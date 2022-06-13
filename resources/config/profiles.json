@@ -1,0 +1,38 @@
+{
+  "dev" : {
+    "admin" : {
+      "password" : "[#]f6fdffe4-8c90-3deb-8f4c-3bd36c032e72",
+      "profile" : {
+        "name" : "Administrator",
+        "lastName" : "User",
+        "email" : {
+          "id" : "info@ekamw.org",
+          "verified" : true
+        },
+        "phone" : {
+          "number" : "0000000000",
+          "verified" : true
+        },
+        "groups" : [ "developers", "administrators" ],
+        "tenant" : "dev"
+      }
+    },
+    "ekaDev" : {
+      "password" : "[#]cb2b11ca-e245-3c27-9b1a-1f070946e5e7",
+      "profile" : {
+        "name" : "RND",
+        "lastName" : "User",
+        "email" : {
+          "id" : "dev@ekamw.org",
+          "verified" : true
+        },
+        "phone" : {
+          "number" : "4387255626",
+          "verified" : true
+        },
+        "groups" : [ "developers", "administrators", "rnd" ],
+        "tenant" : "dev"
+      }
+    }
+  }
+}

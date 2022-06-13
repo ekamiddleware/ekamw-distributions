@@ -1,0 +1,2 @@
+%CD%\jdk-17\bin\java -cp "%CD%\ekamw.jar;%CD%\lib\*" -Xmx2048m -Djdk.io.File.enableADS=true -Djdk.httpclient.allowRestrictedHeaders=host,connection,content-length,expect,upgrade -Djava.awt.headless=true com.eka.middleware.server.MiddlewareServer %CD%\resources\config\
+cmd /k

@@ -1,0 +1,2 @@
+driver=org.sqlite.JDBC
+url=jdbc:sqlite:./integration/middleware/packages/ekaScheduler/dependency/config/ekaSchedulers.db

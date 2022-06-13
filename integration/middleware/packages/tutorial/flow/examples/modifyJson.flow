@@ -1,0 +1,410 @@
+{
+  "latest" : {
+    "createdTS" : "",
+    "input" : [ {
+      "id" : "j2_1",
+      "text" : "jsonList",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j2_1"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j2_1_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : true,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ {
+        "id" : "j2_2",
+        "text" : "id",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j2_2"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j2_2_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "integer"
+      }, {
+        "id" : "j2_3",
+        "text" : "name",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j2_3"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j2_3_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
+      }, {
+        "id" : "j2_4",
+        "text" : "email",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j2_4"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j2_4_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
+      } ],
+      "type" : "documentList"
+    }, {
+      "id" : "j2_5",
+      "text" : "bw",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j2_5"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j2_5_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "javaObject"
+    } ],
+    "output" : [ ],
+    "flow" : [ {
+      "id" : "j1_2",
+      "text" : "LOOP",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_2"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_2_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : true,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "inArray" : "jsonList",
+        "outArray" : "lines",
+        "status" : "enabled",
+        "outArrayType" : "string",
+        "snap" : "disabled"
+      },
+      "children" : [ {
+        "id" : "j1_1",
+        "text" : "MAP",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_1"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_1_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : true,
+          "disabled" : false
+        },
+        "data" : {
+          "transformers" : [ {
+            "op" : "copy",
+            "from" : "/jsonList/name",
+            "to" : "/targetJson/name",
+            "condition" : "",
+            "applyFunction" : "",
+            "jsFunction" : "",
+            "jsFunctionSig" : "",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string"
+          }, {
+            "op" : "copy",
+            "from" : "/jsonList/id",
+            "to" : "/targetJson/id",
+            "condition" : "",
+            "applyFunction" : "",
+            "jsFunction" : "",
+            "jsFunctionSig" : "",
+            "inTypePath" : "document/integer",
+            "outTypePath" : "document/integer"
+          }, {
+            "op" : "copy",
+            "from" : "/jsonList/email",
+            "to" : "/targetJson/email",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string"
+          }, {
+            "op" : "copy",
+            "from" : "/jsonList/name",
+            "to" : "/targetJson/uuid",
+            "condition" : "",
+            "applyFunction" : "custom",
+            "jsFunction" : "return \"#{*index}_\"+val;",
+            "jsFunctionSig" : "",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string"
+          } ],
+          "lines" : [ {
+            "inputPath" : "jsonList/name",
+            "outputPath" : "targetJson/name",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "jsonList/name",
+            "OUTPath" : "targetJson/name",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "string",
+            "outType" : "string",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string",
+            "applyFunction" : "",
+            "condition" : "",
+            "jsFunction" : "",
+            "jsFunctionSig" : ""
+          }, {
+            "inputPath" : "jsonList/id",
+            "outputPath" : "targetJson/id",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "jsonList/id",
+            "OUTPath" : "targetJson/id",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "integer",
+            "outType" : "integer",
+            "inTypePath" : "document/integer",
+            "outTypePath" : "document/integer",
+            "applyFunction" : "",
+            "condition" : "",
+            "jsFunction" : "",
+            "jsFunctionSig" : ""
+          }, {
+            "inputPath" : "jsonList/email",
+            "outputPath" : "targetJson/email",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "jsonList/email",
+            "OUTPath" : "targetJson/email",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "string",
+            "outType" : "string",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string"
+          }, {
+            "inputPath" : "jsonList/name",
+            "outputPath" : "targetJson/uuid",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "jsonList/name",
+            "OUTPath" : "targetJson/uuid",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "string",
+            "outType" : "string",
+            "applyFunction" : "custom",
+            "condition" : "",
+            "jsFunction" : "return \"#{*index}_\"+val;",
+            "jsFunctionSig" : "",
+            "inTypePath" : "document/string",
+            "outTypePath" : "document/string"
+          } ],
+          "dropList" : [ ],
+          "createList" : [ ]
+        },
+        "children" : [ ],
+        "type" : "map"
+      }, {
+        "id" : "j1_3",
+        "text" : "packages/middleware/pub/json/toJson",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_3"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_3_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : {
+          "transformers" : [ {
+            "op" : "copy",
+            "from" : "/targetJson",
+            "to" : "/root",
+            "inTypePath" : "document",
+            "outTypePath" : "document"
+          }, {
+            "op" : "copy",
+            "from" : "/jsonString",
+            "to" : "/lines",
+            "inTypePath" : "string",
+            "outTypePath" : "string"
+          } ],
+          "lines" : [ {
+            "inputPath" : "targetJson",
+            "outputPath" : "root",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree_function",
+            "INPath" : "targetJson",
+            "OUTPath" : "root",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "document",
+            "outType" : "document",
+            "inTypePath" : "document",
+            "outTypePath" : "document"
+          }, {
+            "inputPath" : "jsonString",
+            "outputPath" : "lines",
+            "inpJsTree" : "#launching_arrow_jsTree_function",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "jsonString",
+            "OUTPath" : "lines",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "string",
+            "outType" : "string",
+            "inTypePath" : "string",
+            "outTypePath" : "string"
+          } ],
+          "dropList" : [ {
+            "path" : "targetJson",
+            "typePath" : "document"
+          }, {
+            "path" : "root",
+            "typePath" : "document"
+          } ],
+          "createList" : [ ],
+          "serviceType" : "service",
+          "status" : "enabled"
+        },
+        "children" : [ ],
+        "type" : "invoke"
+      } ],
+      "type" : "loop"
+    }, {
+      "id" : "j1_4",
+      "text" : "packages/middleware/pub/file/writeLines",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_4"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_4_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "transformers" : [ {
+          "op" : "copy",
+          "from" : "/bw",
+          "to" : "/bufferedWriter",
+          "inTypePath" : "javaObject",
+          "outTypePath" : "javaObject"
+        }, {
+          "op" : "copy",
+          "from" : "/lines",
+          "to" : "/lines",
+          "inTypePath" : "string",
+          "outTypePath" : "stringList"
+        } ],
+        "lines" : [ {
+          "inputPath" : "bw",
+          "outputPath" : "bufferedWriter",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "bw",
+          "OUTPath" : "bufferedWriter",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "javaObject",
+          "outType" : "javaObject",
+          "inTypePath" : "javaObject",
+          "outTypePath" : "javaObject"
+        }, {
+          "inputPath" : "lines",
+          "outputPath" : "lines",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "lines",
+          "OUTPath" : "lines",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "stringList",
+          "outType" : "stringList",
+          "inTypePath" : "string",
+          "outTypePath" : "stringList"
+        } ],
+        "dropList" : [ {
+          "path" : "jsonList",
+          "typePath" : "documentList"
+        } ],
+        "createList" : [ ],
+        "serviceType" : "service",
+        "status" : "enabled"
+      },
+      "children" : [ ],
+      "type" : "invoke"
+    } ],
+    "lockedByUser" : "ekaDev"
+  },
+  "consumers" : "",
+  "developers" : "",
+  "enableServiceDocumentValidation" : false
+}

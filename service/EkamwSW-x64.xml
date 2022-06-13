@@ -1,0 +1,11 @@
+<service>
+  <id>ekamw</id>
+  <name>Eka middleware</name>
+  <description>This service runs Eka middleware server.</description>
+  <env name="EKAMW_HOME" value="D:\ekamw"/>
+  <logpath>%BASE%\logs</logpath>
+  <executable>%EKAMW_HOME%\jdk-11\bin\java</executable>
+  <arguments>-Djdk.httpclient.allowRestrictedHeaders=host,connection,content-length,expect,upgrade -Xrs -Xmx2048m -cp "%EKAMW_HOME%\ekamw.jar;%EKAMW_HOME%\lib\*" -Xms512m -Xmx2048m -Djava.awt.headless=true com.eka.middleware.server.MiddlewareServer file:/%EKAMW_HOME%\resources\config\ --httpPort=8080</arguments>
+  <logmode>rotate</logmode>
+  <stopparentprocessfirst>true</stopparentprocessfirst>
+</service>
