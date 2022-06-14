@@ -32,7 +32,7 @@
                         <a href="javascript:void(0)" onclick="swal('Inprogress', '', 'warning')">Test</a>
                         <a href="javascript:void(0)" onclick="openConfigurationProprties()">Configuration</a>
                         <a href="javascript:void(0)" onclick="lockArtifact()">Lock</a>
-                        <a href="javascript:void(0)" onclick="unLockArtifact()">unLock</a>
+                        <a href="javascript:void(0)" onclick="unLockArtifact()">Unlock</a>
                         <a href="javascript:void(0)" onclick="cloneThisService()">Clone</a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                                               id="search_q" placeholder="Search">
                   </div>
                 </div>  -->
-                <div style="text-align:center; width:100%;height:20px;padding-top:4px;" id="currentServiceName"></div>
+                <div style="margin-left: 185px; width:100%;height:20px;padding-top:4px;" id="currentServiceName"></div>
             </div>
         </div></div>
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;width:100%;height:100%">
@@ -590,7 +590,7 @@
     <li class="menu-item">Flow designer</li>
     <li class="menu-separator"></li>
     <li class="menu-item submenu"><a>New</a>
-        <ul class="menu">
+        <ul class="menu secondMenuInput2">
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('sequence',flowDesignerJsTreeRef);">Sequence</a></li>
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('switch',flowDesignerJsTreeRef);">Switch</a></li>
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('try-catch',flowDesignerJsTreeRef);">TCF-Block</a></li>
@@ -1065,7 +1065,7 @@
             flowRef.settings.core.data=JSON.parse(data);
             flowRef.refresh();
         }
-        $("#currentServiceName").html(loadFile);
+        $("#currentServiceName").html(loadFile.replace("files/", "").replaceAll("/", " > "));
     }
 
     function unLockArtifact(){
@@ -1214,6 +1214,7 @@
             }
             if ((yAxis + 223) > window.innerHeight) {
                 $(".secondMenuInput").addClass("secondMenuXAdjustment");
+                $(".secondMenuInput2").addClass("secondMenuXAdjustment2");
                 $(".thirdMenuInput").addClass("thirdMenuXAdjustment");
             } else {
                 $(".secondMenuInput").removeClass("secondMenuXAdjustment");
@@ -1222,8 +1223,10 @@
             if(window.innerWidth<e.pageX+250) {
                 showMenu(e.pageX-150, yAxis);
                 $(".secondMenuInput").addClass("secondMenuYAdjustment");
+                $(".secondMenuInput2").addClass("secondMenuYAdjustment2");
             } else {
                 $(".secondMenuInput").removeClass("secondMenuYAdjustment");
+                $(".secondMenuInput2").removeClass("secondMenuYAdjustment2");
                 showMenu(e.pageX, yAxis);
             }
             document.addEventListener('click', onClick, false);

@@ -1291,8 +1291,10 @@ function openConfigurationProprties(){
     var responseProps=syncRestRequest(propURLPath, "GET", "");
     if(responseProps.status==200)
         $("#servicePropertiesFile").val(responseProps.payload);
-    else
-        swal("Error", JSON.stringify(responseProps), "error")
+    else {
+        //swal("Error", JSON.stringify(responseProps), "error")
+    }
+
 }
 
 function openBuildConfigurationForm(){
