@@ -39,13 +39,13 @@
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="createSchema('package',packageManagerJsTreeRef);">Package</a>
-                            <a href="#" onclick="createSchema('folder',packageManagerJsTreeRef);">Folder</a>
-                            <a href="#" onclick="createSchema('flow',packageManagerJsTreeRef);">Flow</a>
-                            <a href="#" onclick="createSchema('service',packageManagerJsTreeRef);">Service</a>
-                            <a href="#" onclick="createSchema('jdbc',packageManagerJsTreeRef);">JDBC</a>
-                            <a href="#" onclick="createSchema('sql',packageManagerJsTreeRef);">SQL</a>
-                            <a href="#" onclick="createSchema('properties',packageManagerJsTreeRef);">Properties</a>
+                            <a href="#" onclick="createComponent('package',packageManagerJsTreeRef);">Package</a>
+                            <a href="#" onclick="createComponent('folder',packageManagerJsTreeRef);">Folder</a>
+                            <a href="#" onclick="createComponent('flow',packageManagerJsTreeRef);">Flow</a>
+                            <a href="#" onclick="createComponent('service',packageManagerJsTreeRef);">Service</a>
+                            <a href="#" onclick="createComponent('jdbc',packageManagerJsTreeRef);">JDBC</a>
+                            <a href="#" onclick="createComponent('sql',packageManagerJsTreeRef);">SQL</a>
+                            <a href="#" onclick="createComponent('properties',packageManagerJsTreeRef);">Properties</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -116,13 +116,13 @@
         <h3>Create New Item</h3>
         <div id="NameItemPromptDiv" style="margin-top:10px; margin-bottom:15px;">
             <label for="">Item name: </label>
-            <input class="form-control" type="text" id="" name="" value="">
+            <input class="form-control" type="text" id="packages_item_name" name="" value="" />
         </div>
 
         <br>
 
-        <button type="button" id="" class="btn btn-primary">Ok</button>
-        <button type="button" id="" class="btn btn-primary">Cancel</button>
+        <button type="button" id="" class="btn btn-primary" onclick="createItemInSchema()">Ok</button>
+        <button type="button" id="" class="btn btn-primary" onclick="$('#closeExportNameItemPromptModelDialog').trigger('click')">Cancel</button>
     </div>
 </div>
 

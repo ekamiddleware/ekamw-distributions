@@ -1193,6 +1193,103 @@ function createSchema(type,ref,selected,text) {
     return sel;
     //}
 }
+
+
+function createComponent(type,ref,selected,text) {
+    //alert(type);
+    //console.log($(currentSelectedSchemaJStreeID));
+    //var ref = $(currentSelectedSchemaJStreeID).jstree(true),
+
+    var sel = ref.get_selected();
+
+    if(selected)
+        sel[0]=selected;
+    if(!text)
+        text = type.toUpperCase();
+    if (!sel.length)
+        sel="#";
+    else
+        /*{
+            sel=ref.create_node("#", {
+                "text" : text,
+                "type" : type
+            });
+            ref.edit(sel);
+            return;
+        } else {*/
+        sel = sel[0];
+    var selNode=ref.get_node(sel);
+    var selNodeParent=ref.get_node(selNode.parent);
+    //alert(selNode.text+", "+selNodeParent.text+", "+type);
+    if(selNode.text=="config" && selNodeParent.text=="dependency" && type=="properties"){
+        text="package";
+    }else
+    if(type=="properties"){
+        return;
+    }
+    if(type=="try-catch"){
+        text = "TCF-Block";
+    }else if(type=="sequence" && selNode.type=="switch"){// && sel.parent.type=="switch"){
+        //console.log();
+        text="CASE";
+    }
+
+    console.log(type);
+    if (sel == "#" && (type == "package" || type == "folder" || type == "flow" || type == "service" || type == "jdbc" || type == "sql" ||
+        type == "properties")) {
+        if (type == "package") {
+            swal('Select packages', "", 'error');
+        } else if (type == "folder") {
+            swal('The folder can be created only in the package', "", 'error');
+        } else if (type == "flow" || type == "service" || type == "jdbc" || type == "sql" ||
+            type == "properties") {
+            swal('This item can be created only in the folder', "", 'error');
+        }
+        return ;
+    }
+
+    openNameItemPromptForm();
+    /*
+    text = prompt("Enter name of " + type);
+    */
+
+    NEW_ITEM_REF = ref;
+    NEW_ITEM_SEL = sel;
+    NEW_ITEM_TYPE = type;
+}
+
+var NEW_ITEM_REF = null;
+var NEW_ITEM_SEL = null;
+var NEW_ITEM_TYPE = null;
+
+function createItemInSchema() {
+
+    var text = $("#packages_item_name").val();
+
+    if (!validateNewItemName(text)) {
+        swal('Item with this name is already created.', "", 'error');
+        //createComponent(type, ref);
+        return ;
+    } else if (text.trim() == "") {
+        return ;
+    }
+
+    NEW_ITEM_SEL = NEW_ITEM_REF.create_node(NEW_ITEM_SEL, {
+        "text" : text,
+        "type" : NEW_ITEM_TYPE
+    });
+    if (NEW_ITEM_SEL){
+        $("#" + NEW_ITEM_SEL + "_anchor").trigger('click');
+        $('#closeExportNameItemPromptModelDialog').trigger('click');
+        NEW_ITEM_REF = null;
+        NEW_ITEM_SEL = null;
+        NEW_ITEM_TYPE = null;
+    } else {
+        swal('Error in creation, Please try again', "", 'error');
+    }
+    return NEW_ITEM_SEL;
+}
+
 currentSelectedJSONObject={};
 function changeCurrentNodeType(value){
     var node=currentSelectedJSONObject.node;
@@ -1313,7 +1410,8 @@ function openBuildConfigurationForm(){
     }
 }
 
-function openNameItemPromptForm(){
+function openNameItemPromptForm() {
+    $("#packages_item_name").val("");
     var modal = document.getElementById("nameItemPrompt");
     var span = document.getElementById("closeExportNameItemPromptModelDialog");
     modal.style.display = "block";
