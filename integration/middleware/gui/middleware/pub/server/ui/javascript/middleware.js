@@ -1097,6 +1097,21 @@ function createNewVariable(sel, ref, text, type, index) {
 }
 
 var currentSelectedSchemaJStreeID=null;
+
+function createInputSchema(type, ref) {
+    createSchema(type, ref);
+    inputJsTree_id=loadFile+"_inputJsTree";
+    var data=ref.get_json('#', {flat:true});
+    localStorage.setItem(inputJsTree_id,JSON.stringify(data));
+}
+
+function createOutputSchema(type, ref) {
+    createSchema(type, ref);
+    outputJsTree_id=loadFile+"_outputJsTree";
+    var data=outputJstreeRef.get_json('#', {flat:false});
+    localStorage.setItem(outputJsTree_id,JSON.stringify(data));
+}
+
 function createSchema(type,ref,selected,text) {
     //alert(type);
     //console.log($(currentSelectedSchemaJStreeID));
