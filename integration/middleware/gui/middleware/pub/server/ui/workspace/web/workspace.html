@@ -33,7 +33,12 @@
 
         <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:15%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
             <div class="row" style="margin: 0px; padding:0px;">
+
                 <div class="navbar">
+                    <input style="padding: 5px;margin: 5px;width: 215px;" placeholder="Search..." id="search_panel" />
+                </div>
+
+                <div class="navbar" style="display: none;">
                     <div class="dropdown">
                         <button class="dropbtn nw">New
                             <i class="fa fa-angle-down"></i>
@@ -129,6 +134,15 @@
 
 </body>
 <script>
+
+    var to = false;
+    $('#search_panel').keyup(function () {
+        if(to) { clearTimeout(to); }
+        to = setTimeout(function () {
+            var v = $('#search_panel').val();
+            $('#packageManagerJsTree').jstree(true).search(v);
+        }, 250);
+    });
 
     var packageManagerJsTreeRef=createPackageJstree('#packageManagerJsTree');
     $("#packageManagerJsTree").on('click',

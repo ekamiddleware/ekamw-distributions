@@ -690,7 +690,7 @@ function packagesContextMenu(node, id)
     var sel = tree.get_selected()[0];
     var dest=tree.get_path(sel, '/');
     var items = {};
-    if(node.type!="properties"){
+    if(node.type!="properties") {
         items.renameItem={
             label: "Rename",
             action: function (e) {
@@ -699,6 +699,75 @@ function packagesContextMenu(node, id)
             }
         };
 
+    }
+
+    items.new={
+        label: "New",
+        action: false,
+        submenu: {}
+        //function (node) { return { createItem: this.create(node) }; }
+    };
+
+    if(node.type == "root") {
+        items.new.submenu.package= {
+            label: "Package",
+            action: function (e) {
+                createComponent('package',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+    }
+
+    if(node.type == "package") {
+        items.new.submenu.folder= {
+            label: "Folder",
+            action: function (e) {
+                createComponent('folder',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+    }
+
+    if(node.type == "folder") {
+        items.new.submenu.flow= {
+            label: "Flow",
+            action: function (e) {
+                createComponent('flow',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+
+        items.new.submenu.service= {
+            label: "Service",
+            action: function (e) {
+                createComponent('service',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+
+        items.new.submenu.jdbc= {
+            label: "JDBC",
+            action: function (e) {
+                createComponent('jdbc',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+
+        items.new.submenu.sql= {
+            label: "SQL",
+            action: function (e) {
+                createComponent('sql',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+
+        items.new.submenu.properties= {
+            label: "Properties",
+            action: function (e) {
+                createComponent('properties',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
     }
 
 
@@ -859,6 +928,14 @@ function packagesContextMenu(node, id)
                 uploadFile(url,"file",".zip");
             }
         };
+
+        items.build={
+            "label": "Build",
+            action: function (node) {
+                openBuildConfigurationForm();
+            }
+        };
+
     }else if (node.type === 'folder'){
         items.export= {
             label: "Export",
