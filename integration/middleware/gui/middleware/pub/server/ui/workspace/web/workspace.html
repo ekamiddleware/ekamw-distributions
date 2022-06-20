@@ -205,10 +205,13 @@
     function openPage(src){
         //alert(src);
         $("#middlewareCodeEditor").attr('src',src);
+        loadRecentlyOpened();
     }
 
     function loadRecentlyOpened(){
         var recent=localStorage.getItem("workspace-recent");
+        $("#mostRecentlyOpened").html('<a class="eka_logo"><img src="/files/gui/middleware/pub/server/ui/icons/eka_logo.png"></a>');
+        console.log(recent);
         if(recent!=null){
             var strArr=recent.split(",");
             for(i=0;i<strArr.length;i++){
@@ -216,13 +219,17 @@
                 //var tokenize=loadFile.split("/");
                 var name=localStorage.getItem(loadFile);//tokenize[tokenize.length-1].split(".")[0];
                 //alert(loadFile+","+name);
-                if(!name.endsWith("*"))
-                    continue;
                 var url=localStorage.getItem(loadFile+"_url");
                 var src=url+"?loadFile="+loadFile;
-                var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
-                //alert(element);
-                $("#mostRecentlyOpened").append(element);
+                if(!name.endsWith("*")) {
+                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;"><b>'+name+'</b></a>';
+                    //alert(element);
+                    $("#mostRecentlyOpened").append(element);
+                } else {
+                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
+                    //alert(element);
+                    $("#mostRecentlyOpened").append(element);
+                }
             }
         }
     }
