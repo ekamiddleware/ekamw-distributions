@@ -1,7 +1,7 @@
 <html style="min-height: 100% !important;">
 <head>
-    <title>Workspace</title>
-    <link rel="shortcut icon" href="/files/gui/middleware/pub/server/ui/icons/favicon.ico" type="image/x-icon" />
+    <title>Eka Middleware | Workspace</title>
+    <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"	href="/files/gui/middleware/pub/server/ui/css/style.min.css">
@@ -20,7 +20,7 @@
 
 <div class="navbar" style="background-color:#fff;left:0px;top:0px;">
     <div id="mostRecentlyOpened" class="dropdown">
-        <a class="eka_logo"><img src="/files/gui/middleware/pub/server/ui/icons/eka_logo.png"></a>
+        <a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg" /></a>
         <!-- <a class="dropbtn">Unsaved: </a> -->
     </div>
     <div class="dropdown navbar-right">
@@ -33,19 +33,24 @@
 
         <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:15%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
             <div class="row" style="margin: 0px; padding:0px;">
+
                 <div class="navbar">
+                    <input style="padding: 5px;margin: 5px;width: 215px;" placeholder="Search..." id="search_panel" />
+                </div>
+
+                <div class="navbar" style="display: none;">
                     <div class="dropdown">
                         <button class="dropbtn nw">New
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="createSchema('package',packageManagerJsTreeRef);">Package</a>
-                            <a href="#" onclick="createSchema('folder',packageManagerJsTreeRef);">Folder</a>
-                            <a href="#" onclick="createSchema('flow',packageManagerJsTreeRef);">Flow</a>
-                            <a href="#" onclick="createSchema('service',packageManagerJsTreeRef);">Service</a>
-                            <a href="#" onclick="createSchema('jdbc',packageManagerJsTreeRef);">JDBC</a>
-                            <a href="#" onclick="createSchema('sql',packageManagerJsTreeRef);">SQL</a>
-                            <a href="#" onclick="createSchema('properties',packageManagerJsTreeRef);">Properties</a>
+                            <a href="#" onclick="createComponent('package',packageManagerJsTreeRef);">Package</a>
+                            <a href="#" onclick="createComponent('folder',packageManagerJsTreeRef);">Folder</a>
+                            <a href="#" onclick="createComponent('flow',packageManagerJsTreeRef);">Flow</a>
+                            <a href="#" onclick="createComponent('service',packageManagerJsTreeRef);">Service</a>
+                            <a href="#" onclick="createComponent('jdbc',packageManagerJsTreeRef);">JDBC</a>
+                            <a href="#" onclick="createComponent('sql',packageManagerJsTreeRef);">SQL</a>
+                            <a href="#" onclick="createComponent('properties',packageManagerJsTreeRef);">Properties</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -116,19 +121,28 @@
         <h3>Create New Item</h3>
         <div id="NameItemPromptDiv" style="margin-top:10px; margin-bottom:15px;">
             <label for="">Item name: </label>
-            <input class="form-control" type="text" id="" name="" value="">
+            <input class="form-control" type="text" id="packages_item_name" name="" value="" />
         </div>
 
         <br>
 
-        <button type="button" id="" class="btn btn-primary">Ok</button>
-        <button type="button" id="" class="btn btn-primary">Cancel</button>
+        <button type="button" id="" class="btn btn-primary" onclick="createItemInSchema()">Ok</button>
+        <button type="button" id="" class="btn btn-primary" onclick="$('#closeExportNameItemPromptModelDialog').trigger('click')">Cancel</button>
     </div>
 </div>
 
 
 </body>
 <script>
+
+    var to = false;
+    $('#search_panel').keyup(function () {
+        if(to) { clearTimeout(to); }
+        to = setTimeout(function () {
+            var v = $('#search_panel').val();
+            $('#packageManagerJsTree').jstree(true).search(v);
+        }, 250);
+    });
 
     var packageManagerJsTreeRef=createPackageJstree('#packageManagerJsTree');
     $("#packageManagerJsTree").on('click',
