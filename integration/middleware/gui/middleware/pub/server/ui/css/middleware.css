@@ -497,6 +497,7 @@ div#mostRecentlyOpened a.active {
 html { overflow:hidden;}
 .vakata-context ul {
 z-index:10;
+margin-top: -26px;
 }
 
 div {
@@ -759,3 +760,11 @@ div#configureMapLinePropertiesModelDialog {
     background: blue;
 } */
 /* new css start here 05 april 2022 */
+
+.srch_sl{
+	padding: 8px 10px;
+    margin: 5px;
+    width: 94%;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+}
