@@ -47,6 +47,7 @@
                   </div>
                 </div>  -->
                 <div style="margin-left: 185px; width:100%;height:20px;padding-top:4px;" id="currentServiceName"></div>
+				<a id="copy" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
             </div>
         </div></div>
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;width:100%;height:100%">
@@ -606,6 +607,26 @@
      xmlns="http://www.w3.org/2000/svg"
      style="position: absolute; float: none; left: 0px; top: 0px; overflow: visible; z-index:2500; border:1px solid black;"></svg>
 </body>
+
+<script>
+const textElement = document.getElementById("currentServiceName");
+const copyButton = document.getElementById("copy");
+
+const copyText = (e) => {
+  window.getSelection().selectAllChildren(textElement);
+  document.execCommand("copy");
+  e.target.setAttribute("tooltip", "Copied! ✅");
+};
+
+const resetTooltip = (e) => {
+  e.target.setAttribute("tooltip", "Copy to clipboard");
+};
+
+copyButton.addEventListener("click", (e) => copyText(e));
+copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+
+</script>
+
 <script>
 
 

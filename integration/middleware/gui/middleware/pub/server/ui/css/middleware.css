@@ -768,3 +768,11 @@ div#configureMapLinePropertiesModelDialog {
     border: solid 1px #ddd;
     border-radius: 4px;
 }
+
+
+a.cpy {
+    float: left;
+    color: #898989;
+    margin: -9px 0 0 73px;
+    font-size: 15px;
+}
