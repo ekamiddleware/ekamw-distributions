@@ -701,12 +701,14 @@ function packagesContextMenu(node, id)
 
     }
 
-    items.new={
-        label: "New",
-        action: false,
-        submenu: {}
-        //function (node) { return { createItem: this.create(node) }; }
-    };
+    if(node.type == "root" || node.type == "package" || node.type == "folder") {
+        items.new = {
+            label: "New",
+            action: false,
+            submenu: {}
+            //function (node) { return { createItem: this.create(node) }; }
+        };
+    }
 
     if(node.type == "root") {
         items.new.submenu.package= {
@@ -720,7 +722,7 @@ function packagesContextMenu(node, id)
 
     if(node.type == "package") {
         items.new.submenu.folder= {
-            label: "Folder",
+            label: "New Folder",
             action: function (e) {
                 createComponent('folder',packageManagerJsTreeRef);
             },
@@ -728,8 +730,37 @@ function packagesContextMenu(node, id)
         };
     }
 
+    if(node.type == "package") {
+
+        items.new.submenu.configurations = {
+            label: "Configurations",
+            action:false,
+            submenu: {}
+        };
+
+        items.new.submenu.configurations.submenu.properties= {
+            label: "Properties",
+            action: function (e) {
+                createComponent('properties',packageManagerJsTreeRef);
+            },
+            "separator_after": false
+        };
+    }
+
     if(node.type == "folder") {
-        items.new.submenu.flow= {
+        items.new.submenu.services= {
+            label: "Services",
+            action:false,
+            submenu: {}
+        };
+
+        items.new.submenu.connections= {
+            label: "Connections",
+            action:false,
+            submenu: {}
+        };
+
+        items.new.submenu.services.submenu.flow= {
             label: "Flow",
             action: function (e) {
                 createComponent('flow',packageManagerJsTreeRef);
@@ -737,15 +768,15 @@ function packagesContextMenu(node, id)
             "separator_after": false
         };
 
-        items.new.submenu.service= {
-            label: "Service",
+        items.new.submenu.services.submenu.service= {
+            label: "Java",
             action: function (e) {
                 createComponent('service',packageManagerJsTreeRef);
             },
             "separator_after": false
         };
 
-        items.new.submenu.jdbc= {
+        items.new.submenu.connections.submenu.jdbc= {
             label: "JDBC",
             action: function (e) {
                 createComponent('jdbc',packageManagerJsTreeRef);
@@ -753,7 +784,7 @@ function packagesContextMenu(node, id)
             "separator_after": false
         };
 
-        items.new.submenu.sql= {
+        items.new.submenu.services.submenu.sql= {
             label: "SQL",
             action: function (e) {
                 createComponent('sql',packageManagerJsTreeRef);
@@ -761,13 +792,7 @@ function packagesContextMenu(node, id)
             "separator_after": false
         };
 
-        items.new.submenu.properties= {
-            label: "Properties",
-            action: function (e) {
-                createComponent('properties',packageManagerJsTreeRef);
-            },
-            "separator_after": false
-        };
+
     }
 
 
