@@ -22,7 +22,7 @@
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;">
         <div class="row" style="margin: 0px; padding:0px;">
             <div class="navbar">
-                <input style="float:left;width:158px;" class="srch_sl" placeholder="Search..." id="" />
+                <input style="float:left;width:158px;" class="srch_sl" placeholder="Search..." id="input_search_panel" />
 				<!-- <div class="dropdown">
                     <button class="dropbtn nw">Service
                         <i class="fa fa-angle-down"></i>
@@ -48,10 +48,11 @@
                   </div>
                 </div>  -->
                 <div style="margin-left: 195px; height:20px;padding-top:4px;" id="currentServiceName"></div>
-				<a id="copy" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
+                <div style="display: none" id="currentServiceNameNative"></div>
+				<a id="copy" style="display: none;" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
 				<div class="srv-icon">
 				
-				<input class="srch_sl" placeholder="Search..." id="" />
+				<input class="srch_sl" placeholder="Search..." id="flow_search_panel" />
 				
 				<a onclick="save();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/save.svg" alt=""></a>
 				<a onclick="reload();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/reload.svg" alt=""></a>
@@ -61,7 +62,7 @@
 				<a onclick="unLockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/unlock.svg" alt=""></a>
 				<a onclick="cloneThisService()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/clone.svg" alt=""></a>
 				
-				<input class="srch_sl" placeholder="Search..." id="" />
+				<input class="srch_sl" placeholder="Search..." id="output_search_panel" />
 				
 				</div>
 				
@@ -629,7 +630,7 @@
 </body>
 
 <script>
-const textElement = document.getElementById("currentServiceName");
+const textElement = document.getElementById("currentServiceNameNative");
 const copyButton = document.getElementById("copy");
 
 const copyText = (e) => {
@@ -639,7 +640,7 @@ const copyText = (e) => {
 };
 
 const resetTooltip = (e) => {
-  e.target.setAttribute("tooltip", "Copy to clipboard");
+  e.target.setAttribute("tooltip", "Copy to Full Qualified Name");
 };
 
 copyButton.addEventListener("click", (e) => copyText(e));
@@ -648,6 +649,33 @@ copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
 </script>
 
 <script>
+
+    var to_input = false;
+    $('#input_search_panel').keyup(function () {
+        if(to_input) { clearTimeout(to_input); }
+        to_input = setTimeout(function () {
+            var v = $('#input_search_panel').val();
+            $('#input_schema_editor_jsTree').jstree(true).search(v);
+        }, 250);
+    });
+
+    var output_input = false;
+    $('#output_search_panel').keyup(function () {
+        if(output_input) { clearTimeout(output_input); }
+        output_input = setTimeout(function () {
+            var v = $('#output_search_panel').val();
+            $('#output_schema_editor_jsTree').jstree(true).search(v);
+        }, 250);
+    });
+
+    var flow_input = false;
+    $('#flow_search_panel').keyup(function () {
+        if(flow_input) { clearTimeout(flow_input); }
+        flow_input = setTimeout(function () {
+            var v = $('#flow_search_panel').val();
+            $('#flowDesignerJsTree').jstree(true).search(v);
+        }, 250);
+    });
 
 
     loadFile=getUrlParam("loadFile");
@@ -1109,6 +1137,7 @@ copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
             flowRef.refresh();
         }
         $("#currentServiceName").html(loadFile.replace("files/", "").replaceAll("/", " > "));
+        $("#currentServiceNameNative").html(loadFile);
     }
 
     function unLockArtifact(){
