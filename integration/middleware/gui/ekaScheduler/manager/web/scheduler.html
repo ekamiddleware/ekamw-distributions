@@ -1,596 +1,595 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scheduler Configurations</title>
-    
-    <link rel="stylesheet" href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://unpkg.com/tabulator-tables@5.2.1/dist/css/tabulator.min.css" rel="stylesheet">
-      <link rel="shortcut icon" href="/files/gui/middleware/pub/server/ui/icons/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="index.css" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
-  <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
-<script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
-<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
-    <style>
-	
-	  html{overflow:visible;}
-	  
-	  .navbar {
-			overflow: hidden;
-			background-color: #fff;
-			border-bottom: solid 1px #eaebed;
-			min-height: 15px;
-			margin-bottom: 0px;
-			line-height: normal;
-			border-radius: 0px;
-			border-right: solid 1px #eee;
-		}
-		
-		.dropdown {
-			float: left;
-			overflow: hidden;
-		}
-		
-		.eka_logo {
-			width: 205pxpx;
-			text-align: left !important;
-			padding: 4px 6px;
-		}
-		
-		.eka_logo img {
-			margin: 12px 0px 12px;
-			width: 40px;
-		}
-		span.glyphicon.glyphicon-log-in {
-			margin-right: 5px;
-			color: #7e7e7e;
-		}
-		
-		.dropdown .dropbtn {
-			font-size: 13px;
-			border: none;
-			outline: none;
-			color: #6d6d6d;
-			padding: 14px 10px;
-			text-transform: capitalize;
-			font-weight: 500;
-			float: right;
-		}
-	  
-	  body{font-family: 'Inter', sans-serif !important; font-size:14px;}
-	  
-      cron-expression-input .modal-dialog{
-      	min-width:1000px;
-      }
-	  
-	  div#ekaSchedulerTable {
-			margin: 20px auto;
-		}
-		
-		div#createSchedulerJobModelDialog h3 {
-    font-size: 20px;font-family: 'Inter', sans-serif !important;padding-bottom: 20px;
-}
-.modal-footer-en {
-    margin: 25px 0px;
-}
-.tabulator{background-color:#fff;}
-.modal-header{border-bottom:0px;}
-ul.nav.nav-tabs {
-    margin-bottom: 10px !important;
-}
-
-
-
-.dt-buttons {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding-top: 5px;
-}
-.dt-buttons .dt-button {
-  background: #1976d2 none repeat scroll 0 0;
-  border-radius: 4px;
-  color: #ffffff;
-  margin-right: 3px;
-  padding: 5px 15px;
-}
-.dt-buttons .dt-button:hover {
-  background: #2f3d4a none repeat scroll 0 0;
-}
-.dataTables_info,
-.dataTables_length {
-  display: inline-block;
-}
-.dataTables_length {
-  margin-top: 10px;
-}
-.dataTables_length select {
-  background-color: transparent;
-  background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
-  background-position: center bottom, center calc(99%);
-  background-repeat: no-repeat;
-  background-size: 0 2px, 100% 1px;
-  border: 0 none;
-  padding-bottom: 5px;
-  transition: background 0s ease-out 0s;
-}
-.dataTables_length select:focus {
-  background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
-  background-size: 100% 2px, 100% 1px;
-  box-shadow: none;
-  outline: medium none;
-  transition-duration: 0.3s;
-}
-.dataTables_filter {
-  float: right;
-  margin-top: 14px;
-  margin-bottom: 10px;
-}
-.dataTables_filter input {
-  background-color: transparent;
-  background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
-  background-position: center bottom, center calc(99%);
-  background-repeat: no-repeat;
-  background-size: 0 2px, 100% 1px;
-  border: 0 none;
-  border-radius: 0;
-  box-shadow: none;
-  float: none;
-  margin-left: 10px;
-  transition: background 0s ease-out 0s;
-}
-.dataTables_filter input:focus {
-  
-  background-size: 100% 2px, 100% 1px;
-  box-shadow: none;
-  outline: medium none;
-  transition-duration: 0.3s;
-}
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_desc_disabled {
-  background: transparent none repeat scroll 0 0;
-}
-table.dataTable thead .sorting_asc::after {
-  content: "";
-  cursor: pointer;
-  font-family: fontawesome;
-  margin-left: 10px;
-}
-table.dataTable thead .sorting_desc::after {
-  content: "";
-  cursor: pointer;
-  font-family: fontawesome;
-  margin-left: 10px;
-}
-table.dataTable thead .sorting::after {
-  color: rgba(50, 50, 50, 0.5);
-  content: "";
-  cursor: pointer;
-  font-family: fontawesome !important;
-  margin-left: 10px;
-}
-.dataTables_wrapper .dataTables_paginate {
-  float: right;
-  padding-top: 0.25em;
-  text-align: right;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  color: #67757c;
-  cursor: pointer;
-  display: inline-block;
-  min-width: 1.5em;
-  padding: 0.5em 1em;
-  text-align: center;
-  text-decoration: none;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-  background-color: #175cff;
-  border: 1px solid #175cff;
-  color: #ffffff !important;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active,
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
-  background: transparent none repeat scroll 0 0;
-  border: 1px solid #ddd;
-  box-shadow: none;
-  color: #67757c;
-  cursor: default;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  background-color: #175cff;
-  border: 1px solid #175cff;
-  color: white;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button:active {
-  background-color: #175cff;
-  outline: medium none;
-}
-.dataTables_wrapper .dataTables_paginate .ellipsis {
-  padding: 0 1em;
-}
-.tablesaw-bar .btn-group label {
-  color: #67757c !important;
-}
-.dt-bootstrap {
-  display: block;
-}
-
-.tabl_outer {
-  width: 90%;
-  margin: 0 auto;
-}
-
-table { border-collapse: separate; border-spacing: 0; }
-
-.tabl_outer .table-bordered > thead > tr > th, .tabl_outer .table-bordered > tbody > tr > th, .tabl_outer .table-bordered > tfoot > tr > th, .tabl_outer .table-bordered > thead > tr > td, .tabl_outer .table-bordered > tbody > tr > td, .tabl_outer .table-bordered > tfoot > tr > td {
-  border: none;
-  padding: 12px;
-}
-
-.tabl_outer .table-bordered{border-radius: 10px; border: 1px solid #ecedee; box-shadow: 0px 6px 8px -4px rgba(0,0,0,0.1);}
-.dataTables_filter input {
-  box-shadow: none;
-  float: none;
-  margin-left: 10px;
-  border: solid 1px #ddd;
-  border-radius: 4px;
-  height: 38px;
-  padding: 0 10px;
-  background-image: none;
-}
-
-.dataTables_filter input:focus {
-  background-image: none;
-  }
-div#cronMakerTable_length {
-    display: none;
-}
-
-.tabl_outer .fa.fa-check {
-  color: #45df56;
-}
-
-.tabl_outer .fa.fa-times {
-  color: red;
-}
-
-.sch_action {
-  text-align: right;
-  width: 100%;
-  float: right;
-  margin: 20px 0px;
-}
-
-.btn.s_new {
-  background: #175cff;
-  color: #fff;
-  box-shadow: 0 11px 18px -8px rgba(23, 92, 255, 0.6); 
-  /*box-shadow: 0 10px 9px -10px rgba(229, 229, 229, 0.9);*/
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 0.85rem 1.75rem;
-}
-
-.btn.rl_sch {
-  background: #e5e5e5;
-  color: #333;
-  box-shadow: 0 11px 18px -8px rgba(229, 229, 229, 0.6); 
-  /*box-shadow: 0 10px 9px -10px rgba(229, 229, 229, 0.9);*/
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 0.85rem 1.75rem;
-  margin-left: 12px;
-}
-
-.tabl_outer h3 {
-    position: absolute;
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.btn:focus {
-    outline: none;
-    outline-offset: 0;
-}
-
-    </style>
-    
-  </head>
-  <body>
-
-    <div class="tabl_outer">
-	    <h3>Scheduler</h3>
-        <div class="table-responsive">
-			<table id="cronMakerTable" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Service</th>
-						<th>Cron</th>
-						<th>Last error</th>
-						<th>Last run</th>
-						<th>Next run</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody id="cronDataRecords">
-
-				</tbody>
-			</table>
-		</div>
-		
-		<div class="sch_action">
-	     <button type="button" onclick="openCreateSchedulerJobBox();" class="btn s_new">New</button>
-         <button type="button" onclick="reloadScheduledJobs();" class="btn rl_sch">Reload Scheduled Jobs</button>
-	    </div>
-		
-	</div>
-	
-	
-	
-	<center>
-    <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
-    <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
-    <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
-
-     <div id="createSchedulerJobModelDialog" class="modal">
-		<!-- Modal content -->
-		<div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
-			<span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
-          	<h3>Configure Scheduler Job</h3>
-            <input type="hidden" id="schedulerJobID">
-            <input type="text" id="schedulerJobService" name="schedulerJobService" value="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
-            <fieldset id="cronExpressionFieldset"><cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input></fieldset>
-          <div class="modal-footer-en">
-            <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
-		    <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
-            <input type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
-		    <label style="min-width: 100px;" for="filePoller" > Poller(1 ms interval) </label>
-          </div>
-              <div class="modal-footer" style="padding: 20px 0px;">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Scheduler Configurations</title>
+      <link rel="stylesheet" href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://unpkg.com/tabulator-tables@5.2.1/dist/css/tabulator.min.css" rel="stylesheet">
+      <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="index.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+      <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
+      <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
+      <style>
+         html{overflow:visible;}
+         .navbar {
+         overflow: hidden;
+         background-color: #fff;
+         border-bottom: solid 1px #eaebed;
+         min-height: 15px;
+         margin-bottom: 0px;
+         line-height: normal;
+         border-radius: 0px;
+         border-right: solid 1px #eee;
+         }
+         .dropdown {
+         float: left;
+         overflow: hidden;
+         }
+         .eka_logo {
+         width: 205pxpx;
+         text-align: left !important;
+         padding: 4px 6px;
+         }
+         .eka_logo img {
+         width: 118px;
+         }
+         span.glyphicon.glyphicon-log-in {
+         margin-right: 5px;
+         color: #7e7e7e;
+         }
+         .dropdown .dropbtn {
+         font-size: 13px;
+         border: none;
+         outline: none;
+         color: #6d6d6d;
+         padding: 14px 10px;
+         text-transform: capitalize;
+         font-weight: 500;
+         float: right;
+         }
+         body{font-family: 'Inter', sans-serif !important; font-size:14px;}
+         cron-expression-input .modal-dialog{
+         min-width:1000px;
+         }
+         div#ekaSchedulerTable {
+         margin: 20px auto;
+         }
+         div#createSchedulerJobModelDialog h3 {
+         font-size: 20px;font-family: 'Inter', sans-serif !important;padding-bottom: 20px;
+         }
+         .modal-footer-en {
+         margin: 25px 0px;
+         }
+         .tabulator{background-color:#fff;}
+         .modal-header{border-bottom:0px;}
+         ul.nav.nav-tabs {
+         margin-bottom: 10px !important;
+         }
+         .dt-buttons {
+         display: inline-block;
+         margin-bottom: 15px;
+         padding-top: 5px;
+         }
+         .dt-buttons .dt-button {
+         background: #1976d2 none repeat scroll 0 0;
+         border-radius: 4px;
+         color: #ffffff;
+         margin-right: 3px;
+         padding: 5px 15px;
+         }
+         .dt-buttons .dt-button:hover {
+         background: #2f3d4a none repeat scroll 0 0;
+         }
+         .dataTables_info,
+         .dataTables_length {
+         display: inline-block;
+         }
+         .dataTables_length {
+         margin-top: 10px;
+         }
+         .dataTables_length select {
+         background-color: transparent;
+         background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
+         background-position: center bottom, center calc(99%);
+         background-repeat: no-repeat;
+         background-size: 0 2px, 100% 1px;
+         border: 0 none;
+         padding-bottom: 5px;
+         transition: background 0s ease-out 0s;
+         }
+         .dataTables_length select:focus {
+         background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
+         background-size: 100% 2px, 100% 1px;
+         box-shadow: none;
+         outline: medium none;
+         transition-duration: 0.3s;
+         }
+         .dataTables_filter {
+         float: right;
+         margin-top: 14px;
+         margin-bottom: 10px;
+         }
+         .dataTables_filter input {
+         background-color: transparent;
+         background-image: linear-gradient(#ee1635, #ee1635), linear-gradient(#b1b8bb, #b1b8bb);
+         background-position: center bottom, center calc(99%);
+         background-repeat: no-repeat;
+         background-size: 0 2px, 100% 1px;
+         border: 0 none;
+         border-radius: 0;
+         box-shadow: none;
+         float: none;
+         margin-left: 10px;
+         transition: background 0s ease-out 0s;
+         }
+         .dataTables_filter input:focus {
+         background-size: 100% 2px, 100% 1px;
+         box-shadow: none;
+         outline: medium none;
+         transition-duration: 0.3s;
+         }
+         table.dataTable thead .sorting,
+         table.dataTable thead .sorting_asc,
+         table.dataTable thead .sorting_asc_disabled,
+         table.dataTable thead .sorting_desc,
+         table.dataTable thead .sorting_desc_disabled {
+         background: transparent none repeat scroll 0 0;
+         }
+         table.dataTable thead .sorting_asc::after {
+         content: "";
+         cursor: pointer;
+         font-family: fontawesome;
+         margin-left: 10px;
+         }
+         table.dataTable thead .sorting_desc::after {
+         content: "";
+         cursor: pointer;
+         font-family: fontawesome;
+         margin-left: 10px;
+         }
+         table.dataTable thead .sorting::after {
+         color: rgba(50, 50, 50, 0.5);
+         content: "";
+         cursor: pointer;
+         font-family: fontawesome !important;
+         margin-left: 10px;
+         }
+         .dataTables_wrapper .dataTables_paginate {
+         float: right;
+         padding-top: 0.25em;
+         text-align: right;
+         }
+         .dataTables_wrapper .dataTables_paginate .paginate_button {
+         border: 1px solid #ddd;
+         box-sizing: border-box;
+         color: #67757c;
+         cursor: pointer;
+         display: inline-block;
+         min-width: 1.5em;
+         padding: 0.5em 1em;
+         text-align: center;
+         text-decoration: none;
+         }
+         .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+         .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+         background-color: #175cff;
+         border: 1px solid #175cff;
+         color: #ffffff !important;
+         }
+         .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+         .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active,
+         .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+         background: transparent none repeat scroll 0 0;
+         border: 1px solid #ddd;
+         box-shadow: none;
+         color: #67757c;
+         cursor: default;
+         }
+         .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+         background-color: #175cff;
+         border: 1px solid #175cff;
+         color: white;
+         }
+         .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+         background-color: #175cff;
+         outline: medium none;
+         }
+         .dataTables_wrapper .dataTables_paginate .ellipsis {
+         padding: 0 1em;
+         }
+         .tablesaw-bar .btn-group label {
+         color: #67757c !important;
+         }
+         .dt-bootstrap {
+         display: block;
+         }
+         .tabl_outer {
+         width: 99%;
+         margin: 0 auto;
+         }
+         table { border-collapse: separate; border-spacing: 0; }
+         .tabl_outer .table-bordered > thead > tr > th, .tabl_outer .table-bordered > tbody > tr > th, .tabl_outer .table-bordered > tfoot > tr > th, .tabl_outer .table-bordered > thead > tr > td, .tabl_outer .table-bordered > tbody > tr > td, .tabl_outer .table-bordered > tfoot > tr > td {
+         border: none;
+         padding: 12px;
+         }
+         .tabl_outer .table-bordered{border-radius: 10px; border: 1px solid #ecedee; box-shadow: 0px 6px 8px -4px rgba(0,0,0,0.1);}
+         .dataTables_filter input {
+         box-shadow: none;
+         float: none;
+         margin-left: 10px;
+         border: solid 1px #ddd;
+         border-radius: 4px;
+         height: 38px;
+         padding: 0 10px;
+         background-image: none;
+         }
+         .dataTables_filter input:focus {
+         background-image: none;
+         }
+         div#cronMakerTable_length {
+         display: none;
+         }
+         .tabl_outer .fa.fa-check {
+         color: #45df56;
+         }
+         .tabl_outer .fa.fa-times {
+         color: red;
+         }
+         .sch_action {
+         text-align: right;
+         width: 100%;
+         float: right;
+         margin: 20px 0px;
+         }
+         .btn.s_new {
+         background: #175cff;
+         color: #fff;
+         box-shadow: 0 11px 18px -8px rgba(23, 92, 255, 0.6); 
+         /*box-shadow: 0 10px 9px -10px rgba(229, 229, 229, 0.9);*/
+         font-size: 1.5rem;
+         font-weight: 500;
+         padding: 0.85rem 1.75rem;
+         }
+         .btn.rl_sch {
+         background: #e5e5e5;
+         color: #333;
+         box-shadow: 0 11px 18px -8px rgba(229, 229, 229, 0.6); 
+         /*box-shadow: 0 10px 9px -10px rgba(229, 229, 229, 0.9);*/
+         font-size: 1.5rem;
+         font-weight: 500;
+         padding: 0.85rem 1.75rem;
+         margin-left: 12px;
+         }
+         .tabl_outer h3 {
+         position: absolute;
+         font-size: 22px;
+         font-weight: 500;
+         }
+         .btn:focus {
+         outline: none;
+         outline-offset: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="navbar" style="background-color:#fff;left:0px;top:0px;">
+         <div id="mostRecentlyOpened" class="dropdown">
+            <a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg"></a>
+            <!-- <a class="dropbtn">Unsaved: </a> -->
+         </div>
+         <div class="dropdown navbar-right">
+            <a href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" class="dropbtn"><span class="glyphicon glyphicon-log-in"></span> Clear cache</a>
+         </div>
+      </div>
+      <div class="tabl_outer">
+         <h3>Scheduler</h3>
+         <div class="table-responsive">
+            <table id="cronMakerTable" class="table table-bordered table-striped">
+               <thead>
+                  <tr>
+                     <th>ID</th>
+                     <th>Service</th>
+                     <th>Cron</th>
+                     <th>Status</th>
+                  </tr>
+               </thead>
+               <tbody id="cronDataRecords">
+               </tbody>
+            </table>
+         </div>
+         <div class="sch_action">
+            <button type="button" onclick="openCreateSchedulerJobBox();" class="btn s_new">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn rl_sch">Reload Scheduled Jobs</button>
+         </div>
+      </div>
+      <center>
+         <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
+            <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
+         <div id="createSchedulerJobModelDialog" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
+               <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
+               <h3>Configure Scheduler Job</h3>
+               <input type="hidden" id="schedulerJobID">
+               <input type="text" id="schedulerJobService" name="schedulerJobService" value="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+               <fieldset id="cronExpressionFieldset">
+                  <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
+               </fieldset>
+               <div class="modal-footer-en">
+                  <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
+                  <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
+                  <input type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
+                  <label style="min-width: 100px;" for="filePoller" > Poller(1 ms interval) </label>
+               </div>
+               <div class="modal-footer" style="padding: 20px 0px;">
                   <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
                   <button type="button" id="updateSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Update</button>
                   <button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>
-              </div>
-			</div>
-		</div>
-     </center>
-    
-    <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
-    <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
-    <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
-   
-   <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables-init.js"></script>
-   
-   <script>
-     function reloadScheduledJobs(){
-     	syncRestRequest("/ekaScheduler/reload", "GET", "");
-     }
-       
-     function enableCronExpressionSelector(checkBox){
-       if(checkBox.checked==true)
-      	$("#cronExpressionFieldset").prop("disabled",true);
-       else
-         $("#cronExpressionFieldset").prop("disabled",false);
-     }
-function openCreateSchedulerJobBox(){
-      var modal = document.getElementById("createSchedulerJobModelDialog");
-      var span = document.getElementById("closeSchedulerJobModelDialog");
-      var saveSchedulerJob = document.getElementById("saveSchedulerJob");
-      
-      modal.style.display = "block";
-  	  saveSchedulerJob.style.display = "block";
-  
-  
-      $("#schedulerJobID").val("");
-      $(".cronInsideInput").val("* * * * *");
-      $("#enableScheduler").prop('checked',false);
-      $("#schedulerJobService").val("");  
-      $("#filePoller").prop('checked',false);
-      $("#cronExpressionFieldset").prop("disabled",false);
-  
-      span.onclick = function() {
-          saveSchedulerJob.style.display = "none";
-      modal.style.display = "none";
-      }
-  
-      saveSchedulerJob.onclick = function() {
-      var cronExp=$(".cronInsideInput").val();
-      var enableJob=$("#enableScheduler").prop('checked');
-      if(enableJob==true)
-        enableJob="Y";
-      else
-        enableJob="N";
-      var filePoller=$("#filePoller").prop('checked');
-      if(filePoller==true)
-        cronExp="0";
-      
-      var serviceFqn=$("#schedulerJobService").val();
-      var url="/ekaScheduler?cronExpression="+cronExp+"&enabled="+enableJob+"&serviceFqn="+serviceFqn+"&status=new";
-      //alert(url);
-      var response=syncRestRequest(url, "POST", "");
-      if(response.status==200 && response.payload){
-        response=response.payload;
-		  loadDataTable();
-        //alert(response);
-      }
-      saveSchedulerJob.style.display = "none";
-      modal.style.display = "none";
-    }
-}
-     
-function openUpdateSchedulerJobBox(){
-      var modal = document.getElementById("createSchedulerJobModelDialog");
-      var span = document.getElementById("closeSchedulerJobModelDialog");
-      var updateSchedulerJob = document.getElementById("updateSchedulerJob");
-      var deleteSchedulerJob = document.getElementById("deleteSchedulerJob");
-      modal.style.display = "block";
-  	  updateSchedulerJob.style.display = "block";
-      deleteSchedulerJob.style.display = "block";
-      span.onclick = function() {
-          updateSchedulerJob.style.display = "none";
-          modal.style.display = "none";
-          deleteSchedulerJob.style.display = "none";
-      }
-      deleteSchedulerJob.onclick = function() {
-        var schedulerJobId=$("#schedulerJobID").val();
-        var url="/ekaScheduler/"+schedulerJobId;
-      	var response=syncRestRequest(url, "DELETE", "");
-        if(response.status==200 && response.payload){
-          response=response.payload;
-          //alert(response);
-        }
-        updateSchedulerJob.style.display = "none";
-        modal.style.display = "none";
-        deleteSchedulerJob.style.display = "none";
-      }
-      updateSchedulerJob.onclick = function() {
-      var schedulerJobId=$("#schedulerJobID").val();
-      var cronExp=$(".cronInsideInput").val();
-      var enableJob=$("#enableScheduler").prop('checked');
-      if(enableJob==true)
-        enableJob="Y";
-      else
-        enableJob="N";
-      var serviceFqn=$("#schedulerJobService").val();
-      var filePoller=$("#filePoller").prop('checked');
-      if(filePoller==true)
-        cronExp="0";
-      var url="/ekaScheduler/"+schedulerJobId+"?cronExpression="+cronExp+"&enabled="+enableJob+"&serviceFqn="+serviceFqn+"&status=new";
-      //alert(url);
-      var response=syncRestRequest(url, "POST", "");
-      if(response.status==200 && response.payload){
-        response=response.payload;
-        //alert(response);
-      }
-        updateSchedulerJob.style.display = "none";
-        modal.style.display = "none";
-        deleteSchedulerJob.style.display = "none";
-    }
-}
-     function getData(){
-        var response=syncRestRequest("/ekaScheduler","GET");
-        var payload=JSON.parse(response.payload);
-        var length=payload.outputDocList.length;
-        //alert(length);
-        for(i=0;i<length;i++){
-          if(payload.outputDocList[i].enabled=="Y")
-          	payload.outputDocList[i].enabled=true;
-        }
-        return payload.outputDocList;
-     }
-    var table = new Tabulator("#ekaSchedulerTable", {
-        data:getData(),
-        columns:[
-          {title:"ID", field:"id", sorter:"number"},
-          {title:"Service", field:"serviceFqn", sorter:"string"},
-          {title:"Cron", field:"cron", sorter:"string"},
-          {title:"Enabled", field:"enabled", sorter:"string",formatter:"tickCross"},
-          {title:"Owner Node", field:"owner_node", sorter:"string"},
-          {title:"Last error", field:"lasterror", sorter:"date"},
-          {title:"Last run", field:"last_run", sorter:"string"},
-          {title:"Next run", field:"next_run", sorter:"string"},
-          {title:"Status", field:"status", sorter:"string"}
-    	]
-	});
+               </div>
+            </div>
+         </div>
+      </center>
+      <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables-init.js"></script>
+      <script>
+		function reloadScheduledJobs() {
+			syncRestRequest("/ekaScheduler/reload", "GET", "");
+		}
 
-     var AUTO_REFRESH = false;
-	 var tableCronJobs = null;
-	 loadDataTable();
+		function enableCronExpressionSelector(checkBox) {
+			if (checkBox.checked == true)
+				$("#cronExpressionFieldset").prop("disabled", true);
+			else
+				$("#cronExpressionFieldset").prop("disabled", false);
+		}
 
-			 function loadDataTable() {
-	 	var records = getData();
+		function openCreateSchedulerJobBox() {
+			var modal = document.getElementById("createSchedulerJobModelDialog");
+			var span = document.getElementById("closeSchedulerJobModelDialog");
+			var saveSchedulerJob = document.getElementById("saveSchedulerJob");
 
-	 	var HTMLData = "";
+			modal.style.display = "block";
+			saveSchedulerJob.style.display = "block";
 
-	 	for ( var i = 0 ; i < records.length ; i++ ) {
-			HTMLData += "<tr><td>2</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
-			/*if (records[i].enabled) {
-				HTMLData += "<td><i class=\"fa fa-check\" aria-hidden=\"true\"></i></td>" ;
+
+			$("#schedulerJobID").val("");
+			$(".cronInsideInput").val("* * * * *");
+			$("#enableScheduler").prop('checked', false);
+			$("#schedulerJobService").val("");
+			$("#filePoller").prop('checked', false);
+			$("#cronExpressionFieldset").prop("disabled", false);
+
+			span.onclick = function() {
+				saveSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+			}
+
+			saveSchedulerJob.onclick = function() {
+				var cronExp = $(".cronInsideInput").val();
+				var enableJob = $("#enableScheduler").prop('checked');
+				if (enableJob == true)
+					enableJob = "Y";
+				else
+					enableJob = "N";
+				var filePoller = $("#filePoller").prop('checked');
+				if (filePoller == true)
+					cronExp = "0";
+
+				var serviceFqn = $("#schedulerJobService").val();
+				var url = "/ekaScheduler?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new";
+				//alert(url);
+				var response = syncRestRequest(url, "POST", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					loadDataTable();
+					//alert(response);
+				}
+				saveSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+			}
+		}
+
+		function openUpdateSchedulerJobBox() {
+			var modal = document.getElementById("createSchedulerJobModelDialog");
+			var span = document.getElementById("closeSchedulerJobModelDialog");
+			var updateSchedulerJob = document.getElementById("updateSchedulerJob");
+			var deleteSchedulerJob = document.getElementById("deleteSchedulerJob");
+			modal.style.display = "block";
+			updateSchedulerJob.style.display = "block";
+			deleteSchedulerJob.style.display = "block";
+			span.onclick = function() {
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+			deleteSchedulerJob.onclick = function() {
+				var schedulerJobId = $("#schedulerJobID").val();
+				var url = "/ekaScheduler/" + schedulerJobId;
+				var response = syncRestRequest(url, "DELETE", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					//alert(response);
+				}
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+			updateSchedulerJob.onclick = function() {
+				var schedulerJobId = $("#schedulerJobID").val();
+				var cronExp = $(".cronInsideInput").val();
+				var enableJob = $("#enableScheduler").prop('checked');
+				if (enableJob == true)
+					enableJob = "Y";
+				else
+					enableJob = "N";
+				var serviceFqn = $("#schedulerJobService").val();
+				var filePoller = $("#filePoller").prop('checked');
+				if (filePoller == true)
+					cronExp = "0";
+				var url = "/ekaScheduler/" + schedulerJobId + "?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new";
+				//alert(url);
+				var response = syncRestRequest(url, "POST", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					//alert(response);
+				}
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+		}
+
+		function getData() {
+			var response = syncRestRequest("/ekaScheduler", "GET");
+			var payload = JSON.parse(response.payload);
+			var length = payload.outputDocList.length;
+			//alert(length);
+			for (i = 0; i < length; i++) {
+				if (payload.outputDocList[i].enabled == "Y")
+					payload.outputDocList[i].enabled = true;
+			}
+			return payload.outputDocList;
+		}
+		var table = new Tabulator("#ekaSchedulerTable", {
+			data: getData(),
+			columns: [{
+					title: "ID",
+					field: "id",
+					sorter: "number"
+				},
+				{
+					title: "Service",
+					field: "serviceFqn",
+					sorter: "string"
+				},
+				{
+					title: "Cron",
+					field: "cron",
+					sorter: "string"
+				},
+				{
+					title: "Enabled",
+					field: "enabled",
+					sorter: "string",
+					formatter: "tickCross"
+				},
+				{
+					title: "Owner Node",
+					field: "owner_node",
+					sorter: "string"
+				},
+				{
+					title: "Last error",
+					field: "lasterror",
+					sorter: "date"
+				},
+				{
+					title: "Last run",
+					field: "last_run",
+					sorter: "string"
+				},
+				{
+					title: "Next run",
+					field: "next_run",
+					sorter: "string"
+				},
+				{
+					title: "Status",
+					field: "status",
+					sorter: "string"
+				}
+			]
+		});
+
+		var AUTO_REFRESH = false;
+		var tableCronJobs = null;
+		loadDataTable();
+
+		$('#cronMakerTable tbody').on('dblclick', 'tr', function() {
+			var data = tableCronJobs.row(this).data();
+			openUpdateSchedulerJobBox();
+			$("#schedulerJobID").val(data.id);
+			$(".cronInsideInput").val(data.cron);
+			if (data.cron == "0") {
+				$("#filePoller").prop('checked', true);
+				$("#cronExpressionFieldset").prop("disabled", true);
 			} else {
-				HTMLData += "<td><i class=\"fa fa-times\" aria-hidden=\"true\"></i></td>" ;
-			}*/
-			HTMLData += "<td>" + records[i].lasterror + "</td>" +
-					"<td>" + records[i].last_run + "</td>" + "<td>" + records[i].next_run + "</td>" + "<td>" + records[i].status + "</td></tr>";
+				$("#filePoller").prop('checked', false);
+				$("#cronExpressionFieldset").prop("disabled", false);
+			}
+
+			var enableJob = data.enabled;
+			//alert(enableJob);
+			if (enableJob == true)
+				$("#enableScheduler").prop('checked', true);
+			else
+				$("#enableScheduler").prop('checked', false);
+			$("#schedulerJobService").val(data.serviceFqn);
+		});
+
+		function loadDataTable() {
+			var records = getData();
+
+			var HTMLData = "";
+
+			for (var i = 0; i < records.length; i++) {
+				HTMLData += "<tr><td>2</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
+				/*if (records[i].enabled) {
+					HTMLData += "<td><i class=\"fa fa-check\" aria-hidden=\"true\"></i></td>" ;
+				} else {
+					HTMLData += "<td><i class=\"fa fa-times\" aria-hidden=\"true\"></i></td>" ;
+				}*/
+				HTMLData += "<td>" + records[i].status + "</td></tr>";
+			}
+
+			$("#cronDataRecords").html(HTMLData);
+			if (null != tableCronJobs) {
+				tableCronJobs.destroy();
+			}
+
+			tableCronJobs = $('#cronMakerTable').DataTable({
+				"columnDefs": [{
+					"visible": false
+				}],
+				"order": [],
+				"displayLength": 25,
+				"drawCallback": function(settings) {},
+				"columns": [{
+						"data": "id"
+					},
+					{
+						"data": "serviceFqn"
+					},
+					{
+						"data": "cron"
+					},
+					{
+						"data": "status"
+					}
+
+				]
+			});
+
 		}
-
-	 	$("#cronDataRecords").html(HTMLData);
-	 	if (null != tableCronJobs) {
-			tableCronJobs.destroy();
-		}
-
-		 tableCronJobs = $('#cronMakerTable').DataTable({
-			 "columnDefs": [{
-				 "visible": false
-			 }],
-			 "order": [],
-			 "displayLength": 25,
-			 "drawCallback": function(settings) {},
-			 "columns": [
-				 { "data":"id"},
-				 { "data": "serviceFqn"},
-				 { "data": "cron"},
-				 { "data": "lasterror"},
-				 { "data": "last_run"},
-				 { "data": "next_run"},
-				 { "data": "status"}
-
-			 ]
-		 });
-
-	 }
-
-	 setInterval(function() {
-	 	if (AUTO_REFRESH) {
-			table.replaceData(getData());
-		}
-	 }, 500);
-     
-     table.on("rowDblClick", function(e, row){
-       openUpdateSchedulerJobBox();
-       $("#schedulerJobID").val(row.getData().id);
-       $(".cronInsideInput").val(row.getData().cron);
-       if(row.getData().cron=="0"){
-         $("#filePoller").prop('checked',true);
-         $("#cronExpressionFieldset").prop("disabled",true);
-       }else{
-         $("#filePoller").prop('checked',false);
-         $("#cronExpressionFieldset").prop("disabled",false);
-       }
-         
-       var enableJob=row.getData().enabled;
-       //alert(enableJob);
-       if(enableJob==true)
-         $("#enableScheduler").prop('checked',true);
-       else
-         $("#enableScheduler").prop('checked',false);
-       $("#schedulerJobService").val(row.getData().serviceFqn);
-       
-	});
-    </script>
-    
-  </body>
+	  </script>
+   </body>
 </html>

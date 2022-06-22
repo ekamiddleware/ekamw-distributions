@@ -45,6 +45,8 @@ span.glyphicon.glyphicon-log-in {
   color: #6e6f81c4;
   font-size: 12px;
   padding-top: 15px !important;
+  position:absolute;
+  top:0px;
 }
 
 .jstree-default .jstree-anchor {
@@ -497,6 +499,7 @@ div#mostRecentlyOpened a.active {
 html { overflow:hidden;}
 .vakata-context ul {
 z-index:10;
+margin-top: -26px;
 }
 
 div {
@@ -645,8 +648,7 @@ font-size: 12px;}
 .jstree-default > .jstree-striped{background:none;}
 
 .eka_logo img {
-  margin: 9px 0px 0px;
-  width: 40px;
+  width: 118px;
 }
 
 .eka_logo {
@@ -760,3 +762,38 @@ div#configureMapLinePropertiesModelDialog {
     background: blue;
 } */
 /* new css start here 05 april 2022 */
+
+.srch_sl{
+	padding: 8px 10px;
+    margin: 5px;
+    width: 94%;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+}
+
+
+a.cpy {
+    float: left;
+    color: #898989;
+    margin: 11px 0 0 0px;
+    font-size: 15px;
+}
+
+.srv-icon {
+    float: right;
+    margin: 0px 3px 0px;
+}
+
+.srv-icon a {
+    margin: 0 2px;
+    float: none;
+    padding: 0 3px;
+}
+
+.srv-icon img {
+    width: 14px;
+}
+
+.srv-icon input {
+    width: auto;
+}
