@@ -22,7 +22,8 @@
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;">
         <div class="row" style="margin: 0px; padding:0px;">
             <div class="navbar">
-                <div class="dropdown">
+                <input style="float:left;width:158px;" class="srch_sl" placeholder="Search..." id="input_search_panel" />
+				<!-- <div class="dropdown">
                     <button class="dropbtn nw">Service
                         <i class="fa fa-angle-down"></i>
                     </button>
@@ -32,10 +33,10 @@
                         <a href="javascript:void(0)" onclick="swal('Inprogress', '', 'warning')">Test</a>
                         <a href="javascript:void(0)" onclick="openConfigurationProprties()">Configuration</a>
                         <a href="javascript:void(0)" onclick="lockArtifact()">Lock</a>
-                        <a href="javascript:void(0)" onclick="unLockArtifact()">unLock</a>
+                        <a href="javascript:void(0)" onclick="unLockArtifact()">Unlock</a>
                         <a href="javascript:void(0)" onclick="cloneThisService()">Clone</a>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="dropdown">
                   <button class="dropbtn nw">Search
                     <i class="fa fa-caret-down"></i>
@@ -46,7 +47,28 @@
                                               id="search_q" placeholder="Search">
                   </div>
                 </div>  -->
-                <div style="text-align:center; width:100%;height:20px;padding-top:4px;" id="currentServiceName"></div>
+                <div style="margin-left: 195px; height:20px;padding-top:4px;" id="currentServiceName"></div>
+                <div style="display: none" id="currentServiceNameNative"></div>
+				<a id="copy" style="display: none;" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
+				<div class="srv-icon">
+				
+				<input class="srch_sl" placeholder="Search..." id="flow_search_panel" />
+				
+				<a onclick="save();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/save.svg" alt=""></a>
+				<a onclick="reload();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/reload.svg" alt=""></a>
+				<a onclick="swal('Inprogress', '', 'warning')" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/test.svg" alt=""></a>
+				<a onclick="openConfigurationProprties()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/configuration.svg" alt=""></a>
+				<a onclick="lockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/lock.svg" alt=""></a>
+				<a onclick="unLockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/unlock.svg" alt=""></a>
+				<a onclick="cloneThisService()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/clone.svg" alt=""></a>
+				
+				<input class="srch_sl" placeholder="Search..." id="output_search_panel" />
+				
+				</div>
+				
+				
+                    
+               
             </div>
         </div></div>
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;width:100%;height:100%">
@@ -538,19 +560,20 @@
 
 </div>
 
+
 <ul id="input_schema_editor_jsTree_contextMenu" class="menu dropdown-content">
     <li class="menu-item">Input Schema</li>
     <li class="menu-separator"></li>
     <li class="menu-item submenu"><a>New</a>
         <ul class="menu secondMenuInput">
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('document',currentJstreeRef);">Document</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('string',currentJstreeRef);">String</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('integer',currentJstreeRef);">Integer</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('number',currentJstreeRef);">Number</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('date',currentJstreeRef);">Date</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('boolean',currentJstreeRef);">Boolean</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('byte',currentJstreeRef);">Byte</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('javaObject',currentJstreeRef);">Object</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('document',currentJstreeRef);">Document</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('string',currentJstreeRef);">String</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('integer',currentJstreeRef);">Integer</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('number',currentJstreeRef);">Number</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('date',currentJstreeRef);">Date</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('boolean',currentJstreeRef);">Boolean</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('byte',currentJstreeRef);">Byte</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createInputSchema('javaObject',currentJstreeRef);">Object</a></li>
             <li class="menu-item submenu"><a>From</a>
                 <ul class="menu thirdMenuInput">
                     <li class="menu-item" ><a href="javascript:void(0)" onclick="alert('Inprogress');">Ref</a></li>
@@ -567,14 +590,14 @@
     <li class="menu-separator"></li>
     <li class="menu-item submenu"><a>New</a>
         <ul class="menu secondMenuInput">
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('document',currentJstreeRef);">Document</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('string',currentJstreeRef);">String</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('integer',currentJstreeRef);">Integer</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('number',currentJstreeRef);">Number</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('date',currentJstreeRef);">Date</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('boolean',currentJstreeRef);">Boolean</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('byte',currentJstreeRef);">Byte</a></li>
-            <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('javaObject',currentJstreeRef);">Object</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('document',currentJstreeRef);">Document</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('string',currentJstreeRef);">String</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('integer',currentJstreeRef);">Integer</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('number',currentJstreeRef);">Number</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('date',currentJstreeRef);">Date</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('boolean',currentJstreeRef);">Boolean</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('byte',currentJstreeRef);">Byte</a></li>
+            <li class="menu-item" ><a href="javascript:void(0)" onclick="createOutputSchema('javaObject',currentJstreeRef);">Object</a></li>
             <li class="menu-item submenu"><a>From</a>
                 <ul class="menu thirdMenuInput">
                     <li class="menu-item" ><a href="javascript:void(0)" onclick="alert('Inprogress');">Ref</a></li>
@@ -590,7 +613,7 @@
     <li class="menu-item">Flow designer</li>
     <li class="menu-separator"></li>
     <li class="menu-item submenu"><a>New</a>
-        <ul class="menu">
+        <ul class="menu secondMenuInput2">
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('sequence',flowDesignerJsTreeRef);">Sequence</a></li>
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('switch',flowDesignerJsTreeRef);">Switch</a></li>
             <li class="menu-item" ><a href="javascript:void(0)" onclick="createSchema('try-catch',flowDesignerJsTreeRef);">TCF-Block</a></li>
@@ -605,7 +628,54 @@
      xmlns="http://www.w3.org/2000/svg"
      style="position: absolute; float: none; left: 0px; top: 0px; overflow: visible; z-index:2500; border:1px solid black;"></svg>
 </body>
+
 <script>
+const textElement = document.getElementById("currentServiceNameNative");
+const copyButton = document.getElementById("copy");
+
+const copyText = (e) => {
+  window.getSelection().selectAllChildren(textElement);
+  document.execCommand("copy");
+  e.target.setAttribute("tooltip", "Copied! ✅");
+};
+
+const resetTooltip = (e) => {
+  e.target.setAttribute("tooltip", "Copy to Full Qualified Name");
+};
+
+copyButton.addEventListener("click", (e) => copyText(e));
+copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+
+</script>
+
+<script>
+
+    var to_input = false;
+    $('#input_search_panel').keyup(function () {
+        if(to_input) { clearTimeout(to_input); }
+        to_input = setTimeout(function () {
+            var v = $('#input_search_panel').val();
+            $('#input_schema_editor_jsTree').jstree(true).search(v);
+        }, 250);
+    });
+
+    var output_input = false;
+    $('#output_search_panel').keyup(function () {
+        if(output_input) { clearTimeout(output_input); }
+        output_input = setTimeout(function () {
+            var v = $('#output_search_panel').val();
+            $('#output_schema_editor_jsTree').jstree(true).search(v);
+        }, 250);
+    });
+
+    var flow_input = false;
+    $('#flow_search_panel').keyup(function () {
+        if(flow_input) { clearTimeout(flow_input); }
+        flow_input = setTimeout(function () {
+            var v = $('#flow_search_panel').val();
+            $('#flowDesignerJsTree').jstree(true).search(v);
+        }, 250);
+    });
 
 
     loadFile=getUrlParam("loadFile");
@@ -918,7 +988,8 @@
                                 //mapperObj.enableMappingOnJstree("#landing_arrow_jsTree_function");
                             },200);
                         },200);
-                        $("#centerServiceName").html(data.node.text+"."+data.node.data.serviceType);
+
+                        $("#centerServiceName").html(data.node.text.replace("files/", "").replaceAll("/", " > ") + "."+data.node.data.serviceType);
                     }
                 },200);
             }else{
@@ -1065,7 +1136,8 @@
             flowRef.settings.core.data=JSON.parse(data);
             flowRef.refresh();
         }
-        $("#currentServiceName").html(loadFile);
+        $("#currentServiceName").html(loadFile.replace("files/", "").replaceAll("/", " > "));
+        $("#currentServiceNameNative").html(loadFile);
     }
 
     function unLockArtifact(){
@@ -1214,6 +1286,7 @@
             }
             if ((yAxis + 223) > window.innerHeight) {
                 $(".secondMenuInput").addClass("secondMenuXAdjustment");
+                $(".secondMenuInput2").addClass("secondMenuXAdjustment2");
                 $(".thirdMenuInput").addClass("thirdMenuXAdjustment");
             } else {
                 $(".secondMenuInput").removeClass("secondMenuXAdjustment");
@@ -1222,8 +1295,10 @@
             if(window.innerWidth<e.pageX+250) {
                 showMenu(e.pageX-150, yAxis);
                 $(".secondMenuInput").addClass("secondMenuYAdjustment");
+                $(".secondMenuInput2").addClass("secondMenuYAdjustment2");
             } else {
                 $(".secondMenuInput").removeClass("secondMenuYAdjustment");
+                $(".secondMenuInput2").removeClass("secondMenuYAdjustment2");
                 showMenu(e.pageX, yAxis);
             }
             document.addEventListener('click', onClick, false);

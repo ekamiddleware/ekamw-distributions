@@ -209,7 +209,7 @@ function openUpdateSchedulerJobBox(){
     	]
 	});
      setInterval(function(){
-     table.replaceData(getData());},500);
+     table.replaceData(getData());},10000000);
      
      table.on("rowDblClick", function(e, row){
        openUpdateSchedulerJobBox();
