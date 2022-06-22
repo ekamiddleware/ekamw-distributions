@@ -45,6 +45,8 @@ span.glyphicon.glyphicon-log-in {
   color: #6e6f81c4;
   font-size: 12px;
   padding-top: 15px !important;
+  position:absolute;
+  top:0px;
 }
 
 .jstree-default .jstree-anchor {
@@ -773,6 +775,25 @@ div#configureMapLinePropertiesModelDialog {
 a.cpy {
     float: left;
     color: #898989;
-    margin: -9px 0 0 73px;
+    margin: 11px 0 0 0px;
     font-size: 15px;
+}
+
+.srv-icon {
+    float: right;
+    margin: 0px 3px 0px;
+}
+
+.srv-icon a {
+    margin: 0 2px;
+    float: none;
+    padding: 0 3px;
+}
+
+.srv-icon img {
+    width: 14px;
+}
+
+.srv-icon input {
+    width: auto;
 }
