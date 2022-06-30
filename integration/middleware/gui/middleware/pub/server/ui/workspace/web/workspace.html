@@ -2,23 +2,33 @@
 <head>
     <title>Eka Middleware | Workspace</title>
     <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"	href="/files/gui/middleware/pub/server/ui/css/style.min.css">
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/sweetalert.css">
-    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	<link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
+    <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+  
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.min.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/---sweetalert.init.js"></script>
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/middleware.css">
+	
+	<script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+
+
 
 </head>
 
 <body style="width:100%;height:100%;">
 
-<div class="navbar" style="background-color:#fff;left:0px;top:0px;">
+<div class="navbar" style="background-color:#fff;left:0px;top:0px; padding:0px;">
     <div id="mostRecentlyOpened" class="dropdown">
         <a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg" /></a>
         <!-- <a class="dropbtn">Unsaved: </a> -->
@@ -30,8 +40,50 @@
 
 <div id="content" style="max-width: 100%; min-height:500px;padding: 0px; margin: 0px;height:90%;">
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;width:100%;height:100%">
+        
+		<div class="col-md-12" id="packageManagerJsTreeContainer" style="width:5%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+		<div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="width:100%; border-color:#eaebed;">
+		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li>
+              <a href="#" class="nav-link active py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M901.657,166.147H881.874a4.24,4.24,0,0,0-4.24,4.24v11.3a4.24,4.24,0,0,0,4.24,4.24h8.478v2.826H884.7a1.413,1.413,0,0,0,0,2.826h14.131a1.413,1.413,0,1,0,0-2.826h-5.652v-2.826h8.478a4.239,4.239,0,0,0,4.239-4.24v-11.3A4.239,4.239,0,0,0,901.657,166.147Zm1.413,15.544a1.414,1.414,0,0,1-1.413,1.414H881.874a1.413,1.413,0,0,1-1.413-1.414v-11.3a1.412,1.412,0,0,1,1.413-1.413h19.783a1.413,1.413,0,0,1,1.413,1.413v11.3Z"
+                    transform="translate(-877.625 -166.156)" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M905.451,243.013h0a1.276,1.276,0,0,0-1.5-.987,1.289,1.289,0,0,0-.26.083,1.274,1.274,0,0,0-.732,1.409,11.545,11.545,0,1,1-2.812-5.491,1.25,1.25,0,0,0-.748.252,1.264,1.264,0,0,0,.581,2.266l3,0.424,0.052-.388,0.049,0.395a1.277,1.277,0,0,0,1.258-1.086l0.42-2.9a1.272,1.272,0,0,0-2.509-.418,14.145,14.145,0,0,0-24.646,7.114,14.017,14.017,0,0,0,11.82,16.046,14.7,14.7,0,0,0,2.212.169A14.089,14.089,0,0,0,905.451,243.013Zm-14.079-5.95a1.27,1.27,0,0,0-1.272,1.266V244.8a2.566,2.566,0,1,0,3.51,3.493h2.758a1.266,1.266,0,1,0,0-2.531H893.61a2.566,2.566,0,0,0-.967-0.962v-6.469A1.27,1.27,0,0,0,891.372,237.063Z"
+                    transform="translate(-877.406 -231.719)" />
+                </svg>
 
-        <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:15%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+              </a>
+            </li>
+          </ul>
+		
+		</div>
+		</div>
+		
+        <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:13%; min-height:100%; float: left;min-height:600px;height:100%;margin:0px; padding:0px;">
             <div class="row" style="margin: 0px; padding:0px;">
 
                 <div class="navbar">
@@ -73,7 +125,7 @@
                  aria-activedescendant="j1_1" aria-busy="false"></div>
         </div>
 
-        <div class="col-md-12" id="iframe_container" style="width:85%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+        <div class="col-md-12" id="iframe_container" style="width:82%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
             <iframe id="middlewareCodeEditor" class="col-md-12" style="float: left; min-width:400px;min-height:600px;width:100%;height:100%;margin:0px;border:0px;padding:0px; overflow:hidden;overflow-x:hidden;overflow-y:hidden;" allowfullscreen frameborder="0" scrolling="no">
             </iframe>
         </div>
@@ -219,13 +271,10 @@
     function openPage(src){
         //alert(src);
         $("#middlewareCodeEditor").attr('src',src);
-        loadRecentlyOpened();
     }
 
     function loadRecentlyOpened(){
         var recent=localStorage.getItem("workspace-recent");
-        $("#mostRecentlyOpened").html('<a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg"></a>');
-        console.log(recent);
         if(recent!=null){
             var strArr=recent.split(",");
             for(i=0;i<strArr.length;i++){
@@ -233,17 +282,13 @@
                 //var tokenize=loadFile.split("/");
                 var name=localStorage.getItem(loadFile);//tokenize[tokenize.length-1].split(".")[0];
                 //alert(loadFile+","+name);
+                if(!name.endsWith("*"))
+                    continue;
                 var url=localStorage.getItem(loadFile+"_url");
                 var src=url+"?loadFile="+loadFile;
-                if(!name.endsWith("*")) {
-                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;"><b>'+name+'</b></a>';
-                    //alert(element);
-                    $("#mostRecentlyOpened").append(element);
-                } else {
-                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
-                    //alert(element);
-                    $("#mostRecentlyOpened").append(element);
-                }
+                var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
+                //alert(element);
+                $("#mostRecentlyOpened").append(element);
             }
         }
     }

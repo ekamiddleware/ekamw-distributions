@@ -139,6 +139,7 @@ div.jstree-table-cell-root-flowDesignerJsTree {
     background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
     border-radius: 3px;
     box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+	width: 125px;
 }
 .vakata-context li > a {
     display: block;
@@ -299,6 +300,10 @@ width:100%;
   font-family: inherit;
   margin: 0;
   font-weight: 500;
+}
+
+div#mostRecentlyOpened .dropbtn {
+    padding: 20px 10px;
 }
 
 #configurePropertiesModelDialog .form-control {
@@ -795,5 +800,9 @@ a.cpy {
 }
 
 .srv-icon input {
-    width: auto;
+    width: 155px;
+}
+
+#packageManagerJsTreeContainer .navbar {
+    padding: 0px;
 }
