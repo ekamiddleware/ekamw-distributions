@@ -138,9 +138,9 @@ div.jstree-table-cell-root-flowDesignerJsTree {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 2000;
     border: 1px solid #bbb;
-    background: #eee;
-    background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
-    background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+    background: #fff;
+    /* background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+    background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%); */
     border-radius: 3px;
     box-shadow: 1px 1px 4px rgba(0,0,0,.2);
 	width: 135px;
@@ -396,9 +396,9 @@ div#mostRecentlyOpened a.active {
   padding: 2px;
   margin: 0;
   border: 1px solid #bbb;
-  background: #eee;
-  background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
-  background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+  background: #fff;
+  /* background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+  background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%); */
   z-index: 100;
   border-radius: 3px;
   box-shadow: 1px 1px 4px rgba(0,0,0,.2);
@@ -486,7 +486,7 @@ div#mostRecentlyOpened a.active {
   border-left-color: #808080;
 }
 
-.menu-item.submenu:hover::after { border-left-color: #fff; }
+.menu-item.submenu:hover::after { border-left-color: #808080; }
 
 .menu .menu {
   top: 4px;
@@ -819,4 +819,12 @@ a.cpy {
 .left-m-bar li a:hover, .left-m-bar li a:focus {
     text-decoration: none;
     background-color: transparent;
+}
+
+.left-m-bar li {
+    width: 100%;
+}
+
+.eka-side .nav-pills>li+li {
+    margin-left: 0;
 }
