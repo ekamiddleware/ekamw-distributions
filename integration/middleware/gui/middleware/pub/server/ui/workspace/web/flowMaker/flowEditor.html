@@ -24,15 +24,13 @@
             <div class="navbar">
                 <div class="row">
 				    <div class="col-md-12" style="width:15%; margin: 0px; padding:0px;">
-					<input style="float:left;width:94%;" class="srch_sl" placeholder="Search..." id="input_search_panel" />
+					<input style="float:left;width:94%;" class="srch_sl" placeholder="Search Input Params..." id="input_search_panel" />
 					</div>
 				    <div class="col-md-12" style="width:70%; margin: 0px; padding:0px;">
 					<div style="margin-left:5px; height:40px;padding-top:4px;" id="currentServiceName"></div>
 						<div style="display: none" id="currentServiceNameNative"></div>
 						<a id="copy" style="display: none;" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
 						<div class="srv-icon">
-						
-						<input class="srch_sl" placeholder="Search..." id="flow_search_panel" />
 						
 						<a title="Save" onclick="save();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/save.svg" alt=""></a>
 						<a title="Reload" onclick="reload();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/reload.svg" alt=""></a>
@@ -41,11 +39,14 @@
 						<a title="Lock" onclick="lockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/lock.svg" alt=""></a>
 						<a title="Unlock" onclick="unLockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/unlock.svg" alt=""></a>
 						<a title="Clone" onclick="cloneThisService()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/clone.svg" alt=""></a>
-							</div>
+						
+						<input class="srch_sl" placeholder="Search Flow..." id="flow_search_panel" />
+						
+						</div>
 							
 					</div>
 					<div class="col-md-12" style="width:15%; margin: 0px; padding:0px;">
-						<input class="srch_sl" placeholder="Search..." id="output_search_panel" />
+						<input class="srch_sl" placeholder="Search Output Params..." id="output_search_panel" />
 					</div>
 				
 				<!-- <div class="dropdown">
