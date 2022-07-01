@@ -1,10 +1,50 @@
 {
   "latest" : {
     "createdTS" : "",
-    "input" : [ ],
+    "input" : [ {
+      "id" : "j2_2",
+      "text" : "*pathParameters",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j2_2"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j2_2_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ {
+        "id" : "j2_1",
+        "text" : "id",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j2_1"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j2_1_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
+      } ],
+      "type" : "document"
+    } ],
     "output" : [ {
       "id" : "j3_2",
-      "text" : "outputDocList",
+      "text" : "jobHistory",
       "icon" : null,
       "li_attr" : {
         "id" : "j3_2"
@@ -22,7 +62,7 @@
       "data" : { },
       "children" : [ {
         "id" : "j3_3",
-        "text" : "id",
+        "text" : "job_id",
         "icon" : null,
         "li_attr" : {
           "id" : "j3_3"
@@ -60,7 +100,7 @@
         "type" : "string"
       }, {
         "id" : "j3_5",
-        "text" : "cron",
+        "text" : "error",
         "icon" : null,
         "li_attr" : {
           "id" : "j3_5"
@@ -79,7 +119,7 @@
         "type" : "string"
       }, {
         "id" : "j3_6",
-        "text" : "status",
+        "text" : "owner_node",
         "icon" : null,
         "li_attr" : {
           "id" : "j3_6"
@@ -98,7 +138,7 @@
         "type" : "string"
       }, {
         "id" : "j3_7",
-        "text" : "lasterror",
+        "text" : "start_time",
         "icon" : null,
         "li_attr" : {
           "id" : "j3_7"
@@ -117,67 +157,10 @@
         "type" : "string"
       }, {
         "id" : "j3_8",
-        "text" : "enabled",
+        "text" : "duration",
         "icon" : null,
         "li_attr" : {
           "id" : "j3_8"
-        },
-        "a_attr" : {
-          "href" : "#"
-        },
-        "state" : {
-          "loaded" : true,
-          "opened" : false,
-          "selected" : false,
-          "disabled" : false
-        },
-        "data" : { },
-        "children" : [ ],
-        "type" : "string"
-      }, {
-        "id" : "j3_9",
-        "text" : "owner_node",
-        "icon" : null,
-        "li_attr" : {
-          "id" : "j3_9"
-        },
-        "a_attr" : {
-          "href" : "#"
-        },
-        "state" : {
-          "loaded" : true,
-          "opened" : false,
-          "selected" : false,
-          "disabled" : false
-        },
-        "data" : { },
-        "children" : [ ],
-        "type" : "string"
-      }, {
-        "id" : "j3_10",
-        "text" : "last_run",
-        "icon" : null,
-        "li_attr" : {
-          "id" : "j3_10"
-        },
-        "a_attr" : {
-          "href" : "#"
-        },
-        "state" : {
-          "loaded" : true,
-          "opened" : false,
-          "selected" : false,
-          "disabled" : false
-        },
-        "data" : { },
-        "children" : [ ],
-        "type" : "string"
-      }, {
-        "id" : "j3_11",
-        "text" : "next_run",
-        "icon" : null,
-        "li_attr" : {
-          "id" : "j3_11"
         },
         "a_attr" : {
           "href" : "#"
@@ -195,37 +178,43 @@
       "type" : "documentList"
     } ],
     "flow" : [ {
-      "id" : "j1_5",
-      "text" : "packages/ekaScheduler/cronJob/adapter/services/DQL/getSchedulers",
+      "id" : "j1_1",
+      "text" : "packages/ekaScheduler/cronJob/adapter/services/DQL/getJobHistory",
       "icon" : null,
       "li_attr" : {
-        "id" : "j1_5"
+        "id" : "j1_1"
       },
       "a_attr" : {
         "href" : "#",
-        "id" : "j1_5_anchor"
+        "id" : "j1_1_anchor"
       },
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : false,
+        "selected" : true,
         "disabled" : false
       },
       "data" : {
         "transformers" : [ {
           "op" : "copy",
           "from" : "/outputDocList",
-          "to" : "/outputDocList",
+          "to" : "/jobHistory",
           "inTypePath" : "documentList",
           "outTypePath" : "documentList"
+        }, {
+          "op" : "copy",
+          "from" : "/*pathParameters/id",
+          "to" : "/inputDocList/0/id",
+          "inTypePath" : "document/string",
+          "outTypePath" : "documentList/string"
         } ],
         "lines" : [ {
           "inputPath" : "outputDocList",
-          "outputPath" : "outputDocList",
+          "outputPath" : "jobHistory",
           "inpJsTree" : "#launching_arrow_jsTree_function",
           "outpJsTree" : "#landing_arrow_jsTree",
           "INPath" : "outputDocList",
-          "OUTPath" : "outputDocList",
+          "OUTPath" : "jobHistory",
           "op" : "copy",
           "line" : 0,
           "dashedLine" : false,
@@ -233,8 +222,28 @@
           "outType" : "documentList",
           "inTypePath" : "documentList",
           "outTypePath" : "documentList"
+        }, {
+          "inputPath" : "*pathParameters/id",
+          "outputPath" : "inputDocList/id",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "*pathParameters/id",
+          "OUTPath" : "inputDocList/#0/id",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "document/string",
+          "outTypePath" : "documentList/string"
         } ],
-        "dropList" : [ ],
+        "dropList" : [ {
+          "path" : "inputDocList",
+          "typePath" : "documentList"
+        }, {
+          "path" : "*pathParameters",
+          "typePath" : "document"
+        } ],
         "createList" : [ ],
         "serviceType" : "sql"
       },
@@ -244,6 +253,6 @@
     "lockedByUser" : "admin"
   },
   "consumers" : "",
-  "developers" : "rnd",
+  "developers" : "",
   "enableServiceDocumentValidation" : false
 }
