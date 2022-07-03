@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Documentation</title>
+      <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://unpkg.com/tabulator-tables@5.2.1/dist/css/tabulator.min.css" rel="stylesheet">
+      <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="index.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+      
+	  <!-- Custom styles for this template -->
+	  <link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
+	  <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+	  
+	  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
+      <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
+      
+   </head>
+   <body>
+      <header class="navbar sticky-top flex-md-nowrap bg-gray">
+    <a class="navbar-brand col-md-3 col-lg-2 px-3" href="#">
+      <img class="ekalogos" src="/files/gui/middleware/pub/server/ui/assets/img/ekalogo.png">
+    </a>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="#" style="color: #000;">Logout</a>
+      </div>
+    </div>
+  
+  <style>
+    iframe {
+		display: block;
+		margin-top: 20px;
+		width: 100%;
+		height: 100vh;
+	}
+  </style>
+  </header>
+    
+    <main>
+    <div class="container-fluid ">
+      <div class="row">	
+	    <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="height: auto;">
+
+          <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M894.416,90.15h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,90.15Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,96.83Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,103.51Zm17.137-7.824a0.97,0.97,0,0,0-.9-0.6h-7.765a0.971,0.971,0,0,0-.686,1.658l3.883,3.885a0.971,0.971,0,0,0,1.372,0l3.883-3.885A0.973,0.973,0,0,0,911.553,95.686Z"
+                    transform="translate(-878.562 -90.156)" />
+                </svg>
+              </a>
+            </li>
+			<li>
+              <a href="#" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M901.657,166.147H881.874a4.24,4.24,0,0,0-4.24,4.24v11.3a4.24,4.24,0,0,0,4.24,4.24h8.478v2.826H884.7a1.413,1.413,0,0,0,0,2.826h14.131a1.413,1.413,0,1,0,0-2.826h-5.652v-2.826h8.478a4.239,4.239,0,0,0,4.239-4.24v-11.3A4.239,4.239,0,0,0,901.657,166.147Zm1.413,15.544a1.414,1.414,0,0,1-1.413,1.414H881.874a1.413,1.413,0,0,1-1.413-1.414v-11.3a1.412,1.412,0,0,1,1.413-1.413h19.783a1.413,1.413,0,0,1,1.413,1.413v11.3Z"
+                    transform="translate(-877.625 -166.156)" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M905.451,243.013h0a1.276,1.276,0,0,0-1.5-.987,1.289,1.289,0,0,0-.26.083,1.274,1.274,0,0,0-.732,1.409,11.545,11.545,0,1,1-2.812-5.491,1.25,1.25,0,0,0-.748.252,1.264,1.264,0,0,0,.581,2.266l3,0.424,0.052-.388,0.049,0.395a1.277,1.277,0,0,0,1.258-1.086l0.42-2.9a1.272,1.272,0,0,0-2.509-.418,14.145,14.145,0,0,0-24.646,7.114,14.017,14.017,0,0,0,11.82,16.046,14.7,14.7,0,0,0,2.212.169A14.089,14.089,0,0,0,905.451,243.013Zm-14.079-5.95a1.27,1.27,0,0,0-1.272,1.266V244.8a2.566,2.566,0,1,0,3.51,3.493h2.758a1.266,1.266,0,1,0,0-2.531H893.61a2.566,2.566,0,0,0-.967-0.962v-6.469A1.27,1.27,0,0,0,891.372,237.063Z"
+                    transform="translate(-877.406 -231.719)" />
+                </svg>
+
+              </a>
+            </li>
+			<li>
+              <a href="#" class="nav-link active py-3" title="Documentation" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M899.533,361.024H887.814a2.881,2.881,0,0,0-2.915,2.839v2.976a0.549,0.549,0,0,0,.556.542h1.187a0.55,0.55,0,0,0,.556-0.542v-2.976a0.608,0.608,0,0,1,.616-0.6h11.719a0.608,0.608,0,0,1,.616.6v17.619a0.608,0.608,0,0,1-.616.6h-2.39a0.551,0.551,0,0,0-.557.542v1.156a0.55,0.55,0,0,0,.557.542h2.39a2.881,2.881,0,0,0,2.915-2.839V363.863A2.881,2.881,0,0,0,899.533,361.024ZM892.5,368.3H880.777a2.881,2.881,0,0,0-2.914,2.839v17.619a2.881,2.881,0,0,0,2.914,2.839H892.5a2.881,2.881,0,0,0,2.914-2.839V371.136A2.881,2.881,0,0,0,892.5,368.3Zm-12.336,2.839a0.608,0.608,0,0,1,.615-0.6H892.5a0.607,0.607,0,0,1,.614.6v17.619a0.607,0.607,0,0,1-.614.6H880.777a0.607,0.607,0,0,1-.615-0.6V371.136Z"
+                    transform="translate(-877.875 -361.031)" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+		
+	<div class="col-lg-11 px-5 pr-0 p-3">	
+	  <iframe src="https://ekamw.org/documentation-ds.html" frameborder="0"></iframe>
+	</div>  
+      
+      <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+      
+      <script>
+	  
+	  $(document).ready(function() {
+			$('[data-toggle=tooltip]').tooltip();
+		});
+	  
+	  
+		function reloadScheduledJobs() {
+			syncRestRequest("/ekaScheduler/reload", "GET", "");
+		}
+
+		function enableCronExpressionSelector(checkBox) {
+			if (checkBox.checked == true)
+				$("#cronExpressionFieldset").prop("disabled", true);
+			else
+				$("#cronExpressionFieldset").prop("disabled", false);
+		}
+
+		function openCreateSchedulerJobBox() {
+			var modal = document.getElementById("createSchedulerJobModelDialog");
+			var span = document.getElementById("closeSchedulerJobModelDialog");
+			var saveSchedulerJob = document.getElementById("saveSchedulerJob");
+
+			modal.style.display = "block";
+			saveSchedulerJob.style.display = "block";
+
+
+			$("#schedulerJobID").val("");
+			$(".cronInsideInput").val("* * * * *");
+			$("#enableScheduler").prop('checked', false);
+			$("#schedulerJobService").val("");
+			$("#filePoller").prop('checked', false);
+			$("#cronExpressionFieldset").prop("disabled", false);
+
+			span.onclick = function() {
+				saveSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+			}
+
+			saveSchedulerJob.onclick = function() {
+				var cronExp = $(".cronInsideInput").val();
+				var enableJob = $("#enableScheduler").prop('checked');
+				if (enableJob == true)
+					enableJob = "Y";
+				else
+					enableJob = "N";
+				var filePoller = $("#filePoller").prop('checked');
+				if (filePoller == true)
+					cronExp = "0";
+
+				var serviceFqn = $("#schedulerJobService").val();
+				var url = "/ekaScheduler?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new";
+				//alert(url);
+				var response = syncRestRequest(url, "POST", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					loadDataTable();
+					//alert(response);
+				}
+				saveSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+			}
+		}
+
+		function openUpdateSchedulerJobBox() {
+			var modal = document.getElementById("createSchedulerJobModelDialog");
+			var span = document.getElementById("closeSchedulerJobModelDialog");
+			var updateSchedulerJob = document.getElementById("updateSchedulerJob");
+			var deleteSchedulerJob = document.getElementById("deleteSchedulerJob");
+			modal.style.display = "block";
+			updateSchedulerJob.style.display = "block";
+			deleteSchedulerJob.style.display = "block";
+			span.onclick = function() {
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+			deleteSchedulerJob.onclick = function() {
+				var schedulerJobId = $("#schedulerJobID").val();
+				var url = "/ekaScheduler/" + schedulerJobId;
+				var response = syncRestRequest(url, "DELETE", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					//alert(response);
+				}
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+			updateSchedulerJob.onclick = function() {
+				var schedulerJobId = $("#schedulerJobID").val();
+				var cronExp = $(".cronInsideInput").val();
+				var enableJob = $("#enableScheduler").prop('checked');
+				if (enableJob == true)
+					enableJob = "Y";
+				else
+					enableJob = "N";
+				var serviceFqn = $("#schedulerJobService").val();
+				var filePoller = $("#filePoller").prop('checked');
+				if (filePoller == true)
+					cronExp = "0";
+				var url = "/ekaScheduler/" + schedulerJobId + "?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new";
+				//alert(url);
+				var response = syncRestRequest(url, "POST", "");
+				if (response.status == 200 && response.payload) {
+					response = response.payload;
+					//alert(response);
+				}
+				updateSchedulerJob.style.display = "none";
+				modal.style.display = "none";
+				deleteSchedulerJob.style.display = "none";
+			}
+		}
+
+		function getData() {
+			var response = syncRestRequest("/ekaScheduler", "GET");
+			var payload = JSON.parse(response.payload);
+			var length = payload.outputDocList.length;
+			//alert(length);
+			for (i = 0; i < length; i++) {
+				if (payload.outputDocList[i].enabled == "Y")
+					payload.outputDocList[i].enabled = true;
+			}
+			return payload.outputDocList;
+		}
+		var table = new Tabulator("#ekaSchedulerTable", {
+			data: getData(),
+			columns: [{
+					title: "ID",
+					field: "id",
+					sorter: "number"
+				},
+				{
+					title: "Service",
+					field: "serviceFqn",
+					sorter: "string"
+				},
+				{
+					title: "Cron",
+					field: "cron",
+					sorter: "string"
+				},
+				{
+					title: "Enabled",
+					field: "enabled",
+					sorter: "string",
+					formatter: "tickCross"
+				},
+				{
+					title: "Owner Node",
+					field: "owner_node",
+					sorter: "string"
+				},
+				{
+					title: "Last error",
+					field: "lasterror",
+					sorter: "date"
+				},
+				{
+					title: "Last run",
+					field: "last_run",
+					sorter: "string"
+				},
+				{
+					title: "Next run",
+					field: "next_run",
+					sorter: "string"
+				},
+				{
+					title: "Status",
+					field: "status",
+					sorter: "string"
+				}
+			]
+		});
+
+		var AUTO_REFRESH = false;
+		var tableCronJobs = null;
+		loadDataTable();
+
+		$('#cronMakerTable tbody').on('dblclick', 'tr', function() {
+			var data = tableCronJobs.row(this).data();
+			openUpdateSchedulerJobBox();
+			$("#schedulerJobID").val(data.id);
+			$(".cronInsideInput").val(data.cron);
+			if (data.cron == "0") {
+				$("#filePoller").prop('checked', true);
+				$("#cronExpressionFieldset").prop("disabled", true);
+			} else {
+				$("#filePoller").prop('checked', false);
+				$("#cronExpressionFieldset").prop("disabled", false);
+			}
+
+			var enableJob = data.enabled;
+			//alert(enableJob);
+			if (enableJob == true)
+				$("#enableScheduler").prop('checked', true);
+			else
+				$("#enableScheduler").prop('checked', false);
+			$("#schedulerJobService").val(data.serviceFqn);
+		});
+
+		function loadDataTable() {
+			var records = getData();
+
+			var HTMLData = "";
+
+			for (var i = 0; i < records.length; i++) {
+				HTMLData += "<tr><td>2</td><td>" + records[i].owner_node + "</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
+				if (records[i].enabled) {
+					HTMLData += "<td><i class=\"fa fa-check\" aria-hidden=\"true\"></i></td>" ;
+				} else {
+					HTMLData += "<td><i class=\"fa fa-times\" aria-hidden=\"true\"></i></td>" ;
+				}
+				HTMLData += "<td>" + records[i].last_run + "</td>";
+				HTMLData += "<td>" + records[i].status + "</td></tr>";
+			}
+
+			$("#cronDataRecords").html(HTMLData);
+			if (null != tableCronJobs) {
+				tableCronJobs.destroy();
+			}
+
+			tableCronJobs = $('#cronMakerTable').DataTable({
+				"columnDefs": [{
+					"visible": false
+				}],
+				"order": [],
+				language: { search: '', searchPlaceholder: "Search..." },
+				"displayLength": 10,
+				"drawCallback": function(settings) {},
+				"columns": [{
+						"data": "id"
+					},
+					{
+						"data": "owner_node"
+					},
+					{
+						"data": "serviceFqn"
+					},
+					{
+						"data": "cron"
+					},
+					{
+						"data": "enabled"
+					},
+					{
+						"data": "last_run"
+					},
+					{
+						"data": "action"
+					}
+
+				]
+			});
+
+		}
+	  </script>
+	  
+   </body>
+</html>
