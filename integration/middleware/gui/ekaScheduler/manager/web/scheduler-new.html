@@ -1,47 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.84.0">
-  <title>Eka Middleware Integration Platform</title>
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-
-
-
-  <!-- Bootstrap core CSS -->
-  <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Scheduler Configurations</title>
+      <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://unpkg.com/tabulator-tables@5.2.1/dist/css/tabulator.min.css" rel="stylesheet">
       <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-  <!-- Custom styles for this template -->
-  <link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
-  <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <header class="navbar sticky-top flex-md-nowrap bg-gray">
+      <link rel="stylesheet" href="index.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+      
+	  <!-- Custom styles for this template -->
+	  <link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
+	  <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+	  
+	  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
+      <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
+      
+   </head>
+   <body>
+      <header class="navbar sticky-top flex-md-nowrap bg-gray">
     <a class="navbar-brand col-md-3 col-lg-2 px-3" href="#">
       <img class="ekalogos" src="/files/gui/middleware/pub/server/ui/assets/img/ekalogo.png">
     </a>
@@ -51,16 +35,32 @@
       </div>
     </div>
   </header>
-
-  <main>
+    
+    <main>
     <div class="container-fluid ">
-      <div class="row">
-
-        <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0">
+      <div class="row">	
+	    <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="height: auto;">
 
           <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-            <li>
-              <a href="javascript:void(0)" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+            <li class="nav-item">
+              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M894.416,90.15h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,90.15Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,96.83Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,103.51Zm17.137-7.824a0.97,0.97,0,0,0-.9-0.6h-7.765a0.971,0.971,0,0,0-.686,1.658l3.883,3.885a0.971,0.971,0,0,0,1.372,0l3.883-3.885A0.973,0.973,0,0,0,911.553,95.686Z"
+                    transform="translate(-878.562 -90.156)" />
+                </svg>
+              </a>
+            </li>
+			<li>
+              <a href="#" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
                   <defs>
                     <style>
@@ -93,780 +93,84 @@
 
               </a>
             </li>
-            
-            
+			<li>
+              <a href="#" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M899.533,361.024H887.814a2.881,2.881,0,0,0-2.915,2.839v2.976a0.549,0.549,0,0,0,.556.542h1.187a0.55,0.55,0,0,0,.556-0.542v-2.976a0.608,0.608,0,0,1,.616-0.6h11.719a0.608,0.608,0,0,1,.616.6v17.619a0.608,0.608,0,0,1-.616.6h-2.39a0.551,0.551,0,0,0-.557.542v1.156a0.55,0.55,0,0,0,.557.542h2.39a2.881,2.881,0,0,0,2.915-2.839V363.863A2.881,2.881,0,0,0,899.533,361.024ZM892.5,368.3H880.777a2.881,2.881,0,0,0-2.914,2.839v17.619a2.881,2.881,0,0,0,2.914,2.839H892.5a2.881,2.881,0,0,0,2.914-2.839V371.136A2.881,2.881,0,0,0,892.5,368.3Zm-12.336,2.839a0.608,0.608,0,0,1,.615-0.6H892.5a0.607,0.607,0,0,1,.614.6v17.619a0.607,0.607,0,0,1-.614.6H880.777a0.607,0.607,0,0,1-.615-0.6V371.136Z"
+                    transform="translate(-877.875 -361.031)" />
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
-
-        <div class="col-lg-11 px-5 p-3 pr-0">
-          <!-- <div class="row mb-2">
-            <div class="col-lg-12">
-              <div class="tabletitle">
-                <h5>Scheduler</h5>
-              </div>
-            </div>
-            
-          </div> -->
-		  
-		  <div class="tabl_outer">
-		  <h3>Scheduler</h3>
-		  <div class="table-responsive">
+		
+	<div class="col-lg-11 px-5 pr-0 p-3">	
+	  <div class="tabl_outer">
+         <h3>Scheduler</h3>
+         <div class="table-responsive">
             <table id="cronMakerTable" class="table table-bordered table-striped">
                <thead>
                   <tr>
                      <th>ID</th>
                      <th>Node</th>
-                     <th>Service name</th>
+                     <th>Service Name</th>
                      <th>Cron expression</th>
                      <th>Enabled/Disabled</th>
                      <th>Run status</th>
                      <th>Action</th>
                   </tr>
                </thead>
-               <tbody id="cronDataRecords-">
+               <tbody id="cronDataRecords">
                </tbody>
             </table>
          </div>
-         </div>
-
-          <!-- <table class="table table-striped ekatable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Node</th>
-                <th scope="col">Service name</th>
-                <th scope="col">Cron expression</th>
-                <th scope="col">Enabled/Disabled</th>
-                <th scope="col">Run status</th>
-                <th scope="col" class="text-center">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <div class="ekatooltipdefault">
-                      <span class="status st-success"></span>
-                      <span class="ekatooltipdefaulttext">2022/05/22 10:24:59</span>
-                    </div>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <a href="scheduler-details.html">                   
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                     </a>
-                     <a href="#exampleModalToggle" data-bs-toggle="modal">                    
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-                    </a>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td class="cronsinfo">
-                  <div class="ekatooltipdefault">
-                    9,43 * * * *
-                    <span class="ekatooltipdefaulttext">Every 2 seconds</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <div class="ekatooltipdanger">
-                      <span class="status st-danger"></span>
-                      <span class="ekatooltipdangertext">
-                        <b>2022/05/22 10:24:59</b>
-                        <p>error mesage lorem ipsum dolor sit amet dolor sit amet lorem ip</p>
-                      </span>
-                    </div>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>7</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>8</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex ">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>9</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>10</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>11</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>12</th>
-                <td>EkamdNode1</td>
-                <td class="text-blue">Service name</td>
-                <td>9,43 * * * *</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  </div>
-                </td>
-                <td>
-                  <span class="d-flex">
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-success"></span>
-                    <span class="status st-danger"></span>
-                    <span class="status st-light"></span>
-                    <span class="status st-light"></span>
-                  </span>
-                </td>
-                <td class="text-center">
-                  <span class="actionicons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11.5" viewBox="0 0 20.13 11.5">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #9a9a9a;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2342.13,233.8l-2.08-2.031a11.149,11.149,0,0,0-15.46,0l-2.08,2.031a0.845,0.845,0,0,0,0,1.2l2.08,2.03a11.149,11.149,0,0,0,15.46,0l2.08-2.03a0.841,0.841,0,0,0,0-1.2h0Zm-9.81,3.469a2.869,2.869,0,1,1,2.86-2.869A2.874,2.874,0,0,1,2332.32,237.271Zm-8.02-2.869,1.46-1.43a9.229,9.229,0,0,1,3.93-2.277,4.545,4.545,0,0,0,0,7.406,9.272,9.272,0,0,1-3.93-2.273l-1.46-1.426h0Zm14.58,1.43a9.262,9.262,0,0,1-3.93,2.273,4.545,4.545,0,0,0,0-7.406,9.229,9.229,0,0,1,3.93,2.277l1.46,1.43-1.46,1.426h0Z"
-                        transform="translate(-2322.25 -228.656)" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.906" viewBox="0 0 18 18.906">
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #8c8c8c;
-                            fill-rule: evenodd;
-                          }
-                        </style>
-                      </defs>
-                      <path class="cls-1"
-                        d="M2368.11,226.74a1.8,1.8,0,0,1,1.8-1.8h5.4a1.8,1.8,0,0,1,1.8,1.8v1.8h3.6a0.9,0.9,0,1,1,0,1.8h-0.96l-0.78,11.828a1.8,1.8,0,0,1-1.8,1.673h-9.12a1.8,1.8,0,0,1-1.8-1.673l-0.78-11.828h-0.96a0.9,0.9,0,0,1,0-1.8h3.6v-1.8Zm1.8,1.8h5.4v-1.8h-5.4v1.8Zm-2.63,1.8,0.77,11.7h9.12l0.77-11.7h-10.66Zm3.53,1.8a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2370.81,232.141Zm3.6,0a0.9,0.9,0,0,1,.9.9v5.4a0.9,0.9,0,0,1-1.8,0v-5.4A0.9,0.9,0,0,1,2374.41,232.141Z"
-                        transform="translate(-2363.59 -224.938)" />
-                    </svg>
-
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-           -->
-		  <div class="row mb-2">
-            <!-- <div class="col-lg-9">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div> -->
-            <div class="col-lg-12 text-right" style="margin-top:25px;">
-              <button type="button" class="btn btn-primary mr-1">New</button>
-              <button type="button" class="btn btn-secondary">Reload Scheduled Jobs</button>
+         <div class="sch_action">
+		    <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary mr-1">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-secondary">Reload Scheduled Jobs</button>
+		 </div>
+      </div>
+	</div>  
+      <center>
+         <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
+            <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
+         <div id="createSchedulerJobModelDialog" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
+               <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
+               <h3>Configure Scheduler Job</h3>
+               <input type="hidden" id="schedulerJobID">
+               <input type="text" id="schedulerJobService" name="schedulerJobService" value="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+               <fieldset id="cronExpressionFieldset">
+                  <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
+               </fieldset>
+               <div class="modal-footer-en">
+                  <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
+                  <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
+                  <input type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
+                  <label style="min-width: 100px;" for="filePoller" > Poller(1 ms interval) </label>
+               </div>
+               <div class="modal-footer" style="padding: 20px 0px;">
+                  <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
+                  <button type="button" id="updateSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Update</button>
+                  <button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>
+               </div>
             </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content" style="width: 85%;">
-        <div class="modal-body mdlpadding">
-         <div class="mdltitle mb-3">
-          <span class="svgspan">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21.34" height="18.88" viewBox="0 0 21.34 18.88">
-              <defs>
-                <style>
-                  .cls-1 {
-                    fill-rule: evenodd;
-                  }
-                </style>
-              </defs>
-              <path class="cls-1" d="M1533.06,1512.38a0.149,0.149,0,0,1,.09-0.02,0.12,0.12,0,0,1,.08.02,0.158,0.158,0,0,1,.07.07l9.15,15.72a0.231,0.231,0,0,1,.01.24,0.218,0.218,0,0,1-.07.09,0.292,0.292,0,0,1-.09.02H1524a0.2,0.2,0,0,1-.09-0.02,0.16,0.16,0,0,1-.07-0.09,0.211,0.211,0,0,1,0-.24l9.15-15.72A0.234,0.234,0,0,1,1533.06,1512.38Zm1.39-.61a1.487,1.487,0,0,0-2.05-.56,1.436,1.436,0,0,0-.56.56l-9.15,15.72a1.572,1.572,0,0,0,1.3,2.38h18.31a1.577,1.577,0,0,0,1.31-2.38Zm-2.64,14.05a1.335,1.335,0,1,1,1.34,1.35A1.34,1.34,0,0,1,1531.81,1525.82Zm0.13-8.08a1.215,1.215,0,0,1,1.08-1.34,1.2,1.2,0,0,1,1.32,1.08,1.13,1.13,0,0,1,0,.26l-0.46,4.72a0.747,0.747,0,0,1-.8.68,0.738,0.738,0,0,1-.67-0.68Z" transform="translate(-1522.47 -1511)"/>
-            </svg>            
-          </span>
-          <span class="mdltitlespan">Permanently Delete</span>
          </div>
-         <div class="mdlbodytext">
-         Do you really want to delete this service?
-         </div>
-         <div class="mdlactions text-right">
-          <a href="" class="btnclose" data-bs-dismiss="modal" >Cancel</a>
-          <button class="btn btn-secondary btnok" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">OK</button>
-         </div>
-         
-        </div>
-       
-      </div>
-    </div>
-  </div>
- 
-  <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> -->
-  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
-      <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
-      <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
-      <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
-  
-  <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
-
-  <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
-  
-  
-  <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables.min.js"></script>
+      </center>
+      <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+      <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
@@ -875,9 +179,13 @@
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables-init.js"></script>
+      <script>
+	  
+	  $(document).ready(function() {
+			$('[data-toggle=tooltip]').tooltip();
+		});
 	  
 	  
-	  <script>
 		function reloadScheduledJobs() {
 			syncRestRequest("/ekaScheduler/reload", "GET", "");
 		}
@@ -1079,12 +387,13 @@
 			var HTMLData = "";
 
 			for (var i = 0; i < records.length; i++) {
-				HTMLData += "<tr><td>2</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
-				/*if (records[i].enabled) {
+				HTMLData += "<tr><td>2</td><td>" + records[i].owner_node + "</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
+				if (records[i].enabled) {
 					HTMLData += "<td><i class=\"fa fa-check\" aria-hidden=\"true\"></i></td>" ;
 				} else {
 					HTMLData += "<td><i class=\"fa fa-times\" aria-hidden=\"true\"></i></td>" ;
-				}*/
+				}
+				HTMLData += "<td>" + records[i].last_run + "</td>";
 				HTMLData += "<td>" + records[i].status + "</td></tr>";
 			}
 
@@ -1097,30 +406,30 @@
 				"columnDefs": [{
 					"visible": false
 				}],
-				language: { search: "",searchPlaceholder: "Search" },
 				"order": [],
-				"displayLength": 25,
+				language: { search: '', searchPlaceholder: "Search..." },
+				"displayLength": 10,
 				"drawCallback": function(settings) {},
 				"columns": [{
 						"data": "id"
 					},
 					{
-						"data": ""
+						"data": "owner_node"
 					},
 					{
-						"data": ""
+						"data": "serviceFqn"
 					},
 					{
-						"data": ""
+						"data": "cron"
 					},
 					{
-						"data": ""
+						"data": "enabled"
 					},
 					{
-						"data": ""
+						"data": "last_run"
 					},
 					{
-						"data": ""
+						"data": "action"
 					}
 
 				]
@@ -1128,6 +437,6 @@
 
 		}
 	  </script>
-</body>
-
+	  
+   </body>
 </html>
