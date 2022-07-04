@@ -448,9 +448,9 @@ input[type="search"] {
          text-align: left !important;
          padding: 4px 6px;
          }
-         .eka_logo img {
+         /* .eka_logo img {
          width: 118px;
-         }
+         } */
          span.glyphicon.glyphicon-log-in {
          margin-right: 5px;
          color: #7e7e7e;
@@ -689,3 +689,25 @@ input[type="search"] {
          outline: none;
          outline-offset: 0;
          }
+		 
+		 span.actionicons a {
+			margin: 0 5px;
+		}
+		span.actionicons .view_ic img {
+			width: 22px;
+		}
+		span.actionicons a.dlt_ic img {
+			width: 15px;
+		}
+		
+		.eka-side svg {
+			width: 22px;
+		}
+		
+		.menu_ico {
+			width: 28px !important;
+		}
+		
+		.docu_ico {
+			width: 21px !important;
+		}

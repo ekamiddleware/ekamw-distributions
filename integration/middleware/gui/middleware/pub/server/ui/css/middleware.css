@@ -26,7 +26,7 @@ span.glyphicon.glyphicon-log-in {
 }
 
 .jstree-default .jstree-node {
-	margin-left: 5px;
+	margin-left: 9px;
 	min-height: 18px;
 	line-height: 18px;
 }
@@ -262,7 +262,7 @@ width:100%;
 
 .navbar {
   overflow: hidden;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-bottom: solid 1px #eaebed;
   min-height: 15px;
   margin-bottom: 0px;
@@ -531,7 +531,7 @@ div::-webkit-scrollbar-thumb {
 
 /* new css start here 05 april 2022 */
 #input_schema_editor_jsTree_container {
-  background: #f9f9f9;
+  background: #fff;
   /* padding-top: 15px !important;  */
   border-right: solid 1px #eaebed;
   /* padding-bottom: 50px !important; */
@@ -541,7 +541,7 @@ div::-webkit-scrollbar-thumb {
   /* padding-bottom: 50px !important; */
 }
 #output_schema_editor_jsTree_container {
-  background: #f9f9f9;
+  background: #fff;
   padding-top: 5px !important;
   /* padding-bottom: 50px !important; */
 }
@@ -549,7 +549,7 @@ div::-webkit-scrollbar-thumb {
   background: #fbfbfb;
 }
 #packageManagerJsTree {
-  background: #f9f9f9;
+  background: #fff;
   border-right: solid 1px #eaebed;
   padding-top: 5px !important;
 }
@@ -560,6 +560,7 @@ div::-webkit-scrollbar-thumb {
 #packageManagerJsTree ul li ul li {
   margin-top: 2px;
   margin-bottom: 2px;
+  border-left: dotted 2px #f1f1f1;
 }
 
 #packageManagerJsTree .jstree-anchor{color:#121212; font-size: 12px;}
@@ -567,10 +568,12 @@ div::-webkit-scrollbar-thumb {
 #input_schema_editor_jsTree_container ul li ul li {
   margin-top: 2px;
   margin-bottom: 2px;
+  border-left: dotted 2px #f1f1f1;
 }
 #output_schema_editor_jsTree_container ul li ul li {
   margin-top: 2px;
   margin-bottom: 2px;
+  border-left: dotted 2px #f1f1f1;
 }
 
 .jstree-default .jstree-wholerow-clicked {
@@ -656,9 +659,9 @@ font-size: 12px;}
 
 .jstree-default > .jstree-striped{background:none;}
 
-.eka_logo img {
+/* .eka_logo img {
   width: 118px;
-}
+} */
 
 .eka_logo {
   width: 205px;
@@ -827,4 +830,16 @@ a.cpy {
 
 .eka-side .nav-pills>li+li {
     margin-left: 0;
+}
+
+.dropdown.navbar-right a {
+    padding: 20px 10px;
+}
+
+div#mostRecentlyOpened .eka_logo {
+    padding: 10px;
+}
+
+.tp_m a.dropbtn {
+    float: none;
 }

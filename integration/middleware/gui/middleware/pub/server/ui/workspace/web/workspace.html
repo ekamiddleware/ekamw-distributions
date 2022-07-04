@@ -2,12 +2,12 @@
 <head>
     <title>Eka Middleware | Workspace</title>
     <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css"> 
+    <!-- <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"	href="/files/gui/middleware/pub/server/ui/css/style.min.css">
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/sweetalert.css">
     
-	<!-- <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
     <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
   
@@ -19,8 +19,7 @@
     <script src="/files/gui/middleware/pub/server/ui/javascript/---sweetalert.init.js"></script>
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/middleware.css">
 	
-	<script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+	
 
 
 
@@ -28,13 +27,14 @@
 
 <body style="width:100%;height:100%;">
 
-<div class="navbar" style="background-color:#fff;left:0px;top:0px; padding:0px;">
+<div class="navbar" style="background-color:#f9f9f9;left:0px;top:0px; padding:0px;">
     <div id="mostRecentlyOpened" class="dropdown">
-        <a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg" /></a>
+        <a class="eka_logo"><img src="/files/gui/middleware/pub/server/ui/assets/img/ekalogo.png" /></a>
         <!-- <a class="dropbtn">Unsaved: </a> -->
     </div>
-    <div class="dropdown navbar-right">
-        <a href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" class="dropbtn"><span class="glyphicon glyphicon-log-in"></span> Clear cache</a>
+    <div class="dropdown navbar-right tp_m">
+        <a href="https://www.ekamw.org/video.html" target="_blank" class="dropbtn"><img style="width:22px;" src="/files/gui/middleware/pub/server/ui/icons/play_icon.svg">&nbsp; Watch Tutorials</a>&nbsp;
+		<a href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" class="dropbtn"><span><img src="/files/gui/middleware/pub/server/ui/icons/clear_cache.svg"></span>&nbsp; Clear cache</a>
     </div>
 </div>
 
@@ -45,9 +45,9 @@
 		<div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="width:100%; border-color:#eaebed; padding:0px;">
 		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center left-m-bar">
             <li class="nav-item">
-              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
                   <defs>
                     <style>
                       .cls-1 {
@@ -62,7 +62,7 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link active py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link active py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
                   <defs>
                     <style>
@@ -78,7 +78,7 @@
               </a>
             </li>
             <li>
-              <a href="javascript:void(0)" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
                 data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
                   <defs>
@@ -96,9 +96,9 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
                   <defs>
                     <style>
                       .cls-1 {
@@ -219,6 +219,10 @@
 
 
 </body>
+
+
+<script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
 <script>
 
     var to = false;

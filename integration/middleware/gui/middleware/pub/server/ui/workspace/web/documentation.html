@@ -31,7 +31,7 @@
     </a>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#" style="color: #000;">Logout</a>
+        <a class="nav-link px-3" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" href="#" style="color: #000;">Logout</a>
       </div>
     </div>
   
@@ -52,9 +52,9 @@
 
           <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
-              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
                   <defs>
                     <style>
                       .cls-1 {
@@ -69,7 +69,7 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
                   <defs>
                     <style>
@@ -85,7 +85,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
                 data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
                   <defs>
@@ -103,9 +103,9 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link active py-3" title="Documentation" data-bs-toggle="tooltip"
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link active py-3" title="Documentation" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
                   <defs>
                     <style>
                       .cls-1 {
@@ -130,7 +130,10 @@
       <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
       <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
       
-      <script>
+      <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+	  
+	  <script>
 	  
 	  $(document).ready(function() {
 			$('[data-toggle=tooltip]').tooltip();
