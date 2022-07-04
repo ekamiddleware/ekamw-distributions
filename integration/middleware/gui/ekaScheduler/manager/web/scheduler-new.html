@@ -31,7 +31,7 @@
     </a>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#" style="color: #000;">Logout</a>
+        <a class="nav-link px-3" href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" style="color: #000;">Logout</a>
       </div>
     </div>
   </header>
@@ -43,9 +43,9 @@
 
           <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
-              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
                   <defs>
                     <style>
                       .cls-1 {
@@ -60,7 +60,7 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
                   <defs>
                     <style>
@@ -76,7 +76,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link active py-3 " title="Scheduler" data-bs-toggle="tooltip"
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link active py-3 " title="Scheduler" data-bs-toggle="tooltip"
                 data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
                   <defs>
@@ -94,9 +94,9 @@
               </a>
             </li>
 			<li>
-              <a href="#" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
                   <defs>
                     <style>
                       .cls-1 {
@@ -143,8 +143,9 @@
          <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
             <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
             <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
-         <div id="createSchedulerJobModelDialog" class="modal">
-            <!-- Modal content -->
+         <div id="createSchedulerJobModelDialog" class="modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content -->
             <div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
                <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
                <h3>Configure Scheduler Job</h3>
@@ -166,10 +167,52 @@
                </div>
             </div>
          </div>
+         </div>
       </center>
+	  
+	  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="width: 85%;">
+        <div class="modal-body mdlpadding">
+         <div class="mdltitle mb-3">
+          <span class="svgspan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.34" height="18.88" viewBox="0 0 21.34 18.88">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill-rule: evenodd;
+                  }
+                </style>
+              </defs>
+              <path class="cls-1" d="M1533.06,1512.38a0.149,0.149,0,0,1,.09-0.02,0.12,0.12,0,0,1,.08.02,0.158,0.158,0,0,1,.07.07l9.15,15.72a0.231,0.231,0,0,1,.01.24,0.218,0.218,0,0,1-.07.09,0.292,0.292,0,0,1-.09.02H1524a0.2,0.2,0,0,1-.09-0.02,0.16,0.16,0,0,1-.07-0.09,0.211,0.211,0,0,1,0-.24l9.15-15.72A0.234,0.234,0,0,1,1533.06,1512.38Zm1.39-.61a1.487,1.487,0,0,0-2.05-.56,1.436,1.436,0,0,0-.56.56l-9.15,15.72a1.572,1.572,0,0,0,1.3,2.38h18.31a1.577,1.577,0,0,0,1.31-2.38Zm-2.64,14.05a1.335,1.335,0,1,1,1.34,1.35A1.34,1.34,0,0,1,1531.81,1525.82Zm0.13-8.08a1.215,1.215,0,0,1,1.08-1.34,1.2,1.2,0,0,1,1.32,1.08,1.13,1.13,0,0,1,0,.26l-0.46,4.72a0.747,0.747,0,0,1-.8.68,0.738,0.738,0,0,1-.67-0.68Z" transform="translate(-1522.47 -1511)"/>
+            </svg>            
+          </span>
+          <span class="mdltitlespan">Permanently Delete</span>
+         </div>
+         <div class="mdlbodytext">
+         Do you really want to delete this service?
+         </div>
+         <div class="mdlactions text-right">
+          <a href="" class="btnclose" data-bs-dismiss="modal" >Cancel</a>
+          <button class="btn btn-secondary btnok" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">OK</button>
+         </div>
+         
+        </div>
+       
+      </div>
+    </div>
+  </div>
+	  
+	  
       <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
       <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
       <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+	  
+	  <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+	  
+	  
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/datatables.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
@@ -389,12 +432,12 @@
 			for (var i = 0; i < records.length; i++) {
 				HTMLData += "<tr><td>2</td><td>" + records[i].owner_node + "</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
 				if (records[i].enabled) {
-					HTMLData += "<td><i class=\"fa fa-check\" aria-hidden=\"true\"></i></td>" ;
+					HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input\" type=\"checkbox\" role=\"switch\" id=\"flexSwitchCheckChecked\" checked></div></td>" ;
 				} else {
-					HTMLData += "<td><i class=\"fa fa-times\" aria-hidden=\"true\"></i></td>" ;
+					HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input\" type=\"checkbox\" role=\"switch\" id=\"flexSwitchCheckChecked\"></div></td>" ;
 				}
-				HTMLData += "<td>" + records[i].last_run + "</td>";
-				HTMLData += "<td>" + records[i].status + "</td></tr>";
+				HTMLData += "<td><span class=\"d-flex\"><div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span><span class=\"ekatooltipdefaulttext\">2022/05/22 10:24:59</span></div><span class=\"status st-success\"></span><span class=\"status st-success\"></span><span class=\"status st-danger\"></span><span class=\"status st-light\"></span><span class=\"status st-light\"></span></span></td>";
+				HTMLData += "<td><span class=\"actionicons\"><a class=\"view_ic\" href=\"scheduler-details.html\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/view-ico.png\"></a><a class=\"dlt_ic\" href=\"#exampleModalToggle\" data-bs-toggle=\"modal\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/deleteico.png\"></a></span></td></tr>";
 			}
 
 			$("#cronDataRecords").html(HTMLData);

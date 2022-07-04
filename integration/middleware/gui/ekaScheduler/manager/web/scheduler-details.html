@@ -45,7 +45,7 @@
     </a>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#" style="color: #000;">Logout</a>
+        <a class="nav-link px-3" href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" style="color: #000;">Logout</a>
       </div>
     </div>
   </header>
@@ -57,10 +57,10 @@
         <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0">
 
           <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-            <!-- <li class="nav-item">
-              <a href="#" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
                   <defs>
                     <style>
                       .cls-1 {
@@ -73,9 +73,9 @@
                     transform="translate(-878.562 -90.156)" />
                 </svg>
               </a>
-            </li> -->
+            </li> 
             <li>
-              <a href="#" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
                   <defs>
                     <style>
@@ -91,7 +91,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link py-3 active" title="Scheduler" data-bs-toggle="tooltip"
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link py-3 active" title="Scheduler" data-bs-toggle="tooltip"
                 data-bs-placement="right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
                   <defs>
@@ -108,26 +108,11 @@
 
               </a>
             </li>
-            <!-- <li>
-              <a href="#" class="nav-link py-3" title="API" data-bs-toggle="tooltip" data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="31.874" height="22.312" viewBox="0 0 31.874 22.312">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill-rule: evenodd;
-                      }
-                    </style>
-                  </defs>
-                  <path class="cls-1"
-                    d="M881.049,320.969l0.34-2.45a0.191,0.191,0,0,0-.188-0.218H881.12a3.512,3.512,0,0,1-2.589-5.892,1.343,1.343,0,0,0,.26-1.4,7.029,7.029,0,0,1,13.038-5.257,1.322,1.322,0,0,0,2.016.557,4.075,4.075,0,0,1,6.526,3.264,1.443,1.443,0,0,0,1.028,1.77,3.515,3.515,0,0,1-.748,6.948h0a0.261,0.261,0,0,0-.258.3l0.3,2.134a0.27,0.27,0,0,0,.28.234,6.2,6.2,0,0,0,2.043-11.908,6.755,6.755,0,0,0-6.72-6.247,6.636,6.636,0,0,0-2.694.564,9.683,9.683,0,0,0-17.949,5.073,9.479,9.479,0,0,0,.417,2.792,6.185,6.185,0,0,0,4.983,9.734m5.986-1.134,0.025,0.072,0.392,1.121h1.8l-2.482-7.088h-1.93l-2.464,7.088h1.888l0.394-1.193h2.376Zm-1.209-3.45,0.619,1.768h-1.211Zm8.846,1.756a2.483,2.483,0,0,0,0-3.491,2.409,2.409,0,0,0-1.758-.71h-2.682v7.088h1.756V318.85h0.926A2.408,2.408,0,0,0,894.672,318.141Zm-2.684-2.518h0.926a0.686,0.686,0,0,1,.521.214,0.844,0.844,0,0,1,0,1.114,0.677,0.677,0,0,1-.519.217h-0.926v-1.545Zm4.623-1.683v7.088h1.755V313.94h-1.755Z"
-                    transform="translate(-874.938 -298.719)" />
-                </svg>
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="#" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+            
+            <li>
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
                 data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
                   <defs>
                     <style>
                       .cls-1 {
@@ -140,23 +125,7 @@
                     transform="translate(-877.875 -361.031)" />
                 </svg>
               </a>
-            </li> -->
-            <!-- <li>
-              <a href="#" class="nav-link py-3" title="Setting" data-bs-toggle="tooltip" data-bs-placement="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30.875" height="30.906" viewBox="0 0 30.875 30.906">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill-rule: evenodd;
-                      }
-                    </style>
-                  </defs>
-                  <path class="cls-1"
-                    d="M890.347,431.728a1.073,1.073,0,0,1,1.012.706l1.089,3.021q0.587,0.146,1.01.3c0.31,0.111.709,0.28,1.2,0.51l2.536-1.344a1.084,1.084,0,0,1,1.284.2l2.23,2.309a1.056,1.056,0,0,1,.214,1.148l-1.191,2.792q0.3,0.543.476,0.931c0.13,0.284.289,0.674,0.481,1.175l2.773,1.188a1.06,1.06,0,0,1,.645,1.042l-0.2,3.2a1.063,1.063,0,0,1-.709.934l-2.627.934a9.624,9.624,0,0,1-.236.937c-0.1.308-.251,0.7-0.461,1.194l1.32,2.921a1.056,1.056,0,0,1-.26,1.223l-2.509,2.243a1.082,1.082,0,0,1-1.227.148l-2.586-1.371a11.018,11.018,0,0,1-1.25.567l-1.13.423-1,2.78a1.075,1.075,0,0,1-.988.706l-2.932.066a1.074,1.074,0,0,1-1.031-.691L885.1,458.8c-0.543-.191-0.94-0.338-1.2-0.447s-0.562-.254-0.955-0.454l-2.929,1.255a1.085,1.085,0,0,1-1.167-.2l-2.167-2.037a1.057,1.057,0,0,1-.239-1.211l1.261-2.749q-0.285-.559-0.466-0.994c-0.128-.3-0.282-0.722-0.465-1.252l-2.759-.84a1.065,1.065,0,0,1-.758-1.055l0.109-2.967a1.064,1.064,0,0,1,.605-0.918l2.9-1.392c0.134-.493.252-0.876,0.356-1.156s0.264-.642.484-1.1l-1.258-2.658a1.054,1.054,0,0,1,.231-1.22l2.167-2.049a1.082,1.082,0,0,1,1.156-.212l2.929,1.21c0.325-.214.618-0.391,0.882-0.531a9.991,9.991,0,0,1,1.273-.535l1.017-2.843a1.073,1.073,0,0,1,1.013-.708h3.23Zm-0.757,2.126h-1.714l-0.936,2.617a1.069,1.069,0,0,1-.671.653,10.47,10.47,0,0,0-1.442.566,11.07,11.07,0,0,0-1.143.725,1.082,1.082,0,0,1-1.038.116l-2.822-1.166-1.1,1.041,1.149,2.425a1.058,1.058,0,0,1-.01.922c-0.309.619-.518,1.076-0.622,1.357s-0.245.759-.416,1.423a1.065,1.065,0,0,1-.572.695l-2.762,1.327-0.055,1.513,2.5,0.76a1.073,1.073,0,0,1,.7.683c0.247,0.742.444,1.289,0.587,1.631s0.348,0.763.623,1.277a1.054,1.054,0,0,1,.029.937l-1.16,2.53,1.1,1.032,2.749-1.177a1.083,1.083,0,0,1,.93.036c0.564,0.3.984,0.5,1.249,0.614s0.787,0.3,1.536.559a1.07,1.07,0,0,1,.655.633l1.092,2.889,1.43-.032,0.92-2.554a1.067,1.067,0,0,1,.63-0.636l1.6-.6a10.686,10.686,0,0,0,1.468-.71,1.083,1.083,0,0,1,1.039-.013l2.433,1.29,1.368-1.223-1.195-2.643a1.054,1.054,0,0,1,0-.864,15.021,15.021,0,0,0,.567-1.407,10.185,10.185,0,0,0,.285-1.274,1.066,1.066,0,0,1,.7-0.823l2.542-.9,0.112-1.761-2.5-1.072a1.069,1.069,0,0,1-.581-0.608c-0.248-.667-0.444-1.156-0.583-1.458s-0.353-.709-0.648-1.227a1.051,1.051,0,0,1-.053-0.935l1.118-2.624-1.178-1.221-2.3,1.217a1.085,1.085,0,0,1-.977.019c-0.669-.322-1.171-0.543-1.493-0.658a10.964,10.964,0,0,0-1.324-.354,1.074,1.074,0,0,1-.782-0.682Zm-0.87,6.586a6.735,6.735,0,1,1-6.8,6.735A6.771,6.771,0,0,1,888.72,440.44Zm0,2.127a4.608,4.608,0,1,0,4.656,4.608A4.632,4.632,0,0,0,888.72,442.567Z"
-                    transform="translate(-873.25 -431.719)" />
-                </svg>
-              </a>
-            </li> -->
+            </li>
           </ul>
         </div>
  
