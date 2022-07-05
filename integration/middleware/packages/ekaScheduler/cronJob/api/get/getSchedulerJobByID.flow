@@ -4,7 +4,7 @@
     "input" : [ {
       "id" : "j2_1",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
       "li_attr" : {
         "id" : "j2_1"
       },
@@ -22,7 +22,7 @@
       "children" : [ {
         "id" : "j2_2",
         "text" : "id",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
         "li_attr" : {
           "id" : "j2_2"
         },
@@ -45,7 +45,7 @@
     "output" : [ {
       "id" : "j3_1",
       "text" : "outputDocList",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
       "li_attr" : {
         "id" : "j3_1"
       },
@@ -66,7 +66,7 @@
     "flow" : [ {
       "id" : "j1_1",
       "text" : "packages/ekaScheduler/cronJob/adapter/services/DQL/getSchedulerById",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
       "li_attr" : {
         "id" : "j1_1"
       },

@@ -2,7 +2,7 @@
   "input" : [ {
     "id" : "j1_2",
     "text" : "inputDocList",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
     "li_attr" : {
       "id" : "j1_2"
     },
@@ -22,7 +22,7 @@
   }, {
     "id" : "j1_3",
     "text" : "txConn",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/javaObject.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/javaObject.png",
     "li_attr" : {
       "id" : "j1_3"
     },
@@ -42,7 +42,7 @@
   }, {
     "id" : "j1_4",
     "text" : "isTxn",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
     "li_attr" : {
       "id" : "j1_4"
     },
@@ -63,7 +63,7 @@
   "output" : [ {
     "id" : "j2_1",
     "text" : "outputDocList",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
     "li_attr" : {
       "id" : "j2_1"
     },
@@ -83,7 +83,7 @@
   }, {
     "id" : "j2_2",
     "text" : "rows",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.png",
     "li_attr" : {
       "id" : "j2_2"
     },
@@ -103,7 +103,7 @@
   }, {
     "id" : "j2_3",
     "text" : "success",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
     "li_attr" : {
       "id" : "j2_3"
     },
@@ -123,7 +123,7 @@
   }, {
     "id" : "j2_4",
     "text" : "error",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
     "li_attr" : {
       "id" : "j2_4"
     },
