@@ -92,6 +92,8 @@ private static Runnable runnable = new Runnable() {
                                     jobData.put("internal_status","running");
                                     jobData.put("start_time",dtf.format(startedAt));
                                     jobData.put("end_time","");
+                                	jobData.put("correlationId", uuid);
+                                	jobData.put("sessionId", uuidThread);
                                     jobData.put("next_run",getNextInstant(cronExpression)+"");
                         			dp.put("jobData",jobData);
                                     dp.log("Calling startJob for "+serviceFqn+" at time: "+startedAt);

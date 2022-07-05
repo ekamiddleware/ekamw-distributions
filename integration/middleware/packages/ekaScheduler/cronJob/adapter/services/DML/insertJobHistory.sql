@@ -117,6 +117,46 @@
       "data" : { },
       "children" : [ ],
       "type" : "string"
+    }, {
+      "id" : "j1_12",
+      "text" : "correlationId",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_12"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_12_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    }, {
+      "id" : "j1_13",
+      "text" : "sessionId",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_13"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_13_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : true,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
     } ],
     "type" : "documentList"
   }, {
@@ -241,7 +281,7 @@
     "children" : [ ],
     "type" : "string"
   } ],
-  "sql" : "SU5TRVJUIElOVE8gam9iX2hpc3RvcnkgKGpvYl9pZCxzZXJ2aWNlRnFuLGVycm9yLG93bmVyX25vZGUsc3RhcnRfdGltZSxlbmRfdGltZSkKCVZBTFVFUyAoJ3tqb2JfaWR9Jywne3NlcnZpY2VGcW59Jywne2Vycm9yfScsJ3tvd25lcl9ub2RlfScsJ3tzdGFydF90aW1lfScsIGRhdGV0aW1lKCdub3cnKSk7",
+  "sql" : "SU5TRVJUIElOVE8gam9iX2hpc3RvcnkgKGpvYl9pZCxzZXJ2aWNlRnFuLGVycm9yLG93bmVyX25vZGUsc3RhcnRfdGltZSxlbmRfdGltZSxjb3JyZWxhdGlvbklkLHNlc3Npb25JZCkKCVZBTFVFUyAoJ3tqb2JfaWR9Jywne3NlcnZpY2VGcW59Jywne2Vycm9yfScsJ3tvd25lcl9ub2RlfScsJ3tzdGFydF90aW1lfScsIGRhdGV0aW1lKCdub3cnKSwne2NvcnJlbGF0aW9uSWR9Jywne3Nlc3Npb25JZH0nKTs=",
   "version" : "v1",
   "consumers" : "",
   "developers" : "",
