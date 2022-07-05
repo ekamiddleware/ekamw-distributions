@@ -1,4 +1,4 @@
-package packages.middleware.pub.server.core;
+package packages.tutorial.flow;
 
 import com.eka.middleware.service.DataPipeline;
 import com.eka.middleware.service.ServiceUtils;
@@ -11,7 +11,7 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonValue;
 
-public final class service {
+public final class test {
 
 	static JsonObject mainflowJsonObject=null;
 	static final String syncBlock=new String("sync");
@@ -21,7 +21,7 @@ public final class service {
 		  if(mainflowJsonObject==null)
 			synchronized(syncBlock){
 			  String location = ServiceUtils.getPackagesPath();
-			  String flowRef = location+"packages/middleware/pub/server/core/service.flow";
+			  String flowRef = location+"packages/tutorial/flow/test.flow";
 			  if(mainflowJsonObject==null)
 				  mainflowJsonObject = Json.createReader(new FileInputStream(new File(flowRef))).readObject();
 			}
