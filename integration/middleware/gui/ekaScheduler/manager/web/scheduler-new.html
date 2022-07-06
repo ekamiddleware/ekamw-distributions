@@ -23,6 +23,24 @@
       <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
       <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
       
+   <style>
+   .modal-header {
+    display: inline-block;
+	}
+	
+	.modal-body li.nav-link.active.in {
+		border-color: transparent;
+	}
+	
+	.modal-body .nav-link{
+	padding: 0;
+	border: none;
+	}
+	
+	
+	cron-expression-input .nav-tabs>li>a{margin-right: 0px !important;}
+   </style>
+   
    </head>
    <body>
       <header class="navbar sticky-top flex-md-nowrap bg-gray">
@@ -31,7 +49,7 @@
     </a>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" style="color: #000;">Logout</a>
+        <a class="nav-link px-3" href="https://www.ekamw.org/video.html" style="color: #6d6d6d; font-size:13px;"><img style="width:22px;" src="/files/gui/middleware/pub/server/ui/icons/play_icon.svg">&nbsp; Watch Tutorials</a>
       </div>
     </div>
   </header>
