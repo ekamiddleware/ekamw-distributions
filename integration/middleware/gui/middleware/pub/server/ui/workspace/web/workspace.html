@@ -331,5 +331,13 @@
         }
     }
     loadRecentlyOpened();
+	
+	
+	$(function(){
+		$('#mostRecentlyOpened a').click(function(){
+			$('a.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
 </script>
 </html>

@@ -711,3 +711,11 @@ input[type="search"] {
 		.docu_ico {
 			width: 21px !important;
 		}
+		
+		span#closeSchedulerJobModelDialog {
+			text-align: right;
+			font-size: 20px;
+			font-weight: 600;
+			cursor: pointer;
+		}
+		

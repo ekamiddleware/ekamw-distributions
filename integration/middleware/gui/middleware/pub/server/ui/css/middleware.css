@@ -32,7 +32,7 @@ span.glyphicon.glyphicon-log-in {
 }
 
 .jstree-default > .jstree-wholerow-ul .jstree-hovered, .jstree-default > .jstree-wholerow-ul .jstree-clicked {
-  color: #0d7cef !important;
+  color: #121212 !important;
 }
 
 .jstree-default .jstree-icon:empty {
@@ -321,12 +321,12 @@ div#mostRecentlyOpened .dropbtn {
 div#mostRecentlyOpened a:hover {
     /* background: #1d1d2ee3;
     border-radius: 10px 10px 0px 0px; */
-	border-bottom: solid 2px #3276b1 ;
+	border-bottom: solid 2px #175cff ;
 	color: #151515;
 }
 
 div#mostRecentlyOpened a.active {
-	border-bottom: solid 2px #3276b1 ;
+	border-bottom: solid 2px #175cff ;
 	color: #151515;
 }
 
@@ -546,7 +546,7 @@ div::-webkit-scrollbar-thumb {
   /* padding-bottom: 50px !important; */
 }
 #iframe_container {
-  background: #fbfbfb;
+  background: #fff;
 }
 #packageManagerJsTree {
   background: #fff;
@@ -577,19 +577,31 @@ div::-webkit-scrollbar-thumb {
 }
 
 .jstree-default .jstree-wholerow-clicked {
-  background: #83acd938;
+  background: #f5f5f5;
 }
 
-#flowDesignerJsTreeContainer .jstree-wholerow-clicked {
-  background: #83acd938;
-}
+/* #flowDesignerJsTreeContainer .jstree-wholerow-clicked {
+  background: #f5f5f5;
+} */
 
 #input_schema_editor_jsTree_container .jstree-default .jstree-wholerow-clicked {
-  background:#83acd938;
+  background:#f5f5f5;
 }
 
-#packageManagerJsTree .jstree-wholerow-hovered {
- background:#83acd938 !important;
+#packageManagerJsTree .jstree-wholerow-hovered, #input_schema_editor_jsTree_container .jstree-wholerow-hovered, #output_schema_editor_jsTree_container .jstree-wholerow-hovered {
+ background:#f5f5f5 !important;
+}
+
+#flowDesignerJsTree .jstree-hovered, #flowDesignerJsTree .jstree-clicked{
+	color:#175cff !important;
+}
+
+#flowDesignerJsTree .jstree-wholerow-hovered, #flowDesignerJsTree .jstree-wholerow-clicked{
+background:transparent !important;
+}
+
+#mappingArea .jstree-wholerow-hovered, #mappingArea .jstree-wholerow-clicked{
+background:#f5f5f5;
 }
 
 #packageManagerJsTree ul li {
@@ -623,8 +635,8 @@ div::-webkit-scrollbar-thumb {
 }
 
 #flowDesignerJsTree .jstree-striped {
-  min-width: 98%;
-  margin: 1%;
+  min-width: 97%;
+  margin: 1.5%;
   border: solid 1px #f9f9f9;
     border-left-color: rgb(234, 235, 237);
     border-left-style: solid;
