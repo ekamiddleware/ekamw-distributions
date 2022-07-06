@@ -4,7 +4,7 @@
     "input" : [ {
       "id" : "j2_1",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_1"
       },
@@ -22,7 +22,7 @@
       "children" : [ {
         "id" : "j2_2",
         "text" : "id",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+        "icon" : null,
         "li_attr" : {
           "id" : "j2_2"
         },
@@ -44,8 +44,8 @@
     } ],
     "output" : [ {
       "id" : "j3_1",
-      "text" : "outputDocList",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
+      "text" : "output",
+      "icon" : null,
       "li_attr" : {
         "id" : "j3_1"
       },
@@ -66,7 +66,7 @@
     "flow" : [ {
       "id" : "j1_1",
       "text" : "packages/ekaScheduler/cronJob/adapter/services/DQL/getSchedulerById",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_1"
       },
@@ -84,15 +84,79 @@
         "transformers" : [ {
           "op" : "copy",
           "from" : "/*pathParameters/id",
-          "to" : "/inputDocList/#0/id",
+          "to" : "/inputDocList/0/id",
           "inTypePath" : "document/string",
           "outTypePath" : "documentList/string"
         }, {
-          "op" : "copy",
-          "from" : "/outputDocList",
-          "to" : "/outputDocList",
+          "op" : "loop",
+          "from" : "/outputDocList/#{loop_id_-331687499}",
+          "to" : "/output/#{loop_id_-331687499}",
+          "loop_Id" : "loop_id_-331687499",
           "inTypePath" : "documentList",
           "outTypePath" : "documentList"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/id",
+          "to" : "/output/#{loop_id_-331687499}/id",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/serviceFqn",
+          "to" : "/output/#{loop_id_-331687499}/serviceFqn",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/cron",
+          "to" : "/output/#{loop_id_-331687499}/cron",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/status",
+          "to" : "/output/#{loop_id_-331687499}/status",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/lasterror",
+          "to" : "/output/#{loop_id_-331687499}/lasterror",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/enabled",
+          "to" : "/output/#{loop_id_-331687499}/enabled",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/owner_node",
+          "to" : "/output/#{loop_id_-331687499}/owner_node",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/last_run",
+          "to" : "/output/#{loop_id_-331687499}/last_run",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/next_run",
+          "to" : "/output/#{loop_id_-331687499}/next_run",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
         } ],
         "lines" : [ {
           "inputPath" : "*pathParameters/id",
@@ -109,19 +173,155 @@
           "inTypePath" : "document/string",
           "outTypePath" : "documentList/string"
         }, {
+          "loop_Id" : "loop_id_-331687499",
           "inputPath" : "outputDocList",
-          "outputPath" : "outputDocList",
+          "outputPath" : "output",
           "inpJsTree" : "#launching_arrow_jsTree_function",
           "outpJsTree" : "#landing_arrow_jsTree",
-          "INPath" : "outputDocList",
-          "OUTPath" : "outputDocList",
-          "op" : "copy",
+          "INPath" : "outputDocList/#{loop_id_-331687499}",
+          "OUTPath" : "output/#{loop_id_-331687499}",
           "line" : 0,
-          "dashedLine" : false,
+          "dashedLine" : true,
+          "op" : "loop",
           "inType" : "documentList",
           "outType" : "documentList",
           "inTypePath" : "documentList",
           "outTypePath" : "documentList"
+        }, {
+          "inputPath" : "outputDocList/id",
+          "outputPath" : "output/id",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/id",
+          "OUTPath" : "output/#{loop_id_-331687499}/id",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/serviceFqn",
+          "outputPath" : "output/serviceFqn",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/serviceFqn",
+          "OUTPath" : "output/#{loop_id_-331687499}/serviceFqn",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/cron",
+          "outputPath" : "output/cron",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/cron",
+          "OUTPath" : "output/#{loop_id_-331687499}/cron",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/status",
+          "outputPath" : "output/status",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/status",
+          "OUTPath" : "output/#{loop_id_-331687499}/status",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/lasterror",
+          "outputPath" : "output/lasterror",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/lasterror",
+          "OUTPath" : "output/#{loop_id_-331687499}/lasterror",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/enabled",
+          "outputPath" : "output/enabled",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/enabled",
+          "OUTPath" : "output/#{loop_id_-331687499}/enabled",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/owner_node",
+          "outputPath" : "output/owner_node",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/owner_node",
+          "OUTPath" : "output/#{loop_id_-331687499}/owner_node",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/last_run",
+          "outputPath" : "output/last_run",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/last_run",
+          "OUTPath" : "output/#{loop_id_-331687499}/last_run",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/next_run",
+          "outputPath" : "output/next_run",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/next_run",
+          "OUTPath" : "output/#{loop_id_-331687499}/next_run",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
         } ],
         "dropList" : [ {
           "path" : "*pathParameters",
@@ -135,6 +335,97 @@
       },
       "children" : [ ],
       "type" : "invoke"
+    }, {
+      "id" : "j1_2",
+      "text" : "LOOP",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_2"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_2_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : true,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "inArray" : "output",
+        "outArray" : "out",
+        "status" : "enabled"
+      },
+      "children" : [ {
+        "id" : "j1_3",
+        "text" : "packages/ekaScheduler/cronJob/adapter/services/DQL/getJobHistory",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_3"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_3_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : true,
+          "disabled" : false
+        },
+        "data" : {
+          "transformers" : [ {
+            "op" : "copy",
+            "from" : "/output/id",
+            "to" : "/inputDocList/0/id",
+            "inTypePath" : "document/string",
+            "outTypePath" : "documentList/string"
+          }, {
+            "op" : "copy",
+            "from" : "/outputDocList",
+            "to" : "/output/job_history",
+            "inTypePath" : "documentList",
+            "outTypePath" : "document/documentList"
+          } ],
+          "lines" : [ {
+            "inputPath" : "output/id",
+            "outputPath" : "inputDocList/id",
+            "inpJsTree" : "#launching_arrow_jsTree",
+            "outpJsTree" : "#landing_arrow_jsTree_function",
+            "INPath" : "output/id",
+            "OUTPath" : "inputDocList/#0/id",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "string",
+            "outType" : "string",
+            "inTypePath" : "document/string",
+            "outTypePath" : "documentList/string"
+          }, {
+            "inputPath" : "outputDocList",
+            "outputPath" : "output/job_history",
+            "inpJsTree" : "#launching_arrow_jsTree_function",
+            "outpJsTree" : "#landing_arrow_jsTree",
+            "INPath" : "outputDocList",
+            "OUTPath" : "output/job_history",
+            "op" : "copy",
+            "line" : 0,
+            "dashedLine" : false,
+            "inType" : "documentList",
+            "outType" : "documentList",
+            "inTypePath" : "documentList",
+            "outTypePath" : "document/documentList"
+          } ],
+          "dropList" : [ ],
+          "createList" : [ ],
+          "serviceType" : "sql",
+          "status" : "enabled"
+        },
+        "children" : [ ],
+        "type" : "invoke"
+      } ],
+      "type" : "loop"
     } ],
     "lockedByUser" : "ekaDev"
   },
