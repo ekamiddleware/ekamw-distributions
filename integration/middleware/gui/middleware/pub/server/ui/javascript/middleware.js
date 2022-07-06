@@ -720,7 +720,7 @@ function packagesContextMenu(node, id)
         };
     }
 
-    if(node.type == "package") {
+    if(node.type == "package" || node.type == "folder") {
         items.new.submenu.folder= {
             label: "New Folder",
             action: function (e) {

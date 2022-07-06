@@ -4,7 +4,7 @@
     "input" : [ {
       "id" : "j2_4",
       "text" : "cronExpression",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
       "li_attr" : {
         "id" : "j2_4"
       },
@@ -27,7 +27,7 @@
     }, {
       "id" : "j2_5",
       "text" : "status",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
       "li_attr" : {
         "id" : "j2_5"
       },
@@ -47,7 +47,7 @@
     }, {
       "id" : "j2_6",
       "text" : "enabled",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
       "li_attr" : {
         "id" : "j2_6"
       },
@@ -67,7 +67,7 @@
     }, {
       "id" : "j2_7",
       "text" : "ownerNode",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
       "li_attr" : {
         "id" : "j2_7"
       },
@@ -87,7 +87,7 @@
     }, {
       "id" : "j2_8",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
       "li_attr" : {
         "id" : "j2_8"
       },
@@ -105,7 +105,7 @@
       "children" : [ {
         "id" : "j2_9",
         "text" : "id",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
         "li_attr" : {
           "id" : "j2_9"
         },
@@ -128,7 +128,7 @@
     "output" : [ {
       "id" : "j3_1",
       "text" : "rows",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.png",
       "li_attr" : {
         "id" : "j3_1"
       },
@@ -148,7 +148,7 @@
     }, {
       "id" : "j3_2",
       "text" : "success",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
       "li_attr" : {
         "id" : "j3_2"
       },
@@ -168,7 +168,7 @@
     }, {
       "id" : "j3_3",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
       "li_attr" : {
         "id" : "j3_3"
       },
@@ -189,7 +189,7 @@
     "flow" : [ {
       "id" : "j1_3",
       "text" : "MAP",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/map.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/map.png",
       "li_attr" : {
         "id" : "j1_3"
       },
@@ -234,7 +234,7 @@
     }, {
       "id" : "j1_2",
       "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/updateScheduler",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
       "li_attr" : {
         "id" : "j1_2"
       },
@@ -485,7 +485,7 @@
     }, {
       "id" : "j1_1",
       "text" : "SWITCH",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/switch.svg",
+      "icon" : "/files/gui/middleware/pub/server/ui/icons/switch.png",
       "li_attr" : {
         "id" : "j1_1"
       },
@@ -506,7 +506,7 @@
       "children" : [ {
         "id" : "j1_4",
         "text" : "CASE",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.svg",
+        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.png",
         "li_attr" : {
           "id" : "j1_4"
         },
@@ -526,7 +526,7 @@
         "children" : [ {
           "id" : "j1_5",
           "text" : "packages/ekaScheduler/cronJob/handler/loadSchedulerJobs",
-          "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.svg",
+          "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
           "li_attr" : {
             "id" : "j1_5"
           },
@@ -554,7 +554,7 @@
       }, {
         "id" : "j1_6",
         "text" : "CASE",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.svg",
+        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.png",
         "li_attr" : {
           "id" : "j1_6"
         },
@@ -574,7 +574,7 @@
         "children" : [ {
           "id" : "j1_7",
           "text" : "MAP",
-          "icon" : "/files/gui/middleware/pub/server/ui/icons/map.svg",
+          "icon" : "/files/gui/middleware/pub/server/ui/icons/map.png",
           "li_attr" : {
             "id" : "j1_7"
           },

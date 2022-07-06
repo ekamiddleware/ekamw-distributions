@@ -2,7 +2,7 @@
   "input" : [ {
     "id" : "j1_2",
     "text" : "inputDocList",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j1_2"
     },
@@ -17,12 +17,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "documentList"
   }, {
     "id" : "j1_3",
     "text" : "txConn",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/javaObject.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j1_3"
     },
@@ -37,12 +37,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "javaObject"
   }, {
     "id" : "j1_4",
     "text" : "isTxn",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j1_4"
     },
@@ -57,13 +57,13 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "boolean"
   } ],
   "output" : [ {
     "id" : "j2_1",
     "text" : "outputDocList",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_1"
     },
@@ -78,12 +78,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "documentList"
   }, {
     "id" : "j2_2",
     "text" : "rows",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_2"
     },
@@ -98,12 +98,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "integer"
   }, {
     "id" : "j2_3",
     "text" : "success",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_3"
     },
@@ -118,12 +118,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "boolean"
   }, {
     "id" : "j2_4",
     "text" : "error",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_4"
     },
@@ -138,12 +138,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "string"
   } ],
-  "sql" : "REVMRVRFIEZST00gU2NoZWR1bGVycwpXSEVSRSBpZD17aWR9Ow==",
+  "sql" : "REVMRVRFIEZST00gam9iX2hpc3RvcnkgV0hFUkUgc3RhcnRfdGltZSA8PSBkYXRlKCdub3cnLCAiLTE1IERheXMiKTs=",
   "version" : "v1",
   "consumers" : "",
-  "developers" : "rnd",
-  "lockedByUser" : "ekaDev"
+  "developers" : "",
+  "lockedByUser" : "admin"
 }
