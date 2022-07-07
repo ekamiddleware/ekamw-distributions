@@ -35,6 +35,13 @@
   <!-- Custom styles for this template -->
   <link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
   <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+
+  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
+  <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
+  <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
+
 </head>
 
 <body>
@@ -157,25 +164,24 @@
           </div>
           <div class="card p-3 mb-3" style="flex-direction: inherit;">
             <div class="col-lg-4">
-              <div class="nodetext">Node:<strong>Node1</strong></div>
-              <div class="nodetext">Service name:<strong>package.abc.flow</strong></div>
+              <div class="nodetext">Node:<strong id="job_node">...</strong></div>
+              <div class="nodetext">Service name:<strong id="job_service_name">...</strong></div>
             </div>
             <div class="col-lg-4">
-              <div class="nodetext">Job:<strong>Job name</strong></div>
-              <div class="nodetext">Cron expression:<strong>**\1**** (Every 2 seconds)</strong></div>
+              <div class="nodetext">Job:<strong id="job_name">...</strong></div>
+              <div class="nodetext">Cron expression:<strong id="job_cron_exp">...</strong></div>
             </div>
             <div class="col-lg-4">
               <div class="nodetext ">
                 <div class="d-flex">
                   <span>Enable:</span>
                   <div class="form-check form-switch" style="margin-left: 7px;">
-                    <input class="success form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                      checked>
+                    <input class="success form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
                   </div>
                 </div>
 
               </div>
-              <div class="nodetext">Created on: <strong>2022/05/22 10:24:59</strong></div>
+              <div class="nodetext">Created on: <strong id="job_created_on">...</strong></div>
             </div>
           </div>
           <div class="row">
@@ -495,6 +501,39 @@
   <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
 
   <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+
+<script type="text/javascript">
+
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      if (pair[0] == variable) {
+        return pair[1];
+      }
+    }
+    console.log('Query Variable ' + variable + ' not found');
+    return "#";
+  }
+
+  function load(schedulerJobId) {
+    var response = syncRestRequest("/ekaScheduler/11", "GET", "");
+    if (response.status == 200 && response.payload) {
+      var payload = JSON.parse(response.payload);
+      $("#job_node").html(payload.output[0].owner_node);
+      $("#job_name").html("-");
+      $("#job_service_name").html(payload.output[0].serviceFqn);
+      $("#job_cron_exp").html(payload.output[0].cron);
+      $("#job_created_on").html(".");
+      if (payload.output[0].enabled == "Y") {
+        $("#flexSwitchCheckChecked").attr("checked");
+      }
+    }
+  }
+  load(getQueryVariable("id"));
+</script>
+
 </body>
 
 </html>

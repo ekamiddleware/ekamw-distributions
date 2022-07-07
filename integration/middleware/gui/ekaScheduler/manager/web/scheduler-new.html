@@ -138,7 +138,7 @@
             <table id="cronMakerTable" class="table table-bordered table-striped">
                <thead>
                   <tr>
-                     <th>ID</th>
+                     <th>S.No</th>
                      <th>Node</th>
                      <th>Service Name</th>
                      <th>Cron expression</th>
@@ -148,12 +148,15 @@
                   </tr>
                </thead>
                <tbody id="cronDataRecords">
+                <tr>
+                    <td colspan="7">No Job Scheduled!</td>
+                </tr>
                </tbody>
             </table>
          </div>
          <div class="sch_action">
 		    <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary mr-1">New</button>
-            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-secondary">Reload Scheduled Jobs</button>
+            <!--<button type="button" onclick="reloadScheduledJobs();" class="btn btn-secondary">Reload Scheduled Jobs</button>-->
 		 </div>
       </div>
 	</div>  
@@ -181,7 +184,7 @@
                <div class="modal-footer" style="padding: 20px 0px;">
                   <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
                   <button type="button" id="updateSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Update</button>
-                  <button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>
+                  <!--<button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>-->
                </div>
             </div>
          </div>
@@ -212,7 +215,7 @@
          </div>
          <div class="mdlactions text-right">
           <a href="" class="btnclose" data-bs-dismiss="modal" >Cancel</a>
-          <button class="btn btn-secondary btnok" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">OK</button>
+          <button class="btn btn-secondary btnok" onclick="deletePreparedJob()">OK</button>
          </div>
          
         </div>
@@ -319,16 +322,13 @@
 			}
 			deleteSchedulerJob.onclick = function() {
 				var schedulerJobId = $("#schedulerJobID").val();
-				var url = "/ekaScheduler/" + schedulerJobId;
-				var response = syncRestRequest(url, "DELETE", "");
-				if (response.status == 200 && response.payload) {
-					response = response.payload;
-					//alert(response);
-				}
-				updateSchedulerJob.style.display = "none";
-				modal.style.display = "none";
-				deleteSchedulerJob.style.display = "none";
+                deleteJob(schedulerJobId);
 			}
+
+
+
+
+
 			updateSchedulerJob.onclick = function() {
 				var schedulerJobId = $("#schedulerJobID").val();
 				var cronExp = $(".cronInsideInput").val();
@@ -354,16 +354,37 @@
 			}
 		}
 
+      var PREPARE_schedulerJobId = 0;
+      function prepareDeleteJob(schedulerJobId) {
+          PREPARE_schedulerJobId = schedulerJobId;
+          $("#exampleModalToggle").modal('toggle');
+      }
+
+      function deletePreparedJob() {
+          deleteJob(PREPARE_schedulerJobId);
+          $("#exampleModalToggle").modal('toggle');
+
+      }
+
+      function deleteJob(schedulerJobId) {
+          var url = "/ekaScheduler/" + schedulerJobId;
+          var response = syncRestRequest(url, "DELETE", "");
+          if (response.status == 200 && response.payload) {
+              response = response.payload;
+              //alert(response);
+          }
+      }
+
 		function getData() {
 			var response = syncRestRequest("/ekaScheduler", "GET");
 			var payload = JSON.parse(response.payload);
-			var length = payload.outputDocList.length;
+			var length = payload.output.length;
 			//alert(length);
 			for (i = 0; i < length; i++) {
-				if (payload.outputDocList[i].enabled == "Y")
-					payload.outputDocList[i].enabled = true;
+				if (payload.output[i].enabled == "Y")
+					payload.output[i].enabled = true;
 			}
-			return payload.outputDocList;
+			return payload.output;
 		}
 		var table = new Tabulator("#ekaSchedulerTable", {
 			data: getData(),
@@ -420,7 +441,7 @@
 		var tableCronJobs = null;
 		loadDataTable();
 
-		$('#cronMakerTable tbody').on('dblclick', 'tr', function() {
+		$('#cronMakerTable tbody').on('click', '.view_ic', function() {
 			var data = tableCronJobs.row(this).data();
 			openUpdateSchedulerJobBox();
 			$("#schedulerJobID").val(data.id);
@@ -448,14 +469,20 @@
 			var HTMLData = "";
 
 			for (var i = 0; i < records.length; i++) {
-				HTMLData += "<tr><td>2</td><td>" + records[i].owner_node + "</td><td>" + records[i].serviceFqn + "</td><td>" + records[i].cron + "</td>";
+				HTMLData += "<tr><td>" + (i + 1) + "</td><td>" + records[i].owner_node + "</td><td><a href='scheduler-details.html?id=" + records[i].id + "'>" + records[i].serviceFqn + "</a></td><td>" + records[i].cron + "</td>";
 				if (records[i].enabled) {
 					HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input\" type=\"checkbox\" role=\"switch\" id=\"flexSwitchCheckChecked\" checked></div></td>" ;
 				} else {
 					HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input\" type=\"checkbox\" role=\"switch\" id=\"flexSwitchCheckChecked\"></div></td>" ;
 				}
-				HTMLData += "<td><span class=\"d-flex\"><div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span><span class=\"ekatooltipdefaulttext\">2022/05/22 10:24:59</span></div><span class=\"status st-success\"></span><span class=\"status st-success\"></span><span class=\"status st-danger\"></span><span class=\"status st-light\"></span><span class=\"status st-light\"></span></span></td>";
-				HTMLData += "<td><span class=\"actionicons\"><a class=\"view_ic\" href=\"scheduler-details.html\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/view-ico.png\"></a><a class=\"dlt_ic\" href=\"#exampleModalToggle\" data-bs-toggle=\"modal\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/deleteico.png\"></a></span></td></tr>";
+                HTMLData += "<td>";
+				for (var j = 0 ; j < records[i].job_history.length; j++) {
+                    if (records[i].job_history[j].end_time != null && records[i].job_history[j].end_time != "") {
+                        HTMLData += "<div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span><span class=\"ekatooltipdefaulttext\">" + records[i].job_history[j].start_time + "</span></div>";
+                    }
+                }
+                HTMLData += "</td>";
+				HTMLData += "<td><span class=\"actionicons\"><a class=\"view_ic\" href=\"javascript:void(0);\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/view-ico.png\"></a><a class=\"dlt_ic\" href=\"javascript:prepareDeleteJob(" + records[i].id + ")\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/deleteico.png\"></a></span></td></tr>";
 			}
 
 			$("#cronDataRecords").html(HTMLData);
