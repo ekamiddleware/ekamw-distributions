@@ -2,8 +2,11 @@ body {
     font-size: 14px;
 }
 a {
-    color: #175cff;
+    color:#218df2;
     text-decoration: none;
+}
+a:hover {
+    color:#218df2;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -32,13 +35,13 @@ a {
 }
 
 a.nav-link.active {
-    box-shadow: inset 4px 0px 0 #175cff;
+    box-shadow: inset 4px 0px 0 #218df2;
     background: none !important;
-    color: #175cff;
+    color: #218df2;
 }
 
 a.nav-link.active svg path {
-    fill: #175cff;
+    fill: #218df2;
 }
 
 a.nav-link svg path {
@@ -56,7 +59,8 @@ a.nav-link svg path {
 }
 
 .ekalogos {
-    margin-top: -16px;
+    margin-top: -9px;
+    width: 118px;
 }
 
 .table>:not(caption)>*>* {
@@ -683,7 +687,10 @@ input[type="search"] {
          position: absolute;
          font-size: 22px;
          font-weight: 500;
-		 top: 20px;
+		 top: 15px;
+		 width: 50%;
+		 background: #fff;
+		 padding: 5px 0px;
          }
          .btn:focus {
          outline: none;
@@ -718,4 +725,15 @@ input[type="search"] {
 			font-weight: 600;
 			cursor: pointer;
 		}
+		
+		.refsh_btn {
+			position: absolute;
+			right: 232px;
+			top: 16px;
+			background: #175cff;
+			padding: 8px 12px;
+			border-radius: 4px;
+			color: #fff;
+		}
+		
 		

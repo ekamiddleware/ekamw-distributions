@@ -321,12 +321,12 @@ div#mostRecentlyOpened .dropbtn {
 div#mostRecentlyOpened a:hover {
     /* background: #1d1d2ee3;
     border-radius: 10px 10px 0px 0px; */
-	border-bottom: solid 2px #175cff ;
+	border-bottom: solid 2px #218df2 ;
 	color: #151515;
 }
 
 div#mostRecentlyOpened a.active {
-	border-bottom: solid 2px #175cff ;
+	border-bottom: solid 2px #218df2 ;
 	color: #151515;
 }
 
@@ -593,7 +593,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 #flowDesignerJsTree .jstree-hovered, #flowDesignerJsTree .jstree-clicked{
-	color:#175cff !important;
+	color:#218df2 !important;
 }
 
 #flowDesignerJsTree .jstree-wholerow-hovered, #flowDesignerJsTree .jstree-wholerow-clicked{
@@ -660,7 +660,7 @@ background:#f5f5f5;
 }
 
 .glyphicon {
-  color: #0d7cef;
+  color:#218df2;
 }
 #rightSideTools, #leftSideTools {
   background: #f9f9f9;
@@ -676,7 +676,7 @@ font-size: 12px;}
 } */
 
 .eka_logo {
-  width: 205px;
+  width: 245px;
   text-align: left !important;
 }
 
@@ -849,9 +849,22 @@ a.cpy {
 }
 
 div#mostRecentlyOpened .eka_logo {
-    padding: 10px;
+    padding: 15px;
+}
+
+a.eka_logo img {
+    width: 118px;
 }
 
 .tp_m a.dropbtn {
     float: none;
+}
+
+.footer {
+    position: absolute;
+    background: #e5e5e5;
+    padding: 6px;
+	color:#686868;
+    text-align: center;
+    bottom: 0;
 }
