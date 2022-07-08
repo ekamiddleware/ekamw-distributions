@@ -28,6 +28,9 @@ try {
 			AWS4SignerForChunkedUpload signer=null;
 			if (reqHeaders == null)
 				reqHeaders = new HashMap<String, String>();
+  		    if(reqHeaders.get("Accept")==null){
+            	reqHeaders.put("Accept","*/*");
+            }
 			String payload = dataPipeline.getString("payload");
 			File binary = null;
             //Map<String, String> headers=new HashMap<String, String>();
@@ -84,11 +87,11 @@ try {
 				String region = auth.get("awsSignature").get("region");
 				String service = auth.get("awsSignature").get("service");
 				String signPayload = auth.get("awsSignature").get("signPayload");
-				String uriTokens[] = url.split(host);
-				String canonicalURI = "";
-				if (uriTokens.length == 2)
-					canonicalURI = url.split(host)[1];
-//              dataPipeline.log("**********************************"+canonicalURI);
+				//String uriTokens[] = url.split(host);
+				//String canonicalURI = "";
+				//if (uriTokens.length == 2)
+				//	canonicalURI = url.split(host)[1];
+              //dataPipeline.log("**********************************"+new String(payloadBytes));
 //				dataPipeline.log(headers.toString());
               
 				/*if (signPayload != null && signPayload.toLowerCase().equals("true")) {
@@ -97,7 +100,7 @@ try {
 					AWSV4Auth.addAwsHeaders(awsHeaders, method, urlParameters, canonicalURI, AccessKey, SecretKey,
 							region, service, payload, payloadBytes);
 				} else {*/
-					signer=AWSHeaders.build(reqHeaders, method, urlParameters, canonicalURI, AccessKey, SecretKey,
+					signer=AWSHeaders.build(reqHeaders, method, urlParameters, url, AccessKey, SecretKey,
 							region, service, payloadBytes);
 				//}
               //headers=awsHeaders;
@@ -105,7 +108,7 @@ try {
             final Map<String,String> headers=reqHeaders;
            // reqHeaders.forEach((k,v)->header.put(k,v));
 
-			respHandling = Client.invokeREST(0, fullUrlIncludingParams, method, headers, formData, payload, binary,
+			respHandling = Client.invokeREST(0, fullUrlIncludingParams, method, headers, formData, null, binary,
 					basicAuthUser, basicAuthPass, respHandling, payloadBytes, payloadIS, signer);
 			// dataPipeline.put("respPayload",respHandling.get("body"));
 			// if(respHandling.get("bytes")!=null)

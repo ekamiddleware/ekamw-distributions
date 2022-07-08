@@ -1713,6 +1713,12 @@
               "to" : "/inputDocList/0/sessionId",
               "inTypePath" : "document/string",
               "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/jobData/status",
+              "to" : "/inputDocList/0/status",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
             } ],
             "lines" : [ {
               "inputPath" : "jobData/id",
@@ -1805,6 +1811,20 @@
               "outpJsTree" : "#landing_arrow_jsTree_function",
               "INPath" : "jobData/sessionId",
               "OUTPath" : "inputDocList/#0/sessionId",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "jobData/status",
+              "outputPath" : "inputDocList/status",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "jobData/status",
+              "OUTPath" : "inputDocList/#0/status",
               "op" : "copy",
               "line" : 0,
               "dashedLine" : false,

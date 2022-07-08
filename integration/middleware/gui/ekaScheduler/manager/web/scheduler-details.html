@@ -143,7 +143,7 @@
                 <h5>Scheduler / Details</h5>
               </div>
             </div>
-            <div class="col-lg-2 text-right editicosec">
+            <div class="col-lg-2 text-right editicosec" style="display: none;">
               <a class="text-black" href="#exampleModalToggle" data-bs-toggle="modal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 19.63 20.156">
                   <defs>
@@ -199,143 +199,7 @@
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-success"></span>
-                            <span class="statusvalue">Completed</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-success"></span>
-                            <span class="statusvalue">Completed</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-warning"></span>
-                            <span class="statusvalue">Running</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-danger"></span>
-                            <span class="statusvalue">Failed</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-success"></span>
-                            <span class="statusvalue">Completed</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-success"></span>
-                            <span class="statusvalue">Completed</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Cron expression: <b class="fontitalic">**\1**** (Every 2 seconds)</b></td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <!-- <span class="status st-success"></span> -->
-                            <span class="statusvalue">Job: Job name</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-warning"></span>
-                            <span class="statusvalue">Running</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2022/05/22 10:24:59</td>
-                        <td>
-                          <div class="ekatooltipdefault">
-                            <span class="durations"> 5ms</span>
-                            <span class="ekatooltipdefaulttext">10:24:59 - 10:25:04</span>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="statusdisplay">
-                            <span class="status st-danger"></span>
-                            <span class="statusvalue">Failed</span>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tbody id="run_history"></tbody>
                   </table>
                 </div>
               </div>
@@ -345,18 +209,8 @@
               <div class="tabletitle">
                 <h5>Logs (Recent run)</h5>
               </div>
-              <div class="card p-4 customheight">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                  been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                  took a gallery</p>
-                <p>of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                  It was popularised.</p>
-                <p>in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                  and more recently with desktop publishing software like Aldus PageMaker including versions
-                  of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                  Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <div class="card p-4 customheight" id="error_panel">
+
               </div>
             </div>
           </div>
@@ -517,20 +371,45 @@
     return "#";
   }
 
+  let SchedulerRecord = {};
+
   function load(schedulerJobId) {
-    var response = syncRestRequest("/ekaScheduler/11", "GET", "");
+    var response = syncRestRequest("/ekaScheduler/" + schedulerJobId, "GET", "");
     if (response.status == 200 && response.payload) {
       var payload = JSON.parse(response.payload);
+      SchedulerRecord = payload.output[0];
       $("#job_node").html(payload.output[0].owner_node);
-      $("#job_name").html("-");
+      $("#job_name").html(payload.output[0].job_name);
       $("#job_service_name").html(payload.output[0].serviceFqn);
       $("#job_cron_exp").html(payload.output[0].cron);
-      $("#job_created_on").html(".");
+      $("#job_created_on").html(payload.output[0].created_time);
       if (payload.output[0].enabled == "Y") {
-        $("#flexSwitchCheckChecked").attr("checked");
+        $("#flexSwitchCheckChecked").attr("checked", "checked");
       }
+
+
+
+      let HTML_DATA = "";
+      for (let i = 0 ; i < payload.output[0].job_history.length; i++) {
+        $("#error_panel").append("<p>[" + payload.output[0].job_history[i].start_time + "] " + payload.output[0].job_history[i].error + "</p>");
+        HTML_DATA += "<tr>";
+        let difference = new Date(payload.output[0].job_history[i].end_time).getTime() - new Date(payload.output[0].job_history[i].start_time).getTime();
+        HTML_DATA += '<td>' + payload.output[0].job_history[i].start_time + '</td><td><div class="ekatooltipdefault"><span class="durations">' + difference + 'ms</span></div></td>';
+        HTML_DATA += '<td><div class="statusdisplay"><span class="status st-danger"></span><span class="statusvalue">' + payload.output[0].job_history[i].status + '</span></div></td>';
+        HTML_DATA += "</tr>";
+      }
+      $("#run_history").html(HTML_DATA);
     }
   }
+
+  $("#flexSwitchCheckChecked").click(function () {
+    var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N" ) + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new";
+    var response = syncRestRequest(url, "POST", "");
+    if (response.status == 200 && response.payload) {
+
+    }
+  });
+
   load(getQueryVariable("id"));
 </script>
 
