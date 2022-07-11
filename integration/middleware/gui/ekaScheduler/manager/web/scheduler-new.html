@@ -487,7 +487,7 @@
                 HTMLData += "<td>";
 				for (var j = 0 ; j < SchedulerRecords[i].job_history.length; j++) {
                     if (SchedulerRecords[i].job_history[j].end_time != null && SchedulerRecords[i].job_history[j].end_time != "") {
-                        HTMLData += "<div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span><span class=\"ekatooltipdefaulttext\">" + SchedulerRecords[i].job_history[j].start_time + "</span></div>";
+                        HTMLData += "<div class=\"ekatooltipdefault\"><a href='scheduler-details.html?id=" + SchedulerRecords[i].id + "&run_id=" + SchedulerRecords[i].job_history[j].id + "#run_history_highlights'><span class=\"status st-success\"></span></a><span class=\"ekatooltipdefaulttext\">" + SchedulerRecords[i].job_history[j].start_time + "</span></div>";
                     } else {
                         HTMLData += "<div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span></div>";
                     }

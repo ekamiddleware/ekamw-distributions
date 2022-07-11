@@ -30,6 +30,11 @@
         font-size: 3.5rem;
       }
     }
+    .highlight{
+      padding: .25em 0;
+      background: #FFC107;
+      color: #ffffff;
+    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -187,6 +192,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="tabletitle">
+                <span id="run_history_highlights"></span>
                 <h5>Runs History</h5>
               </div>
               <div class="ekatable">
@@ -391,14 +397,24 @@
 
       let HTML_DATA = "";
       for (let i = 0 ; i < payload.output[0].job_history.length; i++) {
-        $("#error_panel").append("<p>[" + payload.output[0].job_history[i].start_time + "] " + payload.output[0].job_history[i].error + "</p>");
-        HTML_DATA += "<tr>";
+        if ( i == 0) {
+          $("#error_panel").append("<p>" + payload.output[0].job_history[i].error + "</p>");
+        }
+        if (getQueryVariable('run_id') == payload.output[0].job_history[i].id) {
+          HTML_DATA += "<tr style='cursor: pointer;' class='history_record highlight' data-id='" + i + "'>";
+        } else {
+          HTML_DATA += "<tr style='cursor: pointer;' class='history_record' data-id='" + i + "'>";
+        }
         let difference = new Date(payload.output[0].job_history[i].end_time).getTime() - new Date(payload.output[0].job_history[i].start_time).getTime();
         HTML_DATA += '<td>' + payload.output[0].job_history[i].start_time + '</td><td><div class="ekatooltipdefault"><span class="durations">' + difference + 'ms</span></div></td>';
         HTML_DATA += '<td><div class="statusdisplay"><span class="status st-danger"></span><span class="statusvalue">' + payload.output[0].job_history[i].status + '</span></div></td>';
         HTML_DATA += "</tr>";
       }
       $("#run_history").html(HTML_DATA);
+
+      $(".history_record").click(function () {
+        $("#error_panel").html("<p>" + SchedulerRecord.job_history[$(this).attr('data-id')].error + "</p>");
+      });
     }
   }
 
