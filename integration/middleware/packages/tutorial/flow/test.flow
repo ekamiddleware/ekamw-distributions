@@ -2,7 +2,27 @@
   "latest" : {
     "createdTS" : "",
     "input" : [ ],
-    "output" : [ ],
+    "output" : [ {
+      "id" : "j3_1",
+      "text" : "test",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_1"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_1_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    } ],
     "flow" : [ {
       "id" : "j1_1",
       "text" : "MAP",
@@ -47,7 +67,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : true,
+        "selected" : false,
         "disabled" : false
       },
       "data" : {
@@ -80,7 +100,7 @@
       "children" : [ ],
       "type" : "invoke"
     } ],
-    "lockedByUser" : "admin"
+    "lockedByUser" : "ekaDev"
   },
   "consumers" : "",
   "developers" : "",
