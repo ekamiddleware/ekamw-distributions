@@ -173,7 +173,7 @@
 
     <!-- Modal content -->
     <div class="modal-content" style="width:650px;height:auto;">
-        <span id="closeExportBuildModelDialog" class="close" >&times;</span>
+        <div class="anc_kbtn"><span id="closeExportBuildModelDialog" class="close" >&times;</span></div>
         <h3>Configure build</h3>
         <div style="display:none">
             <input type="checkbox" id="includeDependencies" name="includeDependencies"
@@ -193,11 +193,13 @@
                                                                     id="buildNameInput" name="buildNameInput" value="">
         </div>
 
-        <input type="checkbox" id="includeEndpoint" name="includeEndpoint"
+        <div class="in_ed">
+		<input type="checkbox" id="includeEndpoint" name="includeEndpoint"
                value="false">
         <label style="min-width: 100px; margin-bottom:15px;" for="includeEndpoint"> Include endpoint?</label><br>
-
-        <button type="button" id="selectArtifactsButton" class="btn btn-primary">Select artifacts</button>
+        </div>
+		
+        <div class="anc_kbtn"><button type="button" id="selectArtifactsButton" class="btn btn-primary">Select artifacts</button></div>
     </div>
 </div>
 
@@ -205,7 +207,7 @@
 
     <!-- Modal content -->
     <div class="modal-content" style="width:650px;height:auto;">
-        <span id="closeExportNameItemPromptModelDialog" class="close" >&times;</span>
+        <div class="anc_kbtn"><span id="closeExportNameItemPromptModelDialog" class="close" >&times;</span></div>
         <h3>Create New Item</h3>
         <div id="NameItemPromptDiv" style="margin-top:10px; margin-bottom:15px;">
             <label for="">Item name: </label>
@@ -213,9 +215,10 @@
         </div>
 
         <br>
-
+    <div class="anc_kbtn">
         <button type="button" id="" class="btn btn-primary" onclick="createItemInSchema()">Ok</button>
         <button type="button" id="" class="btn btn-primary" onclick="$('#closeExportNameItemPromptModelDialog').trigger('click')">Cancel</button>
+	</div>	
     </div>
 </div>
 
