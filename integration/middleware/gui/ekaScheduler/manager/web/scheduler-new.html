@@ -179,7 +179,7 @@
                <h3>Configure Scheduler Job</h3>
                <input type="hidden" id="schedulerJobID">
                 <input type="text" id="schedulerJobName" name="schedulerJobName" placeholder="Job Name" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
-               <input type="text" id="schedulerJobService" name="schedulerJobService" value="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+               <input type="text" id="schedulerJobService" name="schedulerJobService" placeholder="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
                <fieldset id="cronExpressionFieldset">
                   <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
                </fieldset>
@@ -290,7 +290,9 @@
 
 
               $("#schedulerJobID").val("");
+              $("#schedulerJobName").val("");
               $(".cronInsideInput").val("* * * * *");
+              $(".cronInsideInput").attr("readonly", "readonly");
               $("#enableScheduler").prop('checked', false);
               $("#schedulerJobService").val("");
               $("#filePoller").prop('checked', false);
@@ -472,6 +474,8 @@
                   $("#filePoller").prop('checked', false);
                   $("#cronExpressionFieldset").prop("disabled", false);
               }
+
+              $("#schedulerJobName").val(data.job_name);
 
               var enableJob = data.enabled;
               //alert(enableJob);

@@ -407,7 +407,14 @@
         }
         let difference = new Date(payload.output[0].job_history[i].end_time).getTime() - new Date(payload.output[0].job_history[i].start_time).getTime();
         HTML_DATA += '<td>' + payload.output[0].job_history[i].start_time + '</td><td><div class="ekatooltipdefault"><span class="durations">' + difference + 'ms</span></div></td>';
-        HTML_DATA += '<td><div class="statusdisplay"><span class="status st-danger"></span><span class="statusvalue">' + payload.output[0].job_history[i].status + '</span></div></td>';
+
+        let classNameStatus = "st-success";
+        if (payload.output[0].job_history[i].status == "running") {
+          classNameStatus = "st-warning";
+        } else if (payload.output[0].job_history[i].status == "failed") {
+          classNameStatus = "st-danger";
+        }
+        HTML_DATA += '<td><div class="statusdisplay"><span class="status ' + classNameStatus + '"></span><span class="statusvalue">' + payload.output[0].job_history[i].status + '</span></div></td>';
         HTML_DATA += "</tr>";
       }
       $("#run_history").html(HTML_DATA);

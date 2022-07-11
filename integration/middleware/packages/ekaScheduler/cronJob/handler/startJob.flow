@@ -1335,7 +1335,7 @@
           "state" : {
             "loaded" : true,
             "opened" : false,
-            "selected" : false,
+            "selected" : true,
             "disabled" : false
           },
           "data" : {
@@ -1372,7 +1372,7 @@
             "dropList" : [ ],
             "createList" : [ {
               "path" : "jobData/status",
-              "value" : "Failed",
+              "value" : "failed",
               "evaluate" : null,
               "typePath" : "document/string"
             } ],
@@ -1654,6 +1654,102 @@
         },
         "data" : { },
         "children" : [ {
+          "id" : "j1_30",
+          "text" : "MAP",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_30"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_30_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ ],
+            "lines" : [ ],
+            "dropList" : [ ],
+            "createList" : [ {
+              "path" : "date_format",
+              "value" : "yyyy-MM-dd HH:mm:ss",
+              "evaluate" : null,
+              "typePath" : "string"
+            } ]
+          },
+          "children" : [ ],
+          "type" : "map"
+        }, {
+          "id" : "j1_32",
+          "text" : "packages/middleware/pub/date/getCurrentDateTime",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_32"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_32_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ {
+              "op" : "copy",
+              "from" : "/date_format",
+              "to" : "/format",
+              "inTypePath" : "string",
+              "outTypePath" : "string"
+            }, {
+              "op" : "copy",
+              "from" : "/curDatetime",
+              "to" : "/jobData/end_time",
+              "inTypePath" : "string",
+              "outTypePath" : "document/string"
+            } ],
+            "lines" : [ {
+              "inputPath" : "date_format",
+              "outputPath" : "format",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "date_format",
+              "OUTPath" : "format",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "string"
+            }, {
+              "inputPath" : "curDatetime",
+              "outputPath" : "jobData/end_time",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "curDatetime",
+              "OUTPath" : "jobData/end_time",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "document/string"
+            } ],
+            "dropList" : [ ],
+            "createList" : [ ],
+            "serviceType" : "service"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        }, {
           "id" : "j1_29",
           "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/insertJobHistory",
           "icon" : null,
@@ -1667,7 +1763,7 @@
           "state" : {
             "loaded" : true,
             "opened" : false,
-            "selected" : true,
+            "selected" : false,
             "disabled" : false
           },
           "data" : {
@@ -1697,12 +1793,6 @@
               "outTypePath" : "documentList/string"
             }, {
               "op" : "copy",
-              "from" : "/jobData/last_run",
-              "to" : "/inputDocList/0/start_time",
-              "inTypePath" : "document/string",
-              "outTypePath" : "documentList/string"
-            }, {
-              "op" : "copy",
               "from" : "/jobData/correlationId",
               "to" : "/inputDocList/0/correlationId",
               "inTypePath" : "document/string",
@@ -1717,6 +1807,18 @@
               "op" : "copy",
               "from" : "/jobData/status",
               "to" : "/inputDocList/0/status",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/jobData/start_time",
+              "to" : "/inputDocList/0/start_time",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/jobData/end_time",
+              "to" : "/inputDocList/0/end_time",
               "inTypePath" : "document/string",
               "outTypePath" : "documentList/string"
             } ],
@@ -1777,20 +1879,6 @@
               "inTypePath" : "document/string",
               "outTypePath" : "documentList/string"
             }, {
-              "inputPath" : "jobData/last_run",
-              "outputPath" : "inputDocList/start_time",
-              "inpJsTree" : "#launching_arrow_jsTree",
-              "outpJsTree" : "#landing_arrow_jsTree_function",
-              "INPath" : "jobData/last_run",
-              "OUTPath" : "inputDocList/#0/start_time",
-              "op" : "copy",
-              "line" : 0,
-              "dashedLine" : false,
-              "inType" : "string",
-              "outType" : "string",
-              "inTypePath" : "document/string",
-              "outTypePath" : "documentList/string"
-            }, {
               "inputPath" : "jobData/correlationId",
               "outputPath" : "inputDocList/correlationId",
               "inpJsTree" : "#launching_arrow_jsTree",
@@ -1825,6 +1913,34 @@
               "outpJsTree" : "#landing_arrow_jsTree_function",
               "INPath" : "jobData/status",
               "OUTPath" : "inputDocList/#0/status",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "jobData/start_time",
+              "outputPath" : "inputDocList/start_time",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "jobData/start_time",
+              "OUTPath" : "inputDocList/#0/start_time",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "document/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "jobData/end_time",
+              "outputPath" : "inputDocList/end_time",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "jobData/end_time",
+              "OUTPath" : "inputDocList/#0/end_time",
               "op" : "copy",
               "line" : 0,
               "dashedLine" : false,

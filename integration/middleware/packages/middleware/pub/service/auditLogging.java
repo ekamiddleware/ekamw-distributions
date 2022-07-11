@@ -1,4 +1,4 @@
-package packages.tutorial.flow;
+package packages.middleware.pub.service;
 
 import com.eka.middleware.service.DataPipeline;
 import com.eka.middleware.service.ServiceUtils;
@@ -12,12 +12,12 @@ import javax.json.JsonObject;
 import javax.json.JsonValue;
 import java.util.*;
 
-public final class test {
+public final class auditLogging {
 
 	static JsonObject mainflowJsonObject=null;
 	static final String syncBlock=new String("sync");
 	public static final void main(DataPipeline dataPipeline) throws SnippetException{
-		String fqn="packages.tutorial.flow.test";
+		String fqn="packages.middleware.pub.service.auditLogging";
 		long nanoSec=0;
 		String logRequest = null;
 		String logResponse = null;
@@ -43,7 +43,7 @@ public final class test {
 		  if(mainflowJsonObject==null)
 			synchronized(syncBlock){
 			  String location = ServiceUtils.getPackagesPath();
-			  String flowRef = location+"packages/tutorial/flow/test.flow";
+			  String flowRef = location+"packages/middleware/pub/service/auditLogging.flow";
 			  if(mainflowJsonObject==null)
 				  mainflowJsonObject = Json.createReader(new FileInputStream(new File(flowRef))).readObject();
 			}
@@ -54,7 +54,7 @@ public final class test {
 			dataPipeline.put("error", e.getMessage());
 			dataPipeline.setResponseStatus(500);
 			dataPipeline.put("status", "Service error");
-			new SnippetException(dataPipeline,"Failed to execute test", new Exception(e));
+			new SnippetException(dataPipeline,"Failed to execute auditLogging", new Exception(e));
 		}finally{
 			
 			if(stopRecursiveLogging==null && !fqn.equalsIgnoreCase("packages.middleware.pub.service.auditLogging")){
