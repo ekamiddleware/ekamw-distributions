@@ -518,8 +518,6 @@
 
               $("#cronDataRecords").html(HTMLData);
 
-              tableCronJobs = $('#cronMakerTable').DataTable({});
-
               $(".jobState").unbind();
               $(".jobState").click(function () {
 
@@ -528,9 +526,11 @@
                   var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new";
                   var response = syncRestRequest(url, "POST", "");
                   if (response.status == 200 && response.payload) {
-                      loadDataTable();
+                      //loadDataTable();
                   }
               });
+
+              tableCronJobs = $('#cronMakerTable').DataTable({});
 
           }
 
