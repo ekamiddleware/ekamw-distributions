@@ -388,7 +388,7 @@
       $("#job_name").html(payload.output[0].job_name);
       $("#job_service_name").html(payload.output[0].serviceFqn);
       $("#job_cron_exp").html(payload.output[0].cron);
-      $("#job_created_on").html(payload.output[0].created_time);
+      $("#job_created_on").html(new Date(payload.output[0].created_time + " UTC"));
       if (payload.output[0].enabled == "Y") {
         $("#flexSwitchCheckChecked").attr("checked", "checked");
       }
