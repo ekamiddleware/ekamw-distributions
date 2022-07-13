@@ -1,0 +1,364 @@
+{
+  "latest" : {
+    "createdTS" : "",
+    "input" : [ ],
+    "output" : [ {
+      "id" : "j3_1",
+      "text" : "s3Files",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_1"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_1_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : true,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ {
+        "id" : "j3_2",
+        "text" : "name",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j3_2"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j3_2_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : true,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
+      } ],
+      "type" : "documentList"
+    } ],
+    "flow" : [ {
+      "id" : "j1_1",
+      "text" : "MAP",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_1"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_1_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "transformers" : [ ],
+        "lines" : [ ],
+        "dropList" : [ ],
+        "createList" : [ {
+          "path" : "awsUrl",
+          "value" : "https://eka-poc.s3.us-west-2.amazonaws.com",
+          "evaluate" : null,
+          "typePath" : "string"
+        }, {
+          "path" : "awsAccKey",
+          "value" : "AKIA3JUT4XM3RXYW35WA",
+          "evaluate" : null,
+          "typePath" : "string"
+        }, {
+          "path" : "awsSecKey",
+          "value" : "1KSgC4T7cB/3rGTaBwxXYUGgrABQ63YuST9CMjFW",
+          "evaluate" : null,
+          "typePath" : "string"
+        }, {
+          "path" : "awsService",
+          "value" : "s3",
+          "evaluate" : null,
+          "typePath" : "string"
+        }, {
+          "path" : "region",
+          "value" : "us-west-2",
+          "evaluate" : null,
+          "typePath" : "string"
+        }, {
+          "path" : "method",
+          "value" : "GET",
+          "evaluate" : null,
+          "typePath" : "string"
+        } ]
+      },
+      "children" : [ ],
+      "type" : "map"
+    }, {
+      "id" : "j1_3",
+      "text" : "packages/middleware/pub/client/http/request",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_3"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_3_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "transformers" : [ {
+          "op" : "copy",
+          "from" : "/method",
+          "to" : "/method",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "op" : "copy",
+          "from" : "/awsSecKey",
+          "to" : "/auth/awsSignature/SecretKey",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "op" : "copy",
+          "from" : "/awsService",
+          "to" : "/auth/awsSignature/service",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "op" : "copy",
+          "from" : "/respPayload",
+          "to" : "/response",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "op" : "copy",
+          "from" : "/region",
+          "to" : "/auth/awsSignature/region",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "op" : "copy",
+          "from" : "/awsUrl",
+          "to" : "/url",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "op" : "copy",
+          "from" : "/awsAccKey",
+          "to" : "/auth/awsSignature/AccessKey",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        } ],
+        "lines" : [ {
+          "inputPath" : "method",
+          "outputPath" : "method",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "method",
+          "OUTPath" : "method",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "inputPath" : "awsSecKey",
+          "outputPath" : "auth/awsSignature/SecretKey",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "awsSecKey",
+          "OUTPath" : "auth/awsSignature/SecretKey",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "inputPath" : "awsService",
+          "outputPath" : "auth/awsSignature/service",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "awsService",
+          "OUTPath" : "auth/awsSignature/service",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "inputPath" : "respPayload",
+          "outputPath" : "response",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "respPayload",
+          "OUTPath" : "response",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "inputPath" : "region",
+          "outputPath" : "auth/awsSignature/region",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "region",
+          "OUTPath" : "auth/awsSignature/region",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        }, {
+          "inputPath" : "awsUrl",
+          "outputPath" : "url",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "awsUrl",
+          "OUTPath" : "url",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "inputPath" : "awsAccKey",
+          "outputPath" : "auth/awsSignature/AccessKey",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "awsAccKey",
+          "OUTPath" : "auth/awsSignature/AccessKey",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "document/document/string"
+        } ],
+        "dropList" : [ ],
+        "createList" : [ ],
+        "serviceType" : "service"
+      },
+      "children" : [ ],
+      "type" : "invoke"
+    }, {
+      "id" : "j1_4",
+      "text" : "packages/middleware/pub/xml/fromXML",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_4"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_4_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "transformers" : [ {
+          "op" : "copy",
+          "from" : "/response",
+          "to" : "/xml",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "op" : "loop",
+          "from" : "/output/ListBucketResult/Contents/#{loop_id_1722615286}",
+          "to" : "/s3Files/#{loop_id_1722615286}",
+          "loop_Id" : "loop_id_1722615286",
+          "inTypePath" : "document/document/documentList",
+          "outTypePath" : "documentList"
+        }, {
+          "op" : "add",
+          "from" : "/output/ListBucketResult/Contents/#{loop_id_1722615286}/Key",
+          "to" : "/s3Files/#{loop_id_1722615286}/name",
+          "follow" : "loop_id_1722615286",
+          "inTypePath" : "document/document/documentList/string",
+          "outTypePath" : "documentList/string"
+        } ],
+        "lines" : [ {
+          "inputPath" : "response",
+          "outputPath" : "xml",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "response",
+          "OUTPath" : "xml",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        }, {
+          "loop_Id" : "loop_id_1722615286",
+          "inputPath" : "output/ListBucketResult/Contents",
+          "outputPath" : "s3Files",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "output/ListBucketResult/Contents/#{loop_id_1722615286}",
+          "OUTPath" : "s3Files/#{loop_id_1722615286}",
+          "line" : 0,
+          "dashedLine" : true,
+          "op" : "loop",
+          "inType" : "documentList",
+          "outType" : "documentList",
+          "inTypePath" : "document/document/documentList",
+          "outTypePath" : "documentList"
+        }, {
+          "inputPath" : "output/ListBucketResult/Contents/Key",
+          "outputPath" : "s3Files/name",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "output/ListBucketResult/Contents/#{loop_id_1722615286}/Key",
+          "OUTPath" : "s3Files/#{loop_id_1722615286}/name",
+          "follow" : "loop_id_1722615286",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "document/document/documentList/string",
+          "outTypePath" : "documentList/string"
+        } ],
+        "dropList" : [ ],
+        "createList" : [ ],
+        "serviceType" : "service",
+        "status" : "enabled"
+      },
+      "children" : [ ],
+      "type" : "invoke"
+    } ],
+    "lockedByUser" : "ekaDev"
+  },
+  "consumers" : "",
+  "developers" : "",
+  "enableServiceDocumentValidation" : false
+}
