@@ -165,7 +165,7 @@
               </div>
             </div>
             <div class="col-lg-2 text-right editicosec">
-              <a style="display:none;" class="text-black" href="javascript:renderData(' + SchedulerRecords[i].id + ');">
+              <a  class="text-black" href="javascript:renderData(34);">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 19.63 20.156">
                   <defs>
                     <style>
@@ -613,27 +613,9 @@
               }
           }
 
-          var PREPARE_schedulerJobId = 0;
+          
 
-          function prepareDeleteJob(schedulerJobId) {
-              PREPARE_schedulerJobId = schedulerJobId;
-              $("#exampleModalToggle").modal('toggle');
-          }
-
-          function deletePreparedJob() {
-              deleteJob(PREPARE_schedulerJobId);
-              $("#exampleModalToggle").modal('toggle');
-
-          }
-
-          function deleteJob(schedulerJobId) {
-              var url = "/ekaScheduler/" + schedulerJobId;
-              var response = syncRestRequest(url, "DELETE", "");
-              if (response.status == 200 && response.payload) {
-                  response = response.payload;
-                  loadDataTable();
-              }
-          }
+          
 
           function getData() {
               var response = syncRestRequest("/ekaScheduler", "GET");
@@ -646,56 +628,7 @@
               }
               return payload.output;
           }
-          var table = new Tabulator("#ekaSchedulerTable", {
-              data: getData(),
-              columns: [{
-                  title: "ID",
-                  field: "id",
-                  sorter: "number"
-              },
-                  {
-                      title: "Service",
-                      field: "serviceFqn",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Cron",
-                      field: "cron",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Enabled",
-                      field: "enabled",
-                      sorter: "string",
-                      formatter: "tickCross"
-                  },
-                  {
-                      title: "Owner Node",
-                      field: "owner_node",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Last error",
-                      field: "lasterror",
-                      sorter: "date"
-                  },
-                  {
-                      title: "Last run",
-                      field: "last_run",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Next run",
-                      field: "next_run",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Status",
-                      field: "status",
-                      sorter: "string"
-                  }
-              ]
-          });
+          
 
           var AUTO_REFRESH = false;
           var tableCronJobs = null;
