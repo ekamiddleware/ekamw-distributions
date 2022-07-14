@@ -35,6 +35,22 @@
       background: #FFC107;
       color: #ffffff;
     }
+	
+	.modal-header {
+    display: inline-block;
+	}
+	
+	.modal-body li.nav-link.active.in {
+		border-color: transparent;
+	}
+	
+	.modal-body .nav-link{
+	padding: 0;
+	border: none;
+	}
+	
+	
+	cron-expression-input .nav-tabs>li>a{margin-right: 0px !important;}
   </style>
 
   <!-- Custom styles for this template -->
@@ -149,7 +165,7 @@
               </div>
             </div>
             <div class="col-lg-2 text-right editicosec">
-              <a class="text-black" href="#exampleModalToggle" data-bs-toggle="modal" style="display:none;">
+              <a style="display:none;" class="text-black" href="javascript:renderData(' + SchedulerRecords[i].id + ');">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 19.63 20.156">
                   <defs>
                     <style>
@@ -193,7 +209,7 @@
             <div class="col-lg-6">
               <div class="tabletitle">
                 <span id="run_history_highlights"></span>
-                <h5>Runs History</h5>
+                <h5>Run History</h5>
               </div>
               <div class="ekatable">
                 <div class="customheight ">
@@ -225,6 +241,39 @@
       </div>
     </div>
   </main>
+  
+  
+  <center>
+         <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
+            <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
+         <div id="createSchedulerJobModelDialog" class="modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content -->
+            <div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
+               <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
+               <h3>Configure Scheduler Job</h3>
+               <input type="hidden" id="schedulerJobID">
+                <input type="text" id="schedulerJobName" name="schedulerJobName" placeholder="Job Name" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+               <input type="text" id="schedulerJobService" name="schedulerJobService" placeholder="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+               <fieldset id="cronExpressionFieldset">
+                  <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
+               </fieldset>
+               <div class="modal-footer-en">
+                  <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
+                  <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
+                  <input type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
+                  <label style="min-width: 100px;" for="filePoller" > Poller(1 ms interval) </label>
+               </div>
+               <div class="modal-footer" style="padding: 20px 0px;">
+                  <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
+                  <button type="button" id="updateSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Update</button>
+                  <!--<button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>-->
+               </div>
+            </div>
+         </div>
+         </div>
+      </center>
 
   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
     tabindex="-1">
@@ -358,6 +407,11 @@
       </div>
     </div>
   </div>
+  
+  <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cultures/en-US.js"></script> <!-- Languague (Optional) -->
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+  
   <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
 
   <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
@@ -434,6 +488,301 @@
   });
 
   load(getQueryVariable("id"));
+  
+  
+  
+  var SchedulerRecords = null;
+          $(document).ready(function () {
+              $('[data-toggle=tooltip]').tooltip();
+
+              var interval = null;
+
+              $(".auto_refresh_dropdown").change(function () {
+
+                  clearInterval(interval);
+                  if (parseInt($(this).val()) > 1000) {
+                      interval = setInterval(function () {
+                          loadDataTable();
+                      }, parseInt($(this).val()));
+                  }
+              });
+          });
+
+          function reloadScheduledJobs() {
+              syncRestRequest("/ekaScheduler/reload", "GET", "");
+          }
+
+          function enableCronExpressionSelector(checkBox) {
+              if (checkBox.checked == true)
+                  $("#cronExpressionFieldset").prop("disabled", true);
+              else
+                  $("#cronExpressionFieldset").prop("disabled", false);
+          }
+
+          function openCreateSchedulerJobBox() {
+              var modal = document.getElementById("createSchedulerJobModelDialog");
+              var span = document.getElementById("closeSchedulerJobModelDialog");
+              var saveSchedulerJob = document.getElementById("saveSchedulerJob");
+
+              modal.style.display = "block";
+              saveSchedulerJob.style.display = "block";
+
+
+              $("#schedulerJobID").val("");
+              $("#schedulerJobName").val("");
+              $(".cronInsideInput").val("* * * * *");
+              $(".cronInsideInput").attr("readonly", "readonly");
+              $("#enableScheduler").prop('checked', false);
+              $("#schedulerJobService").val("");
+              $("#filePoller").prop('checked', false);
+              $("#cronExpressionFieldset").prop("disabled", false);
+
+              span.onclick = function () {
+                  saveSchedulerJob.style.display = "none";
+                  modal.style.display = "none";
+              }
+
+              saveSchedulerJob.onclick = function () {
+                  var cronExp = $(".cronInsideInput").val();
+                  var enableJob = $("#enableScheduler").prop('checked');
+                  if (enableJob == true)
+                      enableJob = "Y";
+                  else
+                      enableJob = "N";
+                  var filePoller = $("#filePoller").prop('checked');
+                  if (filePoller == true)
+                      cronExp = "0";
+
+                  var serviceFqn = $("#schedulerJobService").val();
+                  var url = "/ekaScheduler?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new" +
+                      "&job_name=" + $("#schedulerJobName").val();
+                  //alert(url);
+                  var response = syncRestRequest(url, "POST", "");
+                  if (response.status == 200 && response.payload) {
+                      response = response.payload;
+                      loadDataTable();
+                      //alert(response);
+                  }
+                  saveSchedulerJob.style.display = "none";
+                  modal.style.display = "none";
+              }
+          }
+
+          function openUpdateSchedulerJobBox() {
+              var modal = document.getElementById("createSchedulerJobModelDialog");
+              var span = document.getElementById("closeSchedulerJobModelDialog");
+              var updateSchedulerJob = document.getElementById("updateSchedulerJob");
+              var deleteSchedulerJob = document.getElementById("deleteSchedulerJob");
+              modal.style.display = "block";
+              updateSchedulerJob.style.display = "block";
+              //deleteSchedulerJob.style.display = "block";
+              span.onclick = function () {
+                  updateSchedulerJob.style.display = "none";
+                  modal.style.display = "none";
+                  //deleteSchedulerJob.style.display = "none";
+              }
+              /*deleteSchedulerJob.onclick = function() {
+                           var schedulerJobId = $("#schedulerJobID").val();
+                           deleteJob(schedulerJobId);
+                       }*/
+
+
+              updateSchedulerJob.onclick = function () {
+                  var schedulerJobId = $("#schedulerJobID").val();
+                  var cronExp = $(".cronInsideInput").val();
+                  var enableJob = $("#enableScheduler").prop('checked');
+                  if (enableJob == true)
+                      enableJob = "Y";
+                  else
+                      enableJob = "N";
+                  var serviceFqn = $("#schedulerJobService").val();
+                  var filePoller = $("#filePoller").prop('checked');
+                  if (filePoller == true)
+                      cronExp = "0";
+                  var url = "/ekaScheduler/" + schedulerJobId + "?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new" +
+                      "&job_name=" + $("#schedulerJobName").val();
+                  //alert(url);
+                  var response = syncRestRequest(url, "POST", "");
+                  if (response.status == 200 && response.payload) {
+                      response = response.payload;
+                      loadDataTable();
+                  }
+                  updateSchedulerJob.style.display = "none";
+                  modal.style.display = "none";
+                  deleteSchedulerJob.style.display = "none";
+              }
+          }
+
+          var PREPARE_schedulerJobId = 0;
+
+          function prepareDeleteJob(schedulerJobId) {
+              PREPARE_schedulerJobId = schedulerJobId;
+              $("#exampleModalToggle").modal('toggle');
+          }
+
+          function deletePreparedJob() {
+              deleteJob(PREPARE_schedulerJobId);
+              $("#exampleModalToggle").modal('toggle');
+
+          }
+
+          function deleteJob(schedulerJobId) {
+              var url = "/ekaScheduler/" + schedulerJobId;
+              var response = syncRestRequest(url, "DELETE", "");
+              if (response.status == 200 && response.payload) {
+                  response = response.payload;
+                  loadDataTable();
+              }
+          }
+
+          function getData() {
+              var response = syncRestRequest("/ekaScheduler", "GET");
+              var payload = JSON.parse(response.payload);
+              var length = payload.output.length;
+              //alert(length);
+              for (i = 0; i < length; i++) {
+                  if (payload.output[i].enabled == "Y")
+                      payload.output[i].enabled = true;
+              }
+              return payload.output;
+          }
+          var table = new Tabulator("#ekaSchedulerTable", {
+              data: getData(),
+              columns: [{
+                  title: "ID",
+                  field: "id",
+                  sorter: "number"
+              },
+                  {
+                      title: "Service",
+                      field: "serviceFqn",
+                      sorter: "string"
+                  },
+                  {
+                      title: "Cron",
+                      field: "cron",
+                      sorter: "string"
+                  },
+                  {
+                      title: "Enabled",
+                      field: "enabled",
+                      sorter: "string",
+                      formatter: "tickCross"
+                  },
+                  {
+                      title: "Owner Node",
+                      field: "owner_node",
+                      sorter: "string"
+                  },
+                  {
+                      title: "Last error",
+                      field: "lasterror",
+                      sorter: "date"
+                  },
+                  {
+                      title: "Last run",
+                      field: "last_run",
+                      sorter: "string"
+                  },
+                  {
+                      title: "Next run",
+                      field: "next_run",
+                      sorter: "string"
+                  },
+                  {
+                      title: "Status",
+                      field: "status",
+                      sorter: "string"
+                  }
+              ]
+          });
+
+          var AUTO_REFRESH = false;
+          var tableCronJobs = null;
+          loadDataTable();
+
+          function renderData(schedulerID) {
+              var data = getDataByID(schedulerID);
+              openUpdateSchedulerJobBox();
+              $("#schedulerJobID").val(data.id);
+              $(".cronInsideInput").val(data.cron);
+              if (data.cron == "0") {
+                  $("#filePoller").prop('checked', true);
+                  $("#cronExpressionFieldset").prop("disabled", true);
+              } else {
+                  $("#filePoller").prop('checked', false);
+                  $("#cronExpressionFieldset").prop("disabled", false);
+              }
+
+              $("#schedulerJobName").val(data.job_name);
+
+              var enableJob = data.enabled;
+              //alert(enableJob);
+              if (enableJob == true)
+                  $("#enableScheduler").prop('checked', true);
+              else
+                  $("#enableScheduler").prop('checked', false);
+              $("#schedulerJobService").val(data.serviceFqn);
+          }
+
+
+          function loadDataTable() {
+              SchedulerRecords = getData();
+
+              if (null != tableCronJobs) {
+                  tableCronJobs.destroy();
+              }
+
+              var HTMLData = "";
+
+              for (var i = 0; i < SchedulerRecords.length; i++) {
+                  HTMLData += "<tr><td>" + (i + 1) + "</td><td><a href='scheduler-details.html?id=" + SchedulerRecords[i].id + "'>" + SchedulerRecords[i].job_name + "</a></td><td>" + SchedulerRecords[i].cron + "</td>";
+
+                  if (SchedulerRecords[i].enabled == true) {
+                      HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input jobState\" type=\"checkbox\" role=\"switch\" checked value='" + SchedulerRecords[i].id + "' /></div></td>";
+                  } else {
+                      HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input jobState\" type=\"checkbox\" role=\"switch\" value='" + SchedulerRecords[i].id + "' /></div></td>";
+                  }
+                  HTMLData += "<td>";
+                  for (var j = 0; j < SchedulerRecords[i].job_history.length; j++) {
+                      if (SchedulerRecords[i].job_history[j].end_time != null && SchedulerRecords[i].job_history[j].end_time != "") {
+                          HTMLData += "<div class=\"ekatooltipdefault\"><a href='scheduler-details.html?id=" + SchedulerRecords[i].id + "&run_id=" + SchedulerRecords[i].job_history[j].id + "#run_history_highlights'><span class=\"status st-success\"></span></a><span class=\"ekatooltipdefaulttext\">" + SchedulerRecords[i].job_history[j].start_time + "</span></div>";
+                      } else {
+                          HTMLData += "<div class=\"ekatooltipdefault\"><span class=\"status st-success\"></span></div>";
+                      }
+                  }
+                  HTMLData += "</td>";
+                  HTMLData += "<td><span class=\"actionicons\"><a class=\"view_ic\" href=\"javascript:renderData(" + SchedulerRecords[i].id + ");\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/view-ico.png\"></a><a class=\"dlt_ic\" href=\"javascript:prepareDeleteJob(" + SchedulerRecords[i].id + ")\"><img src=\"/files/gui/middleware/pub/server/ui/assets/img/deleteico.png\"></a></span></td></tr>";
+              }
+
+              $("#cronDataRecords").html(HTMLData);
+
+              tableCronJobs = $('#cronMakerTable').DataTable({});
+
+              $(".jobState").unbind();
+              $(".jobState").click(function () {
+
+                  var SchedulerRecord = getDataByID($(this).val());
+
+                  var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new";
+                  var response = syncRestRequest(url, "POST", "");
+                  if (response.status == 200 && response.payload) {
+                      loadDataTable();
+                  }
+              });
+
+          }
+
+          function getDataByID(schedulerId) {
+              var SchedulerRecord = {};
+              for (var i = 0; i < SchedulerRecords.length; i++) {
+                  if (SchedulerRecords[i].id == schedulerId) {
+                      SchedulerRecord = SchedulerRecords[i];
+                  }
+              }
+              return SchedulerRecord;
+          }
+		  
 </script>
 
 </body>
