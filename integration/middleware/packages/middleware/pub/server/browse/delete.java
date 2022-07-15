@@ -23,15 +23,15 @@ try {
 			location = ServiceUtils.getPackagesPath()
 					+ location;
 			dataPipeline.clear();
-			//dataPipeline.put("Location", location); 
+			dataPipeline.log("Location ------>" + location); 
 			File file = new File(location); 
 			if(file.exists()) {
               	AuthAccount authAccount = dataPipeline.getCurrentRuntimeAccount();
 				String loggedInUserId = authAccount.getUserId();
                 //System.out.println("Logged in user: "+loggedInUserId);
-                String lockedByUser=getLocakedByUser(file);
+                String lockedByUser=getLockedByUser(file);
                 //System.out.println("LockedBy user in user: "+lockedByUser);
-              	if(!loggedInUserId.equals(lockedByUser)){
+              	if(!loggedInUserId.equals(lockedByUser) && !(ext.equals("jdbc") || ext.equals("properties"))){
                   if(lockedByUser!=null)
                     dataPipeline.put("error", "Locked by user '"+lockedByUser+"'");
                   else
@@ -65,10 +65,13 @@ try {
 			new SnippetException(dataPipeline,"Failed to delete", new Exception(e));
 	}
 	}
-public static String getLocakedByUser(File file)throws Exception{
+public static String getLockedByUser(File file) throws Exception{
 		byte[] data = ServiceUtils.readAllBytes(file);
 		String json = new String(data);
 		Map<String, Object> jsonMap = ServiceUtils.jsonToMap(json);
+  		if (null == jsonMap) {
+          return null;
+        }
   		if(jsonMap.get("lockedByUser")!=null)
           return jsonMap.get("lockedByUser").toString();
   		if(jsonMap.get("latest")!=null){

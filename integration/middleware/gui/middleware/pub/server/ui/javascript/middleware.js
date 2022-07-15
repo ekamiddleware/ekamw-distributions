@@ -1105,10 +1105,10 @@ function createPackageJstree(id) {
                         "icon" : "/files/gui/middleware/pub/server/ui/icons/jar.svg",
                         "valid_children" : []
                     },"jdbc" : {
-                        "icon" : "/files/gui/middleware/pub/server/ui/icons/jdbc.png",
+                        "icon" : "/files/gui/middleware/pub/server/ui/icons/jdbc.svg",
                         "valid_children" : []
                     },"sql" : {
-                        "icon" : "/files/gui/middleware/pub/server/ui/icons/sql.png",
+                        "icon" : "/files/gui/middleware/pub/server/ui/icons/sql.svg",
                         "valid_children" : []
                     }
                 },
