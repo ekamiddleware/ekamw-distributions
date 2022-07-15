@@ -2,9 +2,29 @@
   "latest" : {
     "createdTS" : "",
     "input" : [ {
+      "id" : "j2_10",
+      "text" : "job_name",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j2_10"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j2_10_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    }, {
       "id" : "j2_4",
       "text" : "cronExpression",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_4"
       },
@@ -27,7 +47,7 @@
     }, {
       "id" : "j2_5",
       "text" : "status",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_5"
       },
@@ -47,7 +67,7 @@
     }, {
       "id" : "j2_6",
       "text" : "enabled",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_6"
       },
@@ -67,7 +87,7 @@
     }, {
       "id" : "j2_7",
       "text" : "ownerNode",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_7"
       },
@@ -87,7 +107,7 @@
     }, {
       "id" : "j2_8",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_8"
       },
@@ -105,7 +125,7 @@
       "children" : [ {
         "id" : "j2_9",
         "text" : "id",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.png",
+        "icon" : null,
         "li_attr" : {
           "id" : "j2_9"
         },
@@ -128,7 +148,7 @@
     "output" : [ {
       "id" : "j3_1",
       "text" : "rows",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/integer.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j3_1"
       },
@@ -148,7 +168,7 @@
     }, {
       "id" : "j3_2",
       "text" : "success",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j3_2"
       },
@@ -168,7 +188,7 @@
     }, {
       "id" : "j3_3",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j3_3"
       },
@@ -189,7 +209,7 @@
     "flow" : [ {
       "id" : "j1_3",
       "text" : "MAP",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/map.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_3"
       },
@@ -234,7 +254,7 @@
     }, {
       "id" : "j1_2",
       "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/updateScheduler",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_2"
       },
@@ -245,50 +265,50 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : false,
+        "selected" : true,
         "disabled" : false
       },
       "data" : {
         "transformers" : [ {
           "op" : "copy",
           "from" : "/cronExpression",
-          "to" : "/inputDocList/#0/cronExpression",
+          "to" : "/inputDocList/0/cronExpression",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/status",
-          "to" : "/inputDocList/#0/status",
+          "to" : "/inputDocList/0/status",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/enabled",
-          "to" : "/inputDocList/#0/enabled",
+          "to" : "/inputDocList/0/enabled",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/ownerNode",
-          "to" : "/inputDocList/#0/owner_node",
+          "to" : "/inputDocList/0/owner_node",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/lastRun",
-          "to" : "/inputDocList/#0/last_run",
+          "to" : "/inputDocList/0/last_run",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/nextRun",
-          "to" : "/inputDocList/#0/next_run",
+          "to" : "/inputDocList/0/next_run",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
           "op" : "copy",
           "from" : "/error",
-          "to" : "/inputDocList/#0/lasterror",
+          "to" : "/inputDocList/0/lasterror",
           "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         }, {
@@ -306,8 +326,14 @@
         }, {
           "op" : "copy",
           "from" : "/*pathParameters/id",
-          "to" : "/inputDocList/#0/id",
+          "to" : "/inputDocList/0/id",
           "inTypePath" : "document/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "copy",
+          "from" : "/job_name",
+          "to" : "/inputDocList/0/job_name",
+          "inTypePath" : "string",
           "outTypePath" : "documentList/string"
         } ],
         "lines" : [ {
@@ -450,6 +476,20 @@
           "outType" : "string",
           "inTypePath" : "document/string",
           "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "job_name",
+          "outputPath" : "inputDocList/job_name",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "job_name",
+          "OUTPath" : "inputDocList/#0/job_name",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "documentList/string"
         } ],
         "dropList" : [ {
           "path" : "id",
@@ -485,7 +525,7 @@
     }, {
       "id" : "j1_1",
       "text" : "SWITCH",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/switch.png",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_1"
       },
@@ -496,7 +536,7 @@
       "state" : {
         "loaded" : true,
         "opened" : true,
-        "selected" : true,
+        "selected" : false,
         "disabled" : false
       },
       "data" : {
@@ -506,7 +546,7 @@
       "children" : [ {
         "id" : "j1_4",
         "text" : "CASE",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.png",
+        "icon" : null,
         "li_attr" : {
           "id" : "j1_4"
         },
@@ -526,7 +566,7 @@
         "children" : [ {
           "id" : "j1_5",
           "text" : "packages/ekaScheduler/cronJob/handler/loadSchedulerJobs",
-          "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.png",
+          "icon" : null,
           "li_attr" : {
             "id" : "j1_5"
           },
@@ -554,7 +594,7 @@
       }, {
         "id" : "j1_6",
         "text" : "CASE",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.png",
+        "icon" : null,
         "li_attr" : {
           "id" : "j1_6"
         },
@@ -574,7 +614,7 @@
         "children" : [ {
           "id" : "j1_7",
           "text" : "MAP",
-          "icon" : "/files/gui/middleware/pub/server/ui/icons/map.png",
+          "icon" : null,
           "li_attr" : {
             "id" : "j1_7"
           },

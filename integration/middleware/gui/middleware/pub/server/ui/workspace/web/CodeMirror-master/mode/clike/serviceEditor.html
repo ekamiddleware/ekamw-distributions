@@ -28,15 +28,15 @@
                      <i class="fa fa-caret-down"></i>
                      </button>
                      <div class="dropdown-content">
-                        <a href="#" onclick="save();">Save</a>
-                        <a href="#" onclick="reload();">Reload</a>
-                        <a href="#" onclick="swal('Inprogress', '', 'warning')">Test</a>
-                        <a href="#" onclick="openConfigurationProprties()">Configuration</a>
-                        <a href="#" onclick="lockArtifact()">Lock</a>
-                        <a href="#" onclick="unLockArtifact()">unLock</a>
+                        <a href="javascript:void(0)" onclick="save();">Save</a>
+                        <a href="javascript:void(0)" onclick="reload();">Reload</a>
+                        <a href="javascript:void(0)" onclick="swal('Inprogress', '', 'warning')">Test</a>
+                        <a href="javascript:void(0)" onclick="openConfigurationProprties()">Configuration</a>
+                        <a href="javascript:void(0)" onclick="lockArtifact()">Lock</a>
+                        <a href="javascript:void(0)" onclick="unLockArtifact()">Unlock</a>
                      </div>
                   </div>
-                  <div class="dropdown">
+                  <!-- <div class="dropdown">
                      <button class="dropbtn">Search 
                      <i class="fa fa-caret-down"></i>
                      </button>
@@ -45,7 +45,7 @@
                            style="box-shadow: inset 0 0 4px #eee; width: 120px; margin: 2px; padding: 2px; border-radius: 0px; border: 1px solid silver; font-size: .8em;"
                            id="search_q" placeholder="Search">
                      </div>
-                  </div>
+                  </div> -->
                   <div style="margin-left: 185px; width:100%;height:20px;padding-top:4px;" id="currentServiceName"></div>
                </div>
             </div>
@@ -102,10 +102,12 @@
          <div class="modal-content" style="width:650px;height:auto;">
             <span id="closeConfigurePropertiesModelDialog" class="close">&times;</span>
             <h3>Configure properties</h3>
-            <div id="serviceHTTPMethod" style="margin-top:10px;">
+            <div class="row">
+	        <div class="col-md-6" style="padding-left: 0px;">
+			<div id="serviceHTTPMethod" style="margin-top:10px;">
                <label style="min-width: 100px;" for="serviceHTTPMethodValue">Method: </label> 
                <select
-                  name="serviceHTTPMethodValue" id="serviceHTTPMethodValue">
+                  name="serviceHTTPMethodValue" id="serviceHTTPMethodValue" class="form-control">
                   <option value="GET">GET</option>
                   <option value="POST">POST</option>
                   <option value="DELETE">DELETE</option>
@@ -114,21 +116,24 @@
                </select>
                <br>
             </div>
+			</div>	
+			</div>
+			
             <div id="serviceAlias">
                <label for="serviceAliasValue">Alias: </label> <input type="text"
-                  id="serviceAliasValue" name="serviceAliasValue" value="" style="width:600px"><br>
+                  id="serviceAliasValue" name="serviceAliasValue" value="" class="form-control"><br>
             </div>
             <div id="serviceConsumersDiv" style="margin-top:10px;">
                <label for="serviceConsumers">Consumers: </label> <input type="text" title="Add comma separated groups without spaces."
-                  id="serviceConsumers" name="serviceConsumers" value="" style="width:600px"><br>
+                  id="serviceConsumers" name="serviceConsumers" value="" class="form-control"><br>
             </div>
             <div id="serviceDevelopersDiv" style="margin-top:10px;">
                <label for="serviceDevelopers">Developers: </label> <input type="text" title="Add comma separated groups without spaces."
-                  id="serviceDevelopers" name="serviceDevelopers" value="" style="width:600px"><br>
+                  id="serviceDevelopers" name="serviceDevelopers" value="" class="form-control"><br>
             </div>
             <div id="serviceProperties" style="margin-top:10px;">
                <label for="servicePropertiesFile">Configuration Properties: </label> <textarea rows="15" cols="50"
-                  id="servicePropertiesFile" name="servicePropertiesFile" value="" style="width:600px"></textarea><br>
+                  id="servicePropertiesFile" name="servicePropertiesFile" value="" class="form-control"></textarea><br>
             </div>
          </div>
       </div>
@@ -140,7 +145,7 @@
             <label style="min-width: 100px;" for="elementType">Type: </label> 
             <select
                name="elementType" id="elementType"
-               onChange="showProperties(this.value);">
+               onChange="showProperties(this.value);" class="form-control">
                <option value="document">Document</option>
                <option value="javaObject">Object</option>
                <option value="ref">#ref</option>
@@ -160,26 +165,26 @@
             </div>
             <div id="javaObjectProperties" class="elementProperty">
                <label for="javaObjectWrapper">Java Wrapper: </label> <input type="text"
-                  id="javaObjectWrapper" name="javaObjectWrapper" value="java.lang.Object"><br>
+                  id="javaObjectWrapper" name="javaObjectWrapper" value="java.lang.Object" class="form-control"><br>
             </div>
             <div id="refProperties" class="elementProperty">
                <label for="reference">Reference: </label> <input type="text"
-                  id="reference" name="reference" value=""><br>
+                  id="reference" name="reference" value="" class="form-control"><br>
             </div>
             <div id="stringProperties" class="elementProperty">
                <label for="stringValidation">Validation: </label> 
                <select
-                  name="stringValidation" id="stringValidation">
+                  name="stringValidation" id="stringValidation" class="form-control">
                   <option value=""></option>
                   <option value="email">Email</option>
                   <option value="url">URL</option>
                   <option value="secure">secure</option>
                </select>
                <br> <label for="minLength">Min size: </label> <input
-                  type="text" id="minLength" name="minLength" value=""><br>
+                  type="text" id="minLength" name="minLength" value="" class="form-control"><br>
                <label for="maxLength">Max size: </label> <input type="text"
                   id="maxLength" name="maxLength" value=""><br> <input
-                  type="checkbox" id="isMuliline" name="isMuliline"> <label
+                  type="checkbox" id="isMuliline" name="isMuliline" class="form-control"> <label
                   for="isMuliline">Multi-line: </label>
             </div>
             <div id="intProperties" class="elementProperty">

@@ -2,40 +2,126 @@
 <head>
     <title>Eka Middleware | Workspace</title>
     <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet"	href="//static.jstree.com/3.3.11/assets/bootstrap/css/bootstrap.min.css">  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"	href="/files/gui/middleware/pub/server/ui/css/style.min.css">
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/sweetalert.css">
-    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	<link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
+    <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+  
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.min.js"></script>
     <script src="/files/gui/middleware/pub/server/ui/javascript/---sweetalert.init.js"></script>
     <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/middleware.css">
+	
+	
+
+
 
 </head>
 
 <body style="width:100%;height:100%;">
 
-<div class="navbar" style="background-color:#fff;left:0px;top:0px;">
+<div class="navbar" style="background-color:#f9f9f9;left:0px;top:0px; padding:0px;">
     <div id="mostRecentlyOpened" class="dropdown">
-        <a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg" /></a>
+        <a class="eka_logo"><img src="/files/gui/middleware/pub/server/ui/assets/img/ekalogo.png" /></a>
         <!-- <a class="dropbtn">Unsaved: </a> -->
     </div>
-    <div class="dropdown navbar-right">
-        <a href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" class="dropbtn"><span class="glyphicon glyphicon-log-in"></span> Clear cache</a>
+    <div class="dropdown navbar-right tp_m">
+        <a href="https://www.ekamw.org/video.html" target="_blank" class="dropbtn"><img style="width:22px;" src="/files/gui/middleware/pub/server/ui/icons/play_icon.svg">&nbsp; Watch Tutorials</a>&nbsp;
+		<a href="#" onclick="localStorage.clear();sessionStorage.clear();deleteAllCookies();location.reload(true);" class="dropbtn"><span><img src="/files/gui/middleware/pub/server/ui/icons/clear_cache.svg"></span>&nbsp; Clear cache</a>
     </div>
 </div>
 
 <div id="content" style="max-width: 100%; min-height:500px;padding: 0px; margin: 0px;height:90%;">
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;width:100%;height:100%">
+        
+		<div class="col-md-12" id="packageManagerJsTreeContainer" style="width:5%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+		<div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="width:100%; border-color:#eaebed; padding:0px;">
+		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center left-m-bar">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M894.416,90.15h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,90.15Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,96.83Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,103.51Zm17.137-7.824a0.97,0.97,0,0,0-.9-0.6h-7.765a0.971,0.971,0,0,0-.686,1.658l3.883,3.885a0.971,0.971,0,0,0,1.372,0l3.883-3.885A0.973,0.973,0,0,0,911.553,95.686Z"
+                    transform="translate(-878.562 -90.156)" />
+                </svg>
+              </a>
+            </li>
+			<li>
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link active py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M901.657,166.147H881.874a4.24,4.24,0,0,0-4.24,4.24v11.3a4.24,4.24,0,0,0,4.24,4.24h8.478v2.826H884.7a1.413,1.413,0,0,0,0,2.826h14.131a1.413,1.413,0,1,0,0-2.826h-5.652v-2.826h8.478a4.239,4.239,0,0,0,4.239-4.24v-11.3A4.239,4.239,0,0,0,901.657,166.147Zm1.413,15.544a1.414,1.414,0,0,1-1.413,1.414H881.874a1.413,1.413,0,0,1-1.413-1.414v-11.3a1.412,1.412,0,0,1,1.413-1.413h19.783a1.413,1.413,0,0,1,1.413,1.413v11.3Z"
+                    transform="translate(-877.625 -166.156)" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link py-3 " title="Scheduler" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M905.451,243.013h0a1.276,1.276,0,0,0-1.5-.987,1.289,1.289,0,0,0-.26.083,1.274,1.274,0,0,0-.732,1.409,11.545,11.545,0,1,1-2.812-5.491,1.25,1.25,0,0,0-.748.252,1.264,1.264,0,0,0,.581,2.266l3,0.424,0.052-.388,0.049,0.395a1.277,1.277,0,0,0,1.258-1.086l0.42-2.9a1.272,1.272,0,0,0-2.509-.418,14.145,14.145,0,0,0-24.646,7.114,14.017,14.017,0,0,0,11.82,16.046,14.7,14.7,0,0,0,2.212.169A14.089,14.089,0,0,0,905.451,243.013Zm-14.079-5.95a1.27,1.27,0,0,0-1.272,1.266V244.8a2.566,2.566,0,1,0,3.51,3.493h2.758a1.266,1.266,0,1,0,0-2.531H893.61a2.566,2.566,0,0,0-.967-0.962v-6.469A1.27,1.27,0,0,0,891.372,237.063Z"
+                    transform="translate(-877.406 -231.719)" />
+                </svg>
 
-        <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:15%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+              </a>
+            </li>
+			<li>
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M899.533,361.024H887.814a2.881,2.881,0,0,0-2.915,2.839v2.976a0.549,0.549,0,0,0,.556.542h1.187a0.55,0.55,0,0,0,.556-0.542v-2.976a0.608,0.608,0,0,1,.616-0.6h11.719a0.608,0.608,0,0,1,.616.6v17.619a0.608,0.608,0,0,1-.616.6h-2.39a0.551,0.551,0,0,0-.557.542v1.156a0.55,0.55,0,0,0,.557.542h2.39a2.881,2.881,0,0,0,2.915-2.839V363.863A2.881,2.881,0,0,0,899.533,361.024ZM892.5,368.3H880.777a2.881,2.881,0,0,0-2.914,2.839v17.619a2.881,2.881,0,0,0,2.914,2.839H892.5a2.881,2.881,0,0,0,2.914-2.839V371.136A2.881,2.881,0,0,0,892.5,368.3Zm-12.336,2.839a0.608,0.608,0,0,1,.615-0.6H892.5a0.607,0.607,0,0,1,.614.6v17.619a0.607,0.607,0,0,1-.614.6H880.777a0.607,0.607,0,0,1-.615-0.6V371.136Z"
+                    transform="translate(-877.875 -361.031)" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+		
+		</div>
+		</div>
+		
+        <div class="col-md-12" id="packageManagerJsTreeContainer" style="width:13%; min-height:100%; float: left;min-height:600px;height:100%;margin:0px; padding:0px;">
             <div class="row" style="margin: 0px; padding:0px;">
 
                 <div class="navbar">
-                    <input class="srch_sl" placeholder="Search..." id="search_panel" />
+                    <input class="srch_sl" placeholder="Search Packages..." id="search_panel" />
                 </div>
 
                 <div class="navbar" style="display: none;">
@@ -73,19 +159,21 @@
                  aria-activedescendant="j1_1" aria-busy="false"></div>
         </div>
 
-        <div class="col-md-12" id="iframe_container" style="width:85%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
+        <div class="col-md-12" id="iframe_container" style="width:82%; min-height:100%; float: left;min-height:600px;height:100%;margin: 0px; padding:0px;">
             <iframe id="middlewareCodeEditor" class="col-md-12" style="float: left; min-width:400px;min-height:600px;width:100%;height:100%;margin:0px;border:0px;padding:0px; overflow:hidden;overflow-x:hidden;overflow-y:hidden;" allowfullscreen frameborder="0" scrolling="no">
             </iframe>
         </div>
 
-    </div>
+    <!-- <div class="footer" id="currentServiceName-">packages > tutorial > flow > samples > tryCatch.flow</div> -->
+	
+	</div>
 </div>
 
 <div id="exportBuildModelDialog" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content" style="width:650px;height:auto;">
-        <span id="closeExportBuildModelDialog" class="close" >&times;</span>
+        <div class="anc_kbtn"><span id="closeExportBuildModelDialog" class="close" >&times;</span></div>
         <h3>Configure build</h3>
         <div style="display:none">
             <input type="checkbox" id="includeDependencies" name="includeDependencies"
@@ -105,11 +193,13 @@
                                                                     id="buildNameInput" name="buildNameInput" value="">
         </div>
 
-        <input type="checkbox" id="includeEndpoint" name="includeEndpoint"
+        <div class="in_ed">
+		<input type="checkbox" id="includeEndpoint" name="includeEndpoint"
                value="false">
         <label style="min-width: 100px; margin-bottom:15px;" for="includeEndpoint"> Include endpoint?</label><br>
-
-        <button type="button" id="selectArtifactsButton" class="btn btn-primary">Select artifacts</button>
+        </div>
+		
+        <div class="anc_kbtn"><button type="button" id="selectArtifactsButton" class="btn btn-primary">Select artifacts</button></div>
     </div>
 </div>
 
@@ -117,7 +207,7 @@
 
     <!-- Modal content -->
     <div class="modal-content" style="width:650px;height:auto;">
-        <span id="closeExportNameItemPromptModelDialog" class="close" >&times;</span>
+        <div class="anc_kbtn"><span id="closeExportNameItemPromptModelDialog" class="close" >&times;</span></div>
         <h3>Create New Item</h3>
         <div id="NameItemPromptDiv" style="margin-top:10px; margin-bottom:15px;">
             <label for="">Item name: </label>
@@ -125,14 +215,19 @@
         </div>
 
         <br>
-
+    <div class="anc_kbtn">
         <button type="button" id="" class="btn btn-primary" onclick="createItemInSchema()">Ok</button>
         <button type="button" id="" class="btn btn-primary" onclick="$('#closeExportNameItemPromptModelDialog').trigger('click')">Cancel</button>
+	</div>	
     </div>
 </div>
 
 
 </body>
+
+
+<script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
 <script>
 
     var to = false;
@@ -163,7 +258,7 @@
                 }else if(type=="html"){
                     url="/files/gui/middleware/pub/server/ui/workspace/web/CodeMirror-master/mode/htmlmixed/htmlEditor.html";
                 }else if(type=="jdbc"){
-                    url="/files/gui/middleware/pub/server/ui/workspace/web/CodeMirror-master/mode/properties/propertiesEditor.html";
+                    url="/files/gui/middleware/pub/server/ui/workspace/web/CodeMirror-master/mode/properties/jdbcEditor.html";
                 }else if(type=="sql"){
                     url="/files/gui/middleware/pub/server/ui/workspace/web/CodeMirror-master/mode/sql/sqlEditor.html";
                 }else if(type=="properties"){
@@ -219,13 +314,10 @@
     function openPage(src){
         //alert(src);
         $("#middlewareCodeEditor").attr('src',src);
-        loadRecentlyOpened();
     }
 
     function loadRecentlyOpened(){
         var recent=localStorage.getItem("workspace-recent");
-        $("#mostRecentlyOpened").html('<a class="eka_logo"><img src="https://www.ekamw.org/assets/img/logo/EKA-middleware.svg"></a>');
-        console.log(recent);
         if(recent!=null){
             var strArr=recent.split(",");
             for(i=0;i<strArr.length;i++){
@@ -233,20 +325,24 @@
                 //var tokenize=loadFile.split("/");
                 var name=localStorage.getItem(loadFile);//tokenize[tokenize.length-1].split(".")[0];
                 //alert(loadFile+","+name);
+                if(!name.endsWith("*"))
+                    continue;
                 var url=localStorage.getItem(loadFile+"_url");
                 var src=url+"?loadFile="+loadFile;
-                if(!name.endsWith("*")) {
-                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;"><b>'+name+'</b></a>';
-                    //alert(element);
-                    $("#mostRecentlyOpened").append(element);
-                } else {
-                    var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
-                    //alert(element);
-                    $("#mostRecentlyOpened").append(element);
-                }
+                var element='<a onclick="openPage(\''+src+'\');" class="dropbtn" style="margin-left:2px;cursor: pointer;">'+name+'</a>';
+                //alert(element);
+                $("#mostRecentlyOpened").append(element);
             }
         }
     }
     loadRecentlyOpened();
+	
+	
+	$(function(){
+		$('#mostRecentlyOpened a').click(function(){
+			$('a.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
 </script>
 </html>

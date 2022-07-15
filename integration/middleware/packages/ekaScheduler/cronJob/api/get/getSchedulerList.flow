@@ -200,6 +200,46 @@
         "data" : { },
         "children" : [ ],
         "type" : "string"
+      }, {
+        "id" : "j3_12",
+        "text" : "job_name",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j3_12"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j3_12_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : true,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
+      }, {
+        "id" : "j3_13",
+        "text" : "created_date",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j3_13"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j3_13_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "string"
       } ],
       "type" : "documentList"
     } ],
@@ -217,7 +257,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : false,
+        "selected" : true,
         "disabled" : false
       },
       "data" : {
@@ -288,6 +328,20 @@
           "op" : "add",
           "from" : "/outputDocList/#{loop_id_-331687499}/next_run",
           "to" : "/output/#{loop_id_-331687499}/next_run",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/job_name",
+          "to" : "/output/#{loop_id_-331687499}/job_name",
+          "follow" : "loop_id_-331687499",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "op" : "add",
+          "from" : "/outputDocList/#{loop_id_-331687499}/created_time",
+          "to" : "/output/#{loop_id_-331687499}/created_time",
           "follow" : "loop_id_-331687499",
           "inTypePath" : "documentList/string",
           "outTypePath" : "documentList/string"
@@ -442,6 +496,36 @@
           "outType" : "string",
           "inTypePath" : "documentList/string",
           "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/job_name",
+          "outputPath" : "output/job_name",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/job_name",
+          "OUTPath" : "output/#{loop_id_-331687499}/job_name",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
+        }, {
+          "inputPath" : "outputDocList/created_time",
+          "outputPath" : "output/created_time",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "outputDocList/#{loop_id_-331687499}/created_time",
+          "OUTPath" : "output/#{loop_id_-331687499}/created_time",
+          "follow" : "loop_id_-331687499",
+          "op" : "add",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "documentList/string",
+          "outTypePath" : "documentList/string"
         } ],
         "dropList" : [ ],
         "createList" : [ ],
@@ -484,7 +568,7 @@
         "state" : {
           "loaded" : true,
           "opened" : false,
-          "selected" : true,
+          "selected" : false,
           "disabled" : false
         },
         "data" : {
@@ -539,7 +623,7 @@
       } ],
       "type" : "loop"
     } ],
-    "lockedByUser" : "admin"
+    "lockedByUser" : "ekaDev"
   },
   "consumers" : "",
   "developers" : "rnd",
