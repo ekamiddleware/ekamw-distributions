@@ -427,8 +427,8 @@ input[type="search"] {
 }
 .btn-primary {
     color: #fff;
-    background-color: #175cff;
-    border-color: #175cff;
+    background-color: #218df2;
+    border-color: #218df2;
     box-shadow: 0 11px 18px -8px rgb(23 92 255 / 60%) !important;
 }
 
@@ -594,8 +594,8 @@ input[type="search"] {
          }
          .dataTables_wrapper .dataTables_paginate .paginate_button.current,
          .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-         background-color: #175cff;
-         border: 1px solid #175cff;
+         background-color: #218df2;
+         border: 1px solid #218df2;
          color: #ffffff !important;
          }
          .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
@@ -608,12 +608,12 @@ input[type="search"] {
          cursor: default;
          }
          .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-         background-color: #175cff;
-         border: 1px solid #175cff;
+         background-color: #218df2;
+         border: 1px solid #218df2;
          color: white;
          }
          .dataTables_wrapper .dataTables_paginate .paginate_button:active {
-         background-color: #175cff;
+         background-color: #218df2;
          outline: medium none;
          }
          .dataTables_wrapper .dataTables_paginate .ellipsis {
@@ -784,7 +784,7 @@ input[type="search"] {
 		}
 		
 		.refresh_btn {
-			background: #989898;
+			background: #218df2;
 			color: #fff;
 			padding: 5px 15px;
 			font-size: 13px;
@@ -793,6 +793,10 @@ input[type="search"] {
 		
 		.refresh_btn:hover, .refresh_btn:focus {
 			color:#fff !important;
+		}
+		
+		table#cronMakerTable th {
+			width: auto !important;
 		}
 		
 

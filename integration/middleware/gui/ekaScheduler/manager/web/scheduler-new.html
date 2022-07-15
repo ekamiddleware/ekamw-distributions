@@ -57,7 +57,7 @@
     <main>
     <div class="container-fluid ">
       <div class="row">	
-	    <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" style="height: auto;">
+	    <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0" data-match-height="groupName">
 
           <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
@@ -131,7 +131,7 @@
           </ul>
         </div>
 		
-	<div class="col-lg-11 px-5 pr-0 p-3">	
+	<div class="col-lg-11 px-5 pr-0 p-3" data-match-height="groupName">	
 	  <div class="tabl_outer">
          <h3>Scheduler</h3>
 		 <div class="refresh_at">
@@ -219,7 +219,7 @@
           <span class="mdltitlespan">Permanently Delete</span>
          </div>
          <div class="mdlbodytext">
-         Do you really want to delete this service?
+         Are you sure you want to delete this job?
          </div>
          <div class="mdlactions text-right">
           <a href="" class="btnclose" data-bs-dismiss="modal" >Cancel</a>
@@ -544,6 +544,48 @@
               return SchedulerRecord;
           }
       </script>
+	  
+	  <script>
+	  
+//	Equal height //
+
+var matchHeight = function () {
+	
+	function init() {
+		eventListeners();
+		matchHeight();
+	}
+	
+	function eventListeners(){
+		$(window).on('resize', function() {
+			matchHeight();
+		});
+	}
+	
+	function matchHeight(){
+		var groupName = $('[data-match-height]');
+		var groupHeights = [];
+		
+		groupName.css('min-height', 'auto');
+		
+		groupName.each(function() {
+			groupHeights.push($(this).outerHeight());
+		});
+		
+		var maxHeight = Math.max.apply(null, groupHeights);
+		groupName.css('min-height', maxHeight);
+	};
+	
+	return {
+		init: init
+	};
+	
+} ();
+
+$(document).ready(function() {
+	matchHeight.init();
+});
+	  </script>
 	  
    </body>
 </html>

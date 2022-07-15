@@ -43,7 +43,7 @@
             <a href="#" onclick="swal('Inprogress', '', 'warning')">Test</a>
             <a href="#" onclick="openConfigurationProprties()">Configuration</a>
             <a href="#" onclick="lockArtifact()">Lock</a>
-            <a href="#" onclick="unLockArtifact()">unLock</a>
+            <a href="#" onclick="unLockArtifact()">Unlock</a>
           </div>
         </div>
         <!-- <div class="dropdown">
@@ -113,26 +113,32 @@ SELECT SQL_NO_CACHE DISTINCT
   <div class="modal-content" style="width: 650px; height: auto;">
     <span id="closeConfigurePropertiesModelDialog" class="close">&times;</span>
     <h3>Configure properties</h3>
-    <div id="serviceHTTPMethod" style="margin-top: 10px;">
-      <label style="min-width: 100px;" for="serviceHTTPMethodValue">Method: </label>
-      <select name="serviceHTTPMethodValue" id="serviceHTTPMethodValue">
-        <option value="GET">GET</option>
-        <option value="POST">POST</option>
-        <option value="DELETE">DELETE</option>
-        <option value="PUT">PUT</option>
-        <option value="PATCH">PATCH</option>
-      </select>
-      <br />
-    </div>
-    <div id="serviceAlias"><label for="serviceAliasValue">Alias: </label> <input type="text" id="serviceAliasValue" name="serviceAliasValue" value="" style="width: 600px;" /><br /></div>
+    
+	<div class="row">
+	    <div class="col-md-6" style="padding-left: 0px;">
+		    <div id="serviceHTTPMethod" style="margin-top: 10px;">
+			  <label style="min-width: 100px;" for="serviceHTTPMethodValue">Method: </label>
+			  <select name="serviceHTTPMethodValue" id="serviceHTTPMethodValue" class="form-control">
+				<option value="GET">GET</option>
+				<option value="POST">POST</option>
+				<option value="DELETE">DELETE</option>
+				<option value="PUT">PUT</option>
+				<option value="PATCH">PATCH</option>
+			  </select>
+			  <br />
+			</div>
+		</div>
+	</div>
+	
+    <div id="serviceAlias"><label for="serviceAliasValue">Alias: </label> <input type="text" id="serviceAliasValue" name="serviceAliasValue" value="" class="form-control" /><br /></div>
     <div id="serviceConsumersDiv" style="margin-top: 10px;">
-      <label for="serviceConsumers">Consumers: </label> <input type="text" title="Add comma separated groups without spaces." id="serviceConsumers" name="serviceConsumers" value="" style="width: 600px;" /><br />
+      <label for="serviceConsumers">Consumers: </label> <input type="text" title="Add comma separated groups without spaces." id="serviceConsumers" name="serviceConsumers" value="" class="form-control" /><br />
     </div>
     <div id="serviceDevelopersDiv" style="margin-top: 10px;">
-      <label for="serviceDevelopers">Developers: </label> <input type="text" title="Add comma separated groups without spaces." id="serviceDevelopers" name="serviceDevelopers" value="" style="width: 600px;" /><br />
+      <label for="serviceDevelopers">Developers: </label> <input type="text" title="Add comma separated groups without spaces." id="serviceDevelopers" name="serviceDevelopers" value="" class="form-control" /><br />
     </div>
     <div id="serviceProperties" style="margin-top: 10px;">
-      <label for="servicePropertiesFile">Configuration Properties: </label> <textarea rows="15" cols="50" id="servicePropertiesFile" name="servicePropertiesFile" value="" style="width: 600px;"></textarea><br />
+      <label for="servicePropertiesFile">Configuration Properties: </label> <textarea rows="15" cols="50" id="servicePropertiesFile" name="servicePropertiesFile" value="" class="form-control"></textarea><br />
     </div>
   </div>
 </div>
