@@ -97,9 +97,17 @@ input[type="search"] {
     border: 0;
 }
 
+.tab-content input[type=radio]:checked:after {
+    background-color: #218df2 !important;
+}
+
+.tab-content input[type=radio] {
+    border: 0.1em solid #bdbdbd !important;
+}
+
 .form-check-input:checked {
-    background-color: #606060 !important;
-    border-color: #606060 !important;
+    /* background-color: #606060 !important; */
+    /* border-color: #606060 !important; */
 }
 
 .form-check-input:focus {
