@@ -76,6 +76,7 @@ public final class test {
 				asyncInputDoc.put("stopRecursiveLogging","true");
 				dataPipeline.put("asyncInputDoc",asyncInputDoc);
 				dataPipeline.applyAsync("packages.middleware.pub.service.auditLogging");
+				dataPipeline.drop("asyncInputDoc");
 			}
 		}
 	}
