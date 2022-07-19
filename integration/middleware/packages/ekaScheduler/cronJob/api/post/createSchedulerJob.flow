@@ -170,6 +170,173 @@
       "type" : "string"
     } ],
     "flow" : [ {
+      "id" : "j1_9",
+      "text" : "packages/middleware/pub/service/findReferences",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_9"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_9_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : {
+        "transformers" : [ {
+          "op" : "copy",
+          "from" : "/list",
+          "to" : "/serviceList",
+          "inTypePath" : "documentList",
+          "outTypePath" : "documentList"
+        }, {
+          "op" : "copy",
+          "from" : "/serviceFqn",
+          "to" : "/serviceFqn",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        } ],
+        "lines" : [ {
+          "inputPath" : "list",
+          "outputPath" : "serviceList",
+          "inpJsTree" : "#launching_arrow_jsTree_function",
+          "outpJsTree" : "#landing_arrow_jsTree",
+          "INPath" : "list",
+          "OUTPath" : "serviceList",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "documentList",
+          "outType" : "documentList",
+          "inTypePath" : "documentList",
+          "outTypePath" : "documentList"
+        }, {
+          "inputPath" : "serviceFqn",
+          "outputPath" : "serviceFqn",
+          "inpJsTree" : "#launching_arrow_jsTree",
+          "outpJsTree" : "#landing_arrow_jsTree_function",
+          "INPath" : "serviceFqn",
+          "OUTPath" : "serviceFqn",
+          "op" : "copy",
+          "line" : 0,
+          "dashedLine" : false,
+          "inType" : "string",
+          "outType" : "string",
+          "inTypePath" : "string",
+          "outTypePath" : "string"
+        } ],
+        "dropList" : [ ],
+        "createList" : [ ],
+        "serviceType" : "service"
+      },
+      "children" : [ ],
+      "type" : "invoke"
+    }, {
+      "id" : "j1_11",
+      "text" : "SEQUENCE",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_11"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_11_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : true,
+        "disabled" : false
+      },
+      "data" : {
+        "status" : "disabled"
+      },
+      "children" : [ {
+        "id" : "j1_12",
+        "text" : "SEQUENCE",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_12"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_12_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : {
+          "evaluate" : false,
+          "condition" : "#{serviceList.length} == 0"
+        },
+        "children" : [ {
+          "id" : "j1_17",
+          "text" : "MAP",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_17"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_17_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ ],
+            "lines" : [ ],
+            "dropList" : [ ],
+            "createList" : [ {
+              "path" : "message",
+              "value" : "This service doesn't exist.",
+              "evaluate" : null,
+              "typePath" : "string"
+            } ]
+          },
+          "children" : [ ],
+          "type" : "map"
+        }, {
+          "id" : "j1_8",
+          "text" : "packages/middleware/pub/service/throwExecption",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_8"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_8_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ ],
+            "lines" : [ ],
+            "dropList" : [ ],
+            "createList" : [ ],
+            "serviceType" : "service"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        } ],
+        "type" : "sequence"
+      } ],
+      "type" : "sequence"
+    }, {
       "id" : "j1_7",
       "text" : "MAP",
       "icon" : null,
@@ -213,7 +380,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : true,
+        "selected" : false,
         "disabled" : false
       },
       "data" : {
