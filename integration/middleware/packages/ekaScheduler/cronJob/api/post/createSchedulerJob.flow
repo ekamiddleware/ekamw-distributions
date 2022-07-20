@@ -170,122 +170,308 @@
       "type" : "string"
     } ],
     "flow" : [ {
-      "id" : "j1_9",
-      "text" : "packages/middleware/pub/service/findReferences",
+      "id" : "j1_10",
+      "text" : "TCF-Block",
       "icon" : null,
       "li_attr" : {
-        "id" : "j1_9"
+        "id" : "j1_10"
       },
       "a_attr" : {
         "href" : "#",
-        "id" : "j1_9_anchor"
+        "id" : "j1_10_anchor"
       },
       "state" : {
         "loaded" : true,
-        "opened" : false,
+        "opened" : true,
         "selected" : false,
         "disabled" : false
       },
-      "data" : {
-        "transformers" : [ {
-          "op" : "copy",
-          "from" : "/list",
-          "to" : "/serviceList",
-          "inTypePath" : "documentList",
-          "outTypePath" : "documentList"
-        }, {
-          "op" : "copy",
-          "from" : "/serviceFqn",
-          "to" : "/serviceFqn",
-          "inTypePath" : "string",
-          "outTypePath" : "string"
-        } ],
-        "lines" : [ {
-          "inputPath" : "list",
-          "outputPath" : "serviceList",
-          "inpJsTree" : "#launching_arrow_jsTree_function",
-          "outpJsTree" : "#landing_arrow_jsTree",
-          "INPath" : "list",
-          "OUTPath" : "serviceList",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "documentList",
-          "outType" : "documentList",
-          "inTypePath" : "documentList",
-          "outTypePath" : "documentList"
-        }, {
-          "inputPath" : "serviceFqn",
-          "outputPath" : "serviceFqn",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "serviceFqn",
-          "OUTPath" : "serviceFqn",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "string"
-        } ],
-        "dropList" : [ ],
-        "createList" : [ ],
-        "serviceType" : "service"
-      },
-      "children" : [ ],
-      "type" : "invoke"
-    }, {
-      "id" : "j1_11",
-      "text" : "SEQUENCE",
-      "icon" : null,
-      "li_attr" : {
-        "id" : "j1_11"
-      },
-      "a_attr" : {
-        "href" : "#",
-        "id" : "j1_11_anchor"
-      },
-      "state" : {
-        "loaded" : true,
-        "opened" : false,
-        "selected" : true,
-        "disabled" : false
-      },
-      "data" : {
-        "status" : "disabled"
-      },
+      "data" : { },
       "children" : [ {
-        "id" : "j1_12",
-        "text" : "SEQUENCE",
+        "id" : "j1_13",
+        "text" : "TRY",
         "icon" : null,
         "li_attr" : {
-          "id" : "j1_12"
+          "id" : "j1_13"
         },
         "a_attr" : {
           "href" : "#",
-          "id" : "j1_12_anchor"
+          "id" : "j1_13_anchor"
         },
         "state" : {
           "loaded" : true,
-          "opened" : false,
+          "opened" : true,
           "selected" : false,
           "disabled" : false
         },
-        "data" : {
-          "evaluate" : false,
-          "condition" : "#{serviceList.length} == 0"
-        },
+        "data" : { },
         "children" : [ {
-          "id" : "j1_17",
-          "text" : "MAP",
+          "id" : "j1_9",
+          "text" : "packages/middleware/pub/service/findReferences",
           "icon" : null,
           "li_attr" : {
-            "id" : "j1_17"
+            "id" : "j1_9"
           },
           "a_attr" : {
             "href" : "#",
-            "id" : "j1_17_anchor"
+            "id" : "j1_9_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ {
+              "op" : "copy",
+              "from" : "/list",
+              "to" : "/serviceList",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "op" : "copy",
+              "from" : "/serviceFqn",
+              "to" : "/serviceFqn",
+              "inTypePath" : "string",
+              "outTypePath" : "string"
+            } ],
+            "lines" : [ {
+              "inputPath" : "list",
+              "outputPath" : "serviceList",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "list",
+              "OUTPath" : "serviceList",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "documentList",
+              "outType" : "documentList",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "inputPath" : "serviceFqn",
+              "outputPath" : "serviceFqn",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "serviceFqn",
+              "OUTPath" : "serviceFqn",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "string"
+            } ],
+            "dropList" : [ ],
+            "createList" : [ ],
+            "serviceType" : "service"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        }, {
+          "id" : "j1_11",
+          "text" : "SEQUENCE",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_11"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_11_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : true,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "status" : "enabled",
+            "snap" : "disabled",
+            "evaluate" : true,
+            "comment" : "true"
+          },
+          "children" : [ {
+            "id" : "j1_18",
+            "text" : "packages/middleware/pub/docList/listSize",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_18"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_18_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : false,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "transformers" : [ {
+                "op" : "copy",
+                "from" : "/serviceList",
+                "to" : "/docList",
+                "inTypePath" : "documentList",
+                "outTypePath" : "documentList"
+              }, {
+                "op" : "copy",
+                "from" : "/size",
+                "to" : "/listSize",
+                "inTypePath" : "integer",
+                "outTypePath" : "integer"
+              } ],
+              "lines" : [ {
+                "inputPath" : "serviceList",
+                "outputPath" : "docList",
+                "inpJsTree" : "#launching_arrow_jsTree",
+                "outpJsTree" : "#landing_arrow_jsTree_function",
+                "INPath" : "serviceList",
+                "OUTPath" : "docList",
+                "op" : "copy",
+                "line" : 0,
+                "dashedLine" : false,
+                "inType" : "documentList",
+                "outType" : "documentList",
+                "inTypePath" : "documentList",
+                "outTypePath" : "documentList"
+              }, {
+                "inputPath" : "size",
+                "outputPath" : "listSize",
+                "inpJsTree" : "#launching_arrow_jsTree_function",
+                "outpJsTree" : "#landing_arrow_jsTree",
+                "INPath" : "size",
+                "OUTPath" : "listSize",
+                "op" : "copy",
+                "line" : 0,
+                "dashedLine" : false,
+                "inType" : "integer",
+                "outType" : "integer",
+                "inTypePath" : "integer",
+                "outTypePath" : "integer"
+              } ],
+              "dropList" : [ ],
+              "createList" : [ ],
+              "serviceType" : "service",
+              "condition" : ""
+            },
+            "children" : [ ],
+            "type" : "invoke"
+          }, {
+            "id" : "j1_12",
+            "text" : "SEQUENCE",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_12"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_12_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : true,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "evaluate" : false,
+              "condition" : "#{listSize} == 0"
+            },
+            "children" : [ {
+              "id" : "j1_17",
+              "text" : "MAP",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_17"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_17_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : true,
+                "disabled" : false
+              },
+              "data" : {
+                "transformers" : [ ],
+                "lines" : [ ],
+                "dropList" : [ ],
+                "createList" : [ {
+                  "path" : "message",
+                  "value" : "The flow service doesn't exist.",
+                  "evaluate" : null,
+                  "typePath" : "string"
+                } ]
+              },
+              "children" : [ ],
+              "type" : "map"
+            }, {
+              "id" : "j1_8",
+              "text" : "packages/middleware/pub/service/throwExecption",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_8"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_8_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "transformers" : [ {
+                  "op" : "copy",
+                  "from" : "/message",
+                  "to" : "/msg",
+                  "inTypePath" : "string",
+                  "outTypePath" : "string"
+                } ],
+                "lines" : [ {
+                  "inputPath" : "message",
+                  "outputPath" : "msg",
+                  "inpJsTree" : "#launching_arrow_jsTree",
+                  "outpJsTree" : "#landing_arrow_jsTree_function",
+                  "INPath" : "message",
+                  "OUTPath" : "msg",
+                  "op" : "copy",
+                  "line" : 0,
+                  "dashedLine" : false,
+                  "inType" : "string",
+                  "outType" : "string",
+                  "inTypePath" : "string",
+                  "outTypePath" : "string"
+                } ],
+                "dropList" : [ ],
+                "createList" : [ ],
+                "serviceType" : "service"
+              },
+              "children" : [ ],
+              "type" : "invoke"
+            } ],
+            "type" : "sequence"
+          } ],
+          "type" : "sequence"
+        }, {
+          "id" : "j1_7",
+          "text" : "MAP",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_7"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_7_anchor"
           },
           "state" : {
             "loaded" : true,
@@ -298,24 +484,24 @@
             "lines" : [ ],
             "dropList" : [ ],
             "createList" : [ {
-              "path" : "message",
-              "value" : "This service doesn't exist.",
-              "evaluate" : null,
+              "path" : "ownerNode",
+              "value" : "#{nodeName}",
+              "evaluate" : "EGV",
               "typePath" : "string"
             } ]
           },
           "children" : [ ],
           "type" : "map"
         }, {
-          "id" : "j1_8",
-          "text" : "packages/middleware/pub/service/throwExecption",
+          "id" : "j1_1",
+          "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/insertScheduler",
           "icon" : null,
           "li_attr" : {
-            "id" : "j1_8"
+            "id" : "j1_1"
           },
           "a_attr" : {
             "href" : "#",
-            "id" : "j1_8_anchor"
+            "id" : "j1_1_anchor"
           },
           "state" : {
             "loaded" : true,
@@ -324,8 +510,371 @@
             "disabled" : false
           },
           "data" : {
-            "transformers" : [ ],
-            "lines" : [ ],
+            "transformers" : [ {
+              "op" : "copy",
+              "from" : "/serviceFqn",
+              "to" : "/inputDocList/0/serviceFqn",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/cronExpression",
+              "to" : "/inputDocList/0/cronExpression",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/status",
+              "to" : "/inputDocList/0/status",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/enabled",
+              "to" : "/inputDocList/0/enabled",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/ownerNode",
+              "to" : "/inputDocList/0/ownerNode",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "copy",
+              "from" : "/rows",
+              "to" : "/rows",
+              "inTypePath" : "integer",
+              "outTypePath" : "integer"
+            }, {
+              "op" : "copy",
+              "from" : "/success",
+              "to" : "/success",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
+            }, {
+              "op" : "copy",
+              "from" : "/job_name",
+              "to" : "/inputDocList/0/job_name",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "lines" : [ {
+              "inputPath" : "serviceFqn",
+              "outputPath" : "inputDocList/serviceFqn",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "serviceFqn",
+              "OUTPath" : "inputDocList/#0/serviceFqn",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "cronExpression",
+              "outputPath" : "inputDocList/cronExpression",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "cronExpression",
+              "OUTPath" : "inputDocList/#0/cronExpression",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "status",
+              "outputPath" : "inputDocList/status",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "status",
+              "OUTPath" : "inputDocList/#0/status",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "enabled",
+              "outputPath" : "inputDocList/enabled",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "enabled",
+              "OUTPath" : "inputDocList/#0/enabled",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "ownerNode",
+              "outputPath" : "inputDocList/ownerNode",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "ownerNode",
+              "OUTPath" : "inputDocList/#0/ownerNode",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "rows",
+              "outputPath" : "rows",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "rows",
+              "OUTPath" : "rows",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "integer",
+              "outType" : "integer",
+              "inTypePath" : "integer",
+              "outTypePath" : "integer"
+            }, {
+              "inputPath" : "success",
+              "outputPath" : "success",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "success",
+              "OUTPath" : "success",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "boolean",
+              "outType" : "boolean",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
+            }, {
+              "inputPath" : "job_name",
+              "outputPath" : "inputDocList/job_name",
+              "inpJsTree" : "#launching_arrow_jsTree",
+              "outpJsTree" : "#landing_arrow_jsTree_function",
+              "INPath" : "job_name",
+              "OUTPath" : "inputDocList/#0/job_name",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "dropList" : [ {
+              "path" : "serviceFqn",
+              "typePath" : "string"
+            }, {
+              "path" : "cronExpression",
+              "typePath" : "string"
+            }, {
+              "path" : "status",
+              "typePath" : "string"
+            }, {
+              "path" : "enabled",
+              "typePath" : "string"
+            }, {
+              "path" : "ownerNode",
+              "typePath" : "string"
+            } ],
+            "createList" : [ ],
+            "serviceType" : "sql"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        }, {
+          "id" : "j1_2",
+          "text" : "SWITCH",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_2"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_2_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "switch" : "success"
+          },
+          "children" : [ {
+            "id" : "j1_3",
+            "text" : "CASE",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_3"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_3_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : false,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "case" : "true"
+            },
+            "children" : [ {
+              "id" : "j1_4",
+              "text" : "packages/ekaScheduler/cronJob/handler/loadSchedulerJobs",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_4"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_4_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "transformers" : [ ],
+                "lines" : [ ],
+                "dropList" : [ ],
+                "createList" : [ ],
+                "serviceType" : "flow"
+              },
+              "children" : [ ],
+              "type" : "invoke"
+            } ],
+            "type" : "sequence"
+          }, {
+            "id" : "j1_5",
+            "text" : "CASE",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_5"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_5_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : true,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "case" : "#default"
+            },
+            "children" : [ {
+              "id" : "j1_6",
+              "text" : "MAP",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_6"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_6_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "transformers" : [ ],
+                "lines" : [ ],
+                "dropList" : [ ],
+                "createList" : [ {
+                  "path" : "error",
+                  "value" : "Could not create scheduler Job",
+                  "evaluate" : null,
+                  "typePath" : "string"
+                } ]
+              },
+              "children" : [ ],
+              "type" : "map"
+            } ],
+            "type" : "sequence"
+          } ],
+          "type" : "switch"
+        } ],
+        "type" : "sequence"
+      }, {
+        "id" : "j1_14",
+        "text" : "CATCH",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_14"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_14_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ {
+          "id" : "j1_16",
+          "text" : "packages/middleware/pub/service/utils/getLastErrorDump",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_16"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_16_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ {
+              "op" : "copy",
+              "from" : "/lastErrorDump/message",
+              "to" : "/error",
+              "inTypePath" : "document/string",
+              "outTypePath" : "string"
+            } ],
+            "lines" : [ {
+              "inputPath" : "lastErrorDump/message",
+              "outputPath" : "error",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "lastErrorDump/message",
+              "OUTPath" : "error",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "document/string",
+              "outTypePath" : "string"
+            } ],
             "dropList" : [ ],
             "createList" : [ ],
             "serviceType" : "service"
@@ -334,269 +883,16 @@
           "type" : "invoke"
         } ],
         "type" : "sequence"
-      } ],
-      "type" : "sequence"
-    }, {
-      "id" : "j1_7",
-      "text" : "MAP",
-      "icon" : null,
-      "li_attr" : {
-        "id" : "j1_7"
-      },
-      "a_attr" : {
-        "href" : "#",
-        "id" : "j1_7_anchor"
-      },
-      "state" : {
-        "loaded" : true,
-        "opened" : false,
-        "selected" : false,
-        "disabled" : false
-      },
-      "data" : {
-        "transformers" : [ ],
-        "lines" : [ ],
-        "dropList" : [ ],
-        "createList" : [ {
-          "path" : "ownerNode",
-          "value" : "#{nodeName}",
-          "evaluate" : "EGV",
-          "typePath" : "string"
-        } ]
-      },
-      "children" : [ ],
-      "type" : "map"
-    }, {
-      "id" : "j1_1",
-      "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/insertScheduler",
-      "icon" : null,
-      "li_attr" : {
-        "id" : "j1_1"
-      },
-      "a_attr" : {
-        "href" : "#",
-        "id" : "j1_1_anchor"
-      },
-      "state" : {
-        "loaded" : true,
-        "opened" : false,
-        "selected" : false,
-        "disabled" : false
-      },
-      "data" : {
-        "transformers" : [ {
-          "op" : "copy",
-          "from" : "/serviceFqn",
-          "to" : "/inputDocList/0/serviceFqn",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "op" : "copy",
-          "from" : "/cronExpression",
-          "to" : "/inputDocList/0/cronExpression",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "op" : "copy",
-          "from" : "/status",
-          "to" : "/inputDocList/0/status",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "op" : "copy",
-          "from" : "/enabled",
-          "to" : "/inputDocList/0/enabled",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "op" : "copy",
-          "from" : "/ownerNode",
-          "to" : "/inputDocList/0/ownerNode",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "op" : "copy",
-          "from" : "/rows",
-          "to" : "/rows",
-          "inTypePath" : "integer",
-          "outTypePath" : "integer"
-        }, {
-          "op" : "copy",
-          "from" : "/success",
-          "to" : "/success",
-          "inTypePath" : "boolean",
-          "outTypePath" : "boolean"
-        }, {
-          "op" : "copy",
-          "from" : "/job_name",
-          "to" : "/inputDocList/0/job_name",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        } ],
-        "lines" : [ {
-          "inputPath" : "serviceFqn",
-          "outputPath" : "inputDocList/serviceFqn",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "serviceFqn",
-          "OUTPath" : "inputDocList/#0/serviceFqn",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "inputPath" : "cronExpression",
-          "outputPath" : "inputDocList/cronExpression",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "cronExpression",
-          "OUTPath" : "inputDocList/#0/cronExpression",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "inputPath" : "status",
-          "outputPath" : "inputDocList/status",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "status",
-          "OUTPath" : "inputDocList/#0/status",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "inputPath" : "enabled",
-          "outputPath" : "inputDocList/enabled",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "enabled",
-          "OUTPath" : "inputDocList/#0/enabled",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "inputPath" : "ownerNode",
-          "outputPath" : "inputDocList/ownerNode",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "ownerNode",
-          "OUTPath" : "inputDocList/#0/ownerNode",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        }, {
-          "inputPath" : "rows",
-          "outputPath" : "rows",
-          "inpJsTree" : "#launching_arrow_jsTree_function",
-          "outpJsTree" : "#landing_arrow_jsTree",
-          "INPath" : "rows",
-          "OUTPath" : "rows",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "integer",
-          "outType" : "integer",
-          "inTypePath" : "integer",
-          "outTypePath" : "integer"
-        }, {
-          "inputPath" : "success",
-          "outputPath" : "success",
-          "inpJsTree" : "#launching_arrow_jsTree_function",
-          "outpJsTree" : "#landing_arrow_jsTree",
-          "INPath" : "success",
-          "OUTPath" : "success",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "boolean",
-          "outType" : "boolean",
-          "inTypePath" : "boolean",
-          "outTypePath" : "boolean"
-        }, {
-          "inputPath" : "job_name",
-          "outputPath" : "inputDocList/job_name",
-          "inpJsTree" : "#launching_arrow_jsTree",
-          "outpJsTree" : "#landing_arrow_jsTree_function",
-          "INPath" : "job_name",
-          "OUTPath" : "inputDocList/#0/job_name",
-          "op" : "copy",
-          "line" : 0,
-          "dashedLine" : false,
-          "inType" : "string",
-          "outType" : "string",
-          "inTypePath" : "string",
-          "outTypePath" : "documentList/string"
-        } ],
-        "dropList" : [ {
-          "path" : "serviceFqn",
-          "typePath" : "string"
-        }, {
-          "path" : "cronExpression",
-          "typePath" : "string"
-        }, {
-          "path" : "status",
-          "typePath" : "string"
-        }, {
-          "path" : "enabled",
-          "typePath" : "string"
-        }, {
-          "path" : "ownerNode",
-          "typePath" : "string"
-        } ],
-        "createList" : [ ],
-        "serviceType" : "sql"
-      },
-      "children" : [ ],
-      "type" : "invoke"
-    }, {
-      "id" : "j1_2",
-      "text" : "SWITCH",
-      "icon" : null,
-      "li_attr" : {
-        "id" : "j1_2"
-      },
-      "a_attr" : {
-        "href" : "#",
-        "id" : "j1_2_anchor"
-      },
-      "state" : {
-        "loaded" : true,
-        "opened" : true,
-        "selected" : false,
-        "disabled" : false
-      },
-      "data" : {
-        "switch" : "success"
-      },
-      "children" : [ {
-        "id" : "j1_3",
-        "text" : "CASE",
+      }, {
+        "id" : "j1_15",
+        "text" : "FINALLY",
         "icon" : null,
         "li_attr" : {
-          "id" : "j1_3"
+          "id" : "j1_15"
         },
         "a_attr" : {
           "href" : "#",
-          "id" : "j1_3_anchor"
+          "id" : "j1_15_anchor"
         },
         "state" : {
           "loaded" : true,
@@ -604,91 +900,11 @@
           "selected" : false,
           "disabled" : false
         },
-        "data" : {
-          "case" : "true"
-        },
-        "children" : [ {
-          "id" : "j1_4",
-          "text" : "packages/ekaScheduler/cronJob/handler/loadSchedulerJobs",
-          "icon" : null,
-          "li_attr" : {
-            "id" : "j1_4"
-          },
-          "a_attr" : {
-            "href" : "#",
-            "id" : "j1_4_anchor"
-          },
-          "state" : {
-            "loaded" : true,
-            "opened" : false,
-            "selected" : false,
-            "disabled" : false
-          },
-          "data" : {
-            "transformers" : [ ],
-            "lines" : [ ],
-            "dropList" : [ ],
-            "createList" : [ ],
-            "serviceType" : "flow"
-          },
-          "children" : [ ],
-          "type" : "invoke"
-        } ],
-        "type" : "sequence"
-      }, {
-        "id" : "j1_5",
-        "text" : "CASE",
-        "icon" : null,
-        "li_attr" : {
-          "id" : "j1_5"
-        },
-        "a_attr" : {
-          "href" : "#",
-          "id" : "j1_5_anchor"
-        },
-        "state" : {
-          "loaded" : true,
-          "opened" : true,
-          "selected" : false,
-          "disabled" : false
-        },
-        "data" : {
-          "case" : "#default"
-        },
-        "children" : [ {
-          "id" : "j1_6",
-          "text" : "MAP",
-          "icon" : null,
-          "li_attr" : {
-            "id" : "j1_6"
-          },
-          "a_attr" : {
-            "href" : "#",
-            "id" : "j1_6_anchor"
-          },
-          "state" : {
-            "loaded" : true,
-            "opened" : false,
-            "selected" : false,
-            "disabled" : false
-          },
-          "data" : {
-            "transformers" : [ ],
-            "lines" : [ ],
-            "dropList" : [ ],
-            "createList" : [ {
-              "path" : "error",
-              "value" : "Could not create scheduler Job",
-              "evaluate" : null,
-              "typePath" : "string"
-            } ]
-          },
-          "children" : [ ],
-          "type" : "map"
-        } ],
+        "data" : { },
+        "children" : [ ],
         "type" : "sequence"
       } ],
-      "type" : "switch"
+      "type" : "try-catch"
     } ],
     "lockedByUser" : "ekaDev"
   },

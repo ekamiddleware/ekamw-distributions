@@ -48,7 +48,6 @@ public final class test {
 				  mainflowJsonObject = Json.createReader(new FileInputStream(new File(flowRef))).readObject();
 			}
 		  FlowResolver.execute(dataPipeline,mainflowJsonObject);
-		  dataPipeline.put("error", "");
 		}catch(Throwable e) {
 			dataPipeline.clear();
 			dataPipeline.put("error", e.getMessage());
@@ -66,7 +65,12 @@ public final class test {
 				auditLog.put("sessionId",dataPipeline.getSessionId());
 				auditLog.put("dateTimeStmp",dateTimeStmp+"");
 				auditLog.put("duration",(endTime-startTime)+"");
-				auditLog.put("error",dataPipeline.getString("error"));
+				if (null == dataPipeline.getString("error")) {
+				    auditLog.put("error","");
+				} else {
+				    auditLog.put("error",dataPipeline.getString("error"));
+				}
+
 				auditLog.put("fqn",fqn);
 				auditLog.put("request",requestJson);
 				auditLog.put("response",responseJson);
@@ -77,6 +81,7 @@ public final class test {
 				dataPipeline.put("asyncInputDoc",asyncInputDoc);
 				dataPipeline.applyAsync("packages.middleware.pub.service.auditLogging");
 				dataPipeline.drop("asyncInputDoc");
+				dataPipeline.drop("asyncOutputDoc");
 			}
 		}
 	}

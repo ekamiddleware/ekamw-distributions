@@ -22,7 +22,9 @@
       <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
       <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
-      
+       <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.min.js"></script>
+       <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.init.js"></script>
+       <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/sweetalert.css" />
    <style>
    .modal-header {
     display: inline-block;
@@ -304,6 +306,18 @@
               }
 
               saveSchedulerJob.onclick = function () {
+
+                  if ($("#schedulerJobName").val().trim() == "") {
+                      swal('Error', "Invalid Job Name", 'error');
+                      return ;
+                  } else if ($("#schedulerJobService").val().trim() == "") {
+                      swal('Error', "Invalid Service FQN", 'error');
+                      return ;
+                  }
+
+                  $(this).attr("disabled", "disabled");
+                  $(this).html("...");
+
                   var cronExp = $(".cronInsideInput").val();
                   var enableJob = $("#enableScheduler").prop('checked');
                   if (enableJob == true)
@@ -319,13 +333,17 @@
                       "&job_name=" + $("#schedulerJobName").val();
                   //alert(url);
                   var response = syncRestRequest(url, "POST", "");
-                  if (response.status == 200 && response.payload) {
+                  if (response.status == 200 && response.payload && null == JSON.parse(response.payload).error) {
                       response = response.payload;
+                      swal('Saved', "Job '" + $("#schedulerJobName").val() + "' has been created successfully!", 'success');
                       loadDataTable();
-                      //alert(response);
+                      saveSchedulerJob.style.display = "none";
+                      modal.style.display = "none";
+                  } else {
+                      swal('Error', JSON.parse(response.payload).error, 'error');
                   }
-                  saveSchedulerJob.style.display = "none";
-                  modal.style.display = "none";
+                  $(this).removeAttr("disabled");
+                  $(this).html("Create");
               }
           }
 
@@ -501,7 +519,7 @@
 
               if (null != SchedulerRecords) {
                   for (var i = 0; i < SchedulerRecords.length; i++) {
-                      HTMLData += "<tr><td>" + (i + 1) + "</td><td><a href='scheduler-details.html?id=" + SchedulerRecords[i].id + "'>" + SchedulerRecords[i].job_name + "</a></td><td>" + SchedulerRecords[i].cron + "</td>";
+                      HTMLData += "<tr><td>" + (i + 1) + "</td><td><a title='" + SchedulerRecords[i].serviceFqn + "' href='scheduler-details.html?id=" + SchedulerRecords[i].id + "'>" + SchedulerRecords[i].job_name + "</a></td><td>" + SchedulerRecords[i].cron + "</td>";
 
                       if (SchedulerRecords[i].enabled == true) {
                           HTMLData += "<td><div class=\"form-check form-switch\"><input class=\"form-check-input jobState\" type=\"checkbox\" role=\"switch\" checked value='" + SchedulerRecords[i].id + "' /></div></td>";
