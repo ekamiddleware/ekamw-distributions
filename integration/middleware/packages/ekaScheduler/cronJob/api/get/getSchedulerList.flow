@@ -214,7 +214,7 @@
         "state" : {
           "loaded" : true,
           "opened" : false,
-          "selected" : true,
+          "selected" : false,
           "disabled" : false
         },
         "data" : { },
@@ -257,7 +257,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : true,
+        "selected" : false,
         "disabled" : false
       },
       "data" : {
