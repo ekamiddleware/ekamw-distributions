@@ -207,7 +207,7 @@
         "data" : { },
         "children" : [ {
           "id" : "j1_9",
-          "text" : "packages/middleware/pub/service/findReferences",
+          "text" : "packages/middleware/pub/service/validateFlowPath",
           "icon" : null,
           "li_attr" : {
             "id" : "j1_9"
@@ -225,10 +225,10 @@
           "data" : {
             "transformers" : [ {
               "op" : "copy",
-              "from" : "/list",
-              "to" : "/serviceList",
-              "inTypePath" : "documentList",
-              "outTypePath" : "documentList"
+              "from" : "/exist",
+              "to" : "/flowPath",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
             }, {
               "op" : "copy",
               "from" : "/serviceFqn",
@@ -237,19 +237,19 @@
               "outTypePath" : "string"
             } ],
             "lines" : [ {
-              "inputPath" : "list",
-              "outputPath" : "serviceList",
+              "inputPath" : "exist",
+              "outputPath" : "flowPath",
               "inpJsTree" : "#launching_arrow_jsTree_function",
               "outpJsTree" : "#landing_arrow_jsTree",
-              "INPath" : "list",
-              "OUTPath" : "serviceList",
+              "INPath" : "exist",
+              "OUTPath" : "flowPath",
               "op" : "copy",
               "line" : 0,
               "dashedLine" : false,
-              "inType" : "documentList",
-              "outType" : "documentList",
-              "inTypePath" : "documentList",
-              "outTypePath" : "documentList"
+              "inType" : "boolean",
+              "outType" : "boolean",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
             }, {
               "inputPath" : "serviceFqn",
               "outputPath" : "serviceFqn",
@@ -292,76 +292,9 @@
             "status" : "enabled",
             "snap" : "disabled",
             "evaluate" : true,
-            "comment" : "true"
+            "comment" : ""
           },
           "children" : [ {
-            "id" : "j1_18",
-            "text" : "packages/middleware/pub/docList/listSize",
-            "icon" : null,
-            "li_attr" : {
-              "id" : "j1_18"
-            },
-            "a_attr" : {
-              "href" : "#",
-              "id" : "j1_18_anchor"
-            },
-            "state" : {
-              "loaded" : true,
-              "opened" : false,
-              "selected" : false,
-              "disabled" : false
-            },
-            "data" : {
-              "transformers" : [ {
-                "op" : "copy",
-                "from" : "/serviceList",
-                "to" : "/docList",
-                "inTypePath" : "documentList",
-                "outTypePath" : "documentList"
-              }, {
-                "op" : "copy",
-                "from" : "/size",
-                "to" : "/listSize",
-                "inTypePath" : "integer",
-                "outTypePath" : "integer"
-              } ],
-              "lines" : [ {
-                "inputPath" : "serviceList",
-                "outputPath" : "docList",
-                "inpJsTree" : "#launching_arrow_jsTree",
-                "outpJsTree" : "#landing_arrow_jsTree_function",
-                "INPath" : "serviceList",
-                "OUTPath" : "docList",
-                "op" : "copy",
-                "line" : 0,
-                "dashedLine" : false,
-                "inType" : "documentList",
-                "outType" : "documentList",
-                "inTypePath" : "documentList",
-                "outTypePath" : "documentList"
-              }, {
-                "inputPath" : "size",
-                "outputPath" : "listSize",
-                "inpJsTree" : "#launching_arrow_jsTree_function",
-                "outpJsTree" : "#landing_arrow_jsTree",
-                "INPath" : "size",
-                "OUTPath" : "listSize",
-                "op" : "copy",
-                "line" : 0,
-                "dashedLine" : false,
-                "inType" : "integer",
-                "outType" : "integer",
-                "inTypePath" : "integer",
-                "outTypePath" : "integer"
-              } ],
-              "dropList" : [ ],
-              "createList" : [ ],
-              "serviceType" : "service",
-              "condition" : ""
-            },
-            "children" : [ ],
-            "type" : "invoke"
-          }, {
             "id" : "j1_12",
             "text" : "SEQUENCE",
             "icon" : null,
@@ -375,12 +308,12 @@
             "state" : {
               "loaded" : true,
               "opened" : true,
-              "selected" : false,
+              "selected" : true,
               "disabled" : false
             },
             "data" : {
               "evaluate" : false,
-              "condition" : "#{listSize} == 0"
+              "condition" : "!#{flowPath}"
             },
             "children" : [ {
               "id" : "j1_17",
@@ -396,7 +329,7 @@
               "state" : {
                 "loaded" : true,
                 "opened" : false,
-                "selected" : true,
+                "selected" : false,
                 "disabled" : false
               },
               "data" : {
@@ -405,7 +338,7 @@
                 "dropList" : [ ],
                 "createList" : [ {
                   "path" : "message",
-                  "value" : "The flow service doesn't exist.",
+                  "value" : "The service doesn't exist.",
                   "evaluate" : null,
                   "typePath" : "string"
                 } ]
