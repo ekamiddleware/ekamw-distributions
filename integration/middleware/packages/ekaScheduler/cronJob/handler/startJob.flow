@@ -441,7 +441,7 @@
           },
           "state" : {
             "loaded" : true,
-            "opened" : true,
+            "opened" : false,
             "selected" : false,
             "disabled" : false
           },
@@ -862,7 +862,7 @@
           },
           "state" : {
             "loaded" : true,
-            "opened" : true,
+            "opened" : false,
             "selected" : false,
             "disabled" : false
           },
@@ -931,7 +931,7 @@
           },
           "state" : {
             "loaded" : true,
-            "opened" : true,
+            "opened" : false,
             "selected" : false,
             "disabled" : false
           },
@@ -1314,7 +1314,7 @@
         },
         "state" : {
           "loaded" : true,
-          "opened" : true,
+          "opened" : false,
           "selected" : false,
           "disabled" : false
         },
@@ -1335,7 +1335,7 @@
           "state" : {
             "loaded" : true,
             "opened" : false,
-            "selected" : true,
+            "selected" : false,
             "disabled" : false
           },
           "data" : {
@@ -1679,7 +1679,8 @@
               "value" : "yyyy-MM-dd HH:mm:ss",
               "evaluate" : null,
               "typePath" : "string"
-            } ]
+            } ],
+            "comment" : "Preparing parameters"
           },
           "children" : [ ],
           "type" : "map"
@@ -1763,7 +1764,7 @@
           "state" : {
             "loaded" : true,
             "opened" : false,
-            "selected" : false,
+            "selected" : true,
             "disabled" : false
           },
           "data" : {
@@ -1951,7 +1952,8 @@
             } ],
             "dropList" : [ ],
             "createList" : [ ],
-            "serviceType" : "sql"
+            "serviceType" : "sql",
+            "comment" : "Updating run status"
           },
           "children" : [ ],
           "type" : "invoke"
