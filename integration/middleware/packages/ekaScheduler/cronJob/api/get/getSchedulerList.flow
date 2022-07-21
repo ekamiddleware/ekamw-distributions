@@ -257,7 +257,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : false,
+        "selected" : true,
         "disabled" : false
       },
       "data" : {
@@ -529,7 +529,8 @@
         } ],
         "dropList" : [ ],
         "createList" : [ ],
-        "serviceType" : "sql"
+        "serviceType" : "sql",
+        "comment" : "Getting all scheduler records from the database"
       },
       "children" : [ ],
       "type" : "invoke"
@@ -616,7 +617,8 @@
           } ],
           "dropList" : [ ],
           "createList" : [ ],
-          "serviceType" : "sql"
+          "serviceType" : "sql",
+          "comment" : "Getting recent 5 rows form job_history database."
         },
         "children" : [ ],
         "type" : "invoke"
