@@ -207,7 +207,7 @@
         "data" : { },
         "children" : [ {
           "id" : "j1_9",
-          "text" : "packages/middleware/pub/service/findReferences",
+          "text" : "packages/middleware/pub/service/validateFlowPath",
           "icon" : null,
           "li_attr" : {
             "id" : "j1_9"
@@ -225,32 +225,18 @@
           "data" : {
             "transformers" : [ {
               "op" : "copy",
-              "from" : "/list",
-              "to" : "/serviceList",
-              "inTypePath" : "documentList",
-              "outTypePath" : "documentList"
-            }, {
-              "op" : "copy",
               "from" : "/serviceFqn",
               "to" : "/serviceFqn",
               "inTypePath" : "string",
               "outTypePath" : "string"
+            }, {
+              "op" : "copy",
+              "from" : "/exist",
+              "to" : "/exist",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
             } ],
             "lines" : [ {
-              "inputPath" : "list",
-              "outputPath" : "serviceList",
-              "inpJsTree" : "#launching_arrow_jsTree_function",
-              "outpJsTree" : "#landing_arrow_jsTree",
-              "INPath" : "list",
-              "OUTPath" : "serviceList",
-              "op" : "copy",
-              "line" : 0,
-              "dashedLine" : false,
-              "inType" : "documentList",
-              "outType" : "documentList",
-              "inTypePath" : "documentList",
-              "outTypePath" : "documentList"
-            }, {
               "inputPath" : "serviceFqn",
               "outputPath" : "serviceFqn",
               "inpJsTree" : "#launching_arrow_jsTree",
@@ -264,10 +250,25 @@
               "outType" : "string",
               "inTypePath" : "string",
               "outTypePath" : "string"
+            }, {
+              "inputPath" : "exist",
+              "outputPath" : "exist",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "exist",
+              "OUTPath" : "exist",
+              "op" : "copy",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "boolean",
+              "outType" : "boolean",
+              "inTypePath" : "boolean",
+              "outTypePath" : "boolean"
             } ],
             "dropList" : [ ],
             "createList" : [ ],
-            "serviceType" : "service"
+            "serviceType" : "service",
+            "comment" : "Validating whether flow service exists"
           },
           "children" : [ ],
           "type" : "invoke"
@@ -284,7 +285,7 @@
           },
           "state" : {
             "loaded" : true,
-            "opened" : true,
+            "opened" : false,
             "selected" : false,
             "disabled" : false
           },
@@ -292,76 +293,9 @@
             "status" : "enabled",
             "snap" : "disabled",
             "evaluate" : true,
-            "comment" : "true"
+            "comment" : "Conditional block enabling"
           },
           "children" : [ {
-            "id" : "j1_18",
-            "text" : "packages/middleware/pub/docList/listSize",
-            "icon" : null,
-            "li_attr" : {
-              "id" : "j1_18"
-            },
-            "a_attr" : {
-              "href" : "#",
-              "id" : "j1_18_anchor"
-            },
-            "state" : {
-              "loaded" : true,
-              "opened" : false,
-              "selected" : false,
-              "disabled" : false
-            },
-            "data" : {
-              "transformers" : [ {
-                "op" : "copy",
-                "from" : "/serviceList",
-                "to" : "/docList",
-                "inTypePath" : "documentList",
-                "outTypePath" : "documentList"
-              }, {
-                "op" : "copy",
-                "from" : "/size",
-                "to" : "/listSize",
-                "inTypePath" : "integer",
-                "outTypePath" : "integer"
-              } ],
-              "lines" : [ {
-                "inputPath" : "serviceList",
-                "outputPath" : "docList",
-                "inpJsTree" : "#launching_arrow_jsTree",
-                "outpJsTree" : "#landing_arrow_jsTree_function",
-                "INPath" : "serviceList",
-                "OUTPath" : "docList",
-                "op" : "copy",
-                "line" : 0,
-                "dashedLine" : false,
-                "inType" : "documentList",
-                "outType" : "documentList",
-                "inTypePath" : "documentList",
-                "outTypePath" : "documentList"
-              }, {
-                "inputPath" : "size",
-                "outputPath" : "listSize",
-                "inpJsTree" : "#launching_arrow_jsTree_function",
-                "outpJsTree" : "#landing_arrow_jsTree",
-                "INPath" : "size",
-                "OUTPath" : "listSize",
-                "op" : "copy",
-                "line" : 0,
-                "dashedLine" : false,
-                "inType" : "integer",
-                "outType" : "integer",
-                "inTypePath" : "integer",
-                "outTypePath" : "integer"
-              } ],
-              "dropList" : [ ],
-              "createList" : [ ],
-              "serviceType" : "service",
-              "condition" : ""
-            },
-            "children" : [ ],
-            "type" : "invoke"
-          }, {
             "id" : "j1_12",
             "text" : "SEQUENCE",
             "icon" : null,
@@ -380,7 +314,8 @@
             },
             "data" : {
               "evaluate" : false,
-              "condition" : "#{listSize} == 0"
+              "condition" : "!#{exist}",
+              "comment" : "Checking flow service existence output "
             },
             "children" : [ {
               "id" : "j1_17",
@@ -396,7 +331,7 @@
               "state" : {
                 "loaded" : true,
                 "opened" : false,
-                "selected" : true,
+                "selected" : false,
                 "disabled" : false
               },
               "data" : {
@@ -405,10 +340,11 @@
                 "dropList" : [ ],
                 "createList" : [ {
                   "path" : "message",
-                  "value" : "The flow service doesn't exist.",
+                  "value" : "The service doesn't exist.",
                   "evaluate" : null,
                   "typePath" : "string"
-                } ]
+                } ],
+                "comment" : "Initiating error message"
               },
               "children" : [ ],
               "type" : "map"
@@ -454,7 +390,8 @@
                 } ],
                 "dropList" : [ ],
                 "createList" : [ ],
-                "serviceType" : "service"
+                "serviceType" : "service",
+                "comment" : "Throwing error message"
               },
               "children" : [ ],
               "type" : "invoke"
@@ -488,7 +425,8 @@
               "value" : "#{nodeName}",
               "evaluate" : "EGV",
               "typePath" : "string"
-            } ]
+            } ],
+            "comment" : "Initiating Parameters"
           },
           "children" : [ ],
           "type" : "map"
@@ -689,7 +627,8 @@
               "typePath" : "string"
             } ],
             "createList" : [ ],
-            "serviceType" : "sql"
+            "serviceType" : "sql",
+            "comment" : "inserting job information into the database"
           },
           "children" : [ ],
           "type" : "invoke"
@@ -706,12 +645,13 @@
           },
           "state" : {
             "loaded" : true,
-            "opened" : false,
+            "opened" : true,
             "selected" : false,
             "disabled" : false
           },
           "data" : {
-            "switch" : "success"
+            "switch" : "success",
+            "comment" : "Checking data's insert status"
           },
           "children" : [ {
             "id" : "j1_3",
@@ -755,7 +695,8 @@
                 "lines" : [ ],
                 "dropList" : [ ],
                 "createList" : [ ],
-                "serviceType" : "flow"
+                "serviceType" : "flow",
+                "comment" : "Loading newly created job into the memory"
               },
               "children" : [ ],
               "type" : "invoke"
@@ -807,7 +748,8 @@
                   "value" : "Could not create scheduler Job",
                   "evaluate" : null,
                   "typePath" : "string"
-                } ]
+                } ],
+                "comment" : "Initiating error message"
               },
               "children" : [ ],
               "type" : "map"
@@ -830,7 +772,7 @@
         },
         "state" : {
           "loaded" : true,
-          "opened" : false,
+          "opened" : true,
           "selected" : false,
           "disabled" : false
         },
@@ -849,7 +791,7 @@
           "state" : {
             "loaded" : true,
             "opened" : false,
-            "selected" : false,
+            "selected" : true,
             "disabled" : false
           },
           "data" : {
@@ -877,7 +819,8 @@
             } ],
             "dropList" : [ ],
             "createList" : [ ],
-            "serviceType" : "service"
+            "serviceType" : "service",
+            "comment" : "Catching errors"
           },
           "children" : [ ],
           "type" : "invoke"

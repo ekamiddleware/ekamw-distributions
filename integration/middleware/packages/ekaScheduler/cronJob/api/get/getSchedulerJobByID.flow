@@ -375,7 +375,8 @@
           "typePath" : "documentList"
         } ],
         "createList" : [ ],
-        "serviceType" : "sql"
+        "serviceType" : "sql",
+        "comment" : "Getting one scheduler record from the database"
       },
       "children" : [ ],
       "type" : "invoke"
@@ -415,7 +416,7 @@
         "state" : {
           "loaded" : true,
           "opened" : false,
-          "selected" : false,
+          "selected" : true,
           "disabled" : false
         },
         "data" : {
@@ -464,7 +465,8 @@
           "dropList" : [ ],
           "createList" : [ ],
           "serviceType" : "sql",
-          "status" : "enabled"
+          "status" : "enabled",
+          "comment" : "Getting recent 5 rows form job_history database."
         },
         "children" : [ ],
         "type" : "invoke"
