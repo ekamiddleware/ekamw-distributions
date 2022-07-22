@@ -243,7 +243,7 @@
   </main>
   
   
-  <center>
+ 
          <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
             <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
             <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
@@ -254,11 +254,24 @@
                <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
                <h3>Configure Scheduler Job</h3>
                <input type="hidden" id="schedulerJobID">
-                <input type="text" id="schedulerJobName" name="schedulerJobName" placeholder="Job Name" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
-               <input type="text" id="schedulerJobService" name="schedulerJobService" placeholder="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;" readonly /><br>
-               <fieldset id="cronExpressionFieldset">
+                
+				<div class="fq_grid">
+				<label class="l_nm">Enter Job Name</label>
+				<input type="text" id="schedulerJobName" name="schedulerJobName" placeholder="Job Name" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+				</div>
+				
+               <div class="fq_grid">
+			   <label class="l_nm">Service FQN</label>
+			   <input type="text" id="schedulerJobService" name="schedulerJobService" placeholder="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;" readonly /><br>
+			   </div>
+			   
+			   <div class="fq_grid">
+               <label class="l_nm">Cron expression</label>
+			   <fieldset id="cronExpressionFieldset">
                   <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
                </fieldset>
+			   </div>
+			   
                <div class="modal-footer-en">
                   <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
                   <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
@@ -273,7 +286,7 @@
             </div>
          </div>
          </div>
-      </center>
+      
 
   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
     tabindex="-1">
@@ -407,7 +420,7 @@
       </div>
     </div>
   </div>
-  <link rel="stylesheet" href="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.css">
+  <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/assets/css/cron-expression-input.min.css">
       <script src="http://localhost:8080/files/gui/ekaScheduler/manager/web/cultures/langs/en-US.js"></script> <!-- Languague (Optional) -->
       <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
   
