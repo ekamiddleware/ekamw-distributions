@@ -22,7 +22,33 @@
     <div class="row" id="demo" style="display: block;padding: 0px; margin: 0px;">
         <div class="row" style="margin: 0px; padding:0px;">
             <div class="navbar">
-                <input style="float:left;width:158px;" class="srch_sl" placeholder="Search..." id="input_search_panel" />
+                <div class="row">
+				    <div class="col-md-12" style="width:15%; margin: 0px; padding:0px;">
+					<input style="float:left;width:94%;" class="srch_sl" placeholder="Search Input Params..." id="input_search_panel" />
+					</div>
+				    <div class="col-md-12" style="width:70%; margin: 0px; padding:0px;">
+					<div style="margin-left:5px; height:40px;padding-top:4px;" id="currentServiceName"></div>
+						<div style="display: none" id="currentServiceNameNative"></div>
+						<a id="copy" style="display: none;" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
+						<div class="srv-icon">
+						
+						<a title="Save" onclick="save();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/save.svg" alt=""></a>
+						<a title="Reload" onclick="reload();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/reload.svg" alt=""></a>
+						<a title="Test" onclick="swal('Inprogress', '', 'warning')" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/test.svg" alt=""></a>
+						<a title="Configuration" onclick="openConfigurationProprties()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/configuration.svg" alt=""></a>
+						<a title="Lock" onclick="lockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/lock.svg" alt=""></a>
+						<a title="Unlock" onclick="unLockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/unlock.svg" alt=""></a>
+						<a title="Clone" onclick="cloneThisService()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/clone.svg" alt=""></a>
+						
+						<input class="srch_sl" placeholder="Search Flow..." id="flow_search_panel" />
+						
+						</div>
+							
+					</div>
+					<div class="col-md-12" style="width:15%; margin: 0px; padding:0px;">
+						<input class="srch_sl" placeholder="Search Output Params..." id="output_search_panel" />
+					</div>
+				
 				<!-- <div class="dropdown">
                     <button class="dropbtn nw">Service
                         <i class="fa fa-angle-down"></i>
@@ -47,22 +73,9 @@
                                               id="search_q" placeholder="Search">
                   </div>
                 </div>  -->
-                <div style="margin-left: 195px; height:20px;padding-top:4px;" id="currentServiceName"></div>
-                <div style="display: none" id="currentServiceNameNative"></div>
-				<a id="copy" style="display: none;" class="fa fa-clipboard cpy" href="javascript:void(0)"></a>
-				<div class="srv-icon">
+                
 				
-				<input class="srch_sl" placeholder="Search..." id="flow_search_panel" />
 				
-				<a onclick="save();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/save.svg" alt=""></a>
-				<a onclick="reload();" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/reload.svg" alt=""></a>
-				<a onclick="swal('Inprogress', '', 'warning')" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/test.svg" alt=""></a>
-				<a onclick="openConfigurationProprties()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/configuration.svg" alt=""></a>
-				<a onclick="lockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/lock.svg" alt=""></a>
-				<a onclick="unLockArtifact()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/unlock.svg" alt=""></a>
-				<a onclick="cloneThisService()" href="javascript:void(0)"><img src="/files/gui/middleware/pub/server/ui/icons/service/clone.svg" alt=""></a>
-				
-				<input class="srch_sl" placeholder="Search..." id="output_search_panel" />
 				
 				</div>
 				
@@ -383,7 +396,7 @@
         <div id="elementSequence" class="elementSequence" style="padding-bottom:10px;display:none;">
             <input type="checkbox" id="elementSequenceInput" name="elementSequenceInput" checked=false
                    onChange="setFlowElemAttribOnSelected('evaluate',this.checked);">
-            <label style="min-width: 100px;" for="elementSequenceInput"> Enable Condition evaluation</label><br>
+            <label style="min-width: 100px;" for="elementSequenceInput"> Enable condition evaluation on sub-step(s)</label><br>
         </div>
         <div id="elementCase" class="elementCase" style="padding-bottom:10px;display:none;">
             <label for="elementCaseInput">Case: </label> <input class="form-control" type="text" onChange="setFlowElemAttribOnSelected('case',this.value);"

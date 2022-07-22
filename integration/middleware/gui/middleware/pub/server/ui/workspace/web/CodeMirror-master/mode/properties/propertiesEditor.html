@@ -23,8 +23,8 @@
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-               <a href="#" onclick="save();">Save</a>
-               <a href="#" onclick="location.reload();">Reload</a>
+               <a href="javascript:void(0)" onclick="save();">Save</a>
+               <a href="javascript:void(0)" onclick="location.reload();">Reload</a>
             </div>
          </div>
       </div>
@@ -38,7 +38,7 @@
 			response = response.payload;
 			$("#code").val(response);
 		} else {
-			alert(response.payload);
+			console.log(response.payload);
 		}
 		var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 			lineNumbers: true,
@@ -55,7 +55,7 @@
 			if (response.status == 200) {
 				//localStorage.setItem(loadFile, "");
 				//alert("Saved");
-				swal("Saved !!", "Saved", "success");
+				swal("Saved !!", "Your changes has been saved successfully", "success");
 			} else
 				//alert(JSON.parse(response.payload).error);
 				swal('Error', JSON.parse(response.payload).error, 'error');

@@ -13,8 +13,9 @@ try {
     //dataPipeline.log("***********************"+jobMapData);
     List<Map<String,String>> jobList=dataPipeline.getAsList("jobList");
     //dataPipeline.log("***********************a"+jobMapData);
+    jobMapData.clear();
     for(Map<String,String> jobData : jobList){
-      jobMapData.clear();
+      
       //int id=(int)jobData.get("id");
       //jobData.put("id",id+"");
       dataPipeline.log("Updating schedules : "+jobData);

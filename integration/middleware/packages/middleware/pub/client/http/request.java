@@ -9,7 +9,8 @@ import java.util.TreeMap;
 import com.eka.middleware.pub.util.rest.Client;
 import com.eka.middleware.service.DataPipeline;
 import com.eka.middleware.template.SnippetException;
-import com.eka.middleware.pub.util.auth.AWSV4Auth;
+import com.eka.middleware.pub.util.auth.AWSHeaders;
+import com.eka.middleware.pub.util.auth.aws.AWS4SignerForChunkedUpload;
 import java.util.TreeMap;
 public final class request{
 	public static final void main(DataPipeline dataPipeline) throws SnippetException{
@@ -24,12 +25,15 @@ try {
 			Map<String, Map<String, String>> auth = dataPipeline.getAsMap("auth");
 			Map<String, Object> formData = dataPipeline.getAsMap("formData");
 			Map<String, Object> binaryData = dataPipeline.getAsMap("binaryData");
-
+			AWS4SignerForChunkedUpload signer=null;
 			if (reqHeaders == null)
 				reqHeaders = new HashMap<String, String>();
+  		    if(reqHeaders.get("Accept")==null){
+            	reqHeaders.put("Accept","*/*");
+            }
 			String payload = dataPipeline.getString("payload");
 			File binary = null;
-            Map<String, String> headers=new HashMap<String, String>();
+            //Map<String, String> headers=new HashMap<String, String>();
 			//dataPipeline.log(url);
 
 			if (pathParameters != null) {
@@ -73,39 +77,39 @@ try {
 				basicAuthUser = auth.get("basic").get("username");
 				basicAuthPass = auth.get("basic").get("password");
 			} else if (auth!=null && auth.get("awsSignature") != null) {
-				Map<String, String> awsHeaders = new TreeMap<String, String>();
+				//Map<String, String> awsHeaders = new TreeMap<String, String>();
 				String host = auth.get("awsSignature").get("host");
 				//headers.forEach((k,v)->awsHeaders.put(k,v));
-                awsHeaders.put("host", host);
+               // awsHeaders.put("host", host);
                 
 				String AccessKey = auth.get("awsSignature").get("AccessKey");
 				String SecretKey = auth.get("awsSignature").get("SecretKey");
 				String region = auth.get("awsSignature").get("region");
 				String service = auth.get("awsSignature").get("service");
 				String signPayload = auth.get("awsSignature").get("signPayload");
-				String uriTokens[] = url.split(host);
-				String canonicalURI = "";
-				if (uriTokens.length == 2)
-					canonicalURI = url.split(host)[1];
-//              dataPipeline.log("**********************************"+canonicalURI);
+				//String uriTokens[] = url.split(host);
+				//String canonicalURI = "";
+				//if (uriTokens.length == 2)
+				//	canonicalURI = url.split(host)[1];
+              //dataPipeline.log("**********************************"+new String(payloadBytes));
 //				dataPipeline.log(headers.toString());
               
-				if (signPayload != null && signPayload.toLowerCase().equals("true")) {
+				/*if (signPayload != null && signPayload.toLowerCase().equals("true")) {
 					if (payload == null)
 						payload = "";
 					AWSV4Auth.addAwsHeaders(awsHeaders, method, urlParameters, canonicalURI, AccessKey, SecretKey,
 							region, service, payload, payloadBytes);
-				} else {
-					AWSV4Auth.addAwsHeaders(awsHeaders, method, urlParameters, canonicalURI, AccessKey, SecretKey,
-							region, service, null, null);
-				}
-              headers=awsHeaders;
+				} else {*/
+					signer=AWSHeaders.build(reqHeaders, method, urlParameters, url, AccessKey, SecretKey,
+							region, service, payloadBytes);
+				//}
+              //headers=awsHeaders;
 			}
-            final Map<String,String> header=headers;
-            reqHeaders.forEach((k,v)->header.put(k,v));
+            final Map<String,String> headers=reqHeaders;
+           // reqHeaders.forEach((k,v)->header.put(k,v));
 
-			respHandling = Client.invokeREST(0, fullUrlIncludingParams, method, headers, formData, payload, binary,
-					basicAuthUser, basicAuthPass, respHandling, payloadBytes, payloadIS);
+			respHandling = Client.invokeREST(0, fullUrlIncludingParams, method, headers, formData, null, binary,
+					basicAuthUser, basicAuthPass, respHandling, payloadBytes, payloadIS, signer);
 			// dataPipeline.put("respPayload",respHandling.get("body"));
 			// if(respHandling.get("bytes")!=null)
             dataPipeline.put("statusCode", respHandling.get("statusCode"));

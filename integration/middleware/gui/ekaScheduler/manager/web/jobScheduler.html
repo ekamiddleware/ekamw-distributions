@@ -162,13 +162,13 @@ function openUpdateSchedulerJobBox(){
      function getData(){
         var response=syncRestRequest("/ekaScheduler","GET");
         var payload=JSON.parse(response.payload);
-        var length=payload.outputDocList.length;
+        var length=payload.output.length;
         //alert(length);
         for(i=0;i<length;i++){
-          if(payload.outputDocList[i].enabled=="Y")
-          	payload.outputDocList[i].enabled=true;
+          if(payload.output[i].enabled=="Y")
+          	payload.output[i].enabled=true;
         }
-        return payload.outputDocList;
+        return payload.output;
      }
     var table = new Tabulator("#ekaSchedulerTable", {
         data:getData(),
