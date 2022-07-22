@@ -6,7 +6,7 @@
       <title>Scheduler Configurations</title>
       <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://unpkg.com/tabulator-tables@5.2.1/dist/css/tabulator.min.css" rel="stylesheet">
+
       <link rel="shortcut icon" href="https://www.ekamw.org/assets/img/logo/favicon.ico" type="image/x-icon" />
       <link rel="stylesheet" href="index.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
       <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
       <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
-      <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.2.1/dist/js/tabulator.min.js"></script>
+
        <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.min.js"></script>
        <script src="/files/gui/middleware/pub/server/ui/javascript/sweetalert.init.js"></script>
        <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/css/sweetalert.css" />
@@ -201,8 +201,8 @@
                <div class="modal-footer-en">
                   <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
                   <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
-                  <input type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
-                  <label style="min-width: 100px;" for="filePoller" > Poller(1 ms interval) </label>
+                  <input style="display: none;" type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
+                  <label style="min-width: 100px;display: none;" for="filePoller" > Poller(1 ms interval) </label>
                </div>
                <div class="modal-footer" style="padding: 20px 0px;">
                   <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
@@ -441,56 +441,7 @@
               }
               return payload.output;
           }
-          var table = new Tabulator("#ekaSchedulerTable", {
-              data: getData(),
-              columns: [{
-                  title: "ID",
-                  field: "id",
-                  sorter: "number"
-              },
-                  {
-                      title: "Service",
-                      field: "serviceFqn",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Cron",
-                      field: "cron",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Enabled",
-                      field: "enabled",
-                      sorter: "string",
-                      formatter: "tickCross"
-                  },
-                  {
-                      title: "Owner Node",
-                      field: "owner_node",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Last error",
-                      field: "lasterror",
-                      sorter: "date"
-                  },
-                  {
-                      title: "Last run",
-                      field: "last_run",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Next run",
-                      field: "next_run",
-                      sorter: "string"
-                  },
-                  {
-                      title: "Status",
-                      field: "status",
-                      sorter: "string"
-                  }
-              ]
-          });
+
 
           var AUTO_REFRESH = false;
           var tableCronJobs = null;
@@ -559,7 +510,7 @@
 
                   var SchedulerRecord = getDataByID($(this).val());
 
-                  var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new";
+                  var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new&job_name=" + SchedulerRecord.job_name;
                   var response = syncRestRequest(url, "POST", "");
                   if (response.status == 200 && response.payload) {
                       //loadDataTable();
