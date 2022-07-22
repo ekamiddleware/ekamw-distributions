@@ -807,6 +807,11 @@ input[type="search"] {
 			width: auto !important;
 		}
 		
+		
+		.fq_grid .l_nm {
+			padding: 0px 0 5px;
+			font-weight: 400;
+		}
 
 		
 		
