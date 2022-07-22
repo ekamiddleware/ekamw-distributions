@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Eka Middleware Integration Platform</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="/files/gui/middleware/pub/server/ui/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .highlight{
+      padding: .25em 0;
+      background: #FFC107;
+      color: #ffffff;
+    }
+	
+	.modal-header {
+    display: inline-block;
+	}
+	
+	.modal-body li.nav-link.active.in {
+		border-color: transparent;
+	}
+	
+	.modal-body .nav-link{
+	padding: 0;
+	border: none;
+	}
+	
+	
+	cron-expression-input .nav-tabs>li>a{margin-right: 0px !important;}
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="/files/gui/middleware/pub/server/ui/assets/css/sidebars.css" rel="stylesheet">
+  <link href="/files/gui/middleware/pub/server/ui/assets/css/custom.css" rel="stylesheet">
+
+  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script	src="/files/gui/middleware/pub/server/ui/javascript/jstree.min.js"></script>
+  <script src="/files/gui/middleware/pub/server/ui/javascript/jstreetable.js"></script>
+  <script src="/files/gui/middleware/pub/server/ui/javascript/middleware.js"></script>
+
+
+</head>
+
+<body>
+
+  <header class="navbar sticky-top flex-md-nowrap bg-gray">
+    <a class="navbar-brand col-md-3 col-lg-2 px-3" href="#">
+      <img class="ekalogos" src="/files/gui/middleware/pub/server/ui/assets/img/ekalogo.png">
+    </a>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="https://www.ekamw.org/video.html" style="color: #6d6d6d; font-size:13px;"><img style="width:22px;" src="/files/gui/middleware/pub/server/ui/icons/play_icon.svg">&nbsp; Watch Tutorials</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-fluid ">
+      <div class="row">
+
+        <div class="col-lg-1 d-flex flex-column flex-shrink-0 eka-side p-0">
+
+          <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link py-3" aria-current="page" title="Menu" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg class="menu_ico" xmlns="http://www.w3.org/2000/svg" width="33.094" height="15.688" viewBox="0 0 33.094 15.688">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M894.416,90.15h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,90.15Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,96.83Zm0,6.68h-14.7a1.17,1.17,0,0,0,0,2.34h14.7A1.17,1.17,0,0,0,894.416,103.51Zm17.137-7.824a0.97,0.97,0,0,0-.9-0.6h-7.765a0.971,0.971,0,0,0-.686,1.658l3.883,3.885a0.971,0.971,0,0,0,1.372,0l3.883-3.885A0.973,0.973,0,0,0,911.553,95.686Z"
+                    transform="translate(-878.562 -90.156)" />
+                </svg>
+              </a>
+            </li> 
+            <li>
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/workspace.html" class="nav-link py-3 " title="Workspace" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.281" height="25.438" viewBox="0 0 28.281 25.438">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M901.657,166.147H881.874a4.24,4.24,0,0,0-4.24,4.24v11.3a4.24,4.24,0,0,0,4.24,4.24h8.478v2.826H884.7a1.413,1.413,0,0,0,0,2.826h14.131a1.413,1.413,0,1,0,0-2.826h-5.652v-2.826h8.478a4.239,4.239,0,0,0,4.239-4.24v-11.3A4.239,4.239,0,0,0,901.657,166.147Zm1.413,15.544a1.414,1.414,0,0,1-1.413,1.414H881.874a1.413,1.413,0,0,1-1.413-1.414v-11.3a1.412,1.412,0,0,1,1.413-1.413h19.783a1.413,1.413,0,0,1,1.413,1.413v11.3Z"
+                    transform="translate(-877.625 -166.156)" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="/files/gui/ekaScheduler/manager/web/scheduler-new.html" class="nav-link py-3 active" title="Scheduler" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.313" height="28.187" viewBox="0 0 28.313 28.187">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M905.451,243.013h0a1.276,1.276,0,0,0-1.5-.987,1.289,1.289,0,0,0-.26.083,1.274,1.274,0,0,0-.732,1.409,11.545,11.545,0,1,1-2.812-5.491,1.25,1.25,0,0,0-.748.252,1.264,1.264,0,0,0,.581,2.266l3,0.424,0.052-.388,0.049,0.395a1.277,1.277,0,0,0,1.258-1.086l0.42-2.9a1.272,1.272,0,0,0-2.509-.418,14.145,14.145,0,0,0-24.646,7.114,14.017,14.017,0,0,0,11.82,16.046,14.7,14.7,0,0,0,2.212.169A14.089,14.089,0,0,0,905.451,243.013Zm-14.079-5.95a1.27,1.27,0,0,0-1.272,1.266V244.8a2.566,2.566,0,1,0,3.51,3.493h2.758a1.266,1.266,0,1,0,0-2.531H893.61a2.566,2.566,0,0,0-.967-0.962v-6.469A1.27,1.27,0,0,0,891.372,237.063Z"
+                    transform="translate(-877.406 -231.719)" />
+                </svg>
+
+              </a>
+            </li>
+            
+            <li>
+              <a href="/files/gui/middleware/pub/server/ui/workspace/web/documentation.html" class="nav-link py-3" title="Documentation" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg class="docu_ico" xmlns="http://www.w3.org/2000/svg" width="24.563" height="30.563" viewBox="0 0 24.563 30.563">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M899.533,361.024H887.814a2.881,2.881,0,0,0-2.915,2.839v2.976a0.549,0.549,0,0,0,.556.542h1.187a0.55,0.55,0,0,0,.556-0.542v-2.976a0.608,0.608,0,0,1,.616-0.6h11.719a0.608,0.608,0,0,1,.616.6v17.619a0.608,0.608,0,0,1-.616.6h-2.39a0.551,0.551,0,0,0-.557.542v1.156a0.55,0.55,0,0,0,.557.542h2.39a2.881,2.881,0,0,0,2.915-2.839V363.863A2.881,2.881,0,0,0,899.533,361.024ZM892.5,368.3H880.777a2.881,2.881,0,0,0-2.914,2.839v17.619a2.881,2.881,0,0,0,2.914,2.839H892.5a2.881,2.881,0,0,0,2.914-2.839V371.136A2.881,2.881,0,0,0,892.5,368.3Zm-12.336,2.839a0.608,0.608,0,0,1,.615-0.6H892.5a0.607,0.607,0,0,1,.614.6v17.619a0.607,0.607,0,0,1-.614.6H880.777a0.607,0.607,0,0,1-.615-0.6V371.136Z"
+                    transform="translate(-877.875 -361.031)" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+ 
+        <div class="col-lg-11 px-5 p-3 pr-0">
+          <div class="row mb-2">
+            <div class="col-lg-10">
+              <div class="tabletitle">
+                <h5>Scheduler / Details</h5>
+              </div>
+            </div>
+            <div class="col-lg-2 text-right editicosec">
+              <a  class="text-black" href="javascript:renderData();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 19.63 20.156">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: gray;
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <path class="cls-1"
+                    d="M4318.12,118.2l4.96-2.1a2.717,2.717,0,0,0,.33-0.255l8.18-10.22a0.945,0.945,0,0,0-.13-1.2l-3.88-3.294a0.788,0.788,0,0,0-1.13.128l-8.21,10.216a2.026,2.026,0,0,0-.17.387l-1.04,5.43A0.783,0.783,0,0,0,4318.12,118.2Zm9.04-15.228,2.63,2.224-7.12,8.925-2.61-2.207Zm-7.74,10.6,1.78,1.513-2.29.971Zm13.46,5.822h-14.01s-2.91.14-3.02-.625a0.858,0.858,0,0,1,.31-0.7,0.884,0.884,0,0,0-.09-1.2,0.832,0.832,0,0,0-1.17.086c-0.79.983-1,1.838-.62,2.611,1.02,1.952,4.46,1.492,4.63,1.533h13.97a0.85,0.85,0,0,0,.83-0.855A0.841,0.841,0,0,0,4332.88,119.4Z"
+                    transform="translate(-4314.09 -100.969)" />
+                </svg> Edit
+              </a>
+
+            </div>
+          </div>
+          <div class="card p-3 mb-3" style="flex-direction: inherit;">
+            <div class="col-lg-4">
+              <div class="nodetext">Node:<strong id="job_node">...</strong></div>
+              <div class="nodetext">Service name:<strong id="job_service_name">...</strong></div>
+            </div>
+            <div class="col-lg-4">
+              <div class="nodetext">Job:<strong id="job_name">...</strong></div>
+              <div class="nodetext">Cron expression:<strong id="job_cron_exp">...</strong></div>
+            </div>
+            <div class="col-lg-4">
+              <div class="nodetext ">
+                <div class="d-flex">
+                  <span>Enable:</span>
+                  <div class="form-check form-switch" style="margin-left: 7px;">
+                    <input class="success form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+                  </div>
+                </div>
+
+              </div>
+              <div class="nodetext">Created on: <strong id="job_created_on">...</strong></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="tabletitle">
+                <span id="run_history_highlights"></span>
+                <h5>Run History</h5>
+              </div>
+              <div class="ekatable">
+                <div class="customheight ">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Run</th>
+                        <th scope="col">Duration (ms)</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="run_history"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="tabletitle">
+                <h5>Logs (Recent run)</h5>
+              </div>
+              <div class="card p-4 customheight" id="error_panel">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  
+  
+ 
+         <!-- <div id="ekaSchedulerTable" style="width:1162px; margin-top:55px;"></div>
+            <button type="button" onclick="openCreateSchedulerJobBox();" class="btn btn-primary">New</button>
+            <button type="button" onclick="reloadScheduledJobs();" class="btn btn-primary">Reload Scheduled Jobs</button>  -->
+         <div id="createSchedulerJobModelDialog" class="modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content -->
+            <div class="modal-content" style="width:500px;height:auto;align:left; padding: 20px;">
+               <span id="closeSchedulerJobModelDialog" class="close" >&times;</span>
+               <h3>Configure Scheduler Job</h3>
+               <input type="hidden" id="schedulerJobID">
+                
+				<div class="fq_grid">
+				<label class="l_nm">Enter Job Name</label>
+				<input type="text" id="schedulerJobName" name="schedulerJobName" placeholder="Job Name" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;"><br>
+				</div>
+				
+               <div class="fq_grid">
+			   <label class="l_nm">Service FQN</label>
+			   <input type="text" id="schedulerJobService" name="schedulerJobService" placeholder="Service FQN" style="margin-bottom:25px;align:left;height:34px;width:450px;color:d58512; border: solid 1px #ccc;" readonly /><br>
+			   </div>
+			   
+			   <div class="fq_grid">
+               <label class="l_nm">Cron expression</label>
+			   <fieldset id="cronExpressionFieldset">
+                  <cron-expression-input id="schedulerCronExp" height="34px" width="450px" color="d58512" required="false" hotValidate="true" value="* * * * *"></cron-expression-input>
+               </fieldset>
+			   </div>
+			   
+               <div class="modal-footer-en">
+                  <input type="checkbox" id="enableScheduler" name="enableScheduler" value="true">
+                  <label style="min-width: 50px; margin-right:15px" for="enableScheduler"> Enable </label>
+                  <input style="display: none;" type="checkbox" onchange="enableCronExpressionSelector(this)" id="filePoller" name="filePoller" value="false">
+                  <label style="min-width: 100px;display: none;" for="filePoller" > Poller(1 ms interval) </label>
+               </div>
+               <div class="modal-footer" style="padding: 20px 0px;">
+                  <button type="button" id="saveSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Create</button>
+                  <button type="button" id="updateSchedulerJob" style="display:none;float:right;" class="btn btn-primary">Update</button>
+                  <!--<button type="button" id="deleteSchedulerJob" style="display:none;float:right;" class="btn btn-danger">Delete</button>-->
+               </div>
+            </div>
+         </div>
+         </div>
+      
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body mdlpadding">
+          <div class="mdltitle mb-3">
+            <form>
+              <div class="form-group row">
+                <label for="jon" class="col-sm-2 col-form-label text-right">Job:</label>
+                <div class="col-sm-10 p-0">
+                  <input type="password" class="form-control" id="job" placeholder="Enter Job name">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="row mb-5">
+            <label class="col-sm-2 col-form-label text-right">Cron expression:</label>
+
+            <div class="col-sm-10 p-0 mdltabs">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="Minute-tab" data-bs-toggle="tab" data-bs-target="#Minute"
+                    type="button" role="tab" aria-controls="Minute" aria-selected="true">Minute</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="Hours-tab" data-bs-toggle="tab" data-bs-target="#Hours" type="button"
+                    role="tab" aria-controls="Hours" aria-selected="false">Hours</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="Dayofmonth-tab" data-bs-toggle="tab" data-bs-target="#Dayofmonth"
+                    type="button" role="tab" aria-controls="Dayofmonth" aria-selected="false">Day of month</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="Month-tab" data-bs-toggle="tab" data-bs-target="#Month" type="button"
+                    role="tab" aria-controls="Month" aria-selected="false">Month</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="Daysofweek-tab" data-bs-toggle="tab" data-bs-target="#Daysofweek"
+                    type="button" role="tab" aria-controls="Daysofweek" aria-selected="false">Days of week</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="Minute" role="tabpanel" aria-labelledby="Minute-tab">
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      <b>Every minute</b>
+                    </label>
+                  </div>
+
+                  <div class="d-flex mb-3">
+                    <div class="form-check mt-half">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Every
+                      </label>
+                    </div>
+                    <div class="selectbax">
+                      <select class="form-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                    <div class="minutext mt-half">
+                      <b>minute(s) starting at minute </b>
+                    </div>
+                    <div class="selectbax">
+                      <select class="form-select">
+                        <option value="00">00</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="d-flex mb-3">
+                    <div class="form-check mt-half">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Range
+                      </label>
+                    </div>
+                    <div class="selectbax">
+                      <select class="form-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                    <div class="minutext mt-half">
+                      <b>minute(s) through </b>
+                    </div>
+                    <div class="selectbax">
+                      <select class="form-select">
+                        <option value="00">00</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="minutext mt-half">
+                      <b>past the hour</b>
+                    </div>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                      Choice
+                    </label>
+                  </div>
+                  
+                </div>
+                <div class="tab-pane fade" id="Hours" role="tabpanel" aria-labelledby="Hours-tab">b</div>
+                <div class="tab-pane fade" id="Dayofmonth" role="tabpanel" aria-labelledby="Dayofmonth-tab">c</div>
+                <div class="tab-pane fade" id="Month" role="tabpanel" aria-labelledby="Month-tab">d</div>
+                <div class="tab-pane fade" id="Daysofweek" role="tabpanel" aria-labelledby="Daysofweek-tab">e</div>
+              </div>
+            </div>
+          </div>
+          <div class="mdlactions text-right">
+            <a href="" class="btnclose" data-bs-dismiss="modal">Cancel</a>
+            <button class="btn btn-secondary btnok" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+              data-bs-dismiss="modal">OK</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/files/gui/middleware/pub/server/ui/assets/css/cron-expression-input.min.css">
+      <script src="/files/gui/ekaScheduler/manager/web/cultures/langs/en-US.js"></script> <!-- Languague (Optional) -->
+      <script src="https://unpkg.com/cron-expression-input@1.3.1/lib/cron-expression-input.min.js"></script>
+
+  <script src="/files/gui/middleware/pub/server/ui/assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
+
+<script type="text/javascript">
+  Object.defineProperty(String.prototype, 'capitalize', {
+    value: function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+    },
+    enumerable: false
+  });
+
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split("=");
+      if (pair[0] == variable) {
+        return pair[1];
+      }
+    }
+    console.log('Query Variable ' + variable + ' not found');
+    return "#";
+  }
+
+  let SchedulerRecord = {};
+
+  function load(schedulerJobId) {
+    var response = syncRestRequest("/ekaScheduler/" + schedulerJobId, "GET", "");
+    if (response.status == 200 && response.payload) {
+      var payload = JSON.parse(response.payload);
+      SchedulerRecord = payload.output[0];
+      $("#job_node").html(payload.output[0].owner_node);
+      $("#job_name").html(payload.output[0].job_name);
+      $("#job_service_name").html(payload.output[0].serviceFqn);
+      $("#job_cron_exp").html(payload.output[0].cron);
+      $("#job_created_on").html(new Date(payload.output[0].created_time + " UTC"));
+      if (payload.output[0].enabled == "Y") {
+        $("#flexSwitchCheckChecked").prop("checked", true);
+      } else {
+        $("#flexSwitchCheckChecked").prop("checked", false);
+      }
+
+
+
+      let HTML_DATA = "";
+      for (let i = 0; i < payload.output[0].job_history.length; i++) {
+        if (i == 0) {
+          $("#error_panel").append("<p>" + payload.output[0].job_history[i].error + "</p>");
+        }
+        if (getQueryVariable('run_id') == payload.output[0].job_history[i].id) {
+          HTML_DATA += "<tr style='cursor: pointer;' class='history_record highlight' data-id='" + i + "'>";
+        } else {
+          HTML_DATA += "<tr style='cursor: pointer;' class='history_record' data-id='" + i + "'>";
+        }
+        let difference = new Date(payload.output[0].job_history[i].end_time).getTime() - new Date(payload.output[0].job_history[i].start_time).getTime();
+        HTML_DATA += '<td>' + new Date(payload.output[0].job_history[i].start_time + " UTC") + '</td><td><div class="ekatooltipdefault"><span class="durations">' + difference + 'ms</span></div></td>';
+
+        let classNameStatus = "st-success";
+        if (payload.output[0].job_history[i].status == "running") {
+          classNameStatus = "st-warning";
+        } else if (payload.output[0].job_history[i].status == "failed") {
+          classNameStatus = "st-danger";
+        }
+        HTML_DATA += '<td><div class="statusdisplay"><span class="status ' + classNameStatus + '"></span><span class="statusvalue">' + payload.output[0].job_history[i].status.capitalize() + '</span></div></td>';
+        HTML_DATA += "</tr>";
+      }
+      $("#run_history").html(HTML_DATA);
+
+      $(".history_record").click(function() {
+        $("#error_panel").html("<p>" + SchedulerRecord.job_history[$(this).attr('data-id')].error + "</p>");
+      });
+    }
+  }
+
+  $("#flexSwitchCheckChecked").click(function() {
+    var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new&job_name="+ SchedulerRecord.job_name;
+    var response = syncRestRequest(url, "POST", "");
+    if (response.status == 200 && response.payload) {
+      load(SchedulerRecord.id);
+    }
+  });
+
+  load(getQueryVariable("id"));
+
+
+  function openCreateSchedulerJobBox() {
+    var modal = document.getElementById("createSchedulerJobModelDialog");
+    var span = document.getElementById("closeSchedulerJobModelDialog");
+    var saveSchedulerJob = document.getElementById("saveSchedulerJob");
+
+    modal.style.display = "block";
+    saveSchedulerJob.style.display = "block";
+
+
+    $("#schedulerJobID").val("");
+    $("#schedulerJobName").val("");
+    $(".cronInsideInput").val("* * * * *");
+    $(".cronInsideInput").attr("readonly", "readonly");
+    $("#enableScheduler").prop('checked', false);
+    $("#schedulerJobService").val("");
+    $("#filePoller").prop('checked', false);
+    $("#cronExpressionFieldset").prop("disabled", false);
+
+    span.onclick = function() {
+      saveSchedulerJob.style.display = "none";
+      modal.style.display = "none";
+    }
+
+    saveSchedulerJob.onclick = function() {
+      var cronExp = $(".cronInsideInput").val();
+      var enableJob = $("#enableScheduler").prop('checked');
+      if (enableJob == true)
+        enableJob = "Y";
+      else
+        enableJob = "N";
+      var filePoller = $("#filePoller").prop('checked');
+      if (filePoller == true)
+        cronExp = "0";
+
+      var serviceFqn = $("#schedulerJobService").val();
+      var url = "/ekaScheduler?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new" +
+              "&job_name=" + $("#schedulerJobName").val();
+      //alert(url);
+      var response = syncRestRequest(url, "POST", "");
+      if (response.status == 200 && response.payload) {
+        response = response.payload;
+        loadDataTable();
+        //alert(response);
+      }
+      saveSchedulerJob.style.display = "none";
+      modal.style.display = "none";
+    }
+  }
+
+  function openUpdateSchedulerJobBox() {
+    var modal = document.getElementById("createSchedulerJobModelDialog");
+    var span = document.getElementById("closeSchedulerJobModelDialog");
+    var updateSchedulerJob = document.getElementById("updateSchedulerJob");
+    var deleteSchedulerJob = document.getElementById("deleteSchedulerJob");
+    modal.style.display = "block";
+    updateSchedulerJob.style.display = "block";
+    //deleteSchedulerJob.style.display = "block";
+    span.onclick = function() {
+      updateSchedulerJob.style.display = "none";
+      modal.style.display = "none";
+      //deleteSchedulerJob.style.display = "none";
+    }
+    /*deleteSchedulerJob.onclick = function() {
+                 var schedulerJobId = $("#schedulerJobID").val();
+                 deleteJob(schedulerJobId);
+             }*/
+
+
+    updateSchedulerJob.onclick = function() {
+      var schedulerJobId = $("#schedulerJobID").val();
+      var cronExp = $(".cronInsideInput").val();
+      var enableJob = $("#enableScheduler").prop('checked');
+      if (enableJob == true)
+        enableJob = "Y";
+      else
+        enableJob = "N";
+      var serviceFqn = $("#schedulerJobService").val();
+      var filePoller = $("#filePoller").prop('checked');
+      if (filePoller == true)
+        cronExp = "0";
+      var url = "/ekaScheduler/" + schedulerJobId + "?cronExpression=" + cronExp + "&enabled=" + enableJob + "&serviceFqn=" + serviceFqn + "&status=new" +
+              "&job_name=" + $("#schedulerJobName").val();
+      //alert(url);
+      var response = syncRestRequest(url, "POST", "");
+      if (response.status == 200 && response.payload) {
+        response = response.payload;
+        load(schedulerJobId);
+      }
+      updateSchedulerJob.style.display = "none";
+      modal.style.display = "none";
+      //deleteSchedulerJob.style.display = "none";
+    }
+  }
+
+
+  function renderData() {
+    var schedulerID = getQueryVariable("id");
+    var data = SchedulerRecord;
+    openUpdateSchedulerJobBox();
+    $("#schedulerJobID").val(data.id);
+    $(".cronInsideInput").val(data.cron);
+    if (data.cron == "0") {
+      $("#filePoller").prop('checked', true);
+      $("#cronExpressionFieldset").prop("disabled", true);
+    } else {
+      $("#filePoller").prop('checked', false);
+      $("#cronExpressionFieldset").prop("disabled", false);
+    }
+
+    $("#schedulerJobName").val(data.job_name);
+
+    var enableJob = data.enabled;
+    //alert(enableJob);
+    if (enableJob == "Y")
+      $("#enableScheduler").prop('checked', true);
+    else
+      $("#enableScheduler").prop('checked', false);
+    $("#schedulerJobService").val(data.serviceFqn);
+  }
+
+</script>
+
+</body>
+
+</html>

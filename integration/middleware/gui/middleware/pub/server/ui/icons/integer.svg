@@ -6,23 +6,7 @@
       }
 
       .cls-2 {
-        fill: none;
-        stroke: #010101;
-        stroke-width: 1px;
-      }
-
-      .cls-2, .cls-3 {
         fill-rule: evenodd;
-      }
-
-      .cls-3 {
-        fill: #84857d;
-      }
-
-      .cls-4 {
-        font-size: 44.944px;
-        fill: #010101;
-        font-family: Verdana;
       }
     </style>
     <filter id="filter" filterUnits="userSpaceOnUse">
@@ -31,11 +15,10 @@
       <feBlend result="blend" in2="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="integer">
-    <g class="cls-1">
-      <path class="cls-2" d="M1360.43,82.127h-16.6" transform="translate(-1342 -77)"/>
-      <path class="cls-3" d="M1358.5,79.4a1.1,1.1,0,0,1,1.1,1.1v13a1.1,1.1,0,0,1-1.1,1.1h-13a1.1,1.1,0,0,1-1.1-1.1v-13a1.1,1.1,0,0,1,1.1-1.1h13m0-1.4h-13a2.5,2.5,0,0,0-2.5,2.5v13a2.5,2.5,0,0,0,2.5,2.5h13a2.5,2.5,0,0,0,2.5-2.5v-13a2.5,2.5,0,0,0-2.5-2.5h0Z" transform="translate(-1342 -77)"/>
-      <text id="_x_" data-name="(x)" class="cls-4" transform="translate(4.15 13.077) scale(0.169)">(x)</text>
+  <g id="Integer_" data-name="Integer ">
+    <g id="_12" data-name="12" class="cls-1">
+      <path id="outer" class="cls-2" d="M482,2h18V19H482V2h0Zm0.849,0.8h16.3V18.2h-16.3V2.8h0Z" transform="translate(-481)"/>
+      <path id="_12-2" data-name="12" class="cls-2" d="M486.153,8.731h-1.711V7.046h1.711V6.127h1.711v7.046h1.711v1.685h-5.133V13.174h1.711V8.731Zm6.221-.919h3.577V9.65h-2.177a2.119,2.119,0,0,0-1.4,1.379v3.845h5.132v-1.7h-3.421V11.335h1.866A1.911,1.911,0,0,0,497.662,9.8V7.659a1.88,1.88,0,0,0-1.555-1.532h-3.733V7.812Z" transform="translate(-481)"/>
     </g>
   </g>
 </svg>

@@ -1,0 +1,52 @@
+{
+  "input" : [ {
+    "id" : "j1_1",
+    "text" : "serviceFqn",
+    "icon" : null,
+    "li_attr" : {
+      "id" : "j1_1"
+    },
+    "a_attr" : {
+      "href" : "#",
+      "id" : "j1_1_anchor"
+    },
+    "state" : {
+      "loaded" : true,
+      "opened" : false,
+      "selected" : false,
+      "disabled" : false
+    },
+    "data" : { },
+    "children" : [ ],
+    "type" : "string"
+  } ],
+  "output" : [ {
+    "id" : "j2_1",
+    "text" : "exist",
+    "icon" : null,
+    "li_attr" : {
+      "id" : "j2_1"
+    },
+    "a_attr" : {
+      "href" : "#",
+      "id" : "j2_1_anchor"
+    },
+    "state" : {
+      "loaded" : true,
+      "opened" : false,
+      "selected" : false,
+      "disabled" : false
+    },
+    "data" : { },
+    "children" : [ ],
+    "type" : "boolean"
+  } ],
+  "package" : "cGFja2FnZSBwYWNrYWdlcy5taWRkbGV3YXJlLnB1Yi5zZXJ2aWNlOw==",
+  "imports" : "aW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS5zZXJ2aWNlLkRhdGFQaXBlbGluZTsKaW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS5zZXJ2aWNlLlNlcnZpY2VVdGlsczsKaW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS50ZW1wbGF0ZS5TbmlwcGV0RXhjZXB0aW9uOwppbXBvcnQgb3JnLmFwYWNoZS5jb21tb25zLmxhbmczLlN0cmluZ1V0aWxzOwppbXBvcnQgamF2YS5pby5GaWxlOwppbXBvcnQgY29tLmVrYS5taWRkbGV3YXJlLnNlcnZlci5TZXJ2aWNlTWFuYWdlcjsK",
+  "main" : "dHJ5IHsKCQlTdHJpbmcgc2VydmljZUZxbj1kYXRhUGlwZWxpbmUuZ2V0U3RyaW5nKCJzZXJ2aWNlRnFuIik7CiAgICAgICAgc2VydmljZUZxbiA9IFN0cmluZ1V0aWxzLnJlcGxhY2Uoc2VydmljZUZxbiwgIi4iLCBGaWxlLnNlcGFyYXRvcik7CiAgICAgICAgU3RyaW5nIHBhY2thZ2VEaXJlY3Rvcnk9IFNlcnZpY2VNYW5hZ2VyLnBhY2thZ2VQYXRoICsgc2VydmljZUZxbiArICIuZmxvdyI7CiAgICAgICAgRmlsZSBmaWxlPW5ldyBGaWxlKHBhY2thZ2VEaXJlY3RvcnkgKTsKICAJCQogICAgICAgIC8vZGF0YVBpcGVsaW5lLmxvZygiKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKipcbiIrbGlzdCk7CiAgICAgICAgZGF0YVBpcGVsaW5lLnB1dCgiZXhpc3QiLCBmaWxlLmV4aXN0cygpKTsKICB9IGNhdGNoIChFeGNlcHRpb24gZSkgewoJCWRhdGFQaXBlbGluZS5jbGVhcigpOwogIAkJZGF0YVBpcGVsaW5lLnB1dCgiZXJyb3IiLGUuZ2V0TWVzc2FnZSgpKTsKICAgIAl0aHJvdyBuZXcgU25pcHBldEV4Y2VwdGlvbihkYXRhUGlwZWxpbmUsIlNuaXBwZXQgZXhjZXB0aW9uIiwgbmV3IEV4Y2VwdGlvbihlKSk7CiAgfQoKCg==",
+  "staticWorkspace" : "",
+  "version" : "v1",
+  "consumers" : "",
+  "developers" : "",
+  "lockedByUser" : "ekaDev"
+}

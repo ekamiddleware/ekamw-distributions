@@ -23,7 +23,8 @@ try {
     //dataPipeline.log("***********_________________***"+jobMapData);
     dataPipeline.put("jobMapData",jobMapData);
     //jobMapData.put("active",new HashMap<String,String>());
-    if(!schedulerThread.isAlive()){
+    if(schedulerThread==null || !schedulerThread.isAlive()){
+      schedulerThread=new Thread(runnable);
       dataPipeline.log("Attempting to start the scheduler thread....");
       schedulerThread.start();
       dataPipeline.log("Scheduler thread started");
@@ -36,19 +37,21 @@ try {
     	throw new SnippetException(dataPipeline,"Snippet exception", new Exception(e));
   }
 	}
-private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu/MM/dd HH:mm:ss");
+private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
 private static final Map<String,Map<String,String>> jobMapData=new ConcurrentHashMap<String,Map<String,String>>();
-	private static Thread schedulerThread=new Thread(new Runnable() {
-	
+private static Thread schedulerThread=null;
+private static boolean canRun=true;
+private static Runnable runnable = new Runnable() {
 	@Override
 	public void run() {
+        canRun=true;
         final String uuidThread = ServiceUtils.generateUUID("Job Scheduler thread - packages.ekaScheduler.cronJob.services.getSchedulerJobData.java" + System.nanoTime());
         final RuntimePipeline rpThread = RuntimePipeline.create(uuidThread, null, null, "packages.ekaScheduler.cronJob.services.java.getSchedulerJobData.main", "");
         final DataPipeline dpThread=rpThread.dataPipeLine;
 		int counter=1;
         int logFrequency=1;
         int check=0;
-        while(jobMapData!=null) {
+        while(jobMapData!=null && schedulerThread.isAlive() && canRun) {
 			try {
 				Set<String> jobIds=jobMapData.keySet();
                 if(counter==1)
@@ -89,6 +92,8 @@ private static final Map<String,Map<String,String>> jobMapData=new ConcurrentHas
                                     jobData.put("internal_status","running");
                                     jobData.put("start_time",dtf.format(startedAt));
                                     jobData.put("end_time","");
+                                	jobData.put("correlationId", uuid);
+                                	jobData.put("sessionId", uuidThread);
                                     jobData.put("next_run",getNextInstant(cronExpression)+"");
                         			dp.put("jobData",jobData);
                                     dp.log("Calling startJob for "+serviceFqn+" at time: "+startedAt);
@@ -122,7 +127,7 @@ private static final Map<String,Map<String,String>> jobMapData=new ConcurrentHas
 		}
         rpThread.destroy();
 	  }
-   });
+   };
 
 private static Instant getNextInstant(String cronExpression) {
         if(cronExpression.equals("0"))

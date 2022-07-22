@@ -720,7 +720,7 @@ function packagesContextMenu(node, id)
         };
     }
 
-    if(node.type == "package") {
+    if(node.type == "package" || node.type == "folder") {
         items.new.submenu.folder= {
             label: "New Folder",
             action: function (e) {
@@ -730,7 +730,7 @@ function packagesContextMenu(node, id)
         };
     }
 
-    if(node.type == "package") {
+    if(node.type == "package" && false) {
 
         items.new.submenu.configurations = {
             label: "Configurations",
@@ -1105,10 +1105,10 @@ function createPackageJstree(id) {
                         "icon" : "/files/gui/middleware/pub/server/ui/icons/jar.svg",
                         "valid_children" : []
                     },"jdbc" : {
-                        "icon" : "/files/gui/middleware/pub/server/ui/icons/jdbc.png",
+                        "icon" : "/files/gui/middleware/pub/server/ui/icons/jdbc.svg",
                         "valid_children" : []
                     },"sql" : {
-                        "icon" : "/files/gui/middleware/pub/server/ui/icons/sql.png",
+                        "icon" : "/files/gui/middleware/pub/server/ui/icons/sql.svg",
                         "valid_children" : []
                     }
                 },
@@ -1381,6 +1381,10 @@ var NEW_ITEM_TYPE = null;
 
 function createItemInSchema() {
 
+    if (NEW_ITEM_TYPE == "package") {
+        packageManagerJsTreeRef.open_node("#" + NEW_ITEM_SEL + "_anchor");
+    }
+
     var text = $("#packages_item_name").val();
 
     if (!validateNewItemName(text)) {
@@ -1396,7 +1400,41 @@ function createItemInSchema() {
         "type" : NEW_ITEM_TYPE
     });
     if (NEW_ITEM_SEL){
-        $("#" + NEW_ITEM_SEL + "_anchor").trigger('click');
+        if (NEW_ITEM_TYPE == "package") {
+
+            var OLD_NEW_ITEM_SEL = NEW_ITEM_SEL;
+            var PACKAGE = OLD_NEW_ITEM_SEL;
+            $("#" + NEW_ITEM_SEL + "_anchor").trigger('click');
+            var ref = $("#" + NEW_ITEM_SEL + "_anchor").jstree(true);
+            NEW_ITEM_SEL = ref.create_node(ref.get_selected(), {
+                "text" : "dependency",
+                "type" : "folder"
+            });
+            packageManagerJsTreeRef.open_node("#" + OLD_NEW_ITEM_SEL + "_anchor");
+            OLD_NEW_ITEM_SEL = NEW_ITEM_SEL;
+
+            $("#" + NEW_ITEM_SEL + "_anchor").trigger('click');
+            ref = $("#" + NEW_ITEM_SEL + "_anchor").jstree(true);
+            NEW_ITEM_SEL = ref.create_node(ref.get_selected(), {
+                "text" : "config",
+                "type" : "folder"
+            });
+            packageManagerJsTreeRef.open_node("#" + OLD_NEW_ITEM_SEL + "_anchor");
+            OLD_NEW_ITEM_SEL = NEW_ITEM_SEL;
+
+            $("#" + NEW_ITEM_SEL + "_anchor").trigger('click');
+            ref = $("#" + NEW_ITEM_SEL + "_anchor").jstree(true);
+            NEW_ITEM_SEL = ref.create_node(ref.get_selected(), {
+                "text" : "package",
+                "type" : "properties"
+            });
+            $("#" + PACKAGE + "_anchor").trigger('click');
+            packageManagerJsTreeRef.close_node("#" + PACKAGE + "_anchor");
+
+            syncRestRequest("/files/packages/" + text + "/dependency/config/package.properties", "POST");
+
+        }
+
         $('#closeExportNameItemPromptModelDialog').trigger('click');
         NEW_ITEM_REF = null;
         NEW_ITEM_SEL = null;

@@ -4,7 +4,7 @@
     "input" : [ {
       "id" : "j2_1",
       "text" : "*pathParameters",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/doc.svg",
+      "icon" : null,
       "li_attr" : {
         "id" : "j2_1"
       },
@@ -22,7 +22,7 @@
       "children" : [ {
         "id" : "j2_2",
         "text" : "id",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+        "icon" : null,
         "li_attr" : {
           "id" : "j2_2"
         },
@@ -45,7 +45,7 @@
     "output" : [ {
       "id" : "j3_1",
       "text" : "success",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/boolean.svg",
+      "icon" : null,
       "li_attr" : {
         "id" : "j3_1"
       },
@@ -66,7 +66,7 @@
     "flow" : [ {
       "id" : "j1_2",
       "text" : "packages/ekaScheduler/cronJob/adapter/services/DML/deleterScheduler",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.svg",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_2"
       },
@@ -84,7 +84,7 @@
         "transformers" : [ {
           "op" : "copy",
           "from" : "/*pathParameters/id",
-          "to" : "/inputDocList/#0/id",
+          "to" : "/inputDocList/0/id",
           "inTypePath" : "document/string",
           "outTypePath" : "documentList/string"
         }, {
@@ -125,14 +125,15 @@
         } ],
         "dropList" : [ ],
         "createList" : [ ],
-        "serviceType" : "sql"
+        "serviceType" : "sql",
+        "comment" : "Delete the job corresponding to the id"
       },
       "children" : [ ],
       "type" : "invoke"
     }, {
       "id" : "j1_3",
       "text" : "SWITCH",
-      "icon" : "/files/gui/middleware/pub/server/ui/icons/switch.svg",
+      "icon" : null,
       "li_attr" : {
         "id" : "j1_3"
       },
@@ -143,16 +144,17 @@
       "state" : {
         "loaded" : true,
         "opened" : true,
-        "selected" : false,
+        "selected" : true,
         "disabled" : false
       },
       "data" : {
-        "switch" : "success"
+        "switch" : "success",
+        "comment" : "It will execute if above query will succeed"
       },
       "children" : [ {
         "id" : "j1_4",
         "text" : "CASE",
-        "icon" : "/files/gui/middleware/pub/server/ui/icons/sequence.svg",
+        "icon" : null,
         "li_attr" : {
           "id" : "j1_4"
         },
@@ -172,7 +174,7 @@
         "children" : [ {
           "id" : "j1_5",
           "text" : "packages/ekaScheduler/cronJob/handler/loadSchedulerJobs",
-          "icon" : "/files/gui/middleware/pub/server/ui/icons/invoke.svg",
+          "icon" : null,
           "li_attr" : {
             "id" : "j1_5"
           },
@@ -187,11 +189,12 @@
             "disabled" : false
           },
           "data" : {
-            "transformers" : null,
-            "lines" : null,
+            "transformers" : [ ],
+            "lines" : [ ],
             "dropList" : [ ],
             "createList" : [ ],
-            "serviceType" : "flow"
+            "serviceType" : "flow",
+            "comment" : "Removing the deleted job from memory."
           },
           "children" : [ ],
           "type" : "invoke"

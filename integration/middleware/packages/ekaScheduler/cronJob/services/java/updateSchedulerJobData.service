@@ -2,7 +2,7 @@
   "input" : [ {
     "id" : "j1_1",
     "text" : "jobList",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/docList.svg",
+    "icon" : null,
     "li_attr" : {
       "id" : "j1_1"
     },
@@ -17,92 +17,92 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ {
+      "id" : "j1_2",
+      "text" : "id",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_2"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_2_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    }, {
+      "id" : "j1_3",
+      "text" : "cronExpression",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_3"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_3_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    }, {
+      "id" : "j1_4",
+      "text" : "serviceFqn",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_4"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_4_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    }, {
+      "id" : "j1_6",
+      "text" : "enabled",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_6"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_6_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    } ],
     "type" : "documentList"
-  }, {
-    "id" : "j1_2",
-    "text" : "id",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
-    "li_attr" : {
-      "id" : "j1_2"
-    },
-    "a_attr" : {
-      "href" : "#",
-      "id" : "j1_2_anchor"
-    },
-    "state" : {
-      "loaded" : true,
-      "opened" : false,
-      "selected" : false,
-      "disabled" : false
-    },
-    "data" : { },
-    "parent" : "j1_1",
-    "type" : "string"
-  }, {
-    "id" : "j1_3",
-    "text" : "cronExpression",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
-    "li_attr" : {
-      "id" : "j1_3"
-    },
-    "a_attr" : {
-      "href" : "#",
-      "id" : "j1_3_anchor"
-    },
-    "state" : {
-      "loaded" : true,
-      "opened" : false,
-      "selected" : false,
-      "disabled" : false
-    },
-    "data" : { },
-    "parent" : "j1_1",
-    "type" : "string"
-  }, {
-    "id" : "j1_4",
-    "text" : "serviceFqn",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
-    "li_attr" : {
-      "id" : "j1_4"
-    },
-    "a_attr" : {
-      "href" : "#",
-      "id" : "j1_4_anchor"
-    },
-    "state" : {
-      "loaded" : true,
-      "opened" : false,
-      "selected" : false,
-      "disabled" : false
-    },
-    "data" : { },
-    "parent" : "j1_1",
-    "type" : "string"
-  }, {
-    "id" : "j1_6",
-    "text" : "enabled",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
-    "li_attr" : {
-      "id" : "j1_6"
-    },
-    "a_attr" : {
-      "href" : "#",
-      "id" : "j1_6_anchor"
-    },
-    "state" : {
-      "loaded" : true,
-      "opened" : false,
-      "selected" : false,
-      "disabled" : false
-    },
-    "data" : { },
-    "parent" : "j1_1",
-    "type" : "string"
   }, {
     "id" : "j1_5",
     "text" : "jobMapData",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/javaObject.svg",
+    "icon" : null,
     "li_attr" : {
       "id" : "j1_5"
     },
@@ -117,13 +117,13 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "javaObject"
   } ],
   "output" : [ {
     "id" : "j2_1",
     "text" : "msg",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_1"
     },
@@ -138,12 +138,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "string"
   }, {
     "id" : "j2_2",
     "text" : "error",
-    "icon" : "/files/gui/middleware/pub/server/ui/icons/text.svg",
+    "icon" : null,
     "li_attr" : {
       "id" : "j2_2"
     },
@@ -158,12 +158,12 @@
       "disabled" : false
     },
     "data" : { },
-    "parent" : "#",
+    "children" : [ ],
     "type" : "string"
   } ],
   "package" : "cGFja2FnZSBwYWNrYWdlcy5la2FTY2hlZHVsZXIuY3JvbkpvYi5zZXJ2aWNlcy5qYXZhOw==",
   "imports" : "aW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS5zZXJ2aWNlLkRhdGFQaXBlbGluZTsKaW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS5zZXJ2aWNlLlNlcnZpY2VVdGlsczsKaW1wb3J0IGNvbS5la2EubWlkZGxld2FyZS50ZW1wbGF0ZS5TbmlwcGV0RXhjZXB0aW9uOwoKaW1wb3J0IGphdmEudXRpbC4qOwppbXBvcnQgamF2YS51dGlsLmNvbmN1cnJlbnQuQ29uY3VycmVudEhhc2hNYXA7",
-  "main" : "dHJ5IHsKICAKICAgIE1hcDxTdHJpbmcsTWFwPFN0cmluZyxTdHJpbmc+PiBqb2JNYXBEYXRhPShNYXA8U3RyaW5nLE1hcDxTdHJpbmcsU3RyaW5nPj4pZGF0YVBpcGVsaW5lLmdldCgiam9iTWFwRGF0YSIpOwogICAgLy9kYXRhUGlwZWxpbmUubG9nKCIqKioqKioqKioqKioqKioqKioqKioqKiIram9iTWFwRGF0YSk7CiAgICBMaXN0PE1hcDxTdHJpbmcsU3RyaW5nPj4gam9iTGlzdD1kYXRhUGlwZWxpbmUuZ2V0QXNMaXN0KCJqb2JMaXN0Iik7CiAgICAvL2RhdGFQaXBlbGluZS5sb2coIioqKioqKioqKioqKioqKioqKioqKioqYSIram9iTWFwRGF0YSk7CiAgICBmb3IoTWFwPFN0cmluZyxTdHJpbmc+IGpvYkRhdGEgOiBqb2JMaXN0KXsKICAgICAgam9iTWFwRGF0YS5jbGVhcigpOwogICAgICAvL2ludCBpZD0oaW50KWpvYkRhdGEuZ2V0KCJpZCIpOwogICAgICAvL2pvYkRhdGEucHV0KCJpZCIsaWQrIiIpOwogICAgICBkYXRhUGlwZWxpbmUubG9nKCJVcGRhdGluZyBzY2hlZHVsZXMgOiAiK2pvYkRhdGEpOwogICAgICBNYXA8U3RyaW5nLFN0cmluZz4gamQ9am9iTWFwRGF0YS5nZXQoam9iRGF0YS5nZXQoImlkIikrIiIpOwogICAgICAvL2RhdGFQaXBlbGluZS5sb2coInVwZGF0ZVNjaGVkdWxlcioqKioqKioqKioqKioqKioqKioqKioqMiIpOwogICAgICBpZihqZCE9bnVsbCl7CiAgICAgICAgLy9kYXRhUGlwZWxpbmUubG9nKCJ1cGRhdGVTY2hlZHVsZXIqKioqKioqKioqKioqKioqKioqKioqKjMiKTsKICAgICAgICBqZC5wdXQoImNyb25FeHByZXNzaW9uIixqb2JEYXRhLmdldCgiY3JvbkV4cHJlc3Npb24iKSk7CiAgICAgICAgamQucHV0KCJlbmFibGVkIixqb2JEYXRhLmdldCgiZW5hYmxlZCIpKTsKICAgICAgfWVsc2UKICAgICAgICBqb2JNYXBEYXRhLnB1dChqb2JEYXRhLmdldCgiaWQiKSsiIixqb2JEYXRhKTsKICAgIH0KICAgIGRhdGFQaXBlbGluZS5jbGVhcigpOwogICAgZGF0YVBpcGVsaW5lLnB1dCgibXNnIiwiU3VjY2VzcyIpOwogIH0gY2F0Y2ggKEV4Y2VwdGlvbiBlKSB7CgkJZGF0YVBpcGVsaW5lLmNsZWFyKCk7CiAgCQlkYXRhUGlwZWxpbmUucHV0KCJlcnJvciIsZS5nZXRNZXNzYWdlKCkpOwogICAgCXRocm93IG5ldyBTbmlwcGV0RXhjZXB0aW9uKGRhdGFQaXBlbGluZSwiU25pcHBldCBleGNlcHRpb24iLCBuZXcgRXhjZXB0aW9uKGUpKTsKICB9",
+  "main" : "dHJ5IHsKICAKICAgIE1hcDxTdHJpbmcsTWFwPFN0cmluZyxTdHJpbmc+PiBqb2JNYXBEYXRhPShNYXA8U3RyaW5nLE1hcDxTdHJpbmcsU3RyaW5nPj4pZGF0YVBpcGVsaW5lLmdldCgiam9iTWFwRGF0YSIpOwogICAgLy9kYXRhUGlwZWxpbmUubG9nKCIqKioqKioqKioqKioqKioqKioqKioqKiIram9iTWFwRGF0YSk7CiAgICBMaXN0PE1hcDxTdHJpbmcsU3RyaW5nPj4gam9iTGlzdD1kYXRhUGlwZWxpbmUuZ2V0QXNMaXN0KCJqb2JMaXN0Iik7CiAgICAvL2RhdGFQaXBlbGluZS5sb2coIioqKioqKioqKioqKioqKioqKioqKioqYSIram9iTWFwRGF0YSk7CiAgICBqb2JNYXBEYXRhLmNsZWFyKCk7CiAgICBmb3IoTWFwPFN0cmluZyxTdHJpbmc+IGpvYkRhdGEgOiBqb2JMaXN0KXsKICAgICAgCiAgICAgIC8vaW50IGlkPShpbnQpam9iRGF0YS5nZXQoImlkIik7CiAgICAgIC8vam9iRGF0YS5wdXQoImlkIixpZCsiIik7CiAgICAgIGRhdGFQaXBlbGluZS5sb2coIlVwZGF0aW5nIHNjaGVkdWxlcyA6ICIram9iRGF0YSk7CiAgICAgIE1hcDxTdHJpbmcsU3RyaW5nPiBqZD1qb2JNYXBEYXRhLmdldChqb2JEYXRhLmdldCgiaWQiKSsiIik7CiAgICAgIC8vZGF0YVBpcGVsaW5lLmxvZygidXBkYXRlU2NoZWR1bGVyKioqKioqKioqKioqKioqKioqKioqKioyIik7CiAgICAgIGlmKGpkIT1udWxsKXsKICAgICAgICAvL2RhdGFQaXBlbGluZS5sb2coInVwZGF0ZVNjaGVkdWxlcioqKioqKioqKioqKioqKioqKioqKioqMyIpOwogICAgICAgIGpkLnB1dCgiY3JvbkV4cHJlc3Npb24iLGpvYkRhdGEuZ2V0KCJjcm9uRXhwcmVzc2lvbiIpKTsKICAgICAgICBqZC5wdXQoImVuYWJsZWQiLGpvYkRhdGEuZ2V0KCJlbmFibGVkIikpOwogICAgICB9ZWxzZQogICAgICAgIGpvYk1hcERhdGEucHV0KGpvYkRhdGEuZ2V0KCJpZCIpKyIiLGpvYkRhdGEpOwogICAgfQogICAgZGF0YVBpcGVsaW5lLmNsZWFyKCk7CiAgICBkYXRhUGlwZWxpbmUucHV0KCJtc2ciLCJTdWNjZXNzIik7CiAgfSBjYXRjaCAoRXhjZXB0aW9uIGUpIHsKCQlkYXRhUGlwZWxpbmUuY2xlYXIoKTsKICAJCWRhdGFQaXBlbGluZS5wdXQoImVycm9yIixlLmdldE1lc3NhZ2UoKSk7CiAgICAJdGhyb3cgbmV3IFNuaXBwZXRFeGNlcHRpb24oZGF0YVBpcGVsaW5lLCJTbmlwcGV0IGV4Y2VwdGlvbiIsIG5ldyBFeGNlcHRpb24oZSkpOwogIH0=",
   "staticWorkspace" : "",
   "version" : "v1",
   "consumers" : "",
