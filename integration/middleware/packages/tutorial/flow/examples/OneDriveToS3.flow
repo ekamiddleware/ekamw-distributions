@@ -1,0 +1,1491 @@
+{
+  "latest" : {
+    "createdTS" : "",
+    "input" : [ ],
+    "output" : [ {
+      "id" : "j3_4",
+      "text" : "oneDriveFiles",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_4"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_4_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "documentList"
+    }, {
+      "id" : "j3_2",
+      "text" : "s3Files",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_2"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_2_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "documentList"
+    }, {
+      "id" : "j3_3",
+      "text" : "fileList",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_3"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_3_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "documentList"
+    }, {
+      "id" : "j3_5",
+      "text" : "message",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j3_5"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j3_5_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : false,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ ],
+      "type" : "string"
+    } ],
+    "flow" : [ {
+      "id" : "j1_1",
+      "text" : "TCF-Block",
+      "icon" : null,
+      "li_attr" : {
+        "id" : "j1_1"
+      },
+      "a_attr" : {
+        "href" : "#",
+        "id" : "j1_1_anchor"
+      },
+      "state" : {
+        "loaded" : true,
+        "opened" : true,
+        "selected" : false,
+        "disabled" : false
+      },
+      "data" : { },
+      "children" : [ {
+        "id" : "j1_2",
+        "text" : "TRY",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_2"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_2_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : true,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ {
+          "id" : "j1_56",
+          "text" : "packages/Wrapper/Azure/OneDrive/getFileListFromFolder",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_56"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_56_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ {
+              "op" : "loop",
+              "from" : "/oneDriveFiles/#{loop_id_255515155}",
+              "to" : "/oneDriveFiles/#{loop_id_255515155}",
+              "loop_Id" : "loop_id_255515155",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "op" : "add",
+              "from" : "/oneDriveFiles/#{loop_id_255515155}/id",
+              "to" : "/oneDriveFiles/#{loop_id_255515155}/id",
+              "follow" : "loop_id_255515155",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "op" : "add",
+              "from" : "/oneDriveFiles/#{loop_id_255515155}/name",
+              "to" : "/oneDriveFiles/#{loop_id_255515155}/name",
+              "follow" : "loop_id_255515155",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "lines" : [ {
+              "loop_Id" : "loop_id_255515155",
+              "inputPath" : "oneDriveFiles",
+              "outputPath" : "oneDriveFiles",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "oneDriveFiles/#{loop_id_255515155}",
+              "OUTPath" : "oneDriveFiles/#{loop_id_255515155}",
+              "line" : 0,
+              "dashedLine" : true,
+              "op" : "loop",
+              "inType" : "documentList",
+              "outType" : "documentList",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "inputPath" : "oneDriveFiles/id",
+              "outputPath" : "oneDriveFiles/id",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "oneDriveFiles/#{loop_id_255515155}/id",
+              "OUTPath" : "oneDriveFiles/#{loop_id_255515155}/id",
+              "follow" : "loop_id_255515155",
+              "op" : "add",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            }, {
+              "inputPath" : "oneDriveFiles/name",
+              "outputPath" : "oneDriveFiles/name",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "oneDriveFiles/#{loop_id_255515155}/name",
+              "OUTPath" : "oneDriveFiles/#{loop_id_255515155}/name",
+              "follow" : "loop_id_255515155",
+              "op" : "add",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "dropList" : [ ],
+            "createList" : [ ],
+            "serviceType" : "flow",
+            "comment" : "Get list of files from OneDrive"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        }, {
+          "id" : "j1_57",
+          "text" : "packages/Wrapper/AWS/S3/getList",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_57"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_57_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "transformers" : [ {
+              "op" : "loop",
+              "from" : "/s3Files/#{loop_id_511676471}",
+              "to" : "/s3Files/#{loop_id_511676471}",
+              "loop_Id" : "loop_id_511676471",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "op" : "add",
+              "from" : "/s3Files/#{loop_id_511676471}/name",
+              "to" : "/s3Files/#{loop_id_511676471}/name",
+              "follow" : "loop_id_511676471",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "lines" : [ {
+              "loop_Id" : "loop_id_511676471",
+              "inputPath" : "s3Files",
+              "outputPath" : "s3Files",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "s3Files/#{loop_id_511676471}",
+              "OUTPath" : "s3Files/#{loop_id_511676471}",
+              "line" : 0,
+              "dashedLine" : true,
+              "op" : "loop",
+              "inType" : "documentList",
+              "outType" : "documentList",
+              "inTypePath" : "documentList",
+              "outTypePath" : "documentList"
+            }, {
+              "inputPath" : "s3Files/name",
+              "outputPath" : "s3Files/name",
+              "inpJsTree" : "#launching_arrow_jsTree_function",
+              "outpJsTree" : "#landing_arrow_jsTree",
+              "INPath" : "s3Files/#{loop_id_511676471}/name",
+              "OUTPath" : "s3Files/#{loop_id_511676471}/name",
+              "follow" : "loop_id_511676471",
+              "op" : "add",
+              "line" : 0,
+              "dashedLine" : false,
+              "inType" : "string",
+              "outType" : "string",
+              "inTypePath" : "documentList/string",
+              "outTypePath" : "documentList/string"
+            } ],
+            "dropList" : [ ],
+            "createList" : [ ],
+            "serviceType" : "flow",
+            "comment" : "Get list of files from S3"
+          },
+          "children" : [ ],
+          "type" : "invoke"
+        }, {
+          "id" : "j1_18",
+          "text" : "SEQUENCE",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_18"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_18_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "comment" : "List OneDrive files that are not on S3",
+            "status" : "enabled"
+          },
+          "children" : [ {
+            "id" : "j1_20",
+            "text" : "LOOP",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_20"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_20_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : true,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "comment" : "Loop over OneDrive files",
+              "inArray" : "oneDriveFiles",
+              "outArray" : "files"
+            },
+            "children" : [ {
+              "id" : "j1_21",
+              "text" : "MAP",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_21"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_21_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "transformers" : [ ],
+                "lines" : [ ],
+                "dropList" : [ ],
+                "createList" : [ {
+                  "path" : "matched",
+                  "value" : "no",
+                  "evaluate" : null,
+                  "typePath" : "string"
+                } ],
+                "comment" : "Initialize"
+              },
+              "children" : [ ],
+              "type" : "map"
+            }, {
+              "id" : "j1_22",
+              "text" : "LOOP",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_22"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_22_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "comment" : "Loop over s3 files",
+                "inArray" : "s3Files",
+                "outArray" : "temp"
+              },
+              "children" : [ {
+                "id" : "j1_23",
+                "text" : "SEQUENCE",
+                "icon" : null,
+                "li_attr" : {
+                  "id" : "j1_23"
+                },
+                "a_attr" : {
+                  "href" : "#",
+                  "id" : "j1_23_anchor"
+                },
+                "state" : {
+                  "loaded" : true,
+                  "opened" : true,
+                  "selected" : false,
+                  "disabled" : false
+                },
+                "data" : {
+                  "evaluate" : true,
+                  "comment" : "Match file names"
+                },
+                "children" : [ {
+                  "id" : "j1_24",
+                  "text" : "MAP",
+                  "icon" : null,
+                  "li_attr" : {
+                    "id" : "j1_24"
+                  },
+                  "a_attr" : {
+                    "href" : "#",
+                    "id" : "j1_24_anchor"
+                  },
+                  "state" : {
+                    "loaded" : true,
+                    "opened" : false,
+                    "selected" : false,
+                    "disabled" : false
+                  },
+                  "data" : {
+                    "transformers" : [ ],
+                    "lines" : [ ],
+                    "dropList" : [ ],
+                    "createList" : [ {
+                      "path" : "matched",
+                      "value" : "yes",
+                      "evaluate" : null,
+                      "typePath" : "string"
+                    } ],
+                    "condition" : "\"#{oneDriveFiles/name}\"==\"#{s3Files/name}\"",
+                    "comment" : "Matched names"
+                  },
+                  "children" : [ ],
+                  "type" : "map"
+                } ],
+                "type" : "sequence"
+              } ],
+              "type" : "loop"
+            }, {
+              "id" : "j1_26",
+              "text" : "SWITCH",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_26"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_26_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : false,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "switch" : "matched",
+                "comment" : "Collect the unmatched file"
+              },
+              "children" : [ {
+                "id" : "j1_27",
+                "text" : "CASE",
+                "icon" : null,
+                "li_attr" : {
+                  "id" : "j1_27"
+                },
+                "a_attr" : {
+                  "href" : "#",
+                  "id" : "j1_27_anchor"
+                },
+                "state" : {
+                  "loaded" : true,
+                  "opened" : true,
+                  "selected" : false,
+                  "disabled" : false
+                },
+                "data" : {
+                  "case" : "no",
+                  "comment" : "If not matched"
+                },
+                "children" : [ {
+                  "id" : "j1_31",
+                  "text" : "packages/middleware/pub/docList/addDoc",
+                  "icon" : null,
+                  "li_attr" : {
+                    "id" : "j1_31"
+                  },
+                  "a_attr" : {
+                    "href" : "#",
+                    "id" : "j1_31_anchor"
+                  },
+                  "state" : {
+                    "loaded" : true,
+                    "opened" : false,
+                    "selected" : false,
+                    "disabled" : false
+                  },
+                  "data" : {
+                    "transformers" : [ {
+                      "op" : "copy",
+                      "from" : "/oneDriveFiles",
+                      "to" : "/addDoc",
+                      "inTypePath" : "document",
+                      "outTypePath" : "document"
+                    }, {
+                      "op" : "copy",
+                      "from" : "/docList",
+                      "to" : "/fileList",
+                      "inTypePath" : "documentList",
+                      "outTypePath" : "documentList"
+                    }, {
+                      "op" : "copy",
+                      "from" : "/fileList",
+                      "to" : "/docList",
+                      "inTypePath" : "documentList",
+                      "outTypePath" : "documentList"
+                    } ],
+                    "lines" : [ {
+                      "inputPath" : "oneDriveFiles",
+                      "outputPath" : "addDoc",
+                      "inpJsTree" : "#launching_arrow_jsTree",
+                      "outpJsTree" : "#landing_arrow_jsTree_function",
+                      "INPath" : "oneDriveFiles",
+                      "OUTPath" : "addDoc",
+                      "op" : "copy",
+                      "line" : 0,
+                      "dashedLine" : false,
+                      "inType" : "document",
+                      "outType" : "document",
+                      "inTypePath" : "document",
+                      "outTypePath" : "document"
+                    }, {
+                      "inputPath" : "docList",
+                      "outputPath" : "fileList",
+                      "inpJsTree" : "#launching_arrow_jsTree_function",
+                      "outpJsTree" : "#landing_arrow_jsTree",
+                      "INPath" : "docList",
+                      "OUTPath" : "fileList",
+                      "op" : "copy",
+                      "line" : 0,
+                      "dashedLine" : false,
+                      "inType" : "documentList",
+                      "outType" : "documentList",
+                      "inTypePath" : "documentList",
+                      "outTypePath" : "documentList"
+                    }, {
+                      "inputPath" : "fileList",
+                      "outputPath" : "docList",
+                      "inpJsTree" : "#launching_arrow_jsTree",
+                      "outpJsTree" : "#landing_arrow_jsTree_function",
+                      "INPath" : "fileList",
+                      "OUTPath" : "docList",
+                      "op" : "copy",
+                      "line" : 0,
+                      "dashedLine" : false,
+                      "inType" : "documentList",
+                      "outType" : "documentList",
+                      "inTypePath" : "documentList",
+                      "outTypePath" : "documentList"
+                    } ],
+                    "dropList" : [ {
+                      "path" : "docList",
+                      "typePath" : "documentList"
+                    } ],
+                    "createList" : [ ],
+                    "serviceType" : "service"
+                  },
+                  "children" : [ ],
+                  "type" : "invoke"
+                } ],
+                "type" : "sequence"
+              } ],
+              "type" : "switch"
+            } ],
+            "type" : "loop"
+          }, {
+            "id" : "j1_32",
+            "text" : "MAP",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_32"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_32_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : false,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "transformers" : [ ],
+              "lines" : [ ],
+              "dropList" : [ {
+                "path" : "addDoc",
+                "typePath" : "document"
+              }, {
+                "path" : "matched",
+                "typePath" : "string"
+              } ],
+              "createList" : [ ],
+              "comment" : "Dropper"
+            },
+            "children" : [ ],
+            "type" : "map"
+          } ],
+          "type" : "sequence"
+        }, {
+          "id" : "j1_33",
+          "text" : "SEQUENCE",
+          "icon" : null,
+          "li_attr" : {
+            "id" : "j1_33"
+          },
+          "a_attr" : {
+            "href" : "#",
+            "id" : "j1_33_anchor"
+          },
+          "state" : {
+            "loaded" : true,
+            "opened" : false,
+            "selected" : false,
+            "disabled" : false
+          },
+          "data" : {
+            "comment" : "Copy files from OneDrive to S3",
+            "status" : "enabled"
+          },
+          "children" : [ {
+            "id" : "j1_49",
+            "text" : "SEQUENCE",
+            "icon" : null,
+            "li_attr" : {
+              "id" : "j1_49"
+            },
+            "a_attr" : {
+              "href" : "#",
+              "id" : "j1_49_anchor"
+            },
+            "state" : {
+              "loaded" : true,
+              "opened" : false,
+              "selected" : false,
+              "disabled" : false
+            },
+            "data" : {
+              "comment" : "Check if fileList is empty?"
+            },
+            "children" : [ {
+              "id" : "j1_50",
+              "text" : "SWITCH",
+              "icon" : null,
+              "li_attr" : {
+                "id" : "j1_50"
+              },
+              "a_attr" : {
+                "href" : "#",
+                "id" : "j1_50_anchor"
+              },
+              "state" : {
+                "loaded" : true,
+                "opened" : true,
+                "selected" : false,
+                "disabled" : false
+              },
+              "data" : {
+                "switch" : "fileList",
+                "comment" : "Route based on fileList value"
+              },
+              "children" : [ {
+                "id" : "j1_52",
+                "text" : "CASE",
+                "icon" : null,
+                "li_attr" : {
+                  "id" : "j1_52"
+                },
+                "a_attr" : {
+                  "href" : "#",
+                  "id" : "j1_52_anchor"
+                },
+                "state" : {
+                  "loaded" : true,
+                  "opened" : true,
+                  "selected" : false,
+                  "disabled" : false
+                },
+                "data" : {
+                  "case" : "#default",
+                  "comment" : "If fileList is not null"
+                },
+                "children" : [ {
+                  "id" : "j1_34",
+                  "text" : "LOOP",
+                  "icon" : null,
+                  "li_attr" : {
+                    "id" : "j1_34"
+                  },
+                  "a_attr" : {
+                    "href" : "#",
+                    "id" : "j1_34_anchor"
+                  },
+                  "state" : {
+                    "loaded" : true,
+                    "opened" : false,
+                    "selected" : false,
+                    "disabled" : false
+                  },
+                  "data" : {
+                    "inArray" : "fileList",
+                    "outArray" : "contents",
+                    "comment" : "Loop over new OneDrive files"
+                  },
+                  "children" : [ {
+                    "id" : "j1_36",
+                    "text" : "MAP",
+                    "icon" : null,
+                    "li_attr" : {
+                      "id" : "j1_36"
+                    },
+                    "a_attr" : {
+                      "href" : "#",
+                      "id" : "j1_36_anchor"
+                    },
+                    "state" : {
+                      "loaded" : true,
+                      "opened" : false,
+                      "selected" : false,
+                      "disabled" : false
+                    },
+                    "data" : {
+                      "transformers" : [ {
+                        "op" : "copy",
+                        "from" : "/fileList/id",
+                        "to" : "/fileID",
+                        "inTypePath" : "document/string",
+                        "outTypePath" : "string"
+                      }, {
+                        "op" : "copy",
+                        "from" : "/fileList/name",
+                        "to" : "/fileName",
+                        "inTypePath" : "document/string",
+                        "outTypePath" : "string"
+                      } ],
+                      "lines" : [ {
+                        "inputPath" : "fileList/id",
+                        "outputPath" : "fileID",
+                        "inpJsTree" : "#launching_arrow_jsTree",
+                        "outpJsTree" : "#landing_arrow_jsTree",
+                        "INPath" : "fileList/id",
+                        "OUTPath" : "fileID",
+                        "op" : "copy",
+                        "line" : 0,
+                        "dashedLine" : false,
+                        "inType" : "string",
+                        "outType" : "string",
+                        "inTypePath" : "document/string",
+                        "outTypePath" : "string"
+                      }, {
+                        "inputPath" : "fileList/name",
+                        "outputPath" : "fileName",
+                        "inpJsTree" : "#launching_arrow_jsTree",
+                        "outpJsTree" : "#landing_arrow_jsTree",
+                        "INPath" : "fileList/name",
+                        "OUTPath" : "fileName",
+                        "op" : "copy",
+                        "line" : 0,
+                        "dashedLine" : false,
+                        "inType" : "string",
+                        "outType" : "string",
+                        "inTypePath" : "document/string",
+                        "outTypePath" : "string"
+                      } ],
+                      "dropList" : [ ],
+                      "createList" : [ ],
+                      "comment" : "Map selected file"
+                    },
+                    "children" : [ ],
+                    "type" : "map"
+                  }, {
+                    "id" : "j1_42",
+                    "text" : "SEQUENCE",
+                    "icon" : null,
+                    "li_attr" : {
+                      "id" : "j1_42"
+                    },
+                    "a_attr" : {
+                      "href" : "#",
+                      "id" : "j1_42_anchor"
+                    },
+                    "state" : {
+                      "loaded" : true,
+                      "opened" : true,
+                      "selected" : false,
+                      "disabled" : false
+                    },
+                    "data" : {
+                      "comment" : "Get file from OneDrive"
+                    },
+                    "children" : [ {
+                      "id" : "j1_40",
+                      "text" : "MAP",
+                      "icon" : null,
+                      "li_attr" : {
+                        "id" : "j1_40"
+                      },
+                      "a_attr" : {
+                        "href" : "#",
+                        "id" : "j1_40_anchor"
+                      },
+                      "state" : {
+                        "loaded" : true,
+                        "opened" : false,
+                        "selected" : false,
+                        "disabled" : false
+                      },
+                      "data" : {
+                        "transformers" : [ ],
+                        "lines" : [ ],
+                        "dropList" : [ {
+                          "path" : "payload",
+                          "typePath" : "string"
+                        } ],
+                        "createList" : [ {
+                          "path" : "oneDriveURL",
+                          "value" : "https://graph.microsoft.com/v1.0/me/drive/items/#{fileID}/content",
+                          "evaluate" : "EEV",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "GET",
+                          "value" : "GET",
+                          "evaluate" : null,
+                          "typePath" : "string"
+                        }, {
+                          "path" : "oneDriveAuth",
+                          "value" : "#{OneDriveAuth}",
+                          "evaluate" : "ELV",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "contentType",
+                          "value" : "bytes",
+                          "evaluate" : null,
+                          "typePath" : "string"
+                        }, {
+                          "path" : "conn",
+                          "value" : "Connection",
+                          "evaluate" : null,
+                          "typePath" : "string"
+                        }, {
+                          "path" : "ct",
+                          "value" : "bytes",
+                          "evaluate" : null,
+                          "typePath" : "string"
+                        } ],
+                        "comment" : "Initialize"
+                      },
+                      "children" : [ ],
+                      "type" : "map"
+                    }, {
+                      "id" : "j1_39",
+                      "text" : "packages/middleware/pub/client/http/request",
+                      "icon" : null,
+                      "li_attr" : {
+                        "id" : "j1_39"
+                      },
+                      "a_attr" : {
+                        "href" : "#",
+                        "id" : "j1_39_anchor"
+                      },
+                      "state" : {
+                        "loaded" : true,
+                        "opened" : false,
+                        "selected" : false,
+                        "disabled" : false
+                      },
+                      "data" : {
+                        "transformers" : [ {
+                          "op" : "copy",
+                          "from" : "/oneDriveURL",
+                          "to" : "/url",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/GET",
+                          "to" : "/method",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/oneDriveAuth",
+                          "to" : "/headers/Authorization",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/bytes",
+                          "to" : "/fileList/content",
+                          "inTypePath" : "byteList",
+                          "outTypePath" : "document/byteList"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/error",
+                          "to" : "/fileList/error",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/respPayload",
+                          "to" : "/fileList/payload",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/conn",
+                          "to" : "/headers/Connection",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/ct",
+                          "to" : "/respHandling/contentType",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        } ],
+                        "lines" : [ {
+                          "inputPath" : "oneDriveURL",
+                          "outputPath" : "url",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "oneDriveURL",
+                          "OUTPath" : "url",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "inputPath" : "GET",
+                          "outputPath" : "method",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "GET",
+                          "OUTPath" : "method",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "inputPath" : "oneDriveAuth",
+                          "outputPath" : "headers/Authorization",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "oneDriveAuth",
+                          "OUTPath" : "headers/Authorization",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "inputPath" : "bytes",
+                          "outputPath" : "fileList/content",
+                          "inpJsTree" : "#launching_arrow_jsTree_function",
+                          "outpJsTree" : "#landing_arrow_jsTree",
+                          "INPath" : "bytes",
+                          "OUTPath" : "fileList/content",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "byteList",
+                          "outType" : "byteList",
+                          "inTypePath" : "byteList",
+                          "outTypePath" : "document/byteList"
+                        }, {
+                          "inputPath" : "error",
+                          "outputPath" : "fileList/error",
+                          "inpJsTree" : "#launching_arrow_jsTree_function",
+                          "outpJsTree" : "#landing_arrow_jsTree",
+                          "INPath" : "error",
+                          "OUTPath" : "fileList/error",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "inputPath" : "respPayload",
+                          "outputPath" : "fileList/payload",
+                          "inpJsTree" : "#launching_arrow_jsTree_function",
+                          "outpJsTree" : "#landing_arrow_jsTree",
+                          "INPath" : "respPayload",
+                          "OUTPath" : "fileList/payload",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "inputPath" : "conn",
+                          "outputPath" : "headers/Connection",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "conn",
+                          "OUTPath" : "headers/Connection",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "inputPath" : "ct",
+                          "outputPath" : "respHandling/contentType",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "ct",
+                          "OUTPath" : "respHandling/contentType",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        } ],
+                        "dropList" : [ {
+                          "path" : "oneDriveURL",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "headers",
+                          "typePath" : "document"
+                        }, {
+                          "path" : "GET",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "oneDriveAuth",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "contentType",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "conn",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "ct",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "respHandling",
+                          "typePath" : "document"
+                        } ],
+                        "createList" : [ ],
+                        "serviceType" : "service",
+                        "comment" : "Download file from OneDrive"
+                      },
+                      "children" : [ ],
+                      "type" : "invoke"
+                    } ],
+                    "type" : "sequence"
+                  }, {
+                    "id" : "j1_43",
+                    "text" : "SEQUENCE",
+                    "icon" : null,
+                    "li_attr" : {
+                      "id" : "j1_43"
+                    },
+                    "a_attr" : {
+                      "href" : "#",
+                      "id" : "j1_43_anchor"
+                    },
+                    "state" : {
+                      "loaded" : true,
+                      "opened" : true,
+                      "selected" : false,
+                      "disabled" : false
+                    },
+                    "data" : {
+                      "comment" : "Put file to S3"
+                    },
+                    "children" : [ {
+                      "id" : "j1_44",
+                      "text" : "MAP",
+                      "icon" : null,
+                      "li_attr" : {
+                        "id" : "j1_44"
+                      },
+                      "a_attr" : {
+                        "href" : "#",
+                        "id" : "j1_44_anchor"
+                      },
+                      "state" : {
+                        "loaded" : true,
+                        "opened" : false,
+                        "selected" : false,
+                        "disabled" : false
+                      },
+                      "data" : {
+                        "transformers" : [ ],
+                        "lines" : [ ],
+                        "dropList" : [ ],
+                        "createList" : [ {
+                          "path" : "awsUrl",
+                          "value" : "https://eka-poc.s3.us-west-2.amazonaws.com/#{fileName}",
+                          "evaluate" : "EEV",
+                          "typePath" : "string"
+                        }, {
+                          "path" : "PUT",
+                          "value" : "PUT",
+                          "evaluate" : null,
+                          "typePath" : "string"
+                        } ],
+                        "comment" : "Initialize"
+                      },
+                      "children" : [ ],
+                      "type" : "map"
+                    }, {
+                      "id" : "j1_45",
+                      "text" : "packages/middleware/pub/client/http/request",
+                      "icon" : null,
+                      "li_attr" : {
+                        "id" : "j1_45"
+                      },
+                      "a_attr" : {
+                        "href" : "#",
+                        "id" : "j1_45_anchor"
+                      },
+                      "state" : {
+                        "loaded" : true,
+                        "opened" : false,
+                        "selected" : false,
+                        "disabled" : false
+                      },
+                      "data" : {
+                        "transformers" : [ {
+                          "op" : "copy",
+                          "from" : "/PUT",
+                          "to" : "/method",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/awsUrl",
+                          "to" : "/url",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/awsAccKey",
+                          "to" : "/auth/awsSignature/AccessKey",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/awsSecKey",
+                          "to" : "/auth/awsSignature/SecretKey",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/awsService",
+                          "to" : "/auth/awsSignature/service",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/region",
+                          "to" : "/auth/awsSignature/region",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/fileList/content",
+                          "to" : "/binaryData/bytes",
+                          "inTypePath" : "document/byteList",
+                          "outTypePath" : "document/byteList"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/respPayload",
+                          "to" : "/fileList/resp",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "op" : "copy",
+                          "from" : "/error",
+                          "to" : "/fileList/error",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        } ],
+                        "lines" : [ {
+                          "inputPath" : "PUT",
+                          "outputPath" : "method",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "PUT",
+                          "OUTPath" : "method",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "inputPath" : "awsUrl",
+                          "outputPath" : "url",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "awsUrl",
+                          "OUTPath" : "url",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "string"
+                        }, {
+                          "inputPath" : "awsAccKey",
+                          "outputPath" : "auth/awsSignature/AccessKey",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "awsAccKey",
+                          "OUTPath" : "auth/awsSignature/AccessKey",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "inputPath" : "awsSecKey",
+                          "outputPath" : "auth/awsSignature/SecretKey",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "awsSecKey",
+                          "OUTPath" : "auth/awsSignature/SecretKey",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "inputPath" : "awsService",
+                          "outputPath" : "auth/awsSignature/service",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "awsService",
+                          "OUTPath" : "auth/awsSignature/service",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "inputPath" : "region",
+                          "outputPath" : "auth/awsSignature/region",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "region",
+                          "OUTPath" : "auth/awsSignature/region",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/document/string"
+                        }, {
+                          "inputPath" : "fileList/content",
+                          "outputPath" : "binaryData/bytes",
+                          "inpJsTree" : "#launching_arrow_jsTree",
+                          "outpJsTree" : "#landing_arrow_jsTree_function",
+                          "INPath" : "fileList/content",
+                          "OUTPath" : "binaryData/bytes",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "byteList",
+                          "outType" : "byteList",
+                          "inTypePath" : "document/byteList",
+                          "outTypePath" : "document/byteList"
+                        }, {
+                          "inputPath" : "respPayload",
+                          "outputPath" : "fileList/resp",
+                          "inpJsTree" : "#launching_arrow_jsTree_function",
+                          "outpJsTree" : "#landing_arrow_jsTree",
+                          "INPath" : "respPayload",
+                          "OUTPath" : "fileList/resp",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        }, {
+                          "inputPath" : "error",
+                          "outputPath" : "fileList/error",
+                          "inpJsTree" : "#launching_arrow_jsTree_function",
+                          "outpJsTree" : "#landing_arrow_jsTree",
+                          "INPath" : "error",
+                          "OUTPath" : "fileList/error",
+                          "op" : "copy",
+                          "line" : 0,
+                          "dashedLine" : false,
+                          "inType" : "string",
+                          "outType" : "string",
+                          "inTypePath" : "string",
+                          "outTypePath" : "document/string"
+                        } ],
+                        "dropList" : [ {
+                          "path" : "fileList/content",
+                          "typePath" : "document/byteList"
+                        } ],
+                        "createList" : [ ],
+                        "serviceType" : "service"
+                      },
+                      "children" : [ ],
+                      "type" : "invoke"
+                    } ],
+                    "type" : "sequence"
+                  } ],
+                  "type" : "loop"
+                }, {
+                  "id" : "j1_54",
+                  "text" : "MAP",
+                  "icon" : null,
+                  "li_attr" : {
+                    "id" : "j1_54"
+                  },
+                  "a_attr" : {
+                    "href" : "#",
+                    "id" : "j1_54_anchor"
+                  },
+                  "state" : {
+                    "loaded" : true,
+                    "opened" : false,
+                    "selected" : false,
+                    "disabled" : false
+                  },
+                  "data" : {
+                    "transformers" : [ ],
+                    "lines" : [ ],
+                    "dropList" : [ {
+                      "path" : "s3Files",
+                      "typePath" : "documentList"
+                    }, {
+                      "path" : "oneDriveFiles",
+                      "typePath" : "documentList"
+                    } ],
+                    "createList" : [ {
+                      "path" : "message",
+                      "value" : "All files copied over to S3",
+                      "evaluate" : null,
+                      "typePath" : "string"
+                    } ],
+                    "comment" : "Message: successful output"
+                  },
+                  "children" : [ ],
+                  "type" : "map"
+                } ],
+                "type" : "sequence"
+              }, {
+                "id" : "j1_53",
+                "text" : "CASE",
+                "icon" : null,
+                "li_attr" : {
+                  "id" : "j1_53"
+                },
+                "a_attr" : {
+                  "href" : "#",
+                  "id" : "j1_53_anchor"
+                },
+                "state" : {
+                  "loaded" : true,
+                  "opened" : true,
+                  "selected" : false,
+                  "disabled" : false
+                },
+                "data" : {
+                  "case" : "#null",
+                  "comment" : "If fileList is null"
+                },
+                "children" : [ {
+                  "id" : "j1_35",
+                  "text" : "MAP",
+                  "icon" : null,
+                  "li_attr" : {
+                    "id" : "j1_35"
+                  },
+                  "a_attr" : {
+                    "href" : "#",
+                    "id" : "j1_35_anchor"
+                  },
+                  "state" : {
+                    "loaded" : true,
+                    "opened" : false,
+                    "selected" : false,
+                    "disabled" : false
+                  },
+                  "data" : {
+                    "transformers" : [ ],
+                    "lines" : [ ],
+                    "dropList" : [ ],
+                    "createList" : [ {
+                      "path" : "message",
+                      "value" : "Nothing new to copy over",
+                      "evaluate" : null,
+                      "typePath" : "string"
+                    } ],
+                    "comment" : "Message: nothing found"
+                  },
+                  "children" : [ ],
+                  "type" : "map"
+                } ],
+                "type" : "sequence"
+              } ],
+              "type" : "switch"
+            } ],
+            "type" : "sequence"
+          } ],
+          "type" : "sequence"
+        } ],
+        "type" : "sequence"
+      }, {
+        "id" : "j1_3",
+        "text" : "CATCH",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_3"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_3_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "sequence"
+      }, {
+        "id" : "j1_4",
+        "text" : "FINALLY",
+        "icon" : null,
+        "li_attr" : {
+          "id" : "j1_4"
+        },
+        "a_attr" : {
+          "href" : "#",
+          "id" : "j1_4_anchor"
+        },
+        "state" : {
+          "loaded" : true,
+          "opened" : false,
+          "selected" : false,
+          "disabled" : false
+        },
+        "data" : { },
+        "children" : [ ],
+        "type" : "sequence"
+      } ],
+      "type" : "try-catch"
+    } ],
+    "lockedByUser" : "ekaDev"
+  },
+  "consumers" : "",
+  "developers" : "",
+  "enableServiceDocumentValidation" : false
+}

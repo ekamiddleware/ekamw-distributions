@@ -5,12 +5,12 @@ export default {
   rangeChoise: "Range",
   min: "Min",
   max: "Max",
-  choise: "Choise",
+  choise: "Choice",
   minute: "Minute",
   hours: "Hours",
   dayOfMonth: "Day of Month",
   month: "Month",
   daysOfWeek: "Days of week",
-  invalidCron: "expression cron invalida, try with (* * * * *)",
+  invalidCron: "expression cron invalid, try with (* * * * *)",
   inputPlaceholder: "Cron Expression"
 };

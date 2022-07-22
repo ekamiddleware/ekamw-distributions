@@ -19,7 +19,7 @@
     "data" : { },
     "children" : [ {
       "id" : "j1_1",
-      "text" : "cronExpression",
+      "text" : "correlationId",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_1"
@@ -39,7 +39,7 @@
       "type" : "string"
     }, {
       "id" : "j1_5",
-      "text" : "enabled",
+      "text" : "sessionId",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_5"
@@ -59,7 +59,7 @@
       "type" : "string"
     }, {
       "id" : "j1_6",
-      "text" : "id",
+      "text" : "dateTimeStmp",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_6"
@@ -79,7 +79,7 @@
       "type" : "string"
     }, {
       "id" : "j1_7",
-      "text" : "status",
+      "text" : "duration",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_7"
@@ -99,7 +99,7 @@
       "type" : "string"
     }, {
       "id" : "j1_8",
-      "text" : "lasterror",
+      "text" : "error",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_8"
@@ -119,7 +119,7 @@
       "type" : "string"
     }, {
       "id" : "j1_9",
-      "text" : "owner_node",
+      "text" : "fqn",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_9"
@@ -139,7 +139,7 @@
       "type" : "string"
     }, {
       "id" : "j1_10",
-      "text" : "last_run",
+      "text" : "request",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_10"
@@ -159,7 +159,7 @@
       "type" : "string"
     }, {
       "id" : "j1_11",
-      "text" : "next_run",
+      "text" : "response",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_11"
@@ -179,7 +179,7 @@
       "type" : "string"
     }, {
       "id" : "j1_12",
-      "text" : "job_name",
+      "text" : "nanoInstance",
       "icon" : null,
       "li_attr" : {
         "id" : "j1_12"
@@ -191,7 +191,7 @@
       "state" : {
         "loaded" : true,
         "opened" : false,
-        "selected" : true,
+        "selected" : false,
         "disabled" : false
       },
       "data" : { },
@@ -321,9 +321,9 @@
     "children" : [ ],
     "type" : "string"
   } ],
-  "sql" : "VVBEQVRFIFNjaGVkdWxlcnMKU0VUIGNyb249J3tjcm9uRXhwcmVzc2lvbn0nLCBlbmFibGVkPSd7ZW5hYmxlZH0nLCBvd25lcl9ub2RlPSd7b3duZXJfbm9kZX0nLCBzdGF0dXM9J3tzdGF0dXN9JywgCmxhc3RlcnJvcj0ne2xhc3RlcnJvcn0nLCBvd25lcl9ub2RlPSd7b3duZXJfbm9kZX0nLCBsYXN0X3J1bj0ne2xhc3RfcnVufScsIG5leHRfcnVuPSd7bmV4dF9ydW59JywKam9iX25hbWU9J3tqb2JfbmFtZX0nCldIRVJFIGlkPXtpZH07",
+  "sql" : "SU5TRVJUIElOVE8gYXVkaXRfbG9nZ2luZyhjb3JyZWxhdGlvbklkLCBzZXNzaW9uSWQsIGRhdGVUaW1lU3RtcCxkdXJhdGlvbiwgZXJyb3IsIGZxbiwgcmVxdWVzdCwgcmVzcG9uc2UsIG5hbm9JbnN0YW5jZSkKVkFMVUVTKCd7Y29ycmVsYXRpb25JZH0nLCAne3Nlc3Npb25JZH0nLCAne2RhdGVUaW1lU3RtcH0nLCAne2R1cmF0aW9ufScsICd7ZXJyb3J9JywgJ3tmcW59JywgJ3tyZXF1ZXN0fScsICd7cmVzcG9uc2V9JywgJ3tuYW5vSW5zdGFuY2V9Jyk=",
   "version" : "v1",
   "consumers" : "",
-  "developers" : "rnd",
+  "developers" : "",
   "lockedByUser" : "ekaDev"
 }

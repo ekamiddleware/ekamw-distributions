@@ -1,4 +1,4 @@
-package packages.ekaScheduler.cronJob.api.post;
+package packages.Wrapper.AWS.S3;
 
 import com.eka.middleware.service.DataPipeline;
 import com.eka.middleware.service.ServiceUtils;
@@ -12,12 +12,12 @@ import javax.json.JsonObject;
 import javax.json.JsonValue;
 import java.util.*;
 
-public final class updateSchedulerJob {
+public final class getList {
 
 	static JsonObject mainflowJsonObject=null;
 	static final String syncBlock=new String("sync");
 	public static final void main(DataPipeline dataPipeline) throws SnippetException{
-		String fqn="packages.ekaScheduler.cronJob.api.post.updateSchedulerJob";
+		String fqn="packages.Wrapper.AWS.S3.getList";
 		long nanoSec=0;
 		String logRequest = null;
 		String logResponse = null;
@@ -43,7 +43,7 @@ public final class updateSchedulerJob {
 		  if(mainflowJsonObject==null)
 			synchronized(syncBlock){
 			  String location = ServiceUtils.getPackagesPath();
-			  String flowRef = location+"packages/ekaScheduler/cronJob/api/post/updateSchedulerJob.flow";
+			  String flowRef = location+"packages/Wrapper/AWS/S3/getList.flow";
 			  if(mainflowJsonObject==null)
 				  mainflowJsonObject = Json.createReader(new FileInputStream(new File(flowRef))).readObject();
 			}
@@ -53,7 +53,7 @@ public final class updateSchedulerJob {
 			dataPipeline.put("error", e.getMessage());
 			dataPipeline.setResponseStatus(500);
 			dataPipeline.put("status", "Service error");
-			new SnippetException(dataPipeline,"Failed to execute updateSchedulerJob", new Exception(e));
+			new SnippetException(dataPipeline,"Failed to execute getList", new Exception(e));
 		}finally{
 			
 			if(stopRecursiveLogging==null && !fqn.equalsIgnoreCase("packages.middleware.pub.service.auditLogging")){
