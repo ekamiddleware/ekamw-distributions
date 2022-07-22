@@ -14,7 +14,7 @@
       },
       "state" : {
         "loaded" : true,
-        "opened" : false,
+        "opened" : true,
         "selected" : false,
         "disabled" : false
       },
@@ -245,12 +245,13 @@
           "typePath" : "document"
         } ],
         "createList" : [ ],
-        "serviceType" : "sql"
+        "serviceType" : "sql",
+        "comment" : "Getting recent 5 rows form job_history database."
       },
       "children" : [ ],
       "type" : "invoke"
     } ],
-    "lockedByUser" : "admin"
+    "lockedByUser" : "ekaDev"
   },
   "consumers" : "",
   "developers" : "",
