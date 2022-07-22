@@ -455,7 +455,9 @@
       $("#job_cron_exp").html(payload.output[0].cron);
       $("#job_created_on").html(new Date(payload.output[0].created_time + " UTC"));
       if (payload.output[0].enabled == "Y") {
-        $("#flexSwitchCheckChecked").attr("checked", "checked");
+        $("#flexSwitchCheckChecked").prop("checked", true);
+      } else {
+        $("#flexSwitchCheckChecked").prop("checked", false);
       }
 
 
@@ -494,7 +496,7 @@
     var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new&job_name="+ SchedulerRecord.job_name;
     var response = syncRestRequest(url, "POST", "");
     if (response.status == 200 && response.payload) {
-
+      load(SchedulerRecord.id);
     }
   });
 
@@ -591,7 +593,7 @@
       }
       updateSchedulerJob.style.display = "none";
       modal.style.display = "none";
-      deleteSchedulerJob.style.display = "none";
+      //deleteSchedulerJob.style.display = "none";
     }
   }
 
