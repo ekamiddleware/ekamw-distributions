@@ -513,7 +513,7 @@
                   var url = "/ekaScheduler/" + SchedulerRecord.id + "?cronExpression=" + SchedulerRecord.cron + "&enabled=" + ($(this).is(":checked") ? "Y" : "N") + "&serviceFqn=" + SchedulerRecord.serviceFqn + "&status=new&job_name=" + SchedulerRecord.job_name;
                   var response = syncRestRequest(url, "POST", "");
                   if (response.status == 200 && response.payload) {
-                      //loadDataTable();
+                      loadDataTable();
                   }
               });
 
