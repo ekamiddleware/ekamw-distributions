@@ -429,6 +429,13 @@
   <script src="/files/gui/middleware/pub/server/ui/assets/js/sidebars.js"></script>
 
 <script type="text/javascript">
+  Object.defineProperty(String.prototype, 'capitalize', {
+    value: function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+    },
+    enumerable: false
+  });
+
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -481,7 +488,7 @@
         } else if (payload.output[0].job_history[i].status == "failed") {
           classNameStatus = "st-danger";
         }
-        HTML_DATA += '<td><div class="statusdisplay"><span class="status ' + classNameStatus + '"></span><span class="statusvalue">' + payload.output[0].job_history[i].status + '</span></div></td>';
+        HTML_DATA += '<td><div class="statusdisplay"><span class="status ' + classNameStatus + '"></span><span class="statusvalue">' + payload.output[0].job_history[i].status.capitalize() + '</span></div></td>';
         HTML_DATA += "</tr>";
       }
       $("#run_history").html(HTML_DATA);
